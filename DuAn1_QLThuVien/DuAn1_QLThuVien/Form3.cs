@@ -21,7 +21,7 @@ namespace DuAn1_QLThuVien
         {
             timer1.Enabled = true;
             progressBar1.Increment(2);
-            if (progressBar1.Value == 1000) 
+            if (progressBar1.Value == 100) 
             {
                 timer1.Enabled = false;
                 Form1 lg = new Form1();
