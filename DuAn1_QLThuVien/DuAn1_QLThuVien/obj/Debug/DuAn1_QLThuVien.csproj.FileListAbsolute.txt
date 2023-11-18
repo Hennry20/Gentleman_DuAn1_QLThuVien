@@ -1,0 +1,13 @@
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.exe.config
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.exe
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.pdb
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.AssemblyReference.cache
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.Form1.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.Form2.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.Form3.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.Form4.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.Properties.Resources.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.GenerateResource.cache
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.CoreCompileInputs.cache
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.exe
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.pdb

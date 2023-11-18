@@ -42,9 +42,11 @@ namespace DuAn1_QLThuVien
             // 
             // progressBar1
             // 
+            this.progressBar1.ForeColor = System.Drawing.Color.DarkOrange;
             this.progressBar1.Location = new System.Drawing.Point(-3, 661);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(1319, 32);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 6;
             // 
             // label1
@@ -61,12 +63,17 @@ namespace DuAn1_QLThuVien
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1018, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(1002, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(298, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox2
             // 
@@ -82,7 +89,7 @@ namespace DuAn1_QLThuVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1312, 693);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
