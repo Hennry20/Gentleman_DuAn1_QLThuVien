@@ -75,6 +75,15 @@ namespace QLThuVien
             this.label10 = new System.Windows.Forms.Label();
             this.dtgvQLNhanVien = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -516,12 +525,23 @@ namespace QLThuVien
             // 
             this.dtgvQLNhanVien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvQLNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvQLNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNV,
+            this.HoTen,
+            this.GioiTinh,
+            this.NgaySinh,
+            this.SoDT,
+            this.Email,
+            this.HinhAnh,
+            this.NgayVaoLam,
+            this.GhiChu});
             this.dtgvQLNhanVien.Location = new System.Drawing.Point(381, 37);
             this.dtgvQLNhanVien.Name = "dtgvQLNhanVien";
             this.dtgvQLNhanVien.RowHeadersWidth = 51;
             this.dtgvQLNhanVien.RowTemplate.Height = 24;
             this.dtgvQLNhanVien.Size = new System.Drawing.Size(638, 254);
             this.dtgvQLNhanVien.TabIndex = 0;
+            this.dtgvQLNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLNhanVien_CellClick);
             // 
             // label12
             // 
@@ -533,6 +553,69 @@ namespace QLThuVien
             this.label12.Size = new System.Drawing.Size(76, 22);
             this.label12.TabIndex = 9;
             this.label12.Text = "label12";
+            // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "Họ tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 125;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.MinimumWidth = 6;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Width = 125;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Width = 125;
+            // 
+            // SoDT
+            // 
+            this.SoDT.HeaderText = "Số điện thoại";
+            this.SoDT.MinimumWidth = 6;
+            this.SoDT.Name = "SoDT";
+            this.SoDT.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 125;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.MinimumWidth = 6;
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.Width = 125;
+            // 
+            // NgayVaoLam
+            // 
+            this.NgayVaoLam.HeaderText = "Ngày vào làm";
+            this.NgayVaoLam.MinimumWidth = 6;
+            this.NgayVaoLam.Name = "NgayVaoLam";
+            this.NgayVaoLam.Width = 125;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.MinimumWidth = 6;
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.Width = 125;
             // 
             // QLNhanVien
             // 
@@ -611,6 +694,15 @@ namespace QLThuVien
         private System.Windows.Forms.Button btXoaNV;
         private System.Windows.Forms.Button btCapNhatNV;
         private System.Windows.Forms.Button btThemNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayVaoLam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
     }
 }
 
