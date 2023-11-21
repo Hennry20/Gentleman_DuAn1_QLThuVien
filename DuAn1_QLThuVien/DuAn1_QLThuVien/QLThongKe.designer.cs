@@ -87,11 +87,11 @@ namespace QLThuVien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(177, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(391, 51);
+            this.label1.Size = new System.Drawing.Size(436, 55);
             this.label1.TabIndex = 6;
             this.label1.Text = "BẢNG THỐNG KÊ";
             // 
@@ -480,7 +480,7 @@ namespace QLThuVien
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl1);
             this.Name = "QLThongKe";
-            this.Text = "Thống kê";
+            this.Text = "x";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

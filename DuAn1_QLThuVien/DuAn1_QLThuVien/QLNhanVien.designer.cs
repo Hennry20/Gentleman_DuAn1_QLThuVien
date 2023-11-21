@@ -74,7 +74,6 @@ namespace QLThuVien
             this.txtTimKiemNV = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtgvQLNhanVien = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +83,7 @@ namespace QLThuVien
             this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -96,11 +96,11 @@ namespace QLThuVien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(196, 74);
+            this.label1.Location = new System.Drawing.Point(184, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(455, 51);
+            this.label1.Size = new System.Drawing.Size(508, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÍ NHÂN VIÊN";
             // 
@@ -543,17 +543,6 @@ namespace QLThuVien
             this.dtgvQLNhanVien.TabIndex = 0;
             this.dtgvQLNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLNhanVien_CellClick);
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label12.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(985, 5);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 22);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "label12";
-            // 
             // MaNV
             // 
             this.MaNV.HeaderText = "Mã NV";
@@ -616,6 +605,17 @@ namespace QLThuVien
             this.GhiChu.MinimumWidth = 6;
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.Width = 125;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label12.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(985, 5);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 22);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "label12";
             // 
             // QLNhanVien
             // 
