@@ -16,7 +16,7 @@ namespace DuAn1_QLThuVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhap());
+            Application.Run(new ManHinhCho());
         }
     }
 }

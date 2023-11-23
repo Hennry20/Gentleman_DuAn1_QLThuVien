@@ -29,6 +29,10 @@ namespace DuAn1_QLThuVien
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            using(QLThuVienEntities qltv = new QLThuVienEntities())
+            {
+
+            }
             if (String.IsNullOrEmpty(txt_Username.Text)
                || String.IsNullOrWhiteSpace(txt_Username.Text)
                || String.IsNullOrEmpty(txt_Username.Text)

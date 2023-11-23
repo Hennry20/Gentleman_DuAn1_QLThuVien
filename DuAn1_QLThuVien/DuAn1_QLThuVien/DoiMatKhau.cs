@@ -23,6 +23,9 @@ namespace DuAn1_QLThuVien
             DialogResult quit = MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.YesNo);
             if (quit == DialogResult.Yes)
             {
+                DangNhap dn = new DangNhap();
+                this.Hide();
+                dn.ShowDialog();
                 this.Close();
             }
         }
