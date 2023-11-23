@@ -180,7 +180,6 @@ namespace DuAn1_QLThuVien
             // ptb_ShowMK
             // 
             this.ptb_ShowMK.ErrorImage = null;
-            this.ptb_ShowMK.Image = global::DuAn1_QLThuVien.Properties.Resources.eyes;
             this.ptb_ShowMK.ImageLocation = "";
             this.ptb_ShowMK.Location = new System.Drawing.Point(426, 255);
             this.ptb_ShowMK.Name = "ptb_ShowMK";

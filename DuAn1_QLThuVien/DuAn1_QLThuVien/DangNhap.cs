@@ -34,14 +34,18 @@ namespace DuAn1_QLThuVien
                || String.IsNullOrEmpty(txt_Username.Text)
                || String.IsNullOrWhiteSpace(txt_Password.Text))
             {
-                MessageBox.Show(
-                    "Vui lòng nhập đủ tài khoản và mật khẩu",
-                    "Lỗi nhập liệu",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                //MessageBox.Show(
+                //    "Vui lòng nhập đủ tài khoản và mật khẩu",
+                //    "Lỗi nhập liệu",
+                //    MessageBoxButtons.OK,
+                //    MessageBoxIcon.Error);
+                label4.Visible = true;
+                label4.Text = "Vui lòng nhập đầy đủ thông tin";
+                label4.ForeColor = Color.Red;
             }
             else
             {
+                label4.Visible = false;
                 String Vaitro = DBHandler.Login(txt_Username.Text, txt_Password.Text);
                 if (!String.IsNullOrEmpty(Vaitro))
                 {

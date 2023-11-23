@@ -29,23 +29,39 @@ namespace DuAn1_QLThuVien
 
         private void DoiMatKhau_Load(object sender, EventArgs e)
         {
-            //SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
-            //SqlCommand cmd = new SqlCommand();
-            //myConn.Open();
-            //cmd.Connection = myConn;
+
         }
 
         private void btn_XacNhan_Click(object sender, EventArgs e)
         {
-            //string ht = string.Format(@"exec doimatkhau '{0}', '{1}'", txt_TaiKhoan.Text, txt_MatKhauCu.Text);
-            //SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
-            //SqlCommand cmd = new SqlCommand(ht);
-            //myConn.Open();
-            //cmd.Connection = myConn;
-            //SqlDataReader dtr = cmd.ExecuteReader();
-            //DataTable dt = new DataTable();
-            //dt.Load(dtr);
-            //myConn.Close();
+            try
+            {
+                if(txt_TaiKhoan.Text == "" || txt_MatKhauCu.Text == ""|| txt_MatKhauMoi.Text ==""||txt_XacNhanMatKhau.Text == "")
+                {
+                    MessageBox.Show("Vui long nhap day du thong tin", "Thong bao");
+                    return;
+                }
+                if(txt_MatKhauMoi.Text != txt_XacNhanMatKhau.Text)
+                {
+                    MessageBox.Show("Vui long xac nhan mat khau moi", "Thong bao");
+                    return;
+                }
+                string ht = string.Format(@"exec doimatkhau '{0}', '{1}','{2}'", txt_TaiKhoan.Text, txt_MatKhauCu.Text, txt_MatKhauMoi.Text);
+                SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
+                SqlCommand cmd = new SqlCommand(ht);
+                myConn.Open();
+                cmd.Connection = myConn;
+                SqlDataReader dtr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dtr);
+                myConn.Close();
+                MessageBox.Show("Mat khau da duoc cap nhat","Thong bao");
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 }

@@ -52,6 +52,7 @@ namespace DuAn1_QLThuVien
             this.txt_XacNhanMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_XacNhanMatKhau.Location = new System.Drawing.Point(120, 481);
             this.txt_XacNhanMatKhau.Name = "txt_XacNhanMatKhau";
+            this.txt_XacNhanMatKhau.PasswordChar = '*';
             this.txt_XacNhanMatKhau.Size = new System.Drawing.Size(519, 32);
             this.txt_XacNhanMatKhau.TabIndex = 4;
             // 
@@ -60,6 +61,7 @@ namespace DuAn1_QLThuVien
             this.txt_MatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MatKhauMoi.Location = new System.Drawing.Point(120, 382);
             this.txt_MatKhauMoi.Name = "txt_MatKhauMoi";
+            this.txt_MatKhauMoi.PasswordChar = '*';
             this.txt_MatKhauMoi.Size = new System.Drawing.Size(519, 32);
             this.txt_MatKhauMoi.TabIndex = 3;
             // 
@@ -114,6 +116,7 @@ namespace DuAn1_QLThuVien
             this.txt_MatKhauCu.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MatKhauCu.Location = new System.Drawing.Point(120, 278);
             this.txt_MatKhauCu.Name = "txt_MatKhauCu";
+            this.txt_MatKhauCu.PasswordChar = '*';
             this.txt_MatKhauCu.Size = new System.Drawing.Size(519, 32);
             this.txt_MatKhauCu.TabIndex = 2;
             // 
@@ -159,7 +162,7 @@ namespace DuAn1_QLThuVien
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(682, 481);
+            this.pictureBox2.Location = new System.Drawing.Point(673, 481);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
