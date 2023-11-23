@@ -481,6 +481,7 @@ namespace QLThuVien
             this.Controls.Add(this.tabControl1);
             this.Name = "QLThongKe";
             this.Text = "x";
+            this.Load += new System.EventHandler(this.QLThongKe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
