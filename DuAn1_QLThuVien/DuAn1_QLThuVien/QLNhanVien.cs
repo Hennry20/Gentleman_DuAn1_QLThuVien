@@ -44,10 +44,7 @@ namespace QLThuVien
             txtNgaySinhNV.Text = dtgvQLNhanVien.Rows[i].Cells[3].Value.ToString();
             txtSoDT.Text = dtgvQLNhanVien.Rows[i].Cells[4].Value.ToString();
             txtEmailNV.Text = dtgvQLNhanVien.Rows[i].Cells[5].Value.ToString();
-            ptbAnhNV.Image = dtgvQLNhanVien.Rows[i].Cells[6]
-            txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
-
-            
+            txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[6].Value.ToString();
 
             btThemNV.Enabled = false;
             txtMaNV.ReadOnly = true;
