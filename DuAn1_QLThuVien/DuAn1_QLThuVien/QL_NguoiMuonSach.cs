@@ -17,9 +17,13 @@ namespace DuAn1
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Lỗi khi thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
     }
 }
