@@ -13,7 +13,6 @@ E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.exe
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.pdb
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DangNhap.resources
-E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DangKy.resources
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.FormDangKyHV.resources
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.ManHinhCho.resources
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DoiMatKhau.resources
