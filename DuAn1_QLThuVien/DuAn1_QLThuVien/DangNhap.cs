@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuAn1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,7 +32,13 @@ namespace DuAn1_QLThuVien
         {
             using(QLThuVienEntities qltv = new QLThuVienEntities())
             {
-
+                TaiKhoan tk = new TaiKhoan();
+                if(txt_Username.Text != tk.TenDangNhap || txt_Password.Text != tk.MatKhau)
+                {
+                    label4.Visible = true;
+                    label4.Text = "Tên đăng nhập hoặc mật khẩu không chính xác";
+                    label4.ForeColor = Color.Red;
+                }
             }
             if (String.IsNullOrEmpty(txt_Username.Text)
                || String.IsNullOrWhiteSpace(txt_Username.Text)
@@ -64,15 +71,14 @@ namespace DuAn1_QLThuVien
                         Properties.Settings.Default.Password = "";
                     }
 
-                    if (Vaitro.Equals("Admin"))
+                    if (Vaitro.Equals("vaitro1"))
                     {
                         this.Hide();
-                        DangKy form = new DangKy();
-                        form.ShowDialog();
+                        TrangChu ct = new TrangChu();
+                        ct.ShowDialog();
                         this.Close();
-
                     }
-                    if (Vaitro.Equals("NhanVien"))
+                    if (Vaitro.Equals("vaitro2"))
                     {
                         this.Hide();
                         DoiMatKhau form = new DoiMatKhau();
@@ -91,20 +97,6 @@ namespace DuAn1_QLThuVien
             this.Close();
         }
 
-        private void ptb_ShowMK_Click(object sender, EventArgs e)
-        {
-            ptb_ShowMK.ImageLocation = "eyes2.png";
-            if (ptb_ShowMK.ImageLocation == "eyes2.png")
-            {
-                txt_Password.PasswordChar = '*';
-            }
-            else
-            {
-                ptb_ShowMK.ImageLocation = "eyes2.png";
-                txt_Password.PasswordChar = '\0';
-            }
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DoiMatKhau dmk = new DoiMatKhau();
@@ -119,6 +111,18 @@ namespace DuAn1_QLThuVien
             if(quit == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                txt_Password.PasswordChar = '\0';
+            }
+            else
+            {
+                txt_Password.PasswordChar = '*';
             }
         }
     }

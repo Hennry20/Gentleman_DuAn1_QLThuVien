@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CbbMaThe = new System.Windows.Forms.ComboBox();
             this.dtpNgayHetHan = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayDangky = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.QuanLyTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DKTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CbbMaThe = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -84,7 +84,7 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(73, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(584, 54);
+            this.label1.Size = new System.Drawing.Size(601, 55);
             this.label1.TabIndex = 12;
             this.label1.Text = "QUẢN LÝ THẺ HỘI VIÊN ";
             // 
@@ -121,6 +121,14 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Thẻ";
+            // 
+            // CbbMaThe
+            // 
+            this.CbbMaThe.FormattingEnabled = true;
+            this.CbbMaThe.Location = new System.Drawing.Point(162, 45);
+            this.CbbMaThe.Name = "CbbMaThe";
+            this.CbbMaThe.Size = new System.Drawing.Size(286, 33);
+            this.CbbMaThe.TabIndex = 30;
             // 
             // dtpNgayHetHan
             // 
@@ -398,7 +406,7 @@
             this.TrangChuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TrangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TrangChuToolStripMenuItem.Image")));
             this.TrangChuToolStripMenuItem.Name = "TrangChuToolStripMenuItem";
-            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.TrangChuToolStripMenuItem.Text = "Trang chủ";
             this.TrangChuToolStripMenuItem.Click += new System.EventHandler(this.TrangChu_Click);
             // 
@@ -408,7 +416,7 @@
             this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DangXuatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DangXuatToolStripMenuItem.Image")));
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất ";
             this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuat_Click);
             // 
@@ -418,7 +426,7 @@
             this.DoiMatKhauToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DoiMatKhauToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DoiMatKhauToolStripMenuItem.Image")));
             this.DoiMatKhauToolStripMenuItem.Name = "DoiMatKhauToolStripMenuItem";
-            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DoiMatKhauToolStripMenuItem.Text = "Đổi mật khẩu ";
             this.DoiMatKhauToolStripMenuItem.Click += new System.EventHandler(this.DoiMatKhau_Click);
             // 
@@ -428,7 +436,7 @@
             this.ThoatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThoatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThoatToolStripMenuItem.Image")));
             this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
-            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.ThoatToolStripMenuItem.Text = "Thoát";
             this.ThoatToolStripMenuItem.Click += new System.EventHandler(this.Thoat_Click);
             // 
@@ -499,14 +507,6 @@
             this.ThongKeToolStripMenuItem.Text = "Thống kê";
             this.ThongKeToolStripMenuItem.Click += new System.EventHandler(this.QLTHongke_Click);
             // 
-            // CbbMaThe
-            // 
-            this.CbbMaThe.FormattingEnabled = true;
-            this.CbbMaThe.Location = new System.Drawing.Point(162, 45);
-            this.CbbMaThe.Name = "CbbMaThe";
-            this.CbbMaThe.Size = new System.Drawing.Size(286, 33);
-            this.CbbMaThe.TabIndex = 30;
-            // 
             // QLTheHoiVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -518,9 +518,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QLTheHoiVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "QLTheHoiVien";
+            this.Text = "QUẢN LÝ THẺ HỘI VIÊN";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

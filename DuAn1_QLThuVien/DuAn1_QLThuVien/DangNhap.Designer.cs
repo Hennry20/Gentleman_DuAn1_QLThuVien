@@ -42,9 +42,8 @@ namespace DuAn1_QLThuVien
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ptb_ShowMK = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ptb_ShowMK)).BeginInit();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,18 +176,6 @@ namespace DuAn1_QLThuVien
             this.label1.TabIndex = 16;
             this.label1.Text = "Đăng nhập";
             // 
-            // ptb_ShowMK
-            // 
-            this.ptb_ShowMK.ErrorImage = null;
-            this.ptb_ShowMK.ImageLocation = "";
-            this.ptb_ShowMK.Location = new System.Drawing.Point(426, 255);
-            this.ptb_ShowMK.Name = "ptb_ShowMK";
-            this.ptb_ShowMK.Size = new System.Drawing.Size(28, 32);
-            this.ptb_ShowMK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptb_ShowMK.TabIndex = 27;
-            this.ptb_ShowMK.TabStop = false;
-            this.ptb_ShowMK.Click += new System.EventHandler(this.ptb_ShowMK_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -199,13 +186,24 @@ namespace DuAn1_QLThuVien
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(262, 306);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(140, 21);
+            this.checkBox1.TabIndex = 29;
+            this.checkBox1.Text = "Hiển thị mật khẩu";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 625);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btn_Thoat);
-            this.Controls.Add(this.ptb_ShowMK);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_Login);
@@ -223,7 +221,6 @@ namespace DuAn1_QLThuVien
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐĂNG NHẬP";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptb_ShowMK)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,7 +230,6 @@ namespace DuAn1_QLThuVien
         #endregion
 
         private System.Windows.Forms.Button btn_Thoat;
-        private System.Windows.Forms.PictureBox ptb_ShowMK;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_Login;
@@ -246,6 +242,7 @@ namespace DuAn1_QLThuVien
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

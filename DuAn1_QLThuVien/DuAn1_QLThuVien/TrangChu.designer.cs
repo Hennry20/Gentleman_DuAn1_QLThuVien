@@ -462,7 +462,7 @@
             this.TrangChuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TrangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TrangChuToolStripMenuItem.Image")));
             this.TrangChuToolStripMenuItem.Name = "TrangChuToolStripMenuItem";
-            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.TrangChuToolStripMenuItem.Text = "Trang chủ";
             // 
             // DangXuatToolStripMenuItem
@@ -471,8 +471,9 @@
             this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DangXuatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DangXuatToolStripMenuItem.Image")));
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất ";
+            this.DangXuatToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // DoiMatKhauToolStripMenuItem
@@ -481,7 +482,7 @@
             this.DoiMatKhauToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DoiMatKhauToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DoiMatKhauToolStripMenuItem.Image")));
             this.DoiMatKhauToolStripMenuItem.Name = "DoiMatKhauToolStripMenuItem";
-            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DoiMatKhauToolStripMenuItem.Text = "Đổi mật khẩu ";
             this.DoiMatKhauToolStripMenuItem.Click += new System.EventHandler(this.DoiMatKhau_Click);
             // 
@@ -491,7 +492,7 @@
             this.ThoatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThoatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThoatToolStripMenuItem.Image")));
             this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
-            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.ThoatToolStripMenuItem.Text = "Thoát";
             this.ThoatToolStripMenuItem.Click += new System.EventHandler(this.Thoat_Click);
             // 
@@ -569,7 +570,7 @@
             this.Title.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Title.Location = new System.Drawing.Point(14, 63);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(549, 54);
+            this.Title.Size = new System.Drawing.Size(565, 55);
             this.Title.TabIndex = 11;
             this.Title.Text = "TRANG CHỦ QUẢN LÝ ";
             // 
@@ -602,7 +603,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trang Chủ";
+            this.Text = "TRANG CHỦ";
             this.Load += new System.EventHandler(this.TrangChu_Load);
             this.Panel_Footer.ResumeLayout(false);
             this.Panel_Footer.PerformLayout();

@@ -68,6 +68,12 @@
     <Compile Include="DangKy.Designer.cs">
       <DependentUpon>DangKy.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDangKyHV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDangKyHV.designer.cs">
+      <DependentUpon>FormDangKyHV.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManHinhCho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,18 @@
     <Compile Include="QLNhanVien.designer.cs">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="QlSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSach.designer.cs">
+      <DependentUpon>QlSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTheHoiVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTheHoiVien.Designer.cs">
+      <DependentUpon>QLTheHoiVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +139,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLThuVienModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="QL_NguoiMuonSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QL_NguoiMuonSach.designer.cs">
+      <DependentUpon>QL_NguoiMuonSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sach.cs">
       <DependentUpon>QLThuVienModel.tt</DependentUpon>
     </Compile>
@@ -133,11 +157,20 @@
     <Compile Include="TheHoiVien.cs">
       <DependentUpon>QLThuVienModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangChu.designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDangKyHV.resx">
+      <DependentUpon>FormDangKyHV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManHinhCho.resx">
       <DependentUpon>ManHinhCho.cs</DependentUpon>
@@ -158,8 +191,20 @@
     <EmbeddedResource Include="QLNhanVien.resx">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QlSach.resx">
+      <DependentUpon>QlSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTheHoiVien.resx">
+      <DependentUpon>QLTheHoiVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLThongKe.resx">
       <DependentUpon>QLThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QL_NguoiMuonSach.resx">
+      <DependentUpon>QL_NguoiMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

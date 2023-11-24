@@ -40,9 +40,10 @@ namespace DuAn1
 
         private void DangXuat_Click(object sender, EventArgs e)
         {
-            DangNhap form1 = new DangNhap();
+
+            DangNhap dn = new DangNhap();
             this.Hide();
-            form1.ShowDialog();
+            dn.ShowDialog();
             this.Close();
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
