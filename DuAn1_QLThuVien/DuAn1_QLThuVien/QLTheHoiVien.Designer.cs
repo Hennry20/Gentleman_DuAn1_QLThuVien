@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLTheHoiVien));
-            this.label1 = new System.Windows.Forms.Label();
+            this.Title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CbbMaThe = new System.Windows.Forms.ComboBox();
@@ -55,6 +55,14 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHoiVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayDangKi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemHoiVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.HeThongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TrangChuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,32 +76,24 @@
             this.QuanLyTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DKTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DiemHoiVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayDangKi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHoiVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaThe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // Title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(73, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(584, 54);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "QUẢN LÝ THẺ HỘI VIÊN ";
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Title.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Title.Location = new System.Drawing.Point(73, 60);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(584, 54);
+            this.Title.TabIndex = 12;
+            this.Title.Text = "QUẢN LÝ THẺ HỘI VIÊN ";
             // 
             // pictureBox1
             // 
@@ -290,6 +290,7 @@
             this.btnReset.Text = "Reset";
             this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnXoa
             // 
@@ -375,6 +376,82 @@
             this.label5.Size = new System.Drawing.Size(114, 25);
             this.label5.TabIndex = 14;
             this.label5.Text = "Tìm mã thẻ ";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaThe,
+            this.MaND,
+            this.TenHoiVien,
+            this.DiaChi,
+            this.NgayDangKi,
+            this.NgayHetHan,
+            this.DiemHoiVien});
+            this.dataGridView1.Location = new System.Drawing.Point(313, 29);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(621, 251);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblGridView_CellClick);
+            // 
+            // MaThe
+            // 
+            this.MaThe.HeaderText = "Mã thẻ";
+            this.MaThe.MinimumWidth = 6;
+            this.MaThe.Name = "MaThe";
+            this.MaThe.ReadOnly = true;
+            this.MaThe.Width = 125;
+            // 
+            // MaND
+            // 
+            this.MaND.HeaderText = "Mã người đọc";
+            this.MaND.MinimumWidth = 6;
+            this.MaND.Name = "MaND";
+            this.MaND.ReadOnly = true;
+            this.MaND.Width = 180;
+            // 
+            // TenHoiVien
+            // 
+            this.TenHoiVien.HeaderText = "Tên hội viên";
+            this.TenHoiVien.MinimumWidth = 6;
+            this.TenHoiVien.Name = "TenHoiVien";
+            this.TenHoiVien.ReadOnly = true;
+            this.TenHoiVien.Width = 180;
+            // 
+            // DiaChi
+            // 
+            this.DiaChi.HeaderText = "Địa chỉ";
+            this.DiaChi.MinimumWidth = 6;
+            this.DiaChi.Name = "DiaChi";
+            this.DiaChi.ReadOnly = true;
+            this.DiaChi.Width = 125;
+            // 
+            // NgayDangKi
+            // 
+            this.NgayDangKi.HeaderText = "Ngày đăng ký";
+            this.NgayDangKi.MinimumWidth = 6;
+            this.NgayDangKi.Name = "NgayDangKi";
+            this.NgayDangKi.ReadOnly = true;
+            this.NgayDangKi.Width = 180;
+            // 
+            // NgayHetHan
+            // 
+            this.NgayHetHan.HeaderText = "Ngày hết hạn";
+            this.NgayHetHan.MinimumWidth = 6;
+            this.NgayHetHan.Name = "NgayHetHan";
+            this.NgayHetHan.ReadOnly = true;
+            this.NgayHetHan.Width = 180;
+            // 
+            // DiemHoiVien
+            // 
+            this.DiemHoiVien.HeaderText = "Điểm hội viên";
+            this.DiemHoiVien.MinimumWidth = 6;
+            this.DiemHoiVien.Name = "DiemHoiVien";
+            this.DiemHoiVien.ReadOnly = true;
+            this.DiemHoiVien.Width = 180;
             // 
             // menuStrip1
             // 
@@ -510,82 +587,6 @@
             this.ThongKeToolStripMenuItem.Text = "Thống kê";
             this.ThongKeToolStripMenuItem.Click += new System.EventHandler(this.QLTHongke_Click);
             // 
-            // DiemHoiVien
-            // 
-            this.DiemHoiVien.HeaderText = "Điểm hội viên";
-            this.DiemHoiVien.MinimumWidth = 6;
-            this.DiemHoiVien.Name = "DiemHoiVien";
-            this.DiemHoiVien.ReadOnly = true;
-            this.DiemHoiVien.Width = 180;
-            // 
-            // NgayHetHan
-            // 
-            this.NgayHetHan.HeaderText = "Ngày hết hạn";
-            this.NgayHetHan.MinimumWidth = 6;
-            this.NgayHetHan.Name = "NgayHetHan";
-            this.NgayHetHan.ReadOnly = true;
-            this.NgayHetHan.Width = 180;
-            // 
-            // NgayDangKi
-            // 
-            this.NgayDangKi.HeaderText = "Ngày đăng ký";
-            this.NgayDangKi.MinimumWidth = 6;
-            this.NgayDangKi.Name = "NgayDangKi";
-            this.NgayDangKi.ReadOnly = true;
-            this.NgayDangKi.Width = 180;
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.HeaderText = "Địa chỉ";
-            this.DiaChi.MinimumWidth = 6;
-            this.DiaChi.Name = "DiaChi";
-            this.DiaChi.ReadOnly = true;
-            this.DiaChi.Width = 125;
-            // 
-            // TenHoiVien
-            // 
-            this.TenHoiVien.HeaderText = "Tên hội viên";
-            this.TenHoiVien.MinimumWidth = 6;
-            this.TenHoiVien.Name = "TenHoiVien";
-            this.TenHoiVien.ReadOnly = true;
-            this.TenHoiVien.Width = 180;
-            // 
-            // MaND
-            // 
-            this.MaND.HeaderText = "Mã người đọc";
-            this.MaND.MinimumWidth = 6;
-            this.MaND.Name = "MaND";
-            this.MaND.ReadOnly = true;
-            this.MaND.Width = 180;
-            // 
-            // MaThe
-            // 
-            this.MaThe.HeaderText = "Mã thẻ";
-            this.MaThe.MinimumWidth = 6;
-            this.MaThe.Name = "MaThe";
-            this.MaThe.ReadOnly = true;
-            this.MaThe.Width = 125;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaThe,
-            this.MaND,
-            this.TenHoiVien,
-            this.DiaChi,
-            this.NgayDangKi,
-            this.NgayHetHan,
-            this.DiemHoiVien});
-            this.dataGridView1.Location = new System.Drawing.Point(313, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(621, 251);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblGridView_CellClick);
-            // 
             // QLTheHoiVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -596,7 +597,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Title);
             this.Name = "QLTheHoiVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLTheHoiVien";
@@ -607,16 +608,16 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
