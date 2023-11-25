@@ -89,7 +89,7 @@ namespace QLThuVien
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(177, 72);
+            this.label1.Location = new System.Drawing.Point(196, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(436, 55);
             this.label1.TabIndex = 6;
@@ -229,6 +229,7 @@ namespace QLThuVien
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
             this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(129, 29);
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
+            this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
             // tabPage4
             // 

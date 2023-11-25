@@ -146,29 +146,33 @@ namespace QLThuVien
             // 
             this.trangChủToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trangChủToolStripMenuItem.Image")));
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.trangChủToolStripMenuItem.Text = "Trang chủ";
+            this.trangChủToolStripMenuItem.Click += new System.EventHandler(this.trangChủToolStripMenuItem_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đổiMậtKhẩuToolStripMenuItem.Image")));
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngXuấtToolStripMenuItem.Image")));
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // kếtThúcToolStripMenuItem
             // 
             this.kếtThúcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kếtThúcToolStripMenuItem.Image")));
             this.kếtThúcToolStripMenuItem.Name = "kếtThúcToolStripMenuItem";
-            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.kếtThúcToolStripMenuItem.Text = "Thoát";
+            this.kếtThúcToolStripMenuItem.Click += new System.EventHandler(this.kếtThúcToolStripMenuItem_Click);
             // 
             // quảnLýToolStripMenuItem
             // 
@@ -188,6 +192,7 @@ namespace QLThuVien
             this.quảnLToolStripMenuItem.Name = "quảnLToolStripMenuItem";
             this.quảnLToolStripMenuItem.Size = new System.Drawing.Size(320, 30);
             this.quảnLToolStripMenuItem.Text = "Quản lý nhân viên";
+            this.quảnLToolStripMenuItem.Click += new System.EventHandler(this.quảnLToolStripMenuItem_Click);
             // 
             // quảnLýNgườiMượnSáchToolStripMenuItem1
             // 
@@ -195,6 +200,7 @@ namespace QLThuVien
             this.quảnLýNgườiMượnSáchToolStripMenuItem1.Name = "quảnLýNgườiMượnSáchToolStripMenuItem1";
             this.quảnLýNgườiMượnSáchToolStripMenuItem1.Size = new System.Drawing.Size(320, 30);
             this.quảnLýNgườiMượnSáchToolStripMenuItem1.Text = "Quản lý người mượn sách";
+            this.quảnLýNgườiMượnSáchToolStripMenuItem1.Click += new System.EventHandler(this.quảnLýNgườiMượnSáchToolStripMenuItem1_Click);
             // 
             // quảnLýNgườiMượnSáchToolStripMenuItem
             // 
@@ -202,6 +208,7 @@ namespace QLThuVien
             this.quảnLýNgườiMượnSáchToolStripMenuItem.Name = "quảnLýNgườiMượnSáchToolStripMenuItem";
             this.quảnLýNgườiMượnSáchToolStripMenuItem.Size = new System.Drawing.Size(320, 30);
             this.quảnLýNgườiMượnSáchToolStripMenuItem.Text = "Quản lý kho sách";
+            this.quảnLýNgườiMượnSáchToolStripMenuItem.Click += new System.EventHandler(this.quảnLýNgườiMượnSáchToolStripMenuItem_Click);
             // 
             // quảnLýThẻHộiViênToolStripMenuItem
             // 
@@ -209,6 +216,7 @@ namespace QLThuVien
             this.quảnLýThẻHộiViênToolStripMenuItem.Name = "quảnLýThẻHộiViênToolStripMenuItem";
             this.quảnLýThẻHộiViênToolStripMenuItem.Size = new System.Drawing.Size(320, 30);
             this.quảnLýThẻHộiViênToolStripMenuItem.Text = "Quản lý thẻ hội viên";
+            this.quảnLýThẻHộiViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýThẻHộiViênToolStripMenuItem_Click);
             // 
             // đăngKíThẻHộiViênToolStripMenuItem
             // 
@@ -227,6 +235,7 @@ namespace QLThuVien
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
             this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(129, 29);
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
+            this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -400,7 +409,7 @@ namespace QLThuVien
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(880, 45);
+            this.label9.Location = new System.Drawing.Point(879, 45);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 25);
             this.label9.TabIndex = 16;
@@ -443,6 +452,7 @@ namespace QLThuVien
             this.btReset.Text = "Reset";
             this.btReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btReset.UseVisualStyleBackColor = true;
+            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // btXoaNV
             // 
@@ -481,6 +491,7 @@ namespace QLThuVien
             this.btThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btThemNV.UseVisualStyleBackColor = true;
+            this.btThemNV.Click += new System.EventHandler(this.btThemNV_Click);
             // 
             // groupBox2
             // 
@@ -545,6 +556,7 @@ namespace QLThuVien
             // 
             // MaNV
             // 
+            this.MaNV.DataPropertyName = "MaNV";
             this.MaNV.HeaderText = "Mã NV";
             this.MaNV.MinimumWidth = 6;
             this.MaNV.Name = "MaNV";
@@ -552,6 +564,7 @@ namespace QLThuVien
             // 
             // HoTen
             // 
+            this.HoTen.DataPropertyName = "TenNV";
             this.HoTen.HeaderText = "Họ tên";
             this.HoTen.MinimumWidth = 6;
             this.HoTen.Name = "HoTen";
@@ -559,6 +572,7 @@ namespace QLThuVien
             // 
             // GioiTinh
             // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
             this.GioiTinh.HeaderText = "Giới tính";
             this.GioiTinh.MinimumWidth = 6;
             this.GioiTinh.Name = "GioiTinh";
@@ -566,6 +580,7 @@ namespace QLThuVien
             // 
             // NgaySinh
             // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
             this.NgaySinh.HeaderText = "Ngày sinh";
             this.NgaySinh.MinimumWidth = 6;
             this.NgaySinh.Name = "NgaySinh";
@@ -573,6 +588,7 @@ namespace QLThuVien
             // 
             // SoDT
             // 
+            this.SoDT.DataPropertyName = "SDT";
             this.SoDT.HeaderText = "Số điện thoại";
             this.SoDT.MinimumWidth = 6;
             this.SoDT.Name = "SoDT";
@@ -580,6 +596,7 @@ namespace QLThuVien
             // 
             // Email
             // 
+            this.Email.DataPropertyName = "Email";
             this.Email.HeaderText = "Email";
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
@@ -587,6 +604,7 @@ namespace QLThuVien
             // 
             // HinhAnh
             // 
+            this.HinhAnh.DataPropertyName = "HinhAnh";
             this.HinhAnh.HeaderText = "Hình ảnh";
             this.HinhAnh.MinimumWidth = 6;
             this.HinhAnh.Name = "HinhAnh";
@@ -594,6 +612,7 @@ namespace QLThuVien
             // 
             // NgayVaoLam
             // 
+            this.NgayVaoLam.DataPropertyName = "NgayVaoLam";
             this.NgayVaoLam.HeaderText = "Ngày vào làm";
             this.NgayVaoLam.MinimumWidth = 6;
             this.NgayVaoLam.Name = "NgayVaoLam";
@@ -601,6 +620,7 @@ namespace QLThuVien
             // 
             // GhiChu
             // 
+            this.GhiChu.DataPropertyName = "GhiChu";
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.MinimumWidth = 6;
             this.GhiChu.Name = "GhiChu";

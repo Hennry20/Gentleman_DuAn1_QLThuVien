@@ -62,11 +62,11 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="DangKy.cs">
+    <Compile Include="FormDangKyHV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangKy.Designer.cs">
-      <DependentUpon>DangKy.cs</DependentUpon>
+    <Compile Include="FormDangKyHV.designer.cs">
+      <DependentUpon>FormDangKyHV.cs</DependentUpon>
     </Compile>
     <Compile Include="ManHinhCho.cs">
       <SubType>Form</SubType>
@@ -80,17 +80,32 @@
     <Compile Include="DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="NguoiDoc.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PhieuMuon.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PhieuTra.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,44 +115,47 @@
     <Compile Include="QLNhanVien.designer.cs">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="QlSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSach.designer.cs">
+      <DependentUpon>QlSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTheHoiVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTheHoiVien.Designer.cs">
+      <DependentUpon>QLTheHoiVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QLThongKe.designer.cs">
       <DependentUpon>QLThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThuVienModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLThuVienModel.Context.tt</DependentUpon>
+    <Compile Include="QL_NguoiMuonSach.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThuVienModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QLThuVienModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLThuVienModel.edmx</DependentUpon>
+    <Compile Include="QL_NguoiMuonSach.designer.cs">
+      <DependentUpon>QL_NguoiMuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Sach.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TaiKhoan.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TheHoiVien.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangChu.designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DangKy.resx">
-      <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManHinhCho.resx">
       <DependentUpon>ManHinhCho.cs</DependentUpon>
@@ -158,9 +176,28 @@
     <EmbeddedResource Include="QLNhanVien.resx">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QlSach.resx">
+      <DependentUpon>QlSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTheHoiVien.resx">
+      <DependentUpon>QLTheHoiVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLThongKe.resx">
       <DependentUpon>QLThongKe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QL_NguoiMuonSach.resx">
+      <DependentUpon>QL_NguoiMuonSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -171,33 +208,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="QLThuVienModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLThuVienModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="QLThuVienModel.edmx.diagram">
-      <DependentUpon>QLThuVienModel.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="QLThuVienModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QLThuVienModel.Context.cs</LastGenOutput>
-      <DependentUpon>QLThuVienModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="QLThuVienModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLThuVienModel.edmx</DependentUpon>
-      <LastGenOutput>QLThuVienModel.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\eyes2.png" />
     <None Include="Resources\eyes.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

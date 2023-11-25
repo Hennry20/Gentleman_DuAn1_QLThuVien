@@ -20,10 +20,8 @@ namespace DuAn1_QLThuVien
         public string DiaChi { get; set; }
         public System.DateTime NgayDangKi { get; set; }
         public System.DateTime NgayHetHan { get; set; }
-        public string TenDangNhap { get; set; }
         public Nullable<int> DiemHoiVien { get; set; }
     
         public virtual NguoiDoc NguoiDoc { get; set; }
-        public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }

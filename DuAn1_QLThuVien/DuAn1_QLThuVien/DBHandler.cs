@@ -10,7 +10,7 @@ namespace DuAn1_QLThuVien
     {
         public static String Login(String User, String PassWord)
         {
-            using (QLThuVienEntities pe = new QLThuVienEntities())
+            using (QLThuVienEntities1 pe = new QLThuVienEntities1())
             {
                 TaiKhoan found = pe.TaiKhoans.FirstOrDefault(row => row.TenDangNhap.Equals(User));
                 if (found != null && found.MatKhau.Equals(PassWord))

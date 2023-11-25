@@ -31,5 +31,10 @@ namespace QLThuVien
         {
 
         }
+
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuAn1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,8 +64,8 @@ namespace DuAn1_QLThuVien
                     if (Vaitro.Equals("Admin"))
                     {
                         this.Hide();
-                        DangKy form = new DangKy();
-                        form.ShowDialog();
+                        TrangChu tc = new TrangChu();
+                        tc.ShowDialog();
                         this.Close();
 
                     }
@@ -81,10 +82,10 @@ namespace DuAn1_QLThuVien
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            DangKy dk = new DangKy();
-            dk.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //DangKy dk = new DangKy();
+            //dk.ShowDialog();
+            //this.Close();
         }
 
         private void ptb_ShowMK_Click(object sender, EventArgs e)
