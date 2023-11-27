@@ -20,7 +20,7 @@ namespace DuAn1_QLThuVien
         }
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu();
+            TrangChu trang = new TrangChu("");
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -94,6 +94,11 @@ namespace DuAn1_QLThuVien
             {
 
             }
+        }
+
+        private void QLTheHoiVien_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

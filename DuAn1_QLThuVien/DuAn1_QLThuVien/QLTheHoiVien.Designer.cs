@@ -522,6 +522,7 @@
             this.Name = "QLTheHoiVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ THẺ HỘI VIÊN";
+            this.Load += new System.EventHandler(this.QLTheHoiVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

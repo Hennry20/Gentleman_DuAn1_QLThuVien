@@ -77,6 +77,7 @@
             this.Logo = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.Panel_Footer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Clock)).BeginInit();
             this.Panel_DKTHV.SuspendLayout();
@@ -584,12 +585,22 @@
             this.Logo.TabIndex = 12;
             this.Logo.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(903, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "label1";
+            // 
             // TrangChu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(981, 623);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.menuStrip1);
@@ -682,6 +693,7 @@
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
