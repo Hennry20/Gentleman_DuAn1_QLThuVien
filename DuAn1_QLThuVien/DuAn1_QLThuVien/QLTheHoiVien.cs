@@ -421,9 +421,9 @@ namespace DuAn1_QLThuVien
             }
         }
 
-        private void QLTheHoiVien_Load(object sender, EventArgs e)
-        {
+        //private void QLTheHoiVien_Load(object sender, EventArgs e)
+        //{
 
-        }
+        //}
     }
 }

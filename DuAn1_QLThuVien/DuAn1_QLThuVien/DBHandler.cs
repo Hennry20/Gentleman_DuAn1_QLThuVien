@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DuAn1_QLThuVien
 {
-    class DBHandler
+    public static class DBHandler
     {
         public static String Login(String User, String PassWord)
         {

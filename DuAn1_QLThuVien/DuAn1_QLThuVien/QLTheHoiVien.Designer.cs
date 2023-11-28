@@ -91,7 +91,7 @@
             this.Title.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Title.Location = new System.Drawing.Point(73, 60);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(584, 54);
+            this.Title.Size = new System.Drawing.Size(601, 55);
             this.Title.TabIndex = 12;
             this.Title.Text = "QUẢN LÝ THẺ HỘI VIÊN ";
             // 
@@ -601,7 +601,6 @@
             this.Name = "QLTheHoiVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLTheHoiVien";
-            this.Load += new System.EventHandler(this.QLTheHoiVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
