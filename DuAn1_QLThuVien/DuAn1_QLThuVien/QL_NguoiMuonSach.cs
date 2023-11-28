@@ -1,6 +1,4 @@
-﻿using DuAn1_QLThuVien;
-using QLThuVien;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Globalization;
 
 namespace DuAn1
 {
@@ -19,32 +15,13 @@ namespace DuAn1
         public QL_NguoiMuonSach()
         {
             InitializeComponent();
-
-            load_dtgvQLMuonSach();
-
-            load_dtgvQLTraSach();
-        }
-        private void QL_NguoiMuonSach_Load(object sender, EventArgs e)
-        {
-            load_dtgvQLMuonSach();
-            load_MaND();
-            load_MaSach();
-            load_MaSachTTSach();
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang này?", "Lỗi khi thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
-            {
-                Application.Exit();
-            }
-        }
-
-        private void lblQLMSTenTacGia_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
+<<<<<<< HEAD
 
         private void QL_NguoiMuonSach_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -423,5 +400,7 @@ namespace DuAn1
             txtQLTSTinhTrang.Text = string.Empty;
             txtQLTSSoGioTra.Text = string.Empty;
         }
+=======
+>>>>>>> parent of 52f70fc (Merge remote-tracking branch 'remotes/origin/Truong' into chuong)
     }
 }

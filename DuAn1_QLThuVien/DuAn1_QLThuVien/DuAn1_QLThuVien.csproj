@@ -55,13 +55,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBHandler.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="DBHandler.cs" />
+=======
+>>>>>>> parent of 52f70fc (Merge remote-tracking branch 'remotes/origin/Truong' into chuong)
     <Compile Include="FormDangKyHV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +85,7 @@
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="NguoiDoc.cs">
+<<<<<<< HEAD
       <DependentUpon>QLTHUVIEN.tt</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.cs">
@@ -91,6 +96,18 @@
     </Compile>
     <Compile Include="PhieuTra.cs">
       <DependentUpon>QLTHUVIEN.tt</DependentUpon>
+=======
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuMuon.cs">
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuTra.cs">
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+>>>>>>> parent of 52f70fc (Merge remote-tracking branch 'remotes/origin/Truong' into chuong)
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,7 +126,7 @@
     <Compile Include="QLTheHoiVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLTheHoiVien.designer.cs">
+    <Compile Include="QLTheHoiVien.Designer.cs">
       <DependentUpon>QLTheHoiVien.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThongKe.cs">
@@ -118,6 +135,7 @@
     <Compile Include="QLThongKe.designer.cs">
       <DependentUpon>QLThongKe.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="QLTHUVIEN.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +150,22 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLTHUVIEN.edmx</DependentUpon>
+=======
+    <Compile Include="QLThuVienModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLThuVienModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuVienModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QLThuVienModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLThuVienModel.edmx</DependentUpon>
+>>>>>>> parent of 52f70fc (Merge remote-tracking branch 'remotes/origin/Truong' into chuong)
     </Compile>
     <Compile Include="QL_NguoiMuonSach.cs">
       <SubType>Form</SubType>
@@ -140,6 +174,7 @@
       <DependentUpon>QL_NguoiMuonSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Sach.cs">
+<<<<<<< HEAD
       <DependentUpon>QLTHUVIEN.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
@@ -150,6 +185,18 @@
     </Compile>
     <Compile Include="TheHoiVien.cs">
       <DependentUpon>QLTHUVIEN.tt</DependentUpon>
+=======
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs">
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheHoiVien.cs">
+      <DependentUpon>QLThuVienModel.tt</DependentUpon>
+>>>>>>> parent of 52f70fc (Merge remote-tracking branch 'remotes/origin/Truong' into chuong)
     </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>
@@ -177,6 +224,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QLNhanVien.resx">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
@@ -206,21 +254,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+<<<<<<< HEAD
     <EntityDeploy Include="QLTHUVIEN.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLTHUVIEN.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="QLTHUVIEN.edmx.diagram">
       <DependentUpon>QLTHUVIEN.edmx</DependentUpon>
+=======
+    <EntityDeploy Include="QLThuVienModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLThuVienModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QLThuVienModel.edmx.diagram">
+      <DependentUpon>QLThuVienModel.edmx</DependentUpon>
+>>>>>>> parent of 52f70fc (Merge remote-tracking branch 'remotes/origin/Truong' into chuong)
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="QLThuVienModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QLThuVienModel.Context.cs</LastGenOutput>
+      <DependentUpon>QLThuVienModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="QLThuVienModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLThuVienModel.edmx</DependentUpon>
+      <LastGenOutput>QLThuVienModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\eyes2.png" />
+    <None Include="Resources\eyes.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="QLTHUVIEN.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLTHUVIEN.edmx</DependentUpon>
@@ -231,6 +300,9 @@
       <DependentUpon>QLTHUVIEN.edmx</DependentUpon>
       <LastGenOutput>QLTHUVIEN.cs</LastGenOutput>
     </Content>
+=======
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+>>>>>>> parent of 52f70fc (Merge remote-tracking branch 'remotes/origin/Truong' into chuong)
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
