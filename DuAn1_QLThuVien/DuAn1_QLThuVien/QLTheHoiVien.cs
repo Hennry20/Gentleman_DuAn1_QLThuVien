@@ -382,15 +382,15 @@ namespace DuAn1_QLThuVien
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
-            Load_tblGridView();
-            CbbMaThe.Text = string.Empty;
-            txtManguoidoc.Text = string.Empty;
-            txtTenHoiVien.Text = string.Empty;
-            txtDiaChi.Text = string.Empty;
-            dtpNgayDangky.Text = string.Empty;
-            dtpNgayHetHan.Text = string.Empty;
-            txtDiemHoiVien.Text = string.Empty;
-            txtTimKiem.Text = string.Empty;
+                Load_tblGridView();
+                CbbMaThe.Text = string.Empty;
+                txtManguoidoc.Text = string.Empty;
+                txtTenHoiVien.Text = string.Empty;
+                txtDiaChi.Text = string.Empty;
+                dtpNgayDangky.Text = string.Empty;
+                dtpNgayHetHan.Text = string.Empty;
+                txtDiemHoiVien.Text = string.Empty;
+                txtTimKiem.Text = string.Empty;
         }
         private void Load_MaThe()
         {

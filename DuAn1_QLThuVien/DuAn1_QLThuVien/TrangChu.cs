@@ -90,10 +90,7 @@ namespace DuAn1
         }
         private void QLTHV_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(); 
-            this.Hide();
-            qLTheHoiVien.ShowDialog();
-            this.Close();
+           
         }
         private void Thoat_Click(object sender, EventArgs e)
         {

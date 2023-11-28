@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QLSach));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CbbMaV = new System.Windows.Forms.ComboBox();
+            this.cbbMaNV = new System.Windows.Forms.ComboBox();
             this.cbbMaSach = new System.Windows.Forms.ComboBox();
             this.txtGiaMuon = new System.Windows.Forms.TextBox();
             this.PbHinh = new System.Windows.Forms.PictureBox();
@@ -47,25 +47,17 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongTrongKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Logo = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trangChủToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,18 +71,26 @@
             this.quảnLýThẻHộiViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngKýThẻHộiViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTrongKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbHinh)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.CbbMaV);
+            this.groupBox1.Controls.Add(this.cbbMaNV);
             this.groupBox1.Controls.Add(this.cbbMaSach);
             this.groupBox1.Controls.Add(this.txtGiaMuon);
             this.groupBox1.Controls.Add(this.PbHinh);
@@ -114,13 +114,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sách";
             // 
-            // CbbMaV
+            // cbbMaNV
             // 
-            this.CbbMaV.FormattingEnabled = true;
-            this.CbbMaV.Location = new System.Drawing.Point(610, 47);
-            this.CbbMaV.Name = "CbbMaV";
-            this.CbbMaV.Size = new System.Drawing.Size(324, 33);
-            this.CbbMaV.TabIndex = 23;
+            this.cbbMaNV.FormattingEnabled = true;
+            this.cbbMaNV.Location = new System.Drawing.Point(610, 47);
+            this.cbbMaNV.Name = "cbbMaNV";
+            this.cbbMaNV.Size = new System.Drawing.Size(324, 33);
+            this.cbbMaNV.TabIndex = 23;
             // 
             // cbbMaSach
             // 
@@ -264,9 +264,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.btnReset);
+            this.groupBox2.Controls.Add(this.btnXoa);
+            this.groupBox2.Controls.Add(this.btnCapNhat);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.groupBox3);
@@ -278,47 +278,50 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách";
             // 
-            // button4
+            // btnReset
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(157, 238);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(5, 0, 20, 0);
-            this.button4.Size = new System.Drawing.Size(130, 45);
-            this.button4.TabIndex = 28;
-            this.button4.Text = "Reset";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(157, 238);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Padding = new System.Windows.Forms.Padding(5, 0, 20, 0);
+            this.btnReset.Size = new System.Drawing.Size(130, 45);
+            this.btnReset.TabIndex = 28;
+            this.btnReset.Text = "Reset";
+            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // button3
+            // btnXoa
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(21, 238);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.button3.Size = new System.Drawing.Size(130, 45);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Xóa ";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(21, 238);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnXoa.Size = new System.Drawing.Size(130, 45);
+            this.btnXoa.TabIndex = 27;
+            this.btnXoa.Text = "Xóa ";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // button2
+            // btnCapNhat
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(157, 184);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.button2.Size = new System.Drawing.Size(130, 45);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Cập nhật";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCapNhat.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.Image")));
+            this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCapNhat.Location = new System.Drawing.Point(157, 184);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnCapNhat.Size = new System.Drawing.Size(130, 45);
+            this.btnCapNhat.TabIndex = 26;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnThem
             // 
@@ -354,70 +357,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(621, 251);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // MaSach
-            // 
-            this.MaSach.HeaderText = "Mã sách";
-            this.MaSach.MinimumWidth = 6;
-            this.MaSach.Name = "MaSach";
-            this.MaSach.ReadOnly = true;
-            this.MaSach.Width = 125;
-            // 
-            // TenSach
-            // 
-            this.TenSach.HeaderText = "Tên sách";
-            this.TenSach.MinimumWidth = 6;
-            this.TenSach.Name = "TenSach";
-            this.TenSach.ReadOnly = true;
-            this.TenSach.Width = 125;
-            // 
-            // LoaiSach
-            // 
-            this.LoaiSach.HeaderText = "Loại Sách";
-            this.LoaiSach.MinimumWidth = 6;
-            this.LoaiSach.Name = "LoaiSach";
-            this.LoaiSach.ReadOnly = true;
-            this.LoaiSach.Width = 125;
-            // 
-            // TenTacGia
-            // 
-            this.TenTacGia.HeaderText = "Tên Tác Giả";
-            this.TenTacGia.MinimumWidth = 6;
-            this.TenTacGia.Name = "TenTacGia";
-            this.TenTacGia.ReadOnly = true;
-            this.TenTacGia.Width = 125;
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.HeaderText = "Hình ảnh ";
-            this.HinhAnh.MinimumWidth = 6;
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.ReadOnly = true;
-            this.HinhAnh.Width = 125;
-            // 
-            // SoLuongTrongKho
-            // 
-            this.SoLuongTrongKho.HeaderText = "Số Lượng Trong Kho";
-            this.SoLuongTrongKho.MinimumWidth = 6;
-            this.SoLuongTrongKho.Name = "SoLuongTrongKho";
-            this.SoLuongTrongKho.ReadOnly = true;
-            this.SoLuongTrongKho.Width = 125;
-            // 
-            // GiaMuon
-            // 
-            this.GiaMuon.HeaderText = "Cóa Mượn ";
-            this.GiaMuon.MinimumWidth = 6;
-            this.GiaMuon.Name = "GiaMuon";
-            this.GiaMuon.ReadOnly = true;
-            this.GiaMuon.Width = 125;
-            // 
-            // MaNV
-            // 
-            this.MaNV.HeaderText = "Tạo bởi";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 125;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblGridView_CellClick);
             // 
             // groupBox3
             // 
@@ -439,6 +379,7 @@
             this.btnTimKiem.Size = new System.Drawing.Size(58, 40);
             this.btnTimKiem.TabIndex = 18;
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -470,15 +411,15 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "QUẢN LÝ KHO SÁCH";
             // 
-            // pictureBox1
+            // Logo
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(720, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 88);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.Logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logo.BackgroundImage")));
+            this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Logo.Location = new System.Drawing.Point(720, 39);
+            this.Logo.Name = "Logo";
+            this.Logo.Size = new System.Drawing.Size(250, 88);
+            this.Logo.TabIndex = 7;
+            this.Logo.TabStop = false;
             // 
             // menuStrip1
             // 
@@ -614,6 +555,71 @@
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
             this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.QLTHongke_Click);
             // 
+            // MaSach
+            // 
+            this.MaSach.HeaderText = "Mã sách";
+            this.MaSach.MinimumWidth = 6;
+            this.MaSach.Name = "MaSach";
+            this.MaSach.ReadOnly = true;
+            this.MaSach.Width = 125;
+            // 
+            // TenSach
+            // 
+            this.TenSach.HeaderText = "Tên sách";
+            this.TenSach.MinimumWidth = 6;
+            this.TenSach.Name = "TenSach";
+            this.TenSach.ReadOnly = true;
+            this.TenSach.Width = 125;
+            // 
+            // LoaiSach
+            // 
+            this.LoaiSach.HeaderText = "Loại Sách";
+            this.LoaiSach.MinimumWidth = 6;
+            this.LoaiSach.Name = "LoaiSach";
+            this.LoaiSach.ReadOnly = true;
+            this.LoaiSach.Width = 125;
+            // 
+            // TenTacGia
+            // 
+            this.TenTacGia.HeaderText = "Tên Tác Giả";
+            this.TenTacGia.MinimumWidth = 6;
+            this.TenTacGia.Name = "TenTacGia";
+            this.TenTacGia.ReadOnly = true;
+            this.TenTacGia.Width = 125;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.HeaderText = "Hình ảnh ";
+            this.HinhAnh.MinimumWidth = 6;
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.ReadOnly = true;
+            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.HinhAnh.Width = 125;
+            // 
+            // SoLuongTrongKho
+            // 
+            this.SoLuongTrongKho.HeaderText = "Số Lượng Trong Kho";
+            this.SoLuongTrongKho.MinimumWidth = 6;
+            this.SoLuongTrongKho.Name = "SoLuongTrongKho";
+            this.SoLuongTrongKho.ReadOnly = true;
+            this.SoLuongTrongKho.Width = 125;
+            // 
+            // GiaMuon
+            // 
+            this.GiaMuon.HeaderText = "Cóa Mượn ";
+            this.GiaMuon.MinimumWidth = 6;
+            this.GiaMuon.Name = "GiaMuon";
+            this.GiaMuon.ReadOnly = true;
+            this.GiaMuon.Width = 125;
+            // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "Tạo bởi";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 125;
+            // 
             // QLSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -621,7 +627,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(982, 817);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Logo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -629,6 +635,7 @@
             this.Name = "QLSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLSach";
+            this.Load += new System.EventHandler(this.QLSach_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbHinh)).EndInit();
@@ -636,7 +643,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -663,7 +670,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -679,13 +686,13 @@
         private System.Windows.Forms.ToolStripMenuItem quảnLýNgườiMượnSáchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýThẻHộiViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.ComboBox cbbMaSach;
-        private System.Windows.Forms.ComboBox CbbMaV;
+        private System.Windows.Forms.ComboBox cbbMaNV;
         private System.Windows.Forms.ToolStripMenuItem đăngKýThẻHộiViênToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
