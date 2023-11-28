@@ -420,5 +420,10 @@ namespace DuAn1_QLThuVien
                 connection.Close();
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -71,12 +71,12 @@
             this.QuanLyKhoSachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyNMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DKTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Title = new System.Windows.Forms.Label();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.DKTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel_Footer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Clock)).BeginInit();
             this.Panel_DKTHV.SuspendLayout();
@@ -177,7 +177,7 @@
             this.Btn_DKTHV.TabIndex = 2;
             this.Btn_DKTHV.Text = "Xem";
             this.Btn_DKTHV.UseVisualStyleBackColor = false;
-            this.Btn_DKTHV.Click += new System.EventHandler(this.DKHV_Click);
+            this.Btn_DKTHV.Click += new System.EventHandler(this.QLTHV_Click);
             // 
             // Lbl_DKTHV
             // 
@@ -544,15 +544,6 @@
             this.QuanLyTHVToolStripMenuItem.Text = "Quản lý thẻ hội viên";
             this.QuanLyTHVToolStripMenuItem.Click += new System.EventHandler(this.QLTHV_Click);
             // 
-            // DKTHVToolStripMenuItem
-            // 
-            this.DKTHVToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DKTHVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DKTHVToolStripMenuItem.Image")));
-            this.DKTHVToolStripMenuItem.Name = "DKTHVToolStripMenuItem";
-            this.DKTHVToolStripMenuItem.Size = new System.Drawing.Size(235, 32);
-            this.DKTHVToolStripMenuItem.Text = "Đăng ký thẻ hội viên  ";
-            this.DKTHVToolStripMenuItem.Click += new System.EventHandler(this.DKHV_Click);
-            // 
             // ThongKeToolStripMenuItem
             // 
             this.ThongKeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -582,6 +573,15 @@
             this.Logo.Size = new System.Drawing.Size(250, 88);
             this.Logo.TabIndex = 12;
             this.Logo.TabStop = false;
+            // 
+            // DKTHVToolStripMenuItem
+            // 
+            this.DKTHVToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DKTHVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DKTHVToolStripMenuItem.Image")));
+            this.DKTHVToolStripMenuItem.Name = "DKTHVToolStripMenuItem";
+            this.DKTHVToolStripMenuItem.Size = new System.Drawing.Size(235, 32);
+            this.DKTHVToolStripMenuItem.Text = "Đăng ký thẻ hội viên  ";
+            this.DKTHVToolStripMenuItem.Click += new System.EventHandler(this.QLTHV_Click);
             // 
             // TrangChu
             // 
@@ -675,12 +675,12 @@
         private System.Windows.Forms.ToolStripMenuItem QuanLyKhoSachToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QuanLyNMSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QuanLyTHVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DKTHVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ThongKeToolStripMenuItem;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ToolStripMenuItem DKTHVToolStripMenuItem;
     }
 }
 

@@ -305,6 +305,7 @@
             this.btnXoa.Text = "Xóa ";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapNhat
             // 
@@ -576,7 +577,7 @@
             this.DKTHVToolStripMenuItem.Name = "DKTHVToolStripMenuItem";
             this.DKTHVToolStripMenuItem.Size = new System.Drawing.Size(235, 32);
             this.DKTHVToolStripMenuItem.Text = "Đăng ký thẻ hội viên  ";
-            this.DKTHVToolStripMenuItem.Click += new System.EventHandler(this.DKHV_Click);
+            this.DKTHVToolStripMenuItem.Click += new System.EventHandler(this.QLTHV_Click);
             // 
             // ThongKeToolStripMenuItem
             // 
@@ -645,7 +646,6 @@
         private System.Windows.Forms.ToolStripMenuItem QuanLyKhoSachToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QuanLyNMSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QuanLyTHVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DKTHVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ThongKeToolStripMenuItem;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnXoa;
@@ -664,5 +664,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDangKi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHetHan;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemHoiVien;
+        private System.Windows.Forms.ToolStripMenuItem DKTHVToolStripMenuItem;
     }
 }
