@@ -34,7 +34,11 @@ namespace DuAn1_QLThuVien
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             using(QLThuVienEntities2 qltv = new QLThuVienEntities2())
+=======
+            using(QLThuVienEntities qltv = new QLThuVienEntities())
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
             using(QLThuVienEntities qltv = new QLThuVienEntities())
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
@@ -102,6 +106,15 @@ namespace DuAn1_QLThuVien
                         this.Close();
                     }
                 }
+<<<<<<< HEAD
+=======
+                else
+                {
+                    label4.Visible = true;
+                    label4.Text = "Tài khoản hoặc mật khẩu không chính xác";
+                    label4.ForeColor = Color.Red;
+                }
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
             }
         }
 

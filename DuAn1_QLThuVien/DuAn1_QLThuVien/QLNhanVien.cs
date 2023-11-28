@@ -29,6 +29,9 @@ namespace QLThuVien
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
@@ -87,6 +90,9 @@ namespace QLThuVien
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
@@ -106,6 +112,7 @@ namespace QLThuVien
             txtNgaySinhNV.Text = dtgvQLNhanVien.Rows[i].Cells[3].Value.ToString();
             txtSoDT.Text = dtgvQLNhanVien.Rows[i].Cells[4].Value.ToString();
             txtEmailNV.Text = dtgvQLNhanVien.Rows[i].Cells[5].Value.ToString();
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -130,6 +137,10 @@ namespace QLThuVien
             btCapNhatNV.Enabled = true;
             btXoaNV.Enabled = true;
 =======
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
+            txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
+            txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
             txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
@@ -220,6 +231,7 @@ namespace QLThuVien
             dmk.ShowDialog();
             this.Close();
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -395,5 +407,7 @@ namespace QLThuVien
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
 >>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+=======
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
     }
 }
