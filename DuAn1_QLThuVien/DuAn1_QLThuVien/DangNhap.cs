@@ -31,7 +31,11 @@ namespace DuAn1_QLThuVien
         private void btn_Login_Click(object sender, EventArgs e)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             using(QLThuVienEntities2 qltv = new QLThuVienEntities2())
+=======
+            using(QLThuVienEntities qltv = new QLThuVienEntities())
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
             using(QLThuVienEntities qltv = new QLThuVienEntities())
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)

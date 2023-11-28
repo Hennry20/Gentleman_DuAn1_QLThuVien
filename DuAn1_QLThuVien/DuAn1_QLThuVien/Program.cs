@@ -19,7 +19,11 @@ namespace DuAn1_QLThuVien
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 <<<<<<< HEAD
+<<<<<<< HEAD
             Application.Run(new TrangChu(""));
+=======
+            Application.Run(new QL_NguoiMuonSach());
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
             Application.Run(new QL_NguoiMuonSach());
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
