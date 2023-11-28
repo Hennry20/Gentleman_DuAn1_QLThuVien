@@ -14,12 +14,9 @@ namespace DuAn1
 {
     public partial class TrangChu : Form
     {
-        public static string User { get; private set; }
-
-        public TrangChu(String User)
+        public TrangChu()
         {
             InitializeComponent();
-            label1.Text = User;
         }
 
 

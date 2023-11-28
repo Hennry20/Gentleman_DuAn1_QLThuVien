@@ -1,6 +1,9 @@
 ﻿using System;
+<<<<<<< HEAD
 using DuAn1;
 using DuAn1_QLThuVien;
+=======
+>>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,6 +57,7 @@ namespace QLThuVien
 =======
         }
 
+<<<<<<< HEAD
         private void btThemNV_Click(object sender, EventArgs e)
         {
             DataRow data = ds.Tables["NhanVien"].NewRow();
@@ -389,5 +393,7 @@ namespace QLThuVien
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
+>>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
     }
 }

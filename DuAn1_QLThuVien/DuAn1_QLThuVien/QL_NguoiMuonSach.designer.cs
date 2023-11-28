@@ -132,7 +132,7 @@ namespace DuAn1
             this.tabControl1.Controls.Add(this.tabtra);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(8, 130);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1209, 590);
@@ -149,9 +149,9 @@ namespace DuAn1
             this.tabmuon.Controls.Add(this.groupBox1);
             this.tabmuon.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabmuon.Location = new System.Drawing.Point(4, 32);
-            this.tabmuon.Margin = new System.Windows.Forms.Padding(4);
+            this.tabmuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabmuon.Name = "tabmuon";
-            this.tabmuon.Padding = new System.Windows.Forms.Padding(4);
+            this.tabmuon.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabmuon.Size = new System.Drawing.Size(1201, 554);
             this.tabmuon.TabIndex = 0;
             this.tabmuon.Text = "Quản lý mượn sách";
@@ -160,9 +160,9 @@ namespace DuAn1
             // 
             this.groupBox3.Controls.Add(this.dtgvQLMuonSach);
             this.groupBox3.Location = new System.Drawing.Point(14, 325);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Size = new System.Drawing.Size(1175, 229);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -223,8 +223,8 @@ namespace DuAn1
             // btnKetThuc
             // 
             this.btnKetThuc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnKetThuc.Location = new System.Drawing.Point(1041, 245);
-            this.btnKetThuc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnKetThuc.Location = new System.Drawing.Point(1016, 226);
+            this.btnKetThuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnKetThuc.Name = "btnKetThuc";
             this.btnKetThuc.Size = new System.Drawing.Size(142, 63);
             this.btnKetThuc.TabIndex = 4;
@@ -234,10 +234,10 @@ namespace DuAn1
             // btnChoMuon
             // 
             this.btnChoMuon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnChoMuon.Location = new System.Drawing.Point(1041, 142);
-            this.btnChoMuon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChoMuon.Location = new System.Drawing.Point(1016, 134);
+            this.btnChoMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChoMuon.Name = "btnChoMuon";
-            this.btnChoMuon.Size = new System.Drawing.Size(142, 62);
+            this.btnChoMuon.Size = new System.Drawing.Size(142, 63);
             this.btnChoMuon.TabIndex = 3;
             this.btnChoMuon.Text = "Cho Mượn";
             this.btnChoMuon.UseVisualStyleBackColor = false;
@@ -245,8 +245,8 @@ namespace DuAn1
             // btnMoi
             // 
             this.btnMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMoi.Location = new System.Drawing.Point(1041, 43);
-            this.btnMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMoi.Location = new System.Drawing.Point(1016, 43);
+            this.btnMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMoi.Name = "btnMoi";
             this.btnMoi.Size = new System.Drawing.Size(142, 63);
             this.btnMoi.TabIndex = 2;
@@ -266,9 +266,9 @@ namespace DuAn1
             this.groupBox2.Controls.Add(this.cbMaNguoiDoc);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(486, 7);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Size = new System.Drawing.Size(476, 309);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -279,7 +279,7 @@ namespace DuAn1
             this.cbMaSachChoMuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaSachChoMuon.FormattingEnabled = true;
             this.cbMaSachChoMuon.Location = new System.Drawing.Point(221, 98);
-            this.cbMaSachChoMuon.Margin = new System.Windows.Forms.Padding(4);
+            this.cbMaSachChoMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMaSachChoMuon.Name = "cbMaSachChoMuon";
             this.cbMaSachChoMuon.Size = new System.Drawing.Size(240, 30);
             this.cbMaSachChoMuon.TabIndex = 5;
@@ -299,7 +299,7 @@ namespace DuAn1
             this.dtNgayHenTra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayHenTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtNgayHenTra.Location = new System.Drawing.Point(221, 253);
-            this.dtNgayHenTra.Margin = new System.Windows.Forms.Padding(4);
+            this.dtNgayHenTra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtNgayHenTra.Name = "dtNgayHenTra";
             this.dtNgayHenTra.Size = new System.Drawing.Size(240, 30);
             this.dtNgayHenTra.TabIndex = 3;
@@ -308,7 +308,7 @@ namespace DuAn1
             // 
             this.txtSoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuong.Location = new System.Drawing.Point(221, 150);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(240, 30);
             this.txtSoLuong.TabIndex = 2;
@@ -366,7 +366,7 @@ namespace DuAn1
             this.cbMaNguoiDoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaNguoiDoc.FormattingEnabled = true;
             this.cbMaNguoiDoc.Location = new System.Drawing.Point(221, 44);
-            this.cbMaNguoiDoc.Margin = new System.Windows.Forms.Padding(4);
+            this.cbMaNguoiDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMaNguoiDoc.Name = "cbMaNguoiDoc";
             this.cbMaNguoiDoc.Size = new System.Drawing.Size(240, 30);
             this.cbMaNguoiDoc.TabIndex = 1;
@@ -399,9 +399,9 @@ namespace DuAn1
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox1.Location = new System.Drawing.Point(24, 7);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Size = new System.Drawing.Size(455, 309);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -525,7 +525,7 @@ namespace DuAn1
             this.cbMaSach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaSach.FormattingEnabled = true;
             this.cbMaSach.Location = new System.Drawing.Point(191, 36);
-            this.cbMaSach.Margin = new System.Windows.Forms.Padding(4);
+            this.cbMaSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMaSach.Name = "cbMaSach";
             this.cbMaSach.Size = new System.Drawing.Size(248, 30);
             this.cbMaSach.TabIndex = 1;
@@ -554,9 +554,9 @@ namespace DuAn1
             this.tabtra.Controls.Add(this.groupBox6);
             this.tabtra.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabtra.Location = new System.Drawing.Point(4, 32);
-            this.tabtra.Margin = new System.Windows.Forms.Padding(4);
+            this.tabtra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabtra.Name = "tabtra";
-            this.tabtra.Padding = new System.Windows.Forms.Padding(4);
+            this.tabtra.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabtra.Size = new System.Drawing.Size(1201, 554);
             this.tabtra.TabIndex = 1;
             this.tabtra.Text = "Quản lý trả sách";
@@ -587,7 +587,7 @@ namespace DuAn1
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(483, 224);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(164, 71);
             this.btnThoat.TabIndex = 7;
@@ -600,7 +600,7 @@ namespace DuAn1
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuu.Location = new System.Drawing.Point(251, 224);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(164, 71);
             this.btnLuu.TabIndex = 7;
@@ -613,7 +613,7 @@ namespace DuAn1
             this.btnTraSach.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraSach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTraSach.Location = new System.Drawing.Point(16, 224);
-            this.btnTraSach.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTraSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTraSach.Name = "btnTraSach";
             this.btnTraSach.Size = new System.Drawing.Size(164, 71);
             this.btnTraSach.TabIndex = 7;
@@ -625,9 +625,9 @@ namespace DuAn1
             this.groupBox5.Controls.Add(this.dtgvQLTraSach);
             this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(12, 315);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Size = new System.Drawing.Size(1175, 238);
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
@@ -711,9 +711,9 @@ namespace DuAn1
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(16, 4);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Size = new System.Drawing.Size(1180, 212);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
@@ -724,7 +724,7 @@ namespace DuAn1
             this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(267, 90);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(240, 30);
             this.comboBox2.TabIndex = 18;
@@ -734,7 +734,7 @@ namespace DuAn1
             this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(788, 149);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(240, 30);
             this.dateTimePicker2.TabIndex = 17;
@@ -756,7 +756,7 @@ namespace DuAn1
             this.dateTimePicker3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker3.Location = new System.Drawing.Point(788, 94);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(240, 30);
             this.dateTimePicker3.TabIndex = 15;
@@ -777,7 +777,7 @@ namespace DuAn1
             // 
             this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker4.Location = new System.Drawing.Point(475, 272);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(240, 36);
             this.dateTimePicker4.TabIndex = 12;
@@ -788,7 +788,7 @@ namespace DuAn1
             this.dateTimePicker5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker5.Location = new System.Drawing.Point(788, 37);
-            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(240, 30);
             this.dateTimePicker5.TabIndex = 13;
@@ -797,7 +797,7 @@ namespace DuAn1
             // 
             this.txtSoLuongMuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuongMuon.Location = new System.Drawing.Point(267, 146);
-            this.txtSoLuongMuon.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoLuongMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoLuongMuon.Name = "txtSoLuongMuon";
             this.txtSoLuongMuon.Size = new System.Drawing.Size(240, 30);
             this.txtSoLuongMuon.TabIndex = 11;
@@ -853,7 +853,7 @@ namespace DuAn1
             this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(267, 35);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(240, 30);
             this.comboBox1.TabIndex = 9;

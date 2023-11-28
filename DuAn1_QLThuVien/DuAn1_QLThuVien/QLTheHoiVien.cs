@@ -27,7 +27,7 @@ namespace DuAn1_QLThuVien
         }
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu("");
+            TrangChu trang = new TrangChu();
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -166,6 +166,7 @@ namespace DuAn1_QLThuVien
 
             }
         }
+<<<<<<< HEAD
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
@@ -425,5 +426,7 @@ namespace DuAn1_QLThuVien
         //{
 
         //}
+=======
+>>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
     }
 }

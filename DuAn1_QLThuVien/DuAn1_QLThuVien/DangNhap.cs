@@ -87,10 +87,10 @@ namespace DuAn1_QLThuVien
                         Properties.Settings.Default.Password = "";
                     }
 
-                    if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
+                    if (Vaitro.Equals("vaitro1"))
                     {
                         this.Hide();
-                        TrangChu ct = new TrangChu(txt_Username.Text);
+                        TrangChu ct = new TrangChu();
                         ct.ShowDialog();
                         this.Close();
                     }
@@ -102,14 +102,15 @@ namespace DuAn1_QLThuVien
                         this.Close();
                     }
                 }
-                else
-                {
-                    label4.Visible = true;
-                    label4.Text = "Tài khoản hoặc mật khẩu không chính xác";
-                    label4.ForeColor = Color.Red;
-                }
             }
+        }
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            DangKy dk = new DangKy();
+            dk.ShowDialog();
+            this.Close();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

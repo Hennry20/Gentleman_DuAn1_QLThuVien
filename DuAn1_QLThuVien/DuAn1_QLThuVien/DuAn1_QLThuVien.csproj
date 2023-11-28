@@ -63,9 +63,18 @@
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="DBHandler.cs" />
 =======
 >>>>>>> parent of 52f70fc (Merge remote-tracking branch 'remotes/origin/Truong' into chuong)
+=======
+    <Compile Include="DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
+>>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
     <Compile Include="FormDangKyHV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +215,9 @@
     </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangKyHV.resx">
       <DependentUpon>FormDangKyHV.cs</DependentUpon>

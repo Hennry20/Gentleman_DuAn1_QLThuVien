@@ -20,8 +20,7 @@ namespace DuAn1
         }
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            
-            TrangChu trang = new TrangChu("");
+            TrangChu trang = new TrangChu();
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -97,9 +96,6 @@ namespace DuAn1
             }
         }
 
-        private void QLSach_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
