@@ -26,5 +26,10 @@ namespace QLThuVien
         {
 
         }
+
+        private void QLThongKe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

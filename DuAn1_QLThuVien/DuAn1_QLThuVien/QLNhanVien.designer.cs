@@ -74,6 +74,15 @@ namespace QLThuVien
             this.txtTimKiemNV = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dtgvQLNhanVien = new System.Windows.Forms.DataGridView();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -87,11 +96,11 @@ namespace QLThuVien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(196, 74);
+            this.label1.Location = new System.Drawing.Point(184, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(455, 51);
+            this.label1.Size = new System.Drawing.Size(508, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÍ NHÂN VIÊN";
             // 
@@ -139,7 +148,6 @@ namespace QLThuVien
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
             this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
             this.trangChủToolStripMenuItem.Text = "Trang chủ";
-            this.trangChủToolStripMenuItem.Click += new System.EventHandler(this.trangChủToolStripMenuItem_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
@@ -147,7 +155,6 @@ namespace QLThuVien
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
-            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -281,7 +288,7 @@ namespace QLThuVien
             this.txtMaNV.Location = new System.Drawing.Point(168, 42);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(209, 30);
-            this.txtMaNV.TabIndex = 1;
+            this.txtMaNV.TabIndex = 8;
             // 
             // txtHoTenNV
             // 
@@ -289,7 +296,7 @@ namespace QLThuVien
             this.txtHoTenNV.Location = new System.Drawing.Point(168, 97);
             this.txtHoTenNV.Name = "txtHoTenNV";
             this.txtHoTenNV.Size = new System.Drawing.Size(209, 30);
-            this.txtHoTenNV.TabIndex = 2;
+            this.txtHoTenNV.TabIndex = 9;
             // 
             // txtNgaySinhNV
             // 
@@ -297,7 +304,7 @@ namespace QLThuVien
             this.txtNgaySinhNV.Location = new System.Drawing.Point(568, 42);
             this.txtNgaySinhNV.Name = "txtNgaySinhNV";
             this.txtNgaySinhNV.Size = new System.Drawing.Size(201, 30);
-            this.txtNgaySinhNV.TabIndex = 6;
+            this.txtNgaySinhNV.TabIndex = 10;
             // 
             // txtSoDT
             // 
@@ -305,7 +312,7 @@ namespace QLThuVien
             this.txtSoDT.Location = new System.Drawing.Point(168, 147);
             this.txtSoDT.Name = "txtSoDT";
             this.txtSoDT.Size = new System.Drawing.Size(209, 30);
-            this.txtSoDT.TabIndex = 3;
+            this.txtSoDT.TabIndex = 11;
             // 
             // txtEmailNV
             // 
@@ -313,19 +320,16 @@ namespace QLThuVien
             this.txtEmailNV.Location = new System.Drawing.Point(168, 261);
             this.txtEmailNV.Name = "txtEmailNV";
             this.txtEmailNV.Size = new System.Drawing.Size(209, 30);
-            this.txtEmailNV.TabIndex = 5;
+            this.txtEmailNV.TabIndex = 13;
             // 
             // cbbxGioiTinh
             // 
             this.cbbxGioiTinh.BackColor = System.Drawing.Color.White;
             this.cbbxGioiTinh.FormattingEnabled = true;
-            this.cbbxGioiTinh.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
             this.cbbxGioiTinh.Location = new System.Drawing.Point(168, 200);
             this.cbbxGioiTinh.Name = "cbbxGioiTinh";
             this.cbbxGioiTinh.Size = new System.Drawing.Size(209, 33);
-            this.cbbxGioiTinh.TabIndex = 4;
+            this.cbbxGioiTinh.TabIndex = 14;
             // 
             // groupBox1
             // 
@@ -363,7 +367,7 @@ namespace QLThuVien
             this.txtNgayVaoLam.Location = new System.Drawing.Point(567, 97);
             this.txtNgayVaoLam.Name = "txtNgayVaoLam";
             this.txtNgayVaoLam.Size = new System.Drawing.Size(201, 30);
-            this.txtNgayVaoLam.TabIndex = 7;
+            this.txtNgayVaoLam.TabIndex = 22;
             // 
             // label11
             // 
@@ -383,7 +387,6 @@ namespace QLThuVien
             this.ptbAnhNV.Size = new System.Drawing.Size(200, 219);
             this.ptbAnhNV.TabIndex = 18;
             this.ptbAnhNV.TabStop = false;
-            this.ptbAnhNV.Click += new System.EventHandler(this.ptbAnhNV_Click);
             // 
             // txtGhiChuNV
             // 
@@ -392,7 +395,7 @@ namespace QLThuVien
             this.txtGhiChuNV.Multiline = true;
             this.txtGhiChuNV.Name = "txtGhiChuNV";
             this.txtGhiChuNV.Size = new System.Drawing.Size(200, 144);
-            this.txtGhiChuNV.TabIndex = 8;
+            this.txtGhiChuNV.TabIndex = 17;
             // 
             // label9
             // 
@@ -440,7 +443,6 @@ namespace QLThuVien
             this.btReset.Text = "Reset";
             this.btReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btReset.UseVisualStyleBackColor = true;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // btXoaNV
             // 
@@ -466,7 +468,6 @@ namespace QLThuVien
             this.btCapNhatNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btCapNhatNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btCapNhatNV.UseVisualStyleBackColor = true;
-            this.btCapNhatNV.Click += new System.EventHandler(this.btCapNhatNV_Click);
             // 
             // btThemNV
             // 
@@ -480,7 +481,6 @@ namespace QLThuVien
             this.btThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btThemNV.UseVisualStyleBackColor = true;
-            this.btThemNV.Click += new System.EventHandler(this.btThemNV_Click);
             // 
             // groupBox2
             // 
@@ -525,6 +525,16 @@ namespace QLThuVien
             // 
             this.dtgvQLNhanVien.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvQLNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvQLNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNV,
+            this.HoTen,
+            this.GioiTinh,
+            this.NgaySinh,
+            this.SoDT,
+            this.Email,
+            this.HinhAnh,
+            this.NgayVaoLam,
+            this.GhiChu});
             this.dtgvQLNhanVien.Location = new System.Drawing.Point(381, 37);
             this.dtgvQLNhanVien.Name = "dtgvQLNhanVien";
             this.dtgvQLNhanVien.RowHeadersWidth = 51;
@@ -532,6 +542,69 @@ namespace QLThuVien
             this.dtgvQLNhanVien.Size = new System.Drawing.Size(638, 254);
             this.dtgvQLNhanVien.TabIndex = 0;
             this.dtgvQLNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLNhanVien_CellClick);
+            // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.Width = 125;
+            // 
+            // HoTen
+            // 
+            this.HoTen.HeaderText = "Họ tên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.Width = 125;
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.MinimumWidth = 6;
+            this.GioiTinh.Name = "GioiTinh";
+            this.GioiTinh.Width = 125;
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.HeaderText = "Ngày sinh";
+            this.NgaySinh.MinimumWidth = 6;
+            this.NgaySinh.Name = "NgaySinh";
+            this.NgaySinh.Width = 125;
+            // 
+            // SoDT
+            // 
+            this.SoDT.HeaderText = "Số điện thoại";
+            this.SoDT.MinimumWidth = 6;
+            this.SoDT.Name = "SoDT";
+            this.SoDT.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 125;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.HeaderText = "Hình ảnh";
+            this.HinhAnh.MinimumWidth = 6;
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.Width = 125;
+            // 
+            // NgayVaoLam
+            // 
+            this.NgayVaoLam.HeaderText = "Ngày vào làm";
+            this.NgayVaoLam.MinimumWidth = 6;
+            this.NgayVaoLam.Name = "NgayVaoLam";
+            this.NgayVaoLam.Width = 125;
+            // 
+            // GhiChu
+            // 
+            this.GhiChu.HeaderText = "Ghi chú";
+            this.GhiChu.MinimumWidth = 6;
+            this.GhiChu.Name = "GhiChu";
+            this.GhiChu.Width = 125;
             // 
             // label12
             // 
@@ -558,7 +631,6 @@ namespace QLThuVien
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "QLNhanVien";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí nhân viên";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -622,6 +694,15 @@ namespace QLThuVien
         private System.Windows.Forms.Button btXoaNV;
         private System.Windows.Forms.Button btCapNhatNV;
         private System.Windows.Forms.Button btThemNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayVaoLam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
     }
 }
 
