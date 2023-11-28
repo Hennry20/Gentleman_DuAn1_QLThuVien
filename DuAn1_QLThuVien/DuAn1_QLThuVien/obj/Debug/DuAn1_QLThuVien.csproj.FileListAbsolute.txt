@@ -1,24 +1,20 @@
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.exe.config
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.exe
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.pdb
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.AssemblyReference.cache
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.Properties.Resources.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.GenerateResource.cache
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.CoreCompileInputs.cache
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.exe
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.pdb
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\QLThuVien.QLNhanVien.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\QLThuVien.QLThongKe.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.dll
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.SqlServer.dll
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.xml
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.SqlServer.xml
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.CopyComplete
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DangNhap.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.ManHinhCho.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DoiMatKhau.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QLTheHoiVien.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.TrangChu.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.FormDangKyHV.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QLSach.resources
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QL_NguoiMuonSach.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.exe.config
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.exe
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\DuAn1_QLThuVien.pdb
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.AssemblyReference.cache
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.SuggestedBindingRedirects.cache
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.Properties.Resources.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\QLThuVien.QLNhanVien.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QlSach.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\QLThuVien.QLThongKe.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.TrangChu.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.GenerateResource.cache
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.CoreCompileInputs.cache
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.exe
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.pdb
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DangNhap.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.FormDangKyHV.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.ManHinhCho.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DoiMatKhau.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QLTheHoiVien.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QL_NguoiMuonSach.resources
