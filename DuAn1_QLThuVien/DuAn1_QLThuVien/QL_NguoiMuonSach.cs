@@ -323,20 +323,20 @@ namespace DuAn1
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
-                string check_PhieuMuon_Query = "SELECT COUNT(*) FROM PhieuMuon WHERE PhieuMuon = @PhieuMuon";
+                string check_PhieuMuon_Query = "SELECT COUNT(*) FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
                 
                 using (SqlCommand check_PhieuMuon_Command = new SqlCommand(check_PhieuMuon_Query, conn))
                 {
-                        check_PhieuMuon_Command.Parameters.AddWithValue("@PhieuMuon", txtQLMSMaPhieuMuon.Text.Trim());
+                        check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", txtQLMSMaPhieuMuon.Text.Trim());
 
                         int count = (int)check_PhieuMuon_Command.ExecuteScalar();
 
-                        if (count == 0)
+                        if (count > 0)
                         {
                             MessageBox.Show($"Mã phiếu mượn: {txtQLMSMaPhieuMuon.Text} đã tồn tại! \n Vui lòng Nhập Mã thẻ khác", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
-                        if (txtQLMSMaPhieuMuon.Text.Trim() == string.Empty || cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || txtTenNguoiDoc.Text.Trim() == string.Empty || cbQLMSMaSach2.Text.Trim() == string.Empty || txtQLMSSoLuong.Text.Trim() == string.Empty || dtpQLMSNgayMuon.Text.Trim() == string.Empty || dtpQLMSNgayHenTra.Text.Trim() == string.Empty || txtQLMSTienCoc.Text.Trim() == string.Empty || txtQLMSSoGioMuon.Text.Trim() == string.Empty)
+                        if (txtQLMSMaPhieuMuon.Text.Trim() == string.Empty || cbQLMSMaNguoiDoc.Text.Trim() == string.Empty || txtTenNguoiDoc.Text.Trim() == string.Empty || cbQLMSMaSach2.Text.Trim() == string.Empty || txtQLMSSoLuong.Text.Trim() == string.Empty || dtpQLMSNgayMuon.Text.Trim() == string.Empty || dtpQLMSNgayHenTra.Text.Trim() == string.Empty || txtQLMSTienCoc.Text.Trim() == string.Empty || txtQLMSSoGioMuon.Text.Trim() == string.Empty)
                         {
                             MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
@@ -385,7 +385,7 @@ namespace DuAn1
                                     insertCommand.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@TenND", txtTenNguoiDoc.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@MaSach", cbQLMSMaSach2.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@SoLuong", txtQLTSSLMuon.Text.Trim());
+                                    insertCommand.Parameters.AddWithValue("@SoLuong", txtQLMSSoLuong.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@NgayMuon", dtpQLMSNgayMuon.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@NgayTra", dtpQLMSNgayHenTra.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@TienCoc", txtQLMSTienCoc.Text.Trim());

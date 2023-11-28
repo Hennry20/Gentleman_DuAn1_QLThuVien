@@ -66,7 +66,7 @@ namespace DuAn1
             this.cbQLMSMaNguoiDoc = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.gbThongTinSach = new System.Windows.Forms.GroupBox();
-            this.lblGiaMuon = new System.Windows.Forms.Label();
+            this.lblQLMSGiaMuon = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblQLMSTenTacGia = new System.Windows.Forms.Label();
             this.lblQLMSMaLoai = new System.Windows.Forms.Label();
@@ -541,7 +541,7 @@ namespace DuAn1
             // 
             // gbThongTinSach
             // 
-            this.gbThongTinSach.Controls.Add(this.lblGiaMuon);
+            this.gbThongTinSach.Controls.Add(this.lblQLMSGiaMuon);
             this.gbThongTinSach.Controls.Add(this.label7);
             this.gbThongTinSach.Controls.Add(this.lblQLMSTenTacGia);
             this.gbThongTinSach.Controls.Add(this.lblQLMSMaLoai);
@@ -565,16 +565,16 @@ namespace DuAn1
             this.gbThongTinSach.TabStop = false;
             this.gbThongTinSach.Text = "Thông Tin Sách";
             // 
-            // lblGiaMuon
+            // lblQLMSGiaMuon
             // 
-            this.lblGiaMuon.BackColor = System.Drawing.Color.White;
-            this.lblGiaMuon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblGiaMuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGiaMuon.Location = new System.Drawing.Point(202, 305);
-            this.lblGiaMuon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGiaMuon.Name = "lblGiaMuon";
-            this.lblGiaMuon.Size = new System.Drawing.Size(279, 35);
-            this.lblGiaMuon.TabIndex = 4;
+            this.lblQLMSGiaMuon.BackColor = System.Drawing.Color.White;
+            this.lblQLMSGiaMuon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblQLMSGiaMuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQLMSGiaMuon.Location = new System.Drawing.Point(202, 305);
+            this.lblQLMSGiaMuon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQLMSGiaMuon.Name = "lblQLMSGiaMuon";
+            this.lblQLMSGiaMuon.Size = new System.Drawing.Size(279, 35);
+            this.lblQLMSGiaMuon.TabIndex = 4;
             // 
             // label7
             // 
@@ -1399,7 +1399,7 @@ namespace DuAn1
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtQLMSMaPhieuMuon;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblGiaMuon;
+        private System.Windows.Forms.Label lblQLMSGiaMuon;
         private System.Windows.Forms.ToolStripMenuItem trangChủToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
