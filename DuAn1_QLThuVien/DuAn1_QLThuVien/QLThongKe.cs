@@ -27,6 +27,7 @@ namespace QLThuVien
 
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         private void QLThongKe_Load(object sender, EventArgs e)
         {
@@ -37,6 +38,8 @@ namespace QLThuVien
         {
 
         }
+=======
+>>>>>>> parent of 806bf95 (Merge remote-tracking branch 'remotes/origin/Hieu' into chuong)
 =======
 >>>>>>> parent of 806bf95 (Merge remote-tracking branch 'remotes/origin/Hieu' into chuong)
     }
