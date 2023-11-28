@@ -107,6 +107,7 @@ namespace DuAn1_QLThuVien
                     }
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 else
                 {
@@ -115,6 +116,8 @@ namespace DuAn1_QLThuVien
                     label4.ForeColor = Color.Red;
                 }
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
+>>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
             }
         }
 

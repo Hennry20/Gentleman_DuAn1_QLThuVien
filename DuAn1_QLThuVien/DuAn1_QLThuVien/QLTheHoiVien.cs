@@ -124,6 +124,7 @@ namespace DuAn1_QLThuVien
 
             }
         }
+<<<<<<< HEAD
         private void tblGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int currentRowIndex = dataGridView1.CurrentRow.Index;
@@ -426,6 +427,8 @@ namespace DuAn1_QLThuVien
         //{
 
         //}
+=======
+>>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
 =======
 >>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
     }

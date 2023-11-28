@@ -43,6 +43,18 @@ D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\Entit
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.SqlServer.xml
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.CopyComplete
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DangKy.resources
+>>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+=======
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DangNhap.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DangKy.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.ManHinhCho.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DoiMatKhau.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QLTheHoiVien.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.TrangChu.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.FormDangKyHV.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QLSach.resources
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QL_NguoiMuonSach.resources
 >>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)

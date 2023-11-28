@@ -61,7 +61,10 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="DBHandler.cs" />
+=======
+>>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
     <Compile Include="DangKy.cs">
       <SubType>Form</SubType>
     </Compile>
