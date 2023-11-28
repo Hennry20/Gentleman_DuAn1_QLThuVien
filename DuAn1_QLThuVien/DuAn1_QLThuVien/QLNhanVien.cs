@@ -24,6 +24,9 @@ namespace QLThuVien
         DataSet ds = new DataSet();
         SqlDataAdapter sda;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
@@ -75,6 +78,9 @@ namespace QLThuVien
             row.EndEdit();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
@@ -90,6 +96,7 @@ namespace QLThuVien
             txtNgaySinhNV.Text = dtgvQLNhanVien.Rows[i].Cells[3].Value.ToString();
             txtSoDT.Text = dtgvQLNhanVien.Rows[i].Cells[4].Value.ToString();
             txtEmailNV.Text = dtgvQLNhanVien.Rows[i].Cells[5].Value.ToString();
+<<<<<<< HEAD
 <<<<<<< HEAD
 
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
@@ -112,6 +119,10 @@ namespace QLThuVien
             btCapNhatNV.Enabled = true;
             btXoaNV.Enabled = true;
 =======
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
+            txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
+            txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
             txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
@@ -194,6 +205,7 @@ namespace QLThuVien
             dmk.ShowDialog();
             this.Close();
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -357,6 +369,8 @@ namespace QLThuVien
                 ptbAnhNV.Image = Image.FromFile(@"" + imagePath);
             }
         }
+=======
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
