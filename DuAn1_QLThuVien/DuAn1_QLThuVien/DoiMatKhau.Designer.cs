@@ -41,9 +41,8 @@ namespace DuAn1_QLThuVien
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.cbk_HienThiMK = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -159,16 +158,6 @@ namespace DuAn1_QLThuVien
             this.label1.TabIndex = 47;
             this.label1.Text = "Đổi mật khẩu";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(673, 481);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(28, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 59;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -179,13 +168,23 @@ namespace DuAn1_QLThuVien
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 
+            // cbk_HienThiMK
+            // 
+            this.cbk_HienThiMK.AutoSize = true;
+            this.cbk_HienThiMK.Location = new System.Drawing.Point(655, 493);
+            this.cbk_HienThiMK.Name = "cbk_HienThiMK";
+            this.cbk_HienThiMK.Size = new System.Drawing.Size(18, 17);
+            this.cbk_HienThiMK.TabIndex = 59;
+            this.cbk_HienThiMK.UseVisualStyleBackColor = true;
+            this.cbk_HienThiMK.CheckedChanged += new System.EventHandler(this.cbk_HienThiMK_CheckedChanged);
+            // 
             // DoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(781, 721);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.cbk_HienThiMK);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_XacNhanMatKhau);
             this.Controls.Add(this.txt_MatKhauMoi);
@@ -203,7 +202,6 @@ namespace DuAn1_QLThuVien
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐỔI MẬT KHẨU";
             this.Load += new System.EventHandler(this.DoiMatKhau_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,8 +209,6 @@ namespace DuAn1_QLThuVien
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_XacNhanMatKhau;
         private System.Windows.Forms.TextBox txt_MatKhauMoi;
@@ -225,5 +221,6 @@ namespace DuAn1_QLThuVien
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox cbk_HienThiMK;
     }
 }

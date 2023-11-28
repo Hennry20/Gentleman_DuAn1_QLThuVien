@@ -17,6 +17,8 @@ namespace QLThuVien
     {
         DataSet ds = new DataSet();
         SqlDataAdapter sda;
+        String imagePath = "";
+        List<NhanVien> dsNhanVien;
         public QLNhanVien()
         {
             InitializeComponent();
@@ -36,30 +38,55 @@ namespace QLThuVien
 
         private void btThemNV_Click(object sender, EventArgs e)
         {
-            DataRow data = ds.Tables["NhanVien"].NewRow();
-            data["MaNV"] = txtMaNV.Text;
-            data["TenNV"] = txtHoTenNV.Text;
-            data["GioiTinh"] = cbbxGioiTinh.Text;
-            data["NgaySinh"] = txtNgaySinhNV.Text;
-            data["SDT"] = txtSoDT.Text;
-            data["Email"] = txtEmailNV.Text;
-            data["NgayVaoLam"] = txtNgayVaoLam.Text;
-            ds.Tables["NhanVien"].Rows.Add(data);
-            SqlCommandBuilder scb = new SqlCommandBuilder(sda);
-            sda.Update(ds.Tables["NhanVien"]);
-            MessageBox.Show("Đã thêm thành công!", "Thông báo");
+            try
+            {
+
+                if (txtMaNV.Text == "" || txtHoTenNV.Text == "" || txtEmailNV.Text == "" || txtNgaySinhNV.Text == "" || txtNgayVaoLam.Text == "" || cbbxGioiTinh.Text == "" || txtSoDT.Text == "")
+                {
+                    MessageBox.Show("Loi nhap du lieu");
+                    return;
+                }
+
+                DataRow data = ds.Tables["NhanVien"].NewRow();
+                data["MaNV"] = txtMaNV.Text;
+                data["TenNV"] = txtHoTenNV.Text;
+                data["GioiTinh"] = cbbxGioiTinh.Text;
+                data["NgaySinh"] = txtNgaySinhNV.Text;
+                data["SDT"] = txtSoDT.Text;
+                data["Email"] = txtEmailNV.Text;
+                data["NgayVaoLam"] = txtNgayVaoLam.Text;
+                ds.Tables["NhanVien"].Rows.Add(data);
+                SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+                sda.Update(ds.Tables["NhanVien"]);
+                MessageBox.Show("Đã thêm thành công!", "Thông báo");
+            }
+            catch
+            {
+
+            }
         }
 
         private void btCapNhatNV_Click(object sender, EventArgs e)
         {
-            int i = dtgvQLNhanVien.CurrentRow.Index;
-            DataRow row = ds.Tables["NhanVien"].Rows[i];
-            row.BeginEdit();
-            row["TenNV"] = txtHoTenNV.Text;
-            row["GioiTinh"] = cbbxGioiTinh.SelectedItem;
-            
-            row.EndEdit();
+            try
+            {
+                int i = dtgvQLNhanVien.CurrentRow.Index;
+                DataRow row = ds.Tables["NhanVien"].Rows[i];
+                row.BeginEdit();
+                row["TenNV"] = txtHoTenNV.Text;
+                row["GioiTinh"] = cbbxGioiTinh.SelectedItem;
+                row["SDT"] = txtSoDT.Text;
+                row["NgaySinh"] = txtNgaySinhNV.Text;
+                row["Email"] = txtEmailNV.Text;
+                row["NgayVaoLam"] = txtNgayVaoLam.Text;
+                row["GhiChu"] = txtGhiChuNV.Text;
+                row.EndEdit();
+                MessageBox.Show("Cap nhat thanh cong");
+            }
+            catch
+            {
 
+            }
         }
 
         private void dtgvQLNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -74,6 +101,23 @@ namespace QLThuVien
             txtEmailNV.Text = dtgvQLNhanVien.Rows[i].Cells[5].Value.ToString();
             txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
+
+            //int abc = dtgvQLNhanVien.SelectedCells[0].RowIndex;
+            //NhanVien kkk = dsNhanVien[abc];
+            //txtMaNV.Text = kkk.MaNV;
+            //txtHoTenNV.Text = kkk.TenNV;
+            //cbbxGioiTinh.Text = kkk.GioiTinh;
+            //txtSoDT.Text = kkk.SDT;
+            //txtEmailNV.Text = kkk.Email;
+            //txtNgayVaoLam.Text = kkk.NgayVaoLam.ToString();
+            //if (!String.IsNullOrEmpty(kkk.HinhAnh.ToString()))
+            //{
+            //    ptbAnhNV.Image = Image.FromFile(@"" + kkk.HinhAnh);
+            //}
+            //else
+            //{
+            //    ptbAnhNV.Image = null;
+            //}
         }
 
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,6 +134,34 @@ namespace QLThuVien
             this.Hide();
             dmk.ShowDialog();
             this.Close();
+        }
+
+        private void ptbAnhNV_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "e:\\";
+            openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 2;
+            openFileDialog.RestoreDirectory = true;
+            DialogResult result = openFileDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                imagePath = openFileDialog.FileName;
+                ptbAnhNV.Image = Image.FromFile(@"" + imagePath);
+                ptbAnhNV.Visible = true;
+            }
+        }
+
+        private void btReset_Click(object sender, EventArgs e)
+        {
+            txtMaNV.Text = "";
+            txtHoTenNV.Text = "";
+            txtSoDT.Text = "";
+            txtEmailNV.Text = "";
+            txtGhiChuNV.Text = "";
+            txtNgaySinhNV.Text = "";
+            txtNgayVaoLam.Text = "";
+            cbbxGioiTinh.Text = "";
         }
     }
 }

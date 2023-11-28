@@ -20,6 +20,15 @@ namespace DuAn1_QLThuVien
                 return null;
             }
         }
+        public static List<NhanVien> getlistNhanVien()
+        {
+            List<NhanVien> dsSanPham = new List<NhanVien>();
+            using (QLThuVienEntities csharpDB = new QLThuVienEntities())
+            {
+                dsSanPham = csharpDB.NhanViens.ToList();
+            }
+            return dsSanPham;
+        }
 
     }
 }
