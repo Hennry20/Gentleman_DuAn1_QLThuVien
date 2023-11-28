@@ -29,6 +29,7 @@ namespace DuAn1_QLThuVien
         public string Email { get; set; }
         public byte[] HinhAnh { get; set; }
         public Nullable<System.DateTime> NgayVaoLam { get; set; }
+        public string GhiChu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NguoiDoc> NguoiDocs { get; set; }

@@ -30,7 +30,7 @@ namespace DuAn1_QLThuVien
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            using(QLThuVienEntities qltv = new QLThuVienEntities())
+            using(QLThuVienEntities2 qltv = new QLThuVienEntities2())
             {
                 TaiKhoan tk = new TaiKhoan();
                 if(txt_Username.Text != tk.TenDangNhap || txt_Password.Text != tk.MatKhau)

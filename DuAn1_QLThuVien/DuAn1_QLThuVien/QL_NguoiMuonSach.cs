@@ -55,7 +55,7 @@ namespace DuAn1
 
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu();
+            TrangChu trang = new TrangChu("");
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -308,7 +308,7 @@ namespace DuAn1
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang này?", "Lỗi khi thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
             {
-                TrangChu trangChu = new TrangChu();
+                TrangChu trangChu = new TrangChu("");
                 this.Hide();
                 trangChu.ShowDialog();
                 this.Close();
