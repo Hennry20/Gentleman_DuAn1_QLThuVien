@@ -170,6 +170,7 @@ namespace DuAn1_QLThuVien
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //<<<<<<< HEAD
 //<<<<<<< HEAD
             this.checkBox1.Location = new System.Drawing.Point(26, 327);
@@ -179,6 +180,9 @@ namespace DuAn1_QLThuVien
 //=======
             this.checkBox1.Location = new System.Drawing.Point(24, 355);
 //>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+=======
+            this.checkBox1.Location = new System.Drawing.Point(24, 355);
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
             this.checkBox1.Location = new System.Drawing.Point(24, 355);
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)

@@ -21,7 +21,11 @@ namespace DuAn1_QLThuVien
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             Application.Run(new TrangChu(""));
+=======
+            Application.Run(new QL_NguoiMuonSach());
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
 =======
             Application.Run(new QL_NguoiMuonSach());
 >>>>>>> parent of ca8bd31 (Sua Form DangNhap)
