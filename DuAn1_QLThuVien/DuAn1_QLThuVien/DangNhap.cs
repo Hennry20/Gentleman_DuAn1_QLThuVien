@@ -30,20 +30,33 @@ namespace DuAn1_QLThuVien
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            using(QLThuVienEntities qltv = new QLThuVienEntities())
+            {
+                TaiKhoan tk = new TaiKhoan();
+                if(txt_Username.Text != tk.TenDangNhap || txt_Password.Text != tk.MatKhau)
+                {
+                    label4.Visible = true;
+                    label4.Text = "Tên đăng nhập hoặc mật khẩu không chính xác";
+                    label4.ForeColor = Color.Red;
+                }
+            }
             if (String.IsNullOrEmpty(txt_Username.Text)
                || String.IsNullOrWhiteSpace(txt_Username.Text)
                || String.IsNullOrEmpty(txt_Username.Text)
                || String.IsNullOrWhiteSpace(txt_Password.Text))
             {
-                MessageBox.Show(
-                    "Vui lòng nhập đầy đủ tài khoản và mật khẩu",
-                    "Lỗi nhập liệu",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-
+                //MessageBox.Show(
+                //    "Vui lòng nhập đủ tài khoản và mật khẩu",
+                //    "Lỗi nhập liệu",
+                //    MessageBoxButtons.OK,
+                //    MessageBoxIcon.Error);
+                label4.Visible = true;
+                label4.Text = "Vui lòng nhập đầy đủ thông tin";
+                label4.ForeColor = Color.Red;
             }
             else
-            {   
+            {
+                label4.Visible = false;
                 String Vaitro = DBHandler.Login(txt_Username.Text, txt_Password.Text);
                 if (!String.IsNullOrEmpty(Vaitro))
                 {
@@ -65,21 +78,19 @@ namespace DuAn1_QLThuVien
                         ct.ShowDialog();
                         this.Close();
                     }
-                    if (Vaitro.Equals("vaitro2") || Vaitro.Equals("NhanVien"))
+                    if (Vaitro.Equals("vaitro2"))
                     {
                         this.Hide();
-                        TrangChu ct = new TrangChu(txt_Username.Text);
-                        ct.ShowDialog();
+                        DoiMatKhau form = new DoiMatKhau();
+                        form.ShowDialog();
                         this.Close();
                     }
                 }
                 else
                 {
-                    MessageBox.Show(
-                        "Tài khoản hoặc mật khẩu không chính xác", 
-                        "Lỗi nhập liệu",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    label4.Visible = true;
+                    label4.Text = "Tài khoản hoặc mật khẩu không chính xác";
+                    label4.ForeColor = Color.Red;
                 }
             }
 

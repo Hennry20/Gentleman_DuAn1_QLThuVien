@@ -41,20 +41,14 @@ namespace DuAn1_QLThuVien
             {
                 if(txt_TaiKhoan.Text == "" || txt_MatKhauCu.Text == ""|| txt_MatKhauMoi.Text ==""||txt_XacNhanMatKhau.Text == "")
                 {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi nhập liệu",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Vui long nhap day du thong tin", "Thong bao");
                     return;
                 }
                 if(txt_MatKhauMoi.Text != txt_XacNhanMatKhau.Text)
                 {
-                    MessageBox.Show("Mật khẩu không trùng khớp", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui long xac nhan mat khau moi", "Thong bao");
                     return;
                 }
-                else
-                {
-                    MessageBox.Show("Mật khẩu hoặc tài khoản không chính xác", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
                 string ht = string.Format(@"exec doimatkhau '{0}', '{1}','{2}'", txt_TaiKhoan.Text, txt_MatKhauCu.Text, txt_MatKhauMoi.Text);
                 SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
                 SqlCommand cmd = new SqlCommand(ht);
@@ -64,29 +58,13 @@ namespace DuAn1_QLThuVien
                 DataTable dt = new DataTable();
                 dt.Load(dtr);
                 myConn.Close();
-                MessageBox.Show("Mật khẩu đã được cập nhật","Thông báo");
+                MessageBox.Show("Mat khau da duoc cap nhat","Thong bao");
             }
             catch
             {
 
             }
             
-        }
-
-        private void cbk_HienThiMK_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbk_HienThiMK.Checked == true)
-            {
-                txt_MatKhauCu.PasswordChar = '\0';
-                txt_MatKhauMoi.PasswordChar = '\0';
-                txt_XacNhanMatKhau.PasswordChar = '\0';
-            }
-            else
-            {
-                txt_MatKhauCu.PasswordChar = '*';
-                txt_MatKhauMoi.PasswordChar = '*';
-                txt_XacNhanMatKhau.PasswordChar = '*';
-            }
         }
     }
 }
