@@ -15,10 +15,15 @@ namespace QLThuVien
 {
     public partial class QLNhanVien : Form
     {
+<<<<<<< HEAD
         List<NhanVien> dsNhanVien;
         SqlDataAdapter sda;
         DataSet ds = new DataSet();
         String imagePath;
+=======
+        DataSet ds = new DataSet();
+        SqlDataAdapter sda;
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
         public QLNhanVien()
         {
             InitializeComponent();
@@ -34,8 +39,39 @@ namespace QLThuVien
             sda = new SqlDataAdapter(query, conn);
             sda.Fill(ds, "NhanVien");
             dtgvQLNhanVien.DataSource = ds.Tables["NhanVien"];
+<<<<<<< HEAD
             btCapNhatNV.Enabled = false;
             btXoaNV.Enabled = false;
+=======
+        }
+
+        private void btThemNV_Click(object sender, EventArgs e)
+        {
+            DataRow data = ds.Tables["NhanVien"].NewRow();
+            data["MaNV"] = txtMaNV.Text;
+            data["TenNV"] = txtHoTenNV.Text;
+            data["GioiTinh"] = cbbxGioiTinh.Text;
+            data["NgaySinh"] = txtNgaySinhNV.Text;
+            data["SDT"] = txtSoDT.Text;
+            data["Email"] = txtEmailNV.Text;
+            data["NgayVaoLam"] = txtNgayVaoLam.Text;
+            ds.Tables["NhanVien"].Rows.Add(data);
+            SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+            sda.Update(ds.Tables["NhanVien"]);
+            MessageBox.Show("Đã thêm thành công!", "Thông báo");
+        }
+
+        private void btCapNhatNV_Click(object sender, EventArgs e)
+        {
+            int i = dtgvQLNhanVien.CurrentRow.Index;
+            DataRow row = ds.Tables["NhanVien"].Rows[i];
+            row.BeginEdit();
+            row["TenNV"] = txtHoTenNV.Text;
+            row["GioiTinh"] = cbbxGioiTinh.SelectedItem;
+            
+            row.EndEdit();
+
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
         }
 
         private void dtgvQLNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -51,6 +87,7 @@ namespace QLThuVien
 
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
+<<<<<<< HEAD
 
             //int selectRowIndex = dtgvQLNhanVien.SelectedCells[6].RowIndex;
             //NhanVien nv = dsNhanVien[selectRowIndex];
@@ -67,6 +104,8 @@ namespace QLThuVien
             txtMaNV.ReadOnly = true;
             btCapNhatNV.Enabled = true;
             btXoaNV.Enabled = true;
+=======
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
         }
 
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,6 +183,7 @@ namespace QLThuVien
             dmk.ShowDialog();
             this.Close();
         }
+<<<<<<< HEAD
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -305,5 +345,7 @@ namespace QLThuVien
                 ptbAnhNV.Image = Image.FromFile(@"" + imagePath);
             }
         }
+=======
+>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
     }
 }

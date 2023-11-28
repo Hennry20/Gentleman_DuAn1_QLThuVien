@@ -147,7 +147,7 @@ namespace QLThuVien
             // 
             this.trangChủToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trangChủToolStripMenuItem.Image")));
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.trangChủToolStripMenuItem.Text = "Trang chủ";
             this.trangChủToolStripMenuItem.Click += new System.EventHandler(this.trangChủToolStripMenuItem_Click);
             // 
@@ -155,7 +155,7 @@ namespace QLThuVien
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đổiMậtKhẩuToolStripMenuItem.Image")));
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
@@ -163,7 +163,7 @@ namespace QLThuVien
             // 
             this.đăngXuấtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngXuấtToolStripMenuItem.Image")));
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -171,7 +171,7 @@ namespace QLThuVien
             // 
             this.kếtThúcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kếtThúcToolStripMenuItem.Image")));
             this.kếtThúcToolStripMenuItem.Name = "kếtThúcToolStripMenuItem";
-            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.kếtThúcToolStripMenuItem.Text = "Thoát";
             this.kếtThúcToolStripMenuItem.Click += new System.EventHandler(this.kếtThúcToolStripMenuItem_Click);
             // 
@@ -412,7 +412,6 @@ namespace QLThuVien
             this.ptbAnhNV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbAnhNV.TabIndex = 18;
             this.ptbAnhNV.TabStop = false;
-            this.ptbAnhNV.Click += new System.EventHandler(this.ptbAnhNV_Click);
             // 
             // txtGhiChuNV
             // 
@@ -460,7 +459,6 @@ namespace QLThuVien
             this.btReset.Text = "Reset";
             this.btReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btReset.UseVisualStyleBackColor = true;
-            this.btReset.Click += new System.EventHandler(this.btReset_Click);
             // 
             // btXoaNV
             // 
