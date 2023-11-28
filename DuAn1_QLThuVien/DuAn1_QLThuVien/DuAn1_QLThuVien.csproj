@@ -55,7 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBHandler.cs" />
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,12 +144,6 @@
     </Compile>
     <Compile Include="Sach.cs">
       <DependentUpon>QLTHUVIEN.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TaiKhoan.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TheHoiVien.cs">
-      <DependentUpon>QLThuVienModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TrangChu.cs">
       <SubType>Form</SubType>

@@ -1,9 +1,6 @@
 ﻿using System;
-<<<<<<< HEAD
 using DuAn1;
 using DuAn1_QLThuVien;
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,27 +15,11 @@ namespace QLThuVien
 {
     public partial class QLNhanVien : Form
     {
-<<<<<<< HEAD
-        List<NhanVien> dsNhanVien;
+        //List<NhanVien> dsNhanVien;
         SqlDataAdapter sda;
         DataSet ds = new DataSet();
         String imagePath;
-=======
-        DataSet ds = new DataSet();
-        SqlDataAdapter sda;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+
         public QLNhanVien()
         {
             InitializeComponent();
@@ -54,13 +35,9 @@ namespace QLThuVien
             sda = new SqlDataAdapter(query, conn);
             sda.Fill(ds, "NhanVien");
             dtgvQLNhanVien.DataSource = ds.Tables["NhanVien"];
-<<<<<<< HEAD
             btCapNhatNV.Enabled = false;
             btXoaNV.Enabled = false;
-=======
         }
-
-<<<<<<< HEAD
         private void btThemNV_Click(object sender, EventArgs e)
         {
             DataRow data = ds.Tables["NhanVien"].NewRow();
@@ -86,20 +63,6 @@ namespace QLThuVien
             row["GioiTinh"] = cbbxGioiTinh.SelectedItem;
             
             row.EndEdit();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
         }
 
         private void dtgvQLNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -112,14 +75,9 @@ namespace QLThuVien
             txtNgaySinhNV.Text = dtgvQLNhanVien.Rows[i].Cells[3].Value.ToString();
             txtSoDT.Text = dtgvQLNhanVien.Rows[i].Cells[4].Value.ToString();
             txtEmailNV.Text = dtgvQLNhanVien.Rows[i].Cells[5].Value.ToString();
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
-<<<<<<< HEAD
+
 
             //int selectRowIndex = dtgvQLNhanVien.SelectedCells[6].RowIndex;
             //NhanVien nv = dsNhanVien[selectRowIndex];
@@ -136,24 +94,18 @@ namespace QLThuVien
             txtMaNV.ReadOnly = true;
             btCapNhatNV.Enabled = true;
             btXoaNV.Enabled = true;
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
+
             txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
+
             txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
+
             txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
+
             txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
             txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
         }
 
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
@@ -181,48 +133,48 @@ namespace QLThuVien
             btXoaNV.Enabled = false;
         }
 
-        private void btThemNV_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtMaNV.Text == "" || txtHoTenNV.Text == "" || cbbxGioiTinh.Text == ""
-                    || txtNgaySinhNV.Text == "" && txtSoDT.Text == "" || txtEmailNV.Text == ""
-                    || txtNgayVaoLam.Text == "")
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
-                    return;
-                }
-                if (DBHandler.IsEmail(txtEmailNV.Text.Trim()) != true)
-                {
-                    MessageBox.Show("Email không hợp lệ, vui lòng nhập lại!", "Thông báo");
-                    return;
-                }
-                if (txtSoDT.Text.Length > 10)
-                {
-                    MessageBox.Show("Số điện thoại không hợp lệ, vui lòng nhập lại!", "Thông báo");
-                    return;
-                }
-                DataRow data = ds.Tables["NhanVien"].NewRow();
-                data["MaNV"] = txtMaNV.Text;
-                data["TenNV"] = txtHoTenNV.Text;
-                data["GioiTinh"] = cbbxGioiTinh.SelectedItem;
-                data["NgaySinh"] = txtNgaySinhNV.Text;
-                data["SDT"] = txtSoDT.Text;
-                data["Email"] = txtEmailNV.Text;
-                data["HinhAnh"] = ptbAnhNV.Image;
-                data["NgayVaoLam"] = txtNgayVaoLam.Text;
-                data["GhiChu"] = txtGhiChuNV.Text;
+        //private void btThemNV_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (txtMaNV.Text == "" || txtHoTenNV.Text == "" || cbbxGioiTinh.Text == ""
+        //            || txtNgaySinhNV.Text == "" && txtSoDT.Text == "" || txtEmailNV.Text == ""
+        //            || txtNgayVaoLam.Text == "")
+        //        {
+        //            MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
+        //            return;
+        //        }
+        //        if (DBHandler.IsEmail(txtEmailNV.Text.Trim()) != true)
+        //        {
+        //            MessageBox.Show("Email không hợp lệ, vui lòng nhập lại!", "Thông báo");
+        //            return;
+        //        }
+        //        if (txtSoDT.Text.Length > 10)
+        //        {
+        //            MessageBox.Show("Số điện thoại không hợp lệ, vui lòng nhập lại!", "Thông báo");
+        //            return;
+        //        }
+        //        DataRow data = ds.Tables["NhanVien"].NewRow();
+        //        data["MaNV"] = txtMaNV.Text;
+        //        data["TenNV"] = txtHoTenNV.Text;
+        //        data["GioiTinh"] = cbbxGioiTinh.SelectedItem;
+        //        data["NgaySinh"] = txtNgaySinhNV.Text;
+        //        data["SDT"] = txtSoDT.Text;
+        //        data["Email"] = txtEmailNV.Text;
+        //        data["HinhAnh"] = ptbAnhNV.Image;
+        //        data["NgayVaoLam"] = txtNgayVaoLam.Text;
+        //        data["GhiChu"] = txtGhiChuNV.Text;
 
-                ds.Tables["NhanVien"].Rows.Add(data);
-                SqlCommandBuilder scb = new SqlCommandBuilder(sda);
-                sda.Update(ds.Tables["NhanVien"]);
-                MessageBox.Show("Thêm nhân viên thành công!", "Thông báo");
-            }
-            catch (Exception)
-            {
+        //        ds.Tables["NhanVien"].Rows.Add(data);
+        //        SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+        //        sda.Update(ds.Tables["NhanVien"]);
+        //        MessageBox.Show("Thêm nhân viên thành công!", "Thông báo");
+        //    }
+        //    catch (Exception)
+        //    {
                 
-            }
-        }
+        //    }
+        //}
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -231,11 +183,6 @@ namespace QLThuVien
             dmk.ShowDialog();
             this.Close();
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -307,40 +254,40 @@ namespace QLThuVien
             
         }
 
-        private void btCapNhatNV_Click(object sender, EventArgs e)
-        {
-            QLNhanVien nv = new QLNhanVien();
-            int i = dtgvQLNhanVien.CurrentRow.Index;
-            DataRow row = ds.Tables["NhanVien"].Rows[i];
-            row.BeginEdit();
-            row["MaNV"] = txtMaNV.Text;
-            row["TenNV"] = txtHoTenNV.Text;
-            row["GioiTinh"] = cbbxGioiTinh.SelectedItem;
-            row["NgaySinh"] = txtNgaySinhNV.Text;
-            row["SDT"] = txtSoDT.Text;
-            row["Email"] = txtEmailNV.Text;
-            //row["HinhAnh"] = ptbAnhNV.Image;
-            row["NgayVaoLam"] = txtNgayVaoLam.Text;
-            row["GhiChu"] = txtGhiChuNV.Text;
+        //private void btCapNhatNV_Click(object sender, EventArgs e)
+        //{
+        //    QLNhanVien nv = new QLNhanVien();
+        //    int i = dtgvQLNhanVien.CurrentRow.Index;
+        //    DataRow row = ds.Tables["NhanVien"].Rows[i];
+        //    row.BeginEdit();
+        //    row["MaNV"] = txtMaNV.Text;
+        //    row["TenNV"] = txtHoTenNV.Text;
+        //    row["GioiTinh"] = cbbxGioiTinh.SelectedItem;
+        //    row["NgaySinh"] = txtNgaySinhNV.Text;
+        //    row["SDT"] = txtSoDT.Text;
+        //    row["Email"] = txtEmailNV.Text;
+        //    //row["HinhAnh"] = ptbAnhNV.Image;
+        //    row["NgayVaoLam"] = txtNgayVaoLam.Text;
+        //    row["GhiChu"] = txtGhiChuNV.Text;
 
-            if (txtMaNV.Text == "" || txtHoTenNV.Text == "" || cbbxGioiTinh.Text == ""
-                || txtNgaySinhNV.Text == "" && txtSoDT.Text == "" || txtEmailNV.Text == ""
-                || txtNgayVaoLam.Text == "")
-            {
-                MessageBox.Show("Vui lòng cập nhật đầy đủ thông tin!", "Thông báo");
-                return;
-            }
-            if (DBHandler.IsEmail(txtEmailNV.Text.Trim()) != true)
-            {
-                MessageBox.Show("Email không hợp lệ, vui lòng cập nhập lại!", "Thông báo");
-                return;
-            }
+        //    if (txtMaNV.Text == "" || txtHoTenNV.Text == "" || cbbxGioiTinh.Text == ""
+        //        || txtNgaySinhNV.Text == "" && txtSoDT.Text == "" || txtEmailNV.Text == ""
+        //        || txtNgayVaoLam.Text == "")
+        //    {
+        //        MessageBox.Show("Vui lòng cập nhật đầy đủ thông tin!", "Thông báo");
+        //        return;
+        //    }
+        //    if (DBHandler.IsEmail(txtEmailNV.Text.Trim()) != true)
+        //    {
+        //        MessageBox.Show("Email không hợp lệ, vui lòng cập nhập lại!", "Thông báo");
+        //        return;
+        //    }
 
-            row.EndEdit();
-            SqlCommandBuilder scb = new SqlCommandBuilder(sda);
-            sda.Update(ds.Tables["NhanVien"]);
-            MessageBox.Show("Cập nhật thành công!", "Thông báo");
-        }
+        //    row.EndEdit();
+        //    SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+        //    sda.Update(ds.Tables["NhanVien"]);
+        //    MessageBox.Show("Cập nhật thành công!", "Thông báo");
+        //}
 
         private void btXoaNV_Click(object sender, EventArgs e)
         {
@@ -397,17 +344,10 @@ namespace QLThuVien
                 ptbAnhNV.Image = Image.FromFile(@"" + imagePath);
             }
         }
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
-=======
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
+
+        private void btThemNV_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
