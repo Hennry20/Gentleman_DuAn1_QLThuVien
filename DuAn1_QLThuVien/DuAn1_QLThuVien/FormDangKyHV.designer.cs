@@ -29,7 +29,6 @@ namespace DuAn1
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDangKyHV));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,13 +43,13 @@ namespace DuAn1
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.cbGioiTinh = new System.Windows.Forms.ComboBox();
             this.btnDangKy = new System.Windows.Forms.Button();
-            this.bnt_Thoat = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(209, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 28);
@@ -60,7 +59,7 @@ namespace DuAn1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(209, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 28);
@@ -70,7 +69,7 @@ namespace DuAn1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(209, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 28);
@@ -80,7 +79,7 @@ namespace DuAn1
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(210, 337);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 28);
@@ -90,7 +89,7 @@ namespace DuAn1
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(209, 423);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 28);
@@ -100,7 +99,7 @@ namespace DuAn1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(209, 512);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 28);
@@ -112,9 +111,9 @@ namespace DuAn1
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(206, 9);
+            this.label7.Location = new System.Drawing.Point(163, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(445, 51);
+            this.label7.Size = new System.Drawing.Size(527, 60);
             this.label7.TabIndex = 7;
             this.label7.Text = "ĐĂNG KÝ HỘI VIÊN";
             // 
@@ -123,15 +122,15 @@ namespace DuAn1
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHoTen.Location = new System.Drawing.Point(213, 111);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(417, 30);
-            this.txtHoTen.TabIndex = 1;
+            this.txtHoTen.Size = new System.Drawing.Size(417, 34);
+            this.txtHoTen.TabIndex = 8;
             // 
             // txtNgaySinh
             // 
             this.txtNgaySinh.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNgaySinh.Location = new System.Drawing.Point(213, 458);
             this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(417, 30);
+            this.txtNgaySinh.Size = new System.Drawing.Size(417, 34);
             this.txtNgaySinh.TabIndex = 10;
             // 
             // txtEmail
@@ -139,7 +138,7 @@ namespace DuAn1
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(214, 372);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(417, 30);
+            this.txtEmail.Size = new System.Drawing.Size(417, 34);
             this.txtEmail.TabIndex = 11;
             // 
             // txtSDT
@@ -147,7 +146,7 @@ namespace DuAn1
             this.txtSDT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Location = new System.Drawing.Point(213, 287);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(417, 30);
+            this.txtSDT.Size = new System.Drawing.Size(417, 34);
             this.txtSDT.TabIndex = 12;
             // 
             // txtDiaChi
@@ -155,8 +154,8 @@ namespace DuAn1
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(213, 196);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(417, 30);
-            this.txtDiaChi.TabIndex = 2;
+            this.txtDiaChi.Size = new System.Drawing.Size(417, 34);
+            this.txtDiaChi.TabIndex = 13;
             // 
             // cbGioiTinh
             // 
@@ -164,7 +163,7 @@ namespace DuAn1
             this.cbGioiTinh.FormattingEnabled = true;
             this.cbGioiTinh.Location = new System.Drawing.Point(213, 547);
             this.cbGioiTinh.Name = "cbGioiTinh";
-            this.cbGioiTinh.Size = new System.Drawing.Size(417, 31);
+            this.cbGioiTinh.Size = new System.Drawing.Size(417, 36);
             this.cbGioiTinh.TabIndex = 14;
             // 
             // btnDangKy
@@ -179,26 +178,25 @@ namespace DuAn1
             this.btnDangKy.Text = "ĐĂNG KÝ";
             this.btnDangKy.UseVisualStyleBackColor = false;
             // 
-            // bnt_Thoat
+            // button1
             // 
-            this.bnt_Thoat.BackColor = System.Drawing.Color.Red;
-            this.bnt_Thoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bnt_Thoat.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bnt_Thoat.Location = new System.Drawing.Point(215, 681);
-            this.bnt_Thoat.Name = "bnt_Thoat";
-            this.bnt_Thoat.Size = new System.Drawing.Size(417, 55);
-            this.bnt_Thoat.TabIndex = 16;
-            this.bnt_Thoat.Text = "THOÁT";
-            this.bnt_Thoat.UseVisualStyleBackColor = false;
-            this.bnt_Thoat.Click += new System.EventHandler(this.bnt_Thoat_Click);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(215, 681);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(417, 55);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "THOÁT";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FormDangKyHV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(855, 772);
-            this.Controls.Add(this.bnt_Thoat);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.cbGioiTinh);
             this.Controls.Add(this.txtDiaChi);
@@ -214,10 +212,9 @@ namespace DuAn1
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDangKyHV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ĐĂNG KÝ THẺ HỘI VIÊN";
+            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -240,7 +237,7 @@ namespace DuAn1
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.ComboBox cbGioiTinh;
         private System.Windows.Forms.Button btnDangKy;
-        private System.Windows.Forms.Button bnt_Thoat;
+        private System.Windows.Forms.Button button1;
     }
 }
 
