@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb5b8ed0e4f6498094ff1395c603d5ca" Name="Diagram1">
+        <EntityTypeShape EntityType="QLThuVienModel.NguoiDoc" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThuVienModel.NhanVien" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThuVienModel.PhieuMuon" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThuVienModel.PhieuTra" Width="1.5" PointX="7.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThuVienModel.Sach" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThuVienModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLThuVienModel.TheHoiVien" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="QLThuVienModel.fn_nd" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThuVienModel.fn_ndpm" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThuVienModel.fn_thv" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThuVienModel.fk_snv" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThuVienModel.fn_pm" ManuallyRouted="false" />
+        <AssociationConnector Association="QLThuVienModel.fn_pt" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -29,7 +29,7 @@ namespace DuAn1
             load_dtgvQLMuonSach();
             load_MaND();
             load_MaSach();
-            load_MaSachTTSach();
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -117,7 +117,13 @@ namespace DuAn1
             qLTheHoiVien.ShowDialog();
             this.Close();
         }
-
+        private void đăngKýHộiViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
+            this.Hide();
+            qLTheHoiVien.ShowDialog();
+            this.Close();
+        }
         private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QLThongKe qLThongKe = new QLThongKe();
@@ -255,34 +261,7 @@ namespace DuAn1
                 connection.Close();
             }
         }
-        public void load_MaSachTTSach()
-        {
-            string connectionString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);
-            try
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand("sp_DanhSach_MaSachTTSach", connection);
-                command.CommandType = CommandType.StoredProcedure;
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    cbQLMSMaSach1.Items.Add(reader["MaSach"].ToString());
-                }
-
-                reader.Close();
-            }
-            catch (Exception)
-            {
-                return;
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
+        
 
         private void cbQLMSMaSach1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -318,46 +297,56 @@ namespace DuAn1
 
         private void btnChoMuon_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=SSPI";
+            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
                 string check_PhieuMuon_Query = "SELECT COUNT(*) FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
-                
+                string check_MaND_Query = "SELECT COUNT(*) FROM NguoiDoc WHERE MaND = @MaND";
+
                 using (SqlCommand check_PhieuMuon_Command = new SqlCommand(check_PhieuMuon_Query, conn))
                 {
+                    using (SqlCommand check_MaND_Command = new SqlCommand(check_MaND_Query, conn))
+                    {
                         check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", txtQLMSMaPhieuMuon.Text.Trim());
+                        check_MaND_Command.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
 
                         int count = (int)check_PhieuMuon_Command.ExecuteScalar();
+                        int count2 = (int)check_MaND_Command.ExecuteScalar();
 
                         if (count > 0)
                         {
                             MessageBox.Show($"Mã phiếu mượn: {txtQLMSMaPhieuMuon.Text} đã tồn tại! \n Vui lòng Nhập Mã thẻ khác", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
-                        if (txtQLMSMaPhieuMuon.Text.Trim() == string.Empty || cbQLMSMaNguoiDoc.Text.Trim() == string.Empty || txtTenNguoiDoc.Text.Trim() == string.Empty || cbQLMSMaSach2.Text.Trim() == string.Empty || txtQLMSSoLuong.Text.Trim() == string.Empty || dtpQLMSNgayMuon.Text.Trim() == string.Empty || dtpQLMSNgayHenTra.Text.Trim() == string.Empty || txtQLMSTienCoc.Text.Trim() == string.Empty || txtQLMSSoGioMuon.Text.Trim() == string.Empty)
+                        if (count2 == 0)
+                        {
+                            MessageBox.Show($"Mã người đọc: {cbQLMSMaNguoiDoc.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        if (cbQLMSMaNguoiDoc.Text.Trim() == string.Empty || txtTenNguoiDoc.Text.Trim() == string.Empty || cbQLMSMaSach2.Text.Trim() == string.Empty || txtQLMSSoLuong.Text.Trim() == string.Empty || dtpQLMSNgayMuon.Text.Trim() == string.Empty || dtpQLMSNgayHenTra.Text.Trim() == string.Empty || txtQLMSTienCoc.Text.Trim() == string.Empty || txtQLMSSoGioMuon.Text.Trim() == string.Empty)
                         {
                             MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                         else
                         {
-                            string insertQuery = "INSERT INTO PhieuMuon (MaPhieuMuon, MaND, TenND, MaSach, SoLuongMuon, NgayMuon, NgayTra, TienCoc, SoGio) " +
-                                                     " VALUES (@MaPhieuMuon, @MaND, @TenND, @MaSach, @SoLuong, @NgayMuon, @NgayTra, @TienCoc, @SoGio)";
+                            string insertQuery = "INSERT INTO PhieuMuon (MaND, TenND, MaSach, SoLuong, NgayMuon, NgayTra, TienCoc, SoGio) " +
+                                                     " VALUES (@MaND, @TenND, @MaSach, @SoLuong, @NgayMuon, @NgayTra, @TienCoc, @SoGio)";
 
                             string ngayMuon = dtpQLMSNgayMuon.Text.Trim();
                             DateTime ngMuon;
                             string ngayTra = dtpQLMSNgayHenTra.Text.Trim();
                             DateTime ngTra;
-                            string SoGioMuon = txtQLMSSoGioMuon.Text.Trim();
+                            string SoLuongMuon = txtQLMSSoGioMuon.Text.Trim();
                             float number;
 
-                        using (SqlCommand insertCommand = new SqlCommand(insertQuery, conn))
+                            using (SqlCommand command = new SqlCommand(insertQuery, conn))
                             {
                                 if (DateTime.TryParseExact(ngayMuon, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngMuon))
                                 {
-                                    insertCommand.Parameters.AddWithValue("@NgayMuon", ngMuon);
+                                    command.Parameters.AddWithValue("@NgayMuon", ngMuon);
                                 }
                                 else
                                 {
@@ -366,31 +355,29 @@ namespace DuAn1
                                 }
                                 if (DateTime.TryParseExact(ngayTra, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngTra))
                                 {
-                                    insertCommand.Parameters.AddWithValue("@NgayTra", ngTra);
+                                    command.Parameters.AddWithValue("@NgayTra", ngTra);
                                 }
                                 else
                                 {
                                     MessageBox.Show("Định dạng ngày tháng không hợp lệ. \nVui lòng nhập lại đúng định dạng \nNăm/tháng/ngày (dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
-                                if (!float.TryParse(SoGioMuon, out number) || number < 0)
+                                if (!float.TryParse(SoLuongMuon, out number) || number < 0)
                                 {
-                                    MessageBox.Show("Vui lòng nhập số giờ mượn bằng số! \n Số không được dưới 0", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Vui lòng nhập số lượng mượn bằng số! \n Số không được dưới 0", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
 
                                 else
                                 {
-                                    insertCommand.Parameters.AddWithValue("@MaPhieuMuon", txtQLMSMaPhieuMuon.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@TenND", txtTenNguoiDoc.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@MaSach", cbQLMSMaSach2.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@SoLuong", txtQLMSSoLuong.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@NgayMuon", dtpQLMSNgayMuon.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@NgayTra", dtpQLMSNgayHenTra.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@TienCoc", txtQLMSTienCoc.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@SoGio", txtQLMSSoGioMuon.Text.Trim());
-                                    insertCommand.ExecuteNonQuery();
+                                    ///command.Parameters.AddWithValue("@MaPhieuMuon", txtQLMSMaPhieuMuon.Text.Trim());
+                                    command.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
+                                    command.Parameters.AddWithValue("@TenND", txtTenNguoiDoc.Text.Trim());
+                                    command.Parameters.AddWithValue("@MaSach", cbQLMSMaSach2.Text.Trim());
+                                    command.Parameters.AddWithValue("@SoLuong", txtQLMSSoLuong.Text.Trim());
+                                    command.Parameters.AddWithValue("@TienCoc", txtQLMSTienCoc.Text.Trim());
+                                    command.Parameters.AddWithValue("@SoGio", txtQLMSSoGioMuon.Text.Trim());
+                                    command.ExecuteNonQuery();
                                     MessageBox.Show("Cho mượn thành công!");
                                     load_dtgvQLMuonSach();
 
@@ -399,8 +386,7 @@ namespace DuAn1
 
                             }
                         }
-                    
-
+                    }
                 }
             }
         }
@@ -423,5 +409,7 @@ namespace DuAn1
             txtQLTSTinhTrang.Text = string.Empty;
             txtQLTSSoGioTra.Text = string.Empty;
         }
+
+        
     }
 }
