@@ -22,12 +22,13 @@ namespace DuAn1_QLThuVien
         }
     
         public string MaNV { get; set; }
+        public string TenDangNhap { get; set; }
         public string TenNV { get; set; }
         public string GioiTinh { get; set; }
         public Nullable<System.DateTime> NgaySinh { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
-        public byte[] HinhAnh { get; set; }
+        public string HinhAnh { get; set; }
         public Nullable<System.DateTime> NgayVaoLam { get; set; }
         public string GhiChu { get; set; }
     
@@ -35,5 +36,6 @@ namespace DuAn1_QLThuVien
         public virtual ICollection<NguoiDoc> NguoiDocs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sach> Saches { get; set; }
+        public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }

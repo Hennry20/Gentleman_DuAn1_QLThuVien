@@ -43,7 +43,6 @@ namespace QLThuVien
             this.quảnLýNgườiMượnSáchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýNgườiMượnSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýThẻHộiViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngKíThẻHộiViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,13 +52,13 @@ namespace QLThuVien
             this.label7 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtHoTenNV = new System.Windows.Forms.TextBox();
-            this.txtNgaySinhNV = new System.Windows.Forms.TextBox();
             this.txtSoDT = new System.Windows.Forms.TextBox();
             this.txtEmailNV = new System.Windows.Forms.TextBox();
             this.cbbxGioiTinh = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTenDN = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtNgayVaoLam = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.ptbAnhNV = new System.Windows.Forms.PictureBox();
             this.txtGhiChuNV = new System.Windows.Forms.TextBox();
@@ -75,6 +74,7 @@ namespace QLThuVien
             this.label10 = new System.Windows.Forms.Label();
             this.dtgvQLNhanVien = new System.Windows.Forms.DataGridView();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +84,9 @@ namespace QLThuVien
             this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
+            this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtNgaySinhNV = new System.Windows.Forms.TextBox();
+            this.txtNgayVaoLam = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -123,8 +126,8 @@ namespace QLThuVien
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hệThốngToolStripMenuItem,
             this.quảnLýToolStripMenuItem,
-            this.đăngKíThẻHộiViênToolStripMenuItem,
-            this.thốngKêToolStripMenuItem});
+            this.thốngKêToolStripMenuItem,
+            this.hướngDẫnSửDụngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1113, 33);
@@ -147,7 +150,7 @@ namespace QLThuVien
             // 
             this.trangChủToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trangChủToolStripMenuItem.Image")));
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.trangChủToolStripMenuItem.Text = "Trang chủ";
             this.trangChủToolStripMenuItem.Click += new System.EventHandler(this.trangChủToolStripMenuItem_Click);
             // 
@@ -155,7 +158,7 @@ namespace QLThuVien
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đổiMậtKhẩuToolStripMenuItem.Image")));
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
@@ -163,7 +166,7 @@ namespace QLThuVien
             // 
             this.đăngXuấtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngXuấtToolStripMenuItem.Image")));
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -171,7 +174,7 @@ namespace QLThuVien
             // 
             this.kếtThúcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kếtThúcToolStripMenuItem.Image")));
             this.kếtThúcToolStripMenuItem.Name = "kếtThúcToolStripMenuItem";
-            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
             this.kếtThúcToolStripMenuItem.Text = "Thoát";
             this.kếtThúcToolStripMenuItem.Click += new System.EventHandler(this.kếtThúcToolStripMenuItem_Click);
             // 
@@ -219,23 +222,12 @@ namespace QLThuVien
             this.quảnLýThẻHộiViênToolStripMenuItem.Text = "Quản lý thẻ hội viên";
             this.quảnLýThẻHộiViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýThẻHộiViênToolStripMenuItem_Click);
             // 
-            // đăngKíThẻHộiViênToolStripMenuItem
-            // 
-            this.đăngKíThẻHộiViênToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.đăngKíThẻHộiViênToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngKíThẻHộiViênToolStripMenuItem.Image")));
-            this.đăngKíThẻHộiViênToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.đăngKíThẻHộiViênToolStripMenuItem.Name = "đăngKíThẻHộiViênToolStripMenuItem";
-            this.đăngKíThẻHộiViênToolStripMenuItem.Size = new System.Drawing.Size(216, 29);
-            this.đăngKíThẻHộiViênToolStripMenuItem.Text = "Đăng kí thẻ hội viên";
-            this.đăngKíThẻHộiViênToolStripMenuItem.Click += new System.EventHandler(this.đăngKíThẻHộiViênToolStripMenuItem_Click);
-            // 
             // thốngKêToolStripMenuItem
             // 
             this.thốngKêToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thốngKêToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thốngKêToolStripMenuItem.Image")));
             this.thốngKêToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(129, 29);
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(109, 29);
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
             this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
@@ -269,7 +261,7 @@ namespace QLThuVien
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(426, 47);
+            this.label5.Location = new System.Drawing.Point(408, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 25);
             this.label5.TabIndex = 3;
@@ -309,14 +301,6 @@ namespace QLThuVien
             this.txtHoTenNV.Size = new System.Drawing.Size(209, 30);
             this.txtHoTenNV.TabIndex = 9;
             // 
-            // txtNgaySinhNV
-            // 
-            this.txtNgaySinhNV.BackColor = System.Drawing.Color.White;
-            this.txtNgaySinhNV.Location = new System.Drawing.Point(568, 42);
-            this.txtNgaySinhNV.Name = "txtNgaySinhNV";
-            this.txtNgaySinhNV.Size = new System.Drawing.Size(201, 30);
-            this.txtNgaySinhNV.TabIndex = 10;
-            // 
             // txtSoDT
             // 
             this.txtSoDT.BackColor = System.Drawing.Color.White;
@@ -348,8 +332,11 @@ namespace QLThuVien
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtNgayVaoLam);
+            this.groupBox1.Controls.Add(this.txtNgaySinhNV);
+            this.groupBox1.Controls.Add(this.txtTenDN);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.ptbAnhNV);
             this.groupBox1.Controls.Add(this.txtGhiChuNV);
@@ -357,7 +344,6 @@ namespace QLThuVien
             this.groupBox1.Controls.Add(this.cbbxGioiTinh);
             this.groupBox1.Controls.Add(this.txtEmailNV);
             this.groupBox1.Controls.Add(this.txtSoDT);
-            this.groupBox1.Controls.Add(this.txtNgaySinhNV);
             this.groupBox1.Controls.Add(this.txtHoTenNV);
             this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.label7);
@@ -375,6 +361,23 @@ namespace QLThuVien
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
             // 
+            // txtTenDN
+            // 
+            this.txtTenDN.BackColor = System.Drawing.Color.White;
+            this.txtTenDN.Location = new System.Drawing.Point(571, 42);
+            this.txtTenDN.Name = "txtTenDN";
+            this.txtTenDN.Size = new System.Drawing.Size(201, 30);
+            this.txtTenDN.TabIndex = 26;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(408, 45);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(151, 25);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Tên đăng nhập:";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -384,18 +387,10 @@ namespace QLThuVien
             this.label9.TabIndex = 24;
             this.label9.Text = "Hình ảnh";
             // 
-            // txtNgayVaoLam
-            // 
-            this.txtNgayVaoLam.BackColor = System.Drawing.Color.White;
-            this.txtNgayVaoLam.Location = new System.Drawing.Point(567, 97);
-            this.txtNgayVaoLam.Name = "txtNgayVaoLam";
-            this.txtNgayVaoLam.Size = new System.Drawing.Size(201, 30);
-            this.txtNgayVaoLam.TabIndex = 22;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(426, 100);
+            this.label11.Location = new System.Drawing.Point(408, 150);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(137, 25);
             this.label11.TabIndex = 21;
@@ -417,16 +412,16 @@ namespace QLThuVien
             // txtGhiChuNV
             // 
             this.txtGhiChuNV.BackColor = System.Drawing.Color.White;
-            this.txtGhiChuNV.Location = new System.Drawing.Point(569, 150);
+            this.txtGhiChuNV.Location = new System.Drawing.Point(569, 200);
             this.txtGhiChuNV.Multiline = true;
             this.txtGhiChuNV.Name = "txtGhiChuNV";
-            this.txtGhiChuNV.Size = new System.Drawing.Size(200, 144);
+            this.txtGhiChuNV.Size = new System.Drawing.Size(200, 94);
             this.txtGhiChuNV.TabIndex = 17;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(426, 153);
+            this.label8.Location = new System.Drawing.Point(408, 203);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 25);
             this.label8.TabIndex = 15;
@@ -549,6 +544,7 @@ namespace QLThuVien
             this.dtgvQLNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvQLNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNV,
+            this.TenDN,
             this.HoTen,
             this.GioiTinh,
             this.NgaySinh,
@@ -572,6 +568,14 @@ namespace QLThuVien
             this.MaNV.MinimumWidth = 6;
             this.MaNV.Name = "MaNV";
             this.MaNV.Width = 125;
+            // 
+            // TenDN
+            // 
+            this.TenDN.DataPropertyName = "TenDangNhap";
+            this.TenDN.HeaderText = "Tên đăng nhập";
+            this.TenDN.MinimumWidth = 6;
+            this.TenDN.Name = "TenDN";
+            this.TenDN.Width = 125;
             // 
             // HoTen
             // 
@@ -648,6 +652,29 @@ namespace QLThuVien
             this.label12.TabIndex = 9;
             this.label12.Text = "label12";
             // 
+            // hướngDẫnSửDụngToolStripMenuItem
+            // 
+            this.hướngDẫnSửDụngToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hướngDẫnSửDụngToolStripMenuItem.Name = "hướngDẫnSửDụngToolStripMenuItem";
+            this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(197, 29);
+            this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
+            // 
+            // txtNgaySinhNV
+            // 
+            this.txtNgaySinhNV.BackColor = System.Drawing.Color.White;
+            this.txtNgaySinhNV.Location = new System.Drawing.Point(571, 92);
+            this.txtNgaySinhNV.Name = "txtNgaySinhNV";
+            this.txtNgaySinhNV.Size = new System.Drawing.Size(201, 30);
+            this.txtNgaySinhNV.TabIndex = 27;
+            // 
+            // txtNgayVaoLam
+            // 
+            this.txtNgayVaoLam.BackColor = System.Drawing.Color.White;
+            this.txtNgayVaoLam.Location = new System.Drawing.Point(569, 147);
+            this.txtNgayVaoLam.Name = "txtNgayVaoLam";
+            this.txtNgayVaoLam.Size = new System.Drawing.Size(201, 30);
+            this.txtNgayVaoLam.TabIndex = 28;
+            // 
             // QLNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -685,7 +712,6 @@ namespace QLThuVien
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đăngKíThẻHộiViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -695,7 +721,6 @@ namespace QLThuVien
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.TextBox txtHoTenNV;
-        private System.Windows.Forms.TextBox txtNgaySinhNV;
         private System.Windows.Forms.TextBox txtSoDT;
         private System.Windows.Forms.TextBox txtEmailNV;
         private System.Windows.Forms.ComboBox cbbxGioiTinh;
@@ -717,14 +742,17 @@ namespace QLThuVien
         private System.Windows.Forms.ToolStripMenuItem quảnLýNgườiMượnSáchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýNgườiMượnSáchToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem quảnLýThẻHộiViênToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtNgayVaoLam;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btReset;
         private System.Windows.Forms.Button btXoaNV;
         private System.Windows.Forms.Button btCapNhatNV;
         private System.Windows.Forms.Button btThemNV;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtTenDN;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDN;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
@@ -733,7 +761,9 @@ namespace QLThuVien
         private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayVaoLam;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtNgayVaoLam;
+        private System.Windows.Forms.TextBox txtNgaySinhNV;
     }
 }
 
