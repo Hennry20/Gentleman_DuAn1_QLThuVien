@@ -50,6 +50,14 @@ namespace DuAn1
             nv.ShowDialog();
             this.Close();
         }
+        private void QLnguoiTraSach_Click(Object sender, EventArgs e)
+        {
+            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
+            this.Hide();
+            qLNguoiTra.ShowDialog();
+            this.Close();
+
+        }
 
         private void DoiMatKhau_Click(object sender, EventArgs e)
         {
