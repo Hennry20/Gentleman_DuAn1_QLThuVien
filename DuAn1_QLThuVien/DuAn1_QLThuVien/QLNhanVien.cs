@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace QLThuVien
 {
@@ -33,8 +34,8 @@ namespace QLThuVien
             sda = new SqlDataAdapter(query, conn);
             sda.Fill(ds, "NhanVien");
             dtgvQLNhanVien.DataSource = ds.Tables["NhanVien"];
-            btCapNhatNV.Enabled = true;
-            btXoaNV.Enabled = true;
+            btCapNhatNV.Enabled = false;
+            btXoaNV.Enabled = false;
         }
 
         private void dtgvQLNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -61,8 +62,8 @@ namespace QLThuVien
 
                 btThemNV.Enabled = false;
                 txtMaNV.ReadOnly = true;
-                btCapNhatNV.Enabled = false;
-                btXoaNV.Enabled = false;
+                btCapNhatNV.Enabled = true;
+                btXoaNV.Enabled = true;
             }
             catch (Exception)
             {
@@ -73,21 +74,29 @@ namespace QLThuVien
 
         private void CapNhapDTGVNV()
         {
-            dsNhanVien = DBHandler.getListNhanVien();
-            dtgvQLNhanVien.Rows.Clear();
-            dsNhanVien.ForEach(row => dtgvQLNhanVien.Rows.Add(
-                    row.MaNV,
-                    row.TenDangNhap,
-                    row.TenNV,
-                    row.GioiTinh,
-                    row.NgaySinh,
-                    row.SDT,
-                    row.Email,
-                    row.HinhAnh,
-                    row.NgayVaoLam,
-                    row.GhiChu
-            ));
-            dtgvQLNhanVien.Update();
+            try
+            {
+                dsNhanVien = DBHandler.getListNhanVien();
+                dtgvQLNhanVien.Rows.Clear();
+                dsNhanVien.ForEach(row => dtgvQLNhanVien.Rows.Add(
+                        row.MaNV,
+                        row.TenDangNhap,
+                        row.TenNV,
+                        row.GioiTinh,
+                        row.NgaySinh,
+                        row.SDT,
+                        row.Email,
+                        row.HinhAnh,
+                        row.NgayVaoLam,
+                        row.GhiChu
+                ));
+                dtgvQLNhanVien.Update();
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
         }
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -106,34 +115,39 @@ namespace QLThuVien
             txtNgaySinhNV.Text = "";
             txtEmailNV.Text = "";
             txtSoDT.Text = "";
+            ptbAnhNV.Image = null;
             txtNgayVaoLam.Text = "";
             txtGhiChuNV.Text = "";
+            txtTimKiemNV.Text = "";
 
             btThemNV.Enabled = true;
-            txtMaNV.ReadOnly = true;
+            txtMaNV.ReadOnly = false;
             btCapNhatNV.Enabled = false;
             btXoaNV.Enabled = false;
         }
 
         private void btThemNV_Click(object sender, EventArgs e)
         {
-            if (txtMaNV.Text == "" && txtTenDN.Text == "" && txtHoTenNV.Text == "" && cbbxGioiTinh.Text == "" && txtNgaySinhNV.Text == ""
+            try
+            {
+                if (txtMaNV.Text == "" && txtTenDN.Text == "" && txtHoTenNV.Text == "" && cbbxGioiTinh.Text == "" && txtNgaySinhNV.Text == ""
                 && txtSoDT.Text == "" && txtEmailNV.Text == "" && ptbAnhNV.Image == null && txtNgayVaoLam.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
-                return;
-            }
-            if (DBHandler.IsEmail(txtEmailNV.Text.Trim()) != true)
-            {
-                MessageBox.Show("Email không hợp lệ, vui lòng nhập lại!", "Thông báo");
-                return;
-            }
-            if (txtSoDT.Text.Length > 10)
-            {
-                MessageBox.Show("Số điện thoại không hợp lệ, vui lòng nhập lại!", "Thông báo");
-                return;
-            }
-            DataRow data = ds.Tables["NhanVien"].NewRow();
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
+                    return;
+                }
+                else if (DBHandler.IsEmail(txtEmailNV.Text.Trim()) != true)
+                {
+                    MessageBox.Show("Email không hợp lệ, vui lòng nhập lại!", "Thông báo");
+                    return;
+                }
+                else if (txtSoDT.Text.Length > 10)
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ, vui lòng nhập lại!", "Thông báo");
+                    return;
+                }
+
+                DataRow data = ds.Tables["NhanVien"].NewRow();
                 data["MaNV"] = txtMaNV.Text;
                 data["TenDangNhap"] = txtTenDN.Text;
                 data["TenNV"] = txtHoTenNV.Text;
@@ -141,16 +155,22 @@ namespace QLThuVien
                 data["NgaySinh"] = txtNgaySinhNV.Text;
                 data["SDT"] = txtSoDT.Text;
                 data["Email"] = txtEmailNV.Text;
-                data["HinhAnh"] = ptbAnhNV.Image;
+                data["HinhAnh"] = ptbAnhNV.Tag.ToString();
                 data["NgayVaoLam"] = txtNgayVaoLam.Text;
                 data["GhiChu"] = txtGhiChuNV.Text;
 
-
-            ds.Tables["NhanVien"].Rows.Add(data);
+                ds.Tables["NhanVien"].Rows.Add(data);
                 SqlCommandBuilder scb = new SqlCommandBuilder(sda);
                 sda.Update(ds.Tables["NhanVien"]);
                 MessageBox.Show("Thêm nhân viên thành công!", "Thông báo");
                 this.CapNhapDTGVNV();
+            }
+            catch (Exception)
+            {
+
+                return;
+            }
+            
         }
 
         private void btCapNhatNV_Click(object sender, EventArgs e)
@@ -178,7 +198,7 @@ namespace QLThuVien
                 row["NgaySinh"] = txtNgaySinhNV.Text;
                 row["SDT"] = txtSoDT.Text;
                 row["Email"] = txtEmailNV.Text;
-                row["HinhAnh"] = ptbAnhNV.Image;
+                row["HinhAnh"] = ptbAnhNV.Tag.ToString();
                 row["NgayVaoLam"] = txtNgayVaoLam.Text;
                 row["GhiChu"] = txtGhiChuNV.Text;
 
@@ -206,13 +226,14 @@ namespace QLThuVien
                 this.CapNhapDTGVNV();
 
                 txtMaNV.Text = "";
+                txtTenDN.Text = "";
                 txtHoTenNV.Text = "";
                 cbbxGioiTinh.Text = "";
                 txtNgaySinhNV.Text = "";
                 txtSoDT.Text = "";
                 txtEmailNV.Text = "";
                 ptbAnhNV.Image = null;
-                txt.Text = "";
+                txtNgayVaoLam.Text = "";
                 txtGhiChuNV.Text = "";
 
             }

@@ -31,18 +31,18 @@ namespace DuAn1_QLThuVien
             }
             return dsNhanVien;
         }
-        public static bool IsNumber(string val)
-        {
-            if (val != "")
-                return Regex.IsMatch(val, @"^[0-9]\d*\.?[0]*$");
-            else return true;
-        }
         public static bool IsEmail(string email)
         {
             if (string.IsNullOrEmpty(email))
                 return false;
 
             return Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        }
+        public static bool IsNumber(string val)
+        {
+            if (val != "")
+                return Regex.IsMatch(val, @"^[0-9]\d*\.?[0]*$");
+            else return true;
         }
     }
 }
