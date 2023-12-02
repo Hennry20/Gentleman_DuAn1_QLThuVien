@@ -76,13 +76,7 @@ namespace DuAn1_QLThuVien
             qLThongKe.ShowDialog();
             this.Close();
         }
-        private void DKHV_Click(object sender, EventArgs e)
-        {
-            FormDangKyHV formDangKyHV = new FormDangKyHV();
-            this.Hide();
-            formDangKyHV.ShowDialog();
-            this.Close();
-        }
+        
         private void QLTHV_Click(object sender, EventArgs e)
         {
             QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
