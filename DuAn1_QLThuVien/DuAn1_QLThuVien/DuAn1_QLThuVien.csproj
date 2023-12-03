@@ -115,6 +115,12 @@
     <Compile Include="QLNhanVien.designer.cs">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="QlSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QlSach.designer.cs">
+      <DependentUpon>QlSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLTheHoiVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,12 @@
     <Compile Include="TheHoiVien.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrangChu.designer.cs">
+      <DependentUpon>TrangChu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,11 +173,17 @@
     <EmbeddedResource Include="QLNhanVien.resx">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QlSach.resx">
+      <DependentUpon>QlSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLTheHoiVien.resx">
       <DependentUpon>QLTheHoiVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QLThongKe.resx">
       <DependentUpon>QLThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrangChu.resx">
+      <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
