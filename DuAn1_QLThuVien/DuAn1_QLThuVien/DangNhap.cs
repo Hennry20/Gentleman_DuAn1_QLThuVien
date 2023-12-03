@@ -26,57 +26,25 @@ namespace DuAn1_QLThuVien
                 txt_Password.Text = Properties.Settings.Default.Password;
                 ckb_GhiNhoDangNhap.Checked = true;
             }
+            this.KeyPreview = true;
+            this.KeyDown += btn_Login_KeyDown;
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            using(QLThuVienEntities2 qltv = new QLThuVienEntities2())
-=======
-            using(QLThuVienEntities qltv = new QLThuVienEntities())
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            using(QLThuVienEntities qltv = new QLThuVienEntities())
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            using(QLThuVienEntities qltv = new QLThuVienEntities())
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            using(QLThuVienEntities qltv = new QLThuVienEntities())
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            using(QLThuVienEntities qltv = new QLThuVienEntities())
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-            {
-                TaiKhoan tk = new TaiKhoan();
-                if(txt_Username.Text != tk.TenDangNhap || txt_Password.Text != tk.MatKhau)
-                {
-                    label4.Visible = true;
-                    label4.Text = "Tên đăng nhập hoặc mật khẩu không chính xác";
-                    label4.ForeColor = Color.Red;
-                }
-            }
             if (String.IsNullOrEmpty(txt_Username.Text)
                || String.IsNullOrWhiteSpace(txt_Username.Text)
                || String.IsNullOrEmpty(txt_Username.Text)
                || String.IsNullOrWhiteSpace(txt_Password.Text))
             {
-                //MessageBox.Show(
-                //    "Vui lòng nhập đủ tài khoản và mật khẩu",
-                //    "Lỗi nhập liệu",
-                //    MessageBoxButtons.OK,
-                //    MessageBoxIcon.Error);
-                label4.Visible = true;
-                label4.Text = "Vui lòng nhập đầy đủ thông tin";
-                label4.ForeColor = Color.Red;
+                MessageBox.Show(
+                    "Vui lòng nhập đủ tài khoản và mật khẩu",
+                    "Lỗi nhập liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
             else
             {
-                label4.Visible = false;
                 String Vaitro = DBHandler.Login(txt_Username.Text, txt_Password.Text);
                 if (!String.IsNullOrEmpty(Vaitro))
                 {
@@ -91,49 +59,40 @@ namespace DuAn1_QLThuVien
                         Properties.Settings.Default.Password = "";
                     }
 
-                    if (Vaitro.Equals("vaitro1"))
+                    if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
                     {
                         this.Hide();
-                        TrangChu ct = new TrangChu();
+                        TrangChu ct = new TrangChu(txt_Username.Text);
                         ct.ShowDialog();
                         this.Close();
                     }
-                    if (Vaitro.Equals("vaitro2"))
+                    if (Vaitro.Equals("vaitro2") || Vaitro.Equals("NhanVien"))
                     {
                         this.Hide();
-                        DoiMatKhau form = new DoiMatKhau();
+                        TrangChu form = new TrangChu(txt_Username.Text);
                         form.ShowDialog();
                         this.Close();
                     }
                 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
                 else
                 {
-                    label4.Visible = true;
-                    label4.Text = "Tài khoản hoặc mật khẩu không chính xác";
-                    label4.ForeColor = Color.Red;
+                    MessageBox.Show(
+                    "Tài khoản hoặc mật khẩu không chính xác",
+                    "Lỗi nhập liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 }
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
             }
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            DangKy dk = new DangKy();
-            dk.ShowDialog();
-            this.Close();
+            TrangChu tn = new TrangChu(txt_Username.Text);
+            QLSach ql = new QLSach(txt_Username.Text);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            QuenMatKhau qmk = new QuenMatKhau();
             this.Hide();
-            dmk.ShowDialog();
+            qmk.ShowDialog();
             this.Close();
         }
 
@@ -155,6 +114,14 @@ namespace DuAn1_QLThuVien
             else
             {
                 txt_Password.PasswordChar = '*';
+            }
+        }
+
+        private void btn_Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_Login_Click(sender, e);
             }
         }
     }

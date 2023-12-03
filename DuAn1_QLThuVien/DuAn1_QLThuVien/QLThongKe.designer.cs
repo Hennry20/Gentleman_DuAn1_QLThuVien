@@ -148,7 +148,7 @@ namespace QLThuVien
             // 
             this.trangChủToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trangChủToolStripMenuItem.Image")));
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
-            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
             this.trangChủToolStripMenuItem.Text = "Trang chủ";
             this.trangChủToolStripMenuItem.Click += new System.EventHandler(this.trangChủToolStripMenuItem_Click);
             // 
@@ -156,21 +156,21 @@ namespace QLThuVien
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đổiMậtKhẩuToolStripMenuItem.Image")));
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngXuấtToolStripMenuItem.Image")));
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // kếtThúcToolStripMenuItem
             // 
             this.kếtThúcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kếtThúcToolStripMenuItem.Image")));
             this.kếtThúcToolStripMenuItem.Name = "kếtThúcToolStripMenuItem";
-            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(224, 30);
+            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
             this.kếtThúcToolStripMenuItem.Text = "Thoát";
             // 
             // quảnLýToolStripMenuItem
@@ -299,7 +299,7 @@ namespace QLThuVien
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(194, 23);
+            this.comboBox1.Location = new System.Drawing.Point(199, 23);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(624, 30);
             this.comboBox1.TabIndex = 18;

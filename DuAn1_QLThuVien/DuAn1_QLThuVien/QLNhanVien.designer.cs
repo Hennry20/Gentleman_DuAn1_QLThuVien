@@ -416,8 +416,7 @@ namespace QLThuVien
             this.txtGhiChuNV.Name = "txtGhiChuNV";
             this.txtGhiChuNV.Size = new System.Drawing.Size(200, 144);
             this.txtGhiChuNV.TabIndex = 17;
-<<<<<<< HEAD
-=======
+
             // 
             // label9
             // 
@@ -427,7 +426,6 @@ namespace QLThuVien
             this.label9.Size = new System.Drawing.Size(90, 25);
             this.label9.TabIndex = 16;
             this.label9.Text = "Hình ảnh";
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
             // 
             // label8
             // 
@@ -505,10 +503,8 @@ namespace QLThuVien
             this.btThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btThemNV.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
             this.btThemNV.Click += new System.EventHandler(this.btThemNV_Click_1);
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+
             // 
             // groupBox2
             // 
@@ -570,7 +566,6 @@ namespace QLThuVien
             this.dtgvQLNhanVien.RowTemplate.Height = 24;
             this.dtgvQLNhanVien.Size = new System.Drawing.Size(638, 254);
             this.dtgvQLNhanVien.TabIndex = 0;
-<<<<<<< HEAD
             // 
             // MaNV
             // 
@@ -643,8 +638,6 @@ namespace QLThuVien
             this.GhiChu.MinimumWidth = 6;
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.Width = 125;
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
             // 
             // label12
             // 

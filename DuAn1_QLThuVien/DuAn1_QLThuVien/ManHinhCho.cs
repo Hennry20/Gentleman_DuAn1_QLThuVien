@@ -30,5 +30,10 @@ namespace DuAn1_QLThuVien
                 this.Close();
             }
         }
+
+        private void ManHinhCho_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

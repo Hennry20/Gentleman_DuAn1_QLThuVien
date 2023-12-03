@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuAn1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,35 +17,7 @@ namespace DuAn1_QLThuVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            Application.Run(new TrangChu(""));
-=======
-            Application.Run(new QL_NguoiMuonSach());
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            Application.Run(new QL_NguoiMuonSach());
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            Application.Run(new QL_NguoiMuonSach());
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            Application.Run(new QL_NguoiMuonSach());
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            Application.Run(new DangNhap());
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
-=======
-            Application.Run(new QL_NguoiMuonSach());
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            Application.Run(new DangNhap());
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+            Application.Run(new ManHinhCho());
         }
     }
 }

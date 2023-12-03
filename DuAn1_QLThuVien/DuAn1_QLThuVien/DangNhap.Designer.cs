@@ -31,11 +31,8 @@ namespace DuAn1_QLThuVien
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.btn_Thoat = new System.Windows.Forms.Button();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
             this.btn_Login = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label4 = new System.Windows.Forms.Label();
             this.ckb_GhiNhoDangNhap = new System.Windows.Forms.CheckBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.txt_Username = new System.Windows.Forms.TextBox();
@@ -52,15 +49,7 @@ namespace DuAn1_QLThuVien
             this.btn_Thoat.BackColor = System.Drawing.Color.Red;
             this.btn_Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Thoat.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.btn_Thoat.Location = new System.Drawing.Point(24, 484);
-=======
-            this.btn_Thoat.Location = new System.Drawing.Point(24, 488);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.btn_Thoat.Location = new System.Drawing.Point(24, 484);
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+            this.btn_Thoat.Location = new System.Drawing.Point(26, 474);
             this.btn_Thoat.Name = "btn_Thoat";
             this.btn_Thoat.Size = new System.Drawing.Size(378, 54);
             this.btn_Thoat.TabIndex = 28;
@@ -68,62 +57,25 @@ namespace DuAn1_QLThuVien
             this.btn_Thoat.UseVisualStyleBackColor = false;
             this.btn_Thoat.Click += new System.EventHandler(this.btn_Thoat_Click);
             // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(281, 575);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(114, 20);
-            this.linkLabel2.TabIndex = 26;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Đăng kí ngay?";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(56, 575);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 20);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Bạn chưa có tài khoản?";
-            // 
             // btn_Login
             // 
             this.btn_Login.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Login.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.btn_Login.Location = new System.Drawing.Point(24, 410);
-=======
-            this.btn_Login.Location = new System.Drawing.Point(24, 412);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.btn_Login.Location = new System.Drawing.Point(24, 410);
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+            this.btn_Login.Location = new System.Drawing.Point(26, 400);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(378, 54);
             this.btn_Login.TabIndex = 24;
             this.btn_Login.Text = "Đăng nhập";
             this.btn_Login.UseVisualStyleBackColor = false;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            this.btn_Login.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_Login_KeyDown);
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.linkLabel1.Location = new System.Drawing.Point(264, 358);
-=======
-            this.linkLabel1.Location = new System.Drawing.Point(271, 579);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.linkLabel1.Location = new System.Drawing.Point(264, 358);
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+            this.linkLabel1.Location = new System.Drawing.Point(271, 573);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(131, 20);
             this.linkLabel1.TabIndex = 23;
@@ -131,42 +83,11 @@ namespace DuAn1_QLThuVien
             this.linkLabel1.Text = "Quên mật khẩu?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.label4.Location = new System.Drawing.Point(26, 306);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-=======
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 316);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 18);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.label4.Location = new System.Drawing.Point(26, 306);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
-            this.label4.TabIndex = 22;
-            this.label4.Text = "label4";
-            this.label4.Visible = false;
-            // 
             // ckb_GhiNhoDangNhap
             // 
             this.ckb_GhiNhoDangNhap.AutoSize = true;
             this.ckb_GhiNhoDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.ckb_GhiNhoDangNhap.Location = new System.Drawing.Point(29, 354);
-=======
-            this.ckb_GhiNhoDangNhap.Location = new System.Drawing.Point(29, 578);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.ckb_GhiNhoDangNhap.Location = new System.Drawing.Point(29, 354);
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+            this.ckb_GhiNhoDangNhap.Location = new System.Drawing.Point(26, 569);
             this.ckb_GhiNhoDangNhap.Name = "ckb_GhiNhoDangNhap";
             this.ckb_GhiNhoDangNhap.Size = new System.Drawing.Size(171, 24);
             this.ckb_GhiNhoDangNhap.TabIndex = 21;
@@ -215,7 +136,7 @@ namespace DuAn1_QLThuVien
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Black", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(99, 11);
+            this.label1.Location = new System.Drawing.Point(95, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(274, 58);
             this.label1.TabIndex = 16;
@@ -234,46 +155,10 @@ namespace DuAn1_QLThuVien
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//<<<<<<< HEAD
-//<<<<<<< HEAD
-            this.checkBox1.Location = new System.Drawing.Point(26, 327);
-//=======
-            this.checkBox1.Location = new System.Drawing.Point(24, 355);
-//>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-//=======
-            this.checkBox1.Location = new System.Drawing.Point(24, 355);
-//>>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.checkBox1.Location = new System.Drawing.Point(24, 355);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.checkBox1.Location = new System.Drawing.Point(24, 355);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.checkBox1.Location = new System.Drawing.Point(24, 355);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.checkBox1.Location = new System.Drawing.Point(24, 355);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.checkBox1.Location = new System.Drawing.Point(262, 306);
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
-=======
-            this.checkBox1.Location = new System.Drawing.Point(24, 355);
->>>>>>> parent of ca8bd31 (Sua Form DangNhap)
-=======
-            this.checkBox1.Location = new System.Drawing.Point(262, 306);
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+            this.checkBox1.Location = new System.Drawing.Point(24, 316);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(140, 21);
+            this.checkBox1.Size = new System.Drawing.Size(162, 24);
             this.checkBox1.TabIndex = 29;
             this.checkBox1.Text = "Hiển thị mật khẩu";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -286,11 +171,8 @@ namespace DuAn1_QLThuVien
             this.ClientSize = new System.Drawing.Size(914, 625);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btn_Thoat);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.ckb_GhiNhoDangNhap);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_Username);
@@ -312,11 +194,8 @@ namespace DuAn1_QLThuVien
         #endregion
 
         private System.Windows.Forms.Button btn_Thoat;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox ckb_GhiNhoDangNhap;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.TextBox txt_Username;

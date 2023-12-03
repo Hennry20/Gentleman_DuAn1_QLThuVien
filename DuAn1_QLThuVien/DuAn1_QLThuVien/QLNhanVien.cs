@@ -1,9 +1,6 @@
 ﻿using System;
-<<<<<<< HEAD
 using DuAn1;
 using DuAn1_QLThuVien;
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +15,6 @@ namespace QLThuVien
 {
     public partial class QLNhanVien : Form
     {
-        //List<NhanVien> dsNhanVien;
         SqlDataAdapter sda;
         DataSet ds = new DataSet();
         String imagePath;
@@ -32,7 +28,7 @@ namespace QLThuVien
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String conn = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            String conn = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
             String query = "select * from NhanVien";
 
             sda = new SqlDataAdapter(query, conn);
@@ -41,7 +37,6 @@ namespace QLThuVien
             btCapNhatNV.Enabled = false;
             btXoaNV.Enabled = false;
         }
-<<<<<<< HEAD
         private void btThemNV_Click(object sender, EventArgs e)
         {
             DataRow data = ds.Tables["NhanVien"].NewRow();
@@ -68,7 +63,6 @@ namespace QLThuVien
             
             row.EndEdit();
         }
-
         private void dtgvQLNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dtgvQLNhanVien.CurrentRow.Index;
@@ -114,10 +108,10 @@ namespace QLThuVien
 
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TrangChu tc = new TrangChu();
-            this.Hide();
-            tc.ShowDialog();
-            this.Close();
+            //TrangChu tc = new TrangChu();
+            //this.Hide();
+            //tc.ShowDialog();
+            //this.Close();
         }
 
         private void btReset_Click(object sender, EventArgs e)
@@ -223,7 +217,7 @@ namespace QLThuVien
 
         private void quảnLýNgườiMượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLSach qls = new QLSach();
+            QLSach qls = new QLSach("");
             this.Hide();
             qls.ShowDialog();
             this.Close();
@@ -247,10 +241,10 @@ namespace QLThuVien
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            TrangChu tc = new TrangChu();
-            this.Hide();
-            tc.ShowDialog();
-            this.Close();
+            //TrangChu tc = new TrangChu);
+            //this.Hide();
+            //tc.ShowDialog();
+            //this.Close();
         }
 
         private void đăngKíThẻHộiViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -353,8 +347,5 @@ namespace QLThuVien
         {
 
         }
-=======
-
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
     }
 }

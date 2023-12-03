@@ -600,14 +600,10 @@
             this.Controls.Add(this.Title);
             this.Name = "QLTheHoiVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-<<<<<<< HEAD
+
             this.Text = "QLTheHoiVien";
-=======
             this.Text = "QUẢN LÝ THẺ HỘI VIÊN";
-<<<<<<< HEAD
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

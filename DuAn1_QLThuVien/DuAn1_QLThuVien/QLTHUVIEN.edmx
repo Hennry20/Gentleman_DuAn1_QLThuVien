@@ -26,7 +26,7 @@
           <Property Name="NgaySinh" Type="date" />
           <Property Name="SDT" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="HinhAnh" Type="varbinary(max)" />
+          <Property Name="HinhAnh" Type="nvarchar(max)" />
           <Property Name="NgayVaoLam" Type="date" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -65,7 +65,7 @@
           <Property Name="TenSach" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LoaiSach" Type="nvarchar" MaxLength="20" />
           <Property Name="TenTacGia" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="HinhAnh" Type="varbinary(max)" />
+          <Property Name="HinhAnh" Type="nvarchar(max)" />
           <Property Name="SoLuongTrongKho" Type="int" />
           <Property Name="GiaMuon" Type="float" />
           <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -245,7 +245,7 @@
           <Property Name="NgaySinh" Type="DateTime" Precision="0" />
           <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NguoiDocs" Relationship="Self.fn_nd" FromRole="NhanVien" ToRole="NguoiDoc" />
@@ -290,7 +290,7 @@
           <Property Name="TenSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LoaiSach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TenTacGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SoLuongTrongKho" Type="Int32" />
           <Property Name="GiaMuon" Type="Double" />
           <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />

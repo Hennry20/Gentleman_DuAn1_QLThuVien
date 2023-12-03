@@ -71,6 +71,7 @@
             this.quảnLýThẻHộiViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngKýThẻHộiViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -528,12 +529,23 @@
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
             this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.QLTHongke_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(882, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "label3";
+            // 
             // QLSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(982, 817);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -543,6 +555,7 @@
             this.Name = "QLSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ SÁCH";
+            this.Load += new System.EventHandler(this.QLSach_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -601,5 +614,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label3;
     }
 }

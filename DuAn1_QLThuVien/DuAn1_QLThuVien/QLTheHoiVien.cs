@@ -27,10 +27,10 @@ namespace DuAn1_QLThuVien
         }
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu();
-            this.Hide();
-            trang.ShowDialog();
-            this.Close();
+            //TrangChu trang = new TrangChu();
+            //this.Hide();
+            //trang.ShowDialog();
+            //this.Close();
 
         }
         private void DangXuat_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace DuAn1_QLThuVien
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach();
+            QLSach sach = new QLSach("");
             this.Hide();
             sach.ShowDialog();
             this.Close();
@@ -124,7 +124,6 @@ namespace DuAn1_QLThuVien
 
             }
         }
-<<<<<<< HEAD
         private void tblGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int currentRowIndex = dataGridView1.CurrentRow.Index;
@@ -167,7 +166,6 @@ namespace DuAn1_QLThuVien
 
             }
         }
-<<<<<<< HEAD
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
@@ -427,9 +425,5 @@ namespace DuAn1_QLThuVien
         //{
 
         //}
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
-=======
->>>>>>> parent of ad33b51 (Xoa form Dang Ky + viet codeTrang chu)
     }
 }

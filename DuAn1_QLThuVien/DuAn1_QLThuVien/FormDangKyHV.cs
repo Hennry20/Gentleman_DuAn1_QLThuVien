@@ -24,10 +24,10 @@ namespace DuAn1
 
         private void bnt_Thoat_Click(object sender, EventArgs e)
         {
-            TrangChu tn = new TrangChu();
-            this.Hide();
-            tn.ShowDialog();
-            this.Close();
+            //TrangChu tn = new TrangChu();
+            //this.Hide();
+            //tn.ShowDialog();
+            //this.Close();
         }
     }
 }

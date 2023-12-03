@@ -32,14 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Panel_Footer = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Clock = new System.Windows.Forms.PictureBox();
             this.Lbl_Date = new System.Windows.Forms.Label();
             this.Lbl_Time = new System.Windows.Forms.Label();
             this.HI_User = new System.Windows.Forms.Label();
-            this.Panel_DKTHV = new System.Windows.Forms.Panel();
-            this.Btn_DKTHV = new System.Windows.Forms.Button();
-            this.Lbl_DKTHV = new System.Windows.Forms.Label();
-            this.Pb_DKTHV = new System.Windows.Forms.PictureBox();
+            this.Panel_QLNTS = new System.Windows.Forms.Panel();
+            this.Btn_QLNTS = new System.Windows.Forms.Button();
+            this.Lbl_QLNTS = new System.Windows.Forms.Label();
+            this.Pb_QLNTS = new System.Windows.Forms.PictureBox();
             this.Panel_QLNV = new System.Windows.Forms.Panel();
             this.Btn_QLNV = new System.Windows.Forms.Button();
             this.Lbl_QLNV = new System.Windows.Forms.Label();
@@ -70,8 +71,8 @@
             this.QuanLyNVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyKhoSachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyNMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuanLyNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DKTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Title = new System.Windows.Forms.Label();
             this.Logo = new System.Windows.Forms.PictureBox();
@@ -79,8 +80,8 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.Panel_Footer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Clock)).BeginInit();
-            this.Panel_DKTHV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_DKTHV)).BeginInit();
+            this.Panel_QLNTS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_QLNTS)).BeginInit();
             this.Panel_QLNV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_QLNV)).BeginInit();
             this.Panel_QLKS.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             this.Panel_Footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.Panel_Footer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Panel_Footer.Controls.Add(this.label1);
             this.Panel_Footer.Controls.Add(this.Clock);
             this.Panel_Footer.Controls.Add(this.Lbl_Date);
             this.Panel_Footer.Controls.Add(this.Lbl_Time);
@@ -113,6 +115,15 @@
             this.Panel_Footer.Name = "Panel_Footer";
             this.Panel_Footer.Size = new System.Drawing.Size(981, 47);
             this.Panel_Footer.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(120, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
             // 
             // Clock
             // 
@@ -153,51 +164,51 @@
             this.HI_User.TabIndex = 0;
             this.HI_User.Text = "Xin chào:";
             // 
-            // Panel_DKTHV
+            // Panel_QLNTS
             // 
-            this.Panel_DKTHV.BackColor = System.Drawing.Color.FloralWhite;
-            this.Panel_DKTHV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Panel_DKTHV.Controls.Add(this.Btn_DKTHV);
-            this.Panel_DKTHV.Controls.Add(this.Lbl_DKTHV);
-            this.Panel_DKTHV.Controls.Add(this.Pb_DKTHV);
-            this.Panel_DKTHV.Location = new System.Drawing.Point(32, 151);
-            this.Panel_DKTHV.Name = "Panel_DKTHV";
-            this.Panel_DKTHV.Size = new System.Drawing.Size(283, 182);
-            this.Panel_DKTHV.TabIndex = 3;
+            this.Panel_QLNTS.BackColor = System.Drawing.Color.FloralWhite;
+            this.Panel_QLNTS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Panel_QLNTS.Controls.Add(this.Btn_QLNTS);
+            this.Panel_QLNTS.Controls.Add(this.Lbl_QLNTS);
+            this.Panel_QLNTS.Controls.Add(this.Pb_QLNTS);
+            this.Panel_QLNTS.Location = new System.Drawing.Point(32, 151);
+            this.Panel_QLNTS.Name = "Panel_QLNTS";
+            this.Panel_QLNTS.Size = new System.Drawing.Size(283, 182);
+            this.Panel_QLNTS.TabIndex = 3;
             // 
-            // Btn_DKTHV
+            // Btn_QLNTS
             // 
-            this.Btn_DKTHV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.Btn_DKTHV.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_DKTHV.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Btn_DKTHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Btn_DKTHV.Location = new System.Drawing.Point(169, 86);
-            this.Btn_DKTHV.Name = "Btn_DKTHV";
-            this.Btn_DKTHV.Size = new System.Drawing.Size(89, 45);
-            this.Btn_DKTHV.TabIndex = 2;
-            this.Btn_DKTHV.Text = "Xem";
-            this.Btn_DKTHV.UseVisualStyleBackColor = false;
-            this.Btn_DKTHV.Click += new System.EventHandler(this.DKHV_Click);
+            this.Btn_QLNTS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.Btn_QLNTS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_QLNTS.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.Btn_QLNTS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Btn_QLNTS.Location = new System.Drawing.Point(169, 86);
+            this.Btn_QLNTS.Name = "Btn_QLNTS";
+            this.Btn_QLNTS.Size = new System.Drawing.Size(89, 45);
+            this.Btn_QLNTS.TabIndex = 2;
+            this.Btn_QLNTS.Text = "Xem";
+            this.Btn_QLNTS.UseVisualStyleBackColor = false;
+            this.Btn_QLNTS.Click += new System.EventHandler(this.QLnguoiTraSach_Click);
             // 
-            // Lbl_DKTHV
+            // Lbl_QLNTS
             // 
-            this.Lbl_DKTHV.AutoSize = true;
-            this.Lbl_DKTHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Lbl_DKTHV.Location = new System.Drawing.Point(47, 9);
-            this.Lbl_DKTHV.Name = "Lbl_DKTHV";
-            this.Lbl_DKTHV.Size = new System.Drawing.Size(188, 25);
-            this.Lbl_DKTHV.TabIndex = 1;
-            this.Lbl_DKTHV.Text = "Đăng ký thẻ hội viên";
+            this.Lbl_QLNTS.AutoSize = true;
+            this.Lbl_QLNTS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Lbl_QLNTS.Location = new System.Drawing.Point(34, 9);
+            this.Lbl_QLNTS.Name = "Lbl_QLNTS";
+            this.Lbl_QLNTS.Size = new System.Drawing.Size(212, 25);
+            this.Lbl_QLNTS.TabIndex = 1;
+            this.Lbl_QLNTS.Text = "Quản lý người trả sách ";
             // 
-            // Pb_DKTHV
+            // Pb_QLNTS
             // 
-            this.Pb_DKTHV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pb_DKTHV.BackgroundImage")));
-            this.Pb_DKTHV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pb_DKTHV.Location = new System.Drawing.Point(16, 45);
-            this.Pb_DKTHV.Name = "Pb_DKTHV";
-            this.Pb_DKTHV.Size = new System.Drawing.Size(118, 118);
-            this.Pb_DKTHV.TabIndex = 0;
-            this.Pb_DKTHV.TabStop = false;
+            this.Pb_QLNTS.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pb_QLNTS.BackgroundImage")));
+            this.Pb_QLNTS.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pb_QLNTS.Location = new System.Drawing.Point(16, 45);
+            this.Pb_QLNTS.Name = "Pb_QLNTS";
+            this.Pb_QLNTS.Size = new System.Drawing.Size(118, 118);
+            this.Pb_QLNTS.TabIndex = 0;
+            this.Pb_QLNTS.TabStop = false;
             // 
             // Panel_QLNV
             // 
@@ -436,7 +447,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.HeThongToolStripMenuItem,
             this.QuanLyToolStripMenuItem,
-            this.DKTHVToolStripMenuItem,
             this.ThongKeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -462,7 +472,7 @@
             this.TrangChuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TrangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TrangChuToolStripMenuItem.Image")));
             this.TrangChuToolStripMenuItem.Name = "TrangChuToolStripMenuItem";
-            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
+            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.TrangChuToolStripMenuItem.Text = "Trang chủ";
             // 
             // DangXuatToolStripMenuItem
@@ -471,9 +481,8 @@
             this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DangXuatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DangXuatToolStripMenuItem.Image")));
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất ";
-            this.DangXuatToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // DoiMatKhauToolStripMenuItem
@@ -482,7 +491,7 @@
             this.DoiMatKhauToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DoiMatKhauToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DoiMatKhauToolStripMenuItem.Image")));
             this.DoiMatKhauToolStripMenuItem.Name = "DoiMatKhauToolStripMenuItem";
-            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
+            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.DoiMatKhauToolStripMenuItem.Text = "Đổi mật khẩu ";
             this.DoiMatKhauToolStripMenuItem.Click += new System.EventHandler(this.DoiMatKhau_Click);
             // 
@@ -492,7 +501,7 @@
             this.ThoatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThoatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThoatToolStripMenuItem.Image")));
             this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
-            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
+            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
             this.ThoatToolStripMenuItem.Text = "Thoát";
             this.ThoatToolStripMenuItem.Click += new System.EventHandler(this.Thoat_Click);
             // 
@@ -503,6 +512,7 @@
             this.QuanLyNVToolStripMenuItem,
             this.QuanLyKhoSachToolStripMenuItem,
             this.QuanLyNMSToolStripMenuItem,
+            this.QuanLyNTSToolStripMenuItem,
             this.QuanLyTHVToolStripMenuItem});
             this.QuanLyToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QuanLyToolStripMenuItem.Name = "QuanLyToolStripMenuItem";
@@ -536,6 +546,15 @@
             this.QuanLyNMSToolStripMenuItem.Text = "Quản lý người mượn sách ";
             this.QuanLyNMSToolStripMenuItem.Click += new System.EventHandler(this.QLnguoiMuonSach_Click);
             // 
+            // QuanLyNTSToolStripMenuItem
+            // 
+            this.QuanLyNTSToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.QuanLyNTSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyNTSToolStripMenuItem.Image")));
+            this.QuanLyNTSToolStripMenuItem.Name = "QuanLyNTSToolStripMenuItem";
+            this.QuanLyNTSToolStripMenuItem.Size = new System.Drawing.Size(327, 32);
+            this.QuanLyNTSToolStripMenuItem.Text = "Quản Lý người trả sách";
+            this.QuanLyNTSToolStripMenuItem.Click += new System.EventHandler(this.QLnguoiTraSach_Click);
+            // 
             // QuanLyTHVToolStripMenuItem
             // 
             this.QuanLyTHVToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
@@ -545,22 +564,13 @@
             this.QuanLyTHVToolStripMenuItem.Text = "Quản lý thẻ hội viên";
             this.QuanLyTHVToolStripMenuItem.Click += new System.EventHandler(this.QLTHV_Click);
             // 
-            // DKTHVToolStripMenuItem
-            // 
-            this.DKTHVToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DKTHVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DKTHVToolStripMenuItem.Image")));
-            this.DKTHVToolStripMenuItem.Name = "DKTHVToolStripMenuItem";
-            this.DKTHVToolStripMenuItem.Size = new System.Drawing.Size(235, 32);
-            this.DKTHVToolStripMenuItem.Text = "Đăng ký thẻ hội viên  ";
-            this.DKTHVToolStripMenuItem.Click += new System.EventHandler(this.DKHV_Click);
-            // 
             // ThongKeToolStripMenuItem
             // 
             this.ThongKeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThongKeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThongKeToolStripMenuItem.Image")));
             this.ThongKeToolStripMenuItem.Name = "ThongKeToolStripMenuItem";
-            this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(127, 32);
-            this.ThongKeToolStripMenuItem.Text = "Thống kê";
+            this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(214, 32);
+            this.ThongKeToolStripMenuItem.Text = "Tổng hợp thống kê";
             this.ThongKeToolStripMenuItem.Click += new System.EventHandler(this.QLTHongke_Click);
             // 
             // Title
@@ -568,11 +578,11 @@
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Title.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Title.Location = new System.Drawing.Point(14, 63);
+            this.Title.Location = new System.Drawing.Point(23, 62);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(565, 55);
+            this.Title.Size = new System.Drawing.Size(502, 55);
             this.Title.TabIndex = 11;
-            this.Title.Text = "TRANG CHỦ QUẢN LÝ ";
+            this.Title.Text = "QUẢN LÝ THƯ VIỆN ";
             // 
             // Logo
             // 
@@ -598,19 +608,19 @@
             this.Controls.Add(this.Panel_QLNMS);
             this.Controls.Add(this.Panel_QLKS);
             this.Controls.Add(this.Panel_QLNV);
-            this.Controls.Add(this.Panel_DKTHV);
+            this.Controls.Add(this.Panel_QLNTS);
             this.Controls.Add(this.Panel_Footer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TRANG CHỦ";
+            this.Text = "Trang Chủ";
             this.Load += new System.EventHandler(this.TrangChu_Load);
             this.Panel_Footer.ResumeLayout(false);
             this.Panel_Footer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Clock)).EndInit();
-            this.Panel_DKTHV.ResumeLayout(false);
-            this.Panel_DKTHV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_DKTHV)).EndInit();
+            this.Panel_QLNTS.ResumeLayout(false);
+            this.Panel_QLNTS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_QLNTS)).EndInit();
             this.Panel_QLNV.ResumeLayout(false);
             this.Panel_QLNV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_QLNV)).EndInit();
@@ -637,9 +647,9 @@
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel Panel_Footer;
-        private System.Windows.Forms.Panel Panel_DKTHV;
-        private System.Windows.Forms.PictureBox Pb_DKTHV;
-        private System.Windows.Forms.Label Lbl_DKTHV;
+        private System.Windows.Forms.Panel Panel_QLNTS;
+        private System.Windows.Forms.PictureBox Pb_QLNTS;
+        private System.Windows.Forms.Label Lbl_QLNTS;
         private System.Windows.Forms.Panel Panel_QLNV;
         private System.Windows.Forms.Button Btn_QLNV;
         private System.Windows.Forms.Label Lbl_QLNV;
@@ -660,7 +670,7 @@
         private System.Windows.Forms.Button Btn_THTK;
         private System.Windows.Forms.Label Lbl_THTK;
         private System.Windows.Forms.PictureBox Pb_THTK;
-        private System.Windows.Forms.Button Btn_DKTHV;
+        private System.Windows.Forms.Button Btn_QLNTS;
         private System.Windows.Forms.Label HI_User;
         private System.Windows.Forms.PictureBox Clock;
         private System.Windows.Forms.Label Lbl_Date;
@@ -676,12 +686,13 @@
         private System.Windows.Forms.ToolStripMenuItem QuanLyKhoSachToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QuanLyNMSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QuanLyTHVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DKTHVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ThongKeToolStripMenuItem;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ToolStripMenuItem QuanLyNTSToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 

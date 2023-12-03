@@ -14,13 +14,15 @@ namespace DuAn1
 {
     public partial class QLSach : Form
     {
-        public QLSach()
+
+        public QLSach(String tendangnhap)
         {
             InitializeComponent();
+            label3.Text = tendangnhap;
         }
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu();
+            TrangChu trang = new TrangChu(label3.Text);
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -35,7 +37,7 @@ namespace DuAn1
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach();
+            QLSach sach = new QLSach(label3.Text);
             this.Hide();
             sach.ShowDialog();
             this.Close();
@@ -96,6 +98,9 @@ namespace DuAn1
             }
         }
 
+        private void QLSach_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

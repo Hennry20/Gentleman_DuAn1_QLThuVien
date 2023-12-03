@@ -14,9 +14,10 @@ namespace DuAn1
 {
     public partial class TrangChu : Form
     {
-        public TrangChu()
+        public TrangChu(String tendangnhap)
         {
             InitializeComponent();
+            label1.Text = tendangnhap;
         }
 
 
@@ -40,15 +41,14 @@ namespace DuAn1
 
         private void DangXuat_Click(object sender, EventArgs e)
         {
-
-            DangNhap dn = new DangNhap();
+            DangNhap form1 = new DangNhap();
             this.Hide();
-            dn.ShowDialog();
+            form1.ShowDialog();
             this.Close();
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach();
+            QLSach sach = new QLSach("");
             this.Hide();
             sach.ShowDialog();
             this.Close();
@@ -82,18 +82,19 @@ namespace DuAn1
             qLThongKe.ShowDialog();
             this.Close();
         }
-        private void DKHV_Click(object sender, EventArgs e)
+        private void QLnguoiTraSach_Click(Object sender, EventArgs e)
         {
-            FormDangKyHV formDangKyHV = new FormDangKyHV(); 
-            this.Hide();
-            formDangKyHV.ShowDialog();
-            this.Close();
+            //QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
+            //this.Hide();
+            //qLNguoiTra.ShowDialog();
+            //this.Close();
+
         }
         private void QLTHV_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(); 
+            QLTheHoiVien theHoiVien = new QLTheHoiVien();
             this.Hide();
-            qLTheHoiVien.ShowDialog();
+            theHoiVien.ShowDialog();
             this.Close();
         }
         private void Thoat_Click(object sender, EventArgs e)

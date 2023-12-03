@@ -12,25 +12,26 @@ namespace DuAn1_QLThuVien
     using System;
     using System.Collections.Generic;
     
-    public partial class Sach
+    public partial class PhieuMuon
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Sach()
+        public PhieuMuon()
         {
-            this.PhieuMuons = new HashSet<PhieuMuon>();
+            this.PhieuTras = new HashSet<PhieuTra>();
         }
     
+        public int MaPhieuMuon { get; set; }
+        public string MaND { get; set; }
+        public string TenND { get; set; }
         public string MaSach { get; set; }
-        public string TenSach { get; set; }
-        public string LoaiSach { get; set; }
-        public string TenTacGia { get; set; }
-        public string HinhAnh { get; set; }
-        public Nullable<int> SoLuongTrongKho { get; set; }
-        public Nullable<double> GiaMuon { get; set; }
-        public string MaNV { get; set; }
+        public Nullable<int> SoLuong { get; set; }
+        public Nullable<System.DateTime> NgayMuon { get; set; }
+        public Nullable<double> TienCoc { get; set; }
+        public Nullable<int> SoGio { get; set; }
     
-        public virtual NhanVien NhanVien { get; set; }
+        public virtual NguoiDoc NguoiDoc { get; set; }
+        public virtual Sach Sach { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuMuon> PhieuMuons { get; set; }
+        public virtual ICollection<PhieuTra> PhieuTras { get; set; }
     }
 }
