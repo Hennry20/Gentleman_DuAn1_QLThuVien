@@ -25,8 +25,8 @@
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
     <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="NgayVaoLam" Type="DateTime" Precision="3" />
+    <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
     <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="NguoiDocs" Relationship="Self.fn_nd" FromRole="NhanVien" ToRole="NguoiDoc" />
     <NavigationProperty Name="Saches" Relationship="Self.fk_snv" FromRole="NhanVien" ToRole="Sach" />
@@ -77,6 +77,16 @@
     <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="NhanVien" Relationship="Self.fk_snv" FromRole="Sach" ToRole="NhanVien" />
     <NavigationProperty Name="PhieuMuons" Relationship="Self.fn_pm" FromRole="Sach" ToRole="PhieuMuon" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -202,6 +212,7 @@
     <EntitySet Name="PhieuMuons" EntityType="Self.PhieuMuon" />
     <EntitySet Name="PhieuTras" EntityType="Self.PhieuTra" />
     <EntitySet Name="Saches" EntityType="Self.Sach" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
     <EntitySet Name="TheHoiViens" EntityType="Self.TheHoiVien" />
     <AssociationSet Name="fn_nd" Association="Self.fn_nd">

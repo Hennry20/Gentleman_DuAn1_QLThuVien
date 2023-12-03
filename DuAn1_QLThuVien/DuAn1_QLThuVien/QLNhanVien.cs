@@ -128,8 +128,6 @@ namespace QLThuVien
 
         private void btThemNV_Click(object sender, EventArgs e)
         {
-            try
-            {
                 if (txtMaNV.Text == "" && txtTenDN.Text == "" && txtHoTenNV.Text == "" && cbbxGioiTinh.Text == "" && txtNgaySinhNV.Text == ""
                 && txtSoDT.Text == "" && txtEmailNV.Text == "" && ptbAnhNV.Image == null && txtNgayVaoLam.Text == "")
                 {
@@ -164,13 +162,6 @@ namespace QLThuVien
                 sda.Update(ds.Tables["NhanVien"]);
                 MessageBox.Show("Thêm nhân viên thành công!", "Thông báo");
                 this.CapNhapDTGVNV();
-            }
-            catch (Exception)
-            {
-
-                return;
-            }
-            
         }
 
         private void btCapNhatNV_Click(object sender, EventArgs e)

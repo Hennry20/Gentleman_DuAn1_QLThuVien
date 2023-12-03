@@ -22,8 +22,8 @@
     <Property Name="NgaySinh" Type="date" />
     <Property Name="SDT" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
-    <Property Name="HinhAnh" Type="nvarchar(max)" />
-    <Property Name="NgayVaoLam" Type="datetime" />
+    <Property Name="HinhAnh" Type="varchar(max)" />
+    <Property Name="NgayVaoLam" Type="date" />
     <Property Name="GhiChu" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="PhieuMuon">
@@ -65,6 +65,16 @@
     <Property Name="SoLuongTrongKho" Type="int" />
     <Property Name="GiaMuon" Type="float" />
     <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -188,6 +198,7 @@
     <EntitySet Name="PhieuMuon" EntityType="Self.PhieuMuon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhieuTra" EntityType="Self.PhieuTra" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sach" EntityType="Self.Sach" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TheHoiVien" EntityType="Self.TheHoiVien" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_snv" Association="Self.fk_snv">

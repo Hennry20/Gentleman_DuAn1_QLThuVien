@@ -30,6 +30,7 @@ namespace DuAn1_QLThuVien
         public virtual DbSet<PhieuMuon> PhieuMuons { get; set; }
         public virtual DbSet<PhieuTra> PhieuTras { get; set; }
         public virtual DbSet<Sach> Saches { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<TheHoiVien> TheHoiViens { get; set; }
     }
