@@ -26,6 +26,8 @@ namespace DuAn1_QLThuVien
                 txt_Password.Text = Properties.Settings.Default.Password;
                 ckb_GhiNhoDangNhap.Checked = true;
             }
+            this.KeyPreview = true;
+            this.KeyDown += btn_Login_KeyDown;
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -35,18 +37,14 @@ namespace DuAn1_QLThuVien
                || String.IsNullOrEmpty(txt_Username.Text)
                || String.IsNullOrWhiteSpace(txt_Password.Text))
             {
-                //MessageBox.Show(
-                //    "Vui lòng nhập đủ tài khoản và mật khẩu",
-                //    "Lỗi nhập liệu",
-                //    MessageBoxButtons.OK,
-                //    MessageBoxIcon.Error);
-                label4.Visible = true;
-                label4.Text = "Vui lòng nhập đầy đủ thông tin";
-                label4.ForeColor = Color.Red;
+                MessageBox.Show(
+                    "Vui lòng nhập đủ tài khoản và mật khẩu",
+                    "Lỗi nhập liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
             else
             {
-                label4.Visible = false;
                 String Vaitro = DBHandler.Login(txt_Username.Text, txt_Password.Text);
                 if (!String.IsNullOrEmpty(Vaitro))
                 {
@@ -61,52 +59,40 @@ namespace DuAn1_QLThuVien
                         Properties.Settings.Default.Password = "";
                     }
 
-                    if (Vaitro.Equals("Admin"))
+                    if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
                     {
                         this.Hide();
-                        TrangChu tc = new TrangChu();
-                        tc.ShowDialog();
+                        TrangChu ct = new TrangChu(txt_Username.Text);
+                        ct.ShowDialog();
                         this.Close();
-
                     }
-                    if (Vaitro.Equals("NhanVien"))
+                    if (Vaitro.Equals("vaitro2") || Vaitro.Equals("NhanVien"))
                     {
                         this.Hide();
-                        DoiMatKhau form = new DoiMatKhau();
+                        TrangChu form = new TrangChu(txt_Username.Text);
                         form.ShowDialog();
                         this.Close();
                     }
                 }
-            }
-        }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            //this.Hide();
-            //DangKy dk = new DangKy();
-            //dk.ShowDialog();
-            //this.Close();
-        }
-
-        private void ptb_ShowMK_Click(object sender, EventArgs e)
-        {
-            ptb_ShowMK.ImageLocation = "eyes2.png";
-            if (ptb_ShowMK.ImageLocation == "eyes2.png")
-            {
-                txt_Password.PasswordChar = '*';
+                else
+                {
+                    MessageBox.Show(
+                    "Tài khoản hoặc mật khẩu không chính xác",
+                    "Lỗi nhập liệu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                ptb_ShowMK.ImageLocation = "eyes2.png";
-                txt_Password.PasswordChar = '\0';
-            }
+            TrangChu tn = new TrangChu(txt_Username.Text);
+            QLSach ql = new QLSach(txt_Username.Text);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            QuenMatKhau qmk = new QuenMatKhau();
             this.Hide();
-            dmk.ShowDialog();
+            qmk.ShowDialog();
             this.Close();
         }
 
@@ -116,6 +102,26 @@ namespace DuAn1_QLThuVien
             if(quit == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                txt_Password.PasswordChar = '\0';
+            }
+            else
+            {
+                txt_Password.PasswordChar = '*';
+            }
+        }
+
+        private void btn_Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_Login_Click(sender, e);
             }
         }
     }

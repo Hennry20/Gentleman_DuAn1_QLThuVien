@@ -24,7 +24,7 @@ namespace DuAn1_QLThuVien
         public string TenSach { get; set; }
         public string LoaiSach { get; set; }
         public string TenTacGia { get; set; }
-        public byte[] HinhAnh { get; set; }
+        public string HinhAnh { get; set; }
         public Nullable<int> SoLuongTrongKho { get; set; }
         public Nullable<double> GiaMuon { get; set; }
         public string MaNV { get; set; }
