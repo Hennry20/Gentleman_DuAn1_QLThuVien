@@ -41,9 +41,7 @@ namespace DuAn1_QLThuVien
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_XacNhanMatKhau
@@ -152,21 +150,11 @@ namespace DuAn1_QLThuVien
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Montserrat Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(183, 31);
+            this.label1.Location = new System.Drawing.Point(192, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(397, 69);
             this.label1.TabIndex = 47;
             this.label1.Text = "Đổi mật khẩu";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(623, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(157, 77);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 58;
-            this.pictureBox1.TabStop = false;
             // 
             // checkBox1
             // 
@@ -184,7 +172,6 @@ namespace DuAn1_QLThuVien
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(781, 721);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_XacNhanMatKhau);
             this.Controls.Add(this.txt_MatKhauMoi);
             this.Controls.Add(this.label4);
@@ -201,14 +188,12 @@ namespace DuAn1_QLThuVien
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐỔI MẬT KHẨU";
             this.Load += new System.EventHandler(this.DoiMatKhau_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_XacNhanMatKhau;
         private System.Windows.Forms.TextBox txt_MatKhauMoi;
         private System.Windows.Forms.Label label4;
