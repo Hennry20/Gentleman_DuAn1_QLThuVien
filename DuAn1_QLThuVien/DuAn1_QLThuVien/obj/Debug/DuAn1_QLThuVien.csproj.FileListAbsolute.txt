@@ -41,3 +41,4 @@ D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QLTheHoiVien.resources
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QL_NguoiMuonSach.resources
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.TrangChu.resources
+D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QuenMatKhau.resources

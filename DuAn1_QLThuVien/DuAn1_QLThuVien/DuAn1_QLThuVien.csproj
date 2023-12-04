@@ -62,12 +62,6 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDangKyHV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDangKyHV.designer.cs">
-      <DependentUpon>FormDangKyHV.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManHinhCho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +127,12 @@
     <Compile Include="QLThongKe.designer.cs">
       <DependentUpon>QLThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuenMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuenMatKhau.Designer.cs">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sach.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -181,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="QLThongKe.resx">
       <DependentUpon>QLThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuenMatKhau.resx">
+      <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

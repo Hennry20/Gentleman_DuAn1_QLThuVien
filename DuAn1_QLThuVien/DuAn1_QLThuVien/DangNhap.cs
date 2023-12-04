@@ -62,14 +62,14 @@ namespace DuAn1_QLThuVien
                     if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
                     {
                         this.Hide();
-                        TrangChu ct = new TrangChu(txt_Username.Text);
+                        TrangChu ct = new TrangChu();
                         ct.ShowDialog();
                         this.Close();
                     }
                     if (Vaitro.Equals("vaitro2") || Vaitro.Equals("NhanVien"))
                     {
                         this.Hide();
-                        TrangChu form = new TrangChu(txt_Username.Text);
+                        TrangChu form = new TrangChu();
                         form.ShowDialog();
                         this.Close();
                     }
@@ -84,8 +84,8 @@ namespace DuAn1_QLThuVien
                     MessageBoxIcon.Error);
                 }
             }
-            TrangChu tn = new TrangChu(txt_Username.Text);
-            QLSach ql = new QLSach(txt_Username.Text);
+            TrangChu tn = new TrangChu();
+            QLSach ql = new QLSach();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
