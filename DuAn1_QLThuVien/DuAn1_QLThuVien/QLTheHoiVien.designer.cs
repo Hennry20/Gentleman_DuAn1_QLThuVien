@@ -73,8 +73,8 @@
             this.QuanLyNVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyKhoSachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyNMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuanLyNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DKTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -105,6 +105,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(281, 110);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -479,18 +480,16 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.HeThongToolStripMenuItem,
             this.QuanLyToolStripMenuItem,
-            this.DKTHVToolStripMenuItem,
             this.ThongKeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1105, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1105, 40);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -501,48 +500,48 @@
             this.DangXuatToolStripMenuItem,
             this.DoiMatKhauToolStripMenuItem,
             this.ThoatToolStripMenuItem});
-            this.HeThongToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.HeThongToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.HeThongToolStripMenuItem.Name = "HeThongToolStripMenuItem";
-            this.HeThongToolStripMenuItem.Size = new System.Drawing.Size(122, 31);
+            this.HeThongToolStripMenuItem.Size = new System.Drawing.Size(139, 36);
             this.HeThongToolStripMenuItem.Text = "Hệ thống ";
             // 
             // TrangChuToolStripMenuItem
             // 
             this.TrangChuToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
-            this.TrangChuToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TrangChuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TrangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TrangChuToolStripMenuItem.Image")));
             this.TrangChuToolStripMenuItem.Name = "TrangChuToolStripMenuItem";
-            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(250, 36);
+            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(271, 40);
             this.TrangChuToolStripMenuItem.Text = "Trang chủ";
             this.TrangChuToolStripMenuItem.Click += new System.EventHandler(this.TrangChu_Click);
             // 
             // DangXuatToolStripMenuItem
             // 
             this.DangXuatToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
-            this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DangXuatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DangXuatToolStripMenuItem.Image")));
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(250, 36);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(271, 40);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất ";
             this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuat_Click);
             // 
             // DoiMatKhauToolStripMenuItem
             // 
             this.DoiMatKhauToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
-            this.DoiMatKhauToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DoiMatKhauToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DoiMatKhauToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DoiMatKhauToolStripMenuItem.Image")));
             this.DoiMatKhauToolStripMenuItem.Name = "DoiMatKhauToolStripMenuItem";
-            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(250, 36);
+            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(271, 40);
             this.DoiMatKhauToolStripMenuItem.Text = "Đổi mật khẩu ";
             this.DoiMatKhauToolStripMenuItem.Click += new System.EventHandler(this.DoiMatKhau_Click);
             // 
             // ThoatToolStripMenuItem
             // 
             this.ThoatToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
-            this.ThoatToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ThoatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThoatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThoatToolStripMenuItem.Image")));
             this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
-            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(250, 36);
+            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(271, 40);
             this.ThoatToolStripMenuItem.Text = "Thoát";
             this.ThoatToolStripMenuItem.Click += new System.EventHandler(this.Thoat_Click);
             // 
@@ -553,10 +552,11 @@
             this.QuanLyNVToolStripMenuItem,
             this.QuanLyKhoSachToolStripMenuItem,
             this.QuanLyNMSToolStripMenuItem,
+            this.QuanLyNTSToolStripMenuItem,
             this.QuanLyTHVToolStripMenuItem});
-            this.QuanLyToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.QuanLyToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QuanLyToolStripMenuItem.Name = "QuanLyToolStripMenuItem";
-            this.QuanLyToolStripMenuItem.Size = new System.Drawing.Size(110, 31);
+            this.QuanLyToolStripMenuItem.Size = new System.Drawing.Size(121, 36);
             this.QuanLyToolStripMenuItem.Text = "Quản lý ";
             // 
             // QuanLyNVToolStripMenuItem
@@ -564,7 +564,7 @@
             this.QuanLyNVToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.QuanLyNVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyNVToolStripMenuItem.Image")));
             this.QuanLyNVToolStripMenuItem.Name = "QuanLyNVToolStripMenuItem";
-            this.QuanLyNVToolStripMenuItem.Size = new System.Drawing.Size(368, 36);
+            this.QuanLyNVToolStripMenuItem.Size = new System.Drawing.Size(403, 40);
             this.QuanLyNVToolStripMenuItem.Text = "Quản lý nhân viên";
             this.QuanLyNVToolStripMenuItem.Click += new System.EventHandler(this.QlNhanVien_Click);
             // 
@@ -573,8 +573,8 @@
             this.QuanLyKhoSachToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.QuanLyKhoSachToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyKhoSachToolStripMenuItem.Image")));
             this.QuanLyKhoSachToolStripMenuItem.Name = "QuanLyKhoSachToolStripMenuItem";
-            this.QuanLyKhoSachToolStripMenuItem.Size = new System.Drawing.Size(368, 36);
-            this.QuanLyKhoSachToolStripMenuItem.Text = "Quản lý kho sách";
+            this.QuanLyKhoSachToolStripMenuItem.Size = new System.Drawing.Size(403, 40);
+            this.QuanLyKhoSachToolStripMenuItem.Text = "Quản lý Kho sách";
             this.QuanLyKhoSachToolStripMenuItem.Click += new System.EventHandler(this.QLKhoSach_Click);
             // 
             // QuanLyNMSToolStripMenuItem
@@ -582,35 +582,35 @@
             this.QuanLyNMSToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.QuanLyNMSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyNMSToolStripMenuItem.Image")));
             this.QuanLyNMSToolStripMenuItem.Name = "QuanLyNMSToolStripMenuItem";
-            this.QuanLyNMSToolStripMenuItem.Size = new System.Drawing.Size(368, 36);
+            this.QuanLyNMSToolStripMenuItem.Size = new System.Drawing.Size(403, 40);
             this.QuanLyNMSToolStripMenuItem.Text = "Quản lý người mượn sách ";
             this.QuanLyNMSToolStripMenuItem.Click += new System.EventHandler(this.QLnguoiMuonSach_Click);
+            // 
+            // QuanLyNTSToolStripMenuItem
+            // 
+            this.QuanLyNTSToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.QuanLyNTSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyNTSToolStripMenuItem.Image")));
+            this.QuanLyNTSToolStripMenuItem.Name = "QuanLyNTSToolStripMenuItem";
+            this.QuanLyNTSToolStripMenuItem.Size = new System.Drawing.Size(403, 40);
+            this.QuanLyNTSToolStripMenuItem.Text = "Quản Lý người trả sách";
+            this.QuanLyNTSToolStripMenuItem.Click += new System.EventHandler(this.QuanLyNTSToolStripMenuItem_Click);
             // 
             // QuanLyTHVToolStripMenuItem
             // 
             this.QuanLyTHVToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.QuanLyTHVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyTHVToolStripMenuItem.Image")));
             this.QuanLyTHVToolStripMenuItem.Name = "QuanLyTHVToolStripMenuItem";
-            this.QuanLyTHVToolStripMenuItem.Size = new System.Drawing.Size(368, 36);
+            this.QuanLyTHVToolStripMenuItem.Size = new System.Drawing.Size(403, 40);
             this.QuanLyTHVToolStripMenuItem.Text = "Quản lý thẻ hội viên";
-            this.QuanLyTHVToolStripMenuItem.Click += new System.EventHandler(this.QLTHV_Click);
-            // 
-            // DKTHVToolStripMenuItem
-            // 
-            this.DKTHVToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.DKTHVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DKTHVToolStripMenuItem.Image")));
-            this.DKTHVToolStripMenuItem.Name = "DKTHVToolStripMenuItem";
-            this.DKTHVToolStripMenuItem.Size = new System.Drawing.Size(260, 31);
-            this.DKTHVToolStripMenuItem.Text = "Đăng ký thẻ hội viên  ";
-            this.DKTHVToolStripMenuItem.Click += new System.EventHandler(this.DKHV_Click);
+            this.QuanLyTHVToolStripMenuItem.Click += new System.EventHandler(this.QLTheHoiVien_Load);
             // 
             // ThongKeToolStripMenuItem
             // 
-            this.ThongKeToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ThongKeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThongKeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThongKeToolStripMenuItem.Image")));
             this.ThongKeToolStripMenuItem.Name = "ThongKeToolStripMenuItem";
-            this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(138, 31);
-            this.ThongKeToolStripMenuItem.Text = "Thống kê";
+            this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(258, 36);
+            this.ThongKeToolStripMenuItem.Text = "Tổng hợp thống kê";
             this.ThongKeToolStripMenuItem.Click += new System.EventHandler(this.QLTHongke_Click);
             // 
             // QLTheHoiVien
@@ -661,19 +661,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dtpNgayHetHan;
         private System.Windows.Forms.DateTimePicker dtpNgayDangky;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem HeThongToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem TrangChuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DangXuatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DoiMatKhauToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ThoatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem QuanLyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem QuanLyNVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem QuanLyKhoSachToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem QuanLyNMSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem QuanLyTHVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DKTHVToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ThongKeToolStripMenuItem;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnCapNhat;
@@ -691,5 +678,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDangKi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHetHan;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemHoiVien;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem HeThongToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TrangChuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DangXuatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DoiMatKhauToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ThoatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QuanLyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QuanLyNVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QuanLyKhoSachToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QuanLyNMSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QuanLyNTSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QuanLyTHVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ThongKeToolStripMenuItem;
     }
 }

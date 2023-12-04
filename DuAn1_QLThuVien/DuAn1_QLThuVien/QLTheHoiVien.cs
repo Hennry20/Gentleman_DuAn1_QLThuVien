@@ -88,6 +88,13 @@ namespace DuAn1_QLThuVien
             qLTheHoiVien.ShowDialog();
             this.Close();
         }
+        private void QuanLyNTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLNguoiTraSach qLNguoiTraSach = new QLNguoiTraSach();
+            this.Hide();
+            qLNguoiTraSach.ShowDialog();
+            this.Close();
+        }
         private void QLTHV_Click(object sender, EventArgs e)
         {
             QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
@@ -459,6 +466,14 @@ namespace DuAn1_QLThuVien
                 XoaHV(idToDelete);
             }
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            TrangChu trangChu = new TrangChu();
+            this.Hide();
+            trangChu.ShowDialog();
+            this.Close();
         }
     }
 }

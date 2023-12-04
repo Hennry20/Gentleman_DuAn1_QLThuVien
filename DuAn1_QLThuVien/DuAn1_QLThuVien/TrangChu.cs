@@ -81,15 +81,19 @@ namespace DuAn1
             qLThongKe.ShowDialog();
             this.Close();
         }
-        private void DKHV_Click(object sender, EventArgs e)
+        private void QLnguoiTraSach_Click(Object sender, EventArgs e)
         {
-            
+            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
+            this.Hide();
+            qLNguoiTra.ShowDialog();
+            this.Close();
+
         }
         private void QLTHV_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(); 
+            QLTheHoiVien theHoiVien = new QLTheHoiVien();
             this.Hide();
-            qLTheHoiVien.ShowDialog();
+            theHoiVien.ShowDialog();
             this.Close();
         }
         private void Thoat_Click(object sender, EventArgs e)
