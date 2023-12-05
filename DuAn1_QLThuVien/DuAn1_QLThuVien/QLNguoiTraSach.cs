@@ -66,14 +66,13 @@ namespace DuAn1_QLThuVien
                 {
                     conn.Open();
                     SqlDataReader dataReader = command.ExecuteReader();
-                    if (dataReader.HasRows)
+                    dtgvQLTraSach.Rows.Clear();
+                    while (dataReader.Read()) 
                     {
-                        dtgvQLTraSach.Rows.Clear();
-                        if (dataReader.Read())
-                        {
-                            dtgvQLTraSach.Rows.Add(dataReader[0], dataReader[1], dataReader[2], dataReader[3], dataReader[4].ToString().Split(' ')[0],
-                                dataReader[5].ToString().Split(' ')[0], dataReader[6], dataReader[7], dataReader[8]);
-                        }
+                        dtgvQLTraSach.Rows.Add(
+                            dataReader[0], dataReader[1], dataReader[2], dataReader[3], dataReader[4].ToString().Split(' ')[0],
+                            dataReader[5].ToString().Split(' ')[0], dataReader[6], dataReader[7], dataReader[8]
+                        );
                     }
                     conn.Close();
                 }
@@ -83,16 +82,22 @@ namespace DuAn1_QLThuVien
         private void dtgvQLTraSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int currenRowIndex = dtgvQLTraSach.CurrentRow.Index;
-            lblQLTSMaPhieuTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[0].Value.ToString();
-            txtQLTSMaPhieuMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[1].Value.ToString();
-            cbQLTSMaNguoiDoc.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[2].Value.ToString();
-            txtQLTSSLMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[3].Value.ToString();
-            dtpQLTSNgayHenTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[4].Value.ToString();
-            dtpQLTSNgayTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[5].Value.ToString();
-            txtQLTSPhiTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[6].Value.ToString();
-            lblTinhTrangTraSach.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[7].Value.ToString();
-            txtQLTSSoGioTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[8].Value.ToString();
-
+            try
+            {
+                lblQLTSMaPhieuTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[0].Value.ToString();
+                txtQLTSMaPhieuMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[1].Value.ToString();
+                cbQLTSMaNguoiDoc.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[2].Value.ToString();
+                txtQLTSSLMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[3].Value.ToString();
+                dtpQLTSNgayHenTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[4].Value.ToString();
+                dtpQLTSNgayTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[5].Value.ToString();
+                txtQLTSPhiTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[6].Value.ToString();
+                lblTinhTrangTraSach.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[7].Value.ToString();
+                txtQLTSSoGioTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[8].Value.ToString();
+            }
+            catch
+            {
+                return;
+            }
         }
 
         private void btnTraSach_Click(object sender, EventArgs e)

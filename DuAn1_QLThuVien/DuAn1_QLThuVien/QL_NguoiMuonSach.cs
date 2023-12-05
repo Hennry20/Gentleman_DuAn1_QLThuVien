@@ -163,14 +163,21 @@ namespace DuAn1
         private void dtgvQLMuonSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int currentRowIndex = dtgvQLMuonSach.CurrentRow.Index;
-            lblQLMSMaPhieuMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[0].Value.ToString();
-            cbQLMSMaNguoiDoc.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[1].Value.ToString();
-            cbQLMSMaSach2.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[2].Value.ToString();
-            txtQLMSSoLuong.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[3].Value.ToString();
-            dtpQLMSNgayMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[4].Value.ToString();
-            dtpQLMSNgayHenTra.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[5].Value.ToString();
-            txtQLMSTienCoc.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[6].Value.ToString();
-            txtQLMSSoGioMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[7].Value.ToString();
+            try
+            {
+                lblQLMSMaPhieuMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[0].Value.ToString();
+                cbQLMSMaNguoiDoc.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[1].Value.ToString();
+                cbQLMSMaSach2.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[2].Value.ToString();
+                txtQLMSSoLuong.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[3].Value.ToString();
+                dtpQLMSNgayMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[4].Value.ToString();
+                dtpQLMSNgayHenTra.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[5].Value.ToString();
+                txtQLMSTienCoc.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[6].Value.ToString();
+                txtQLMSSoGioMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[7].Value.ToString();
+            }
+            catch
+            {
+                return;
+            }
         }
         public void load_MaND()
         {
