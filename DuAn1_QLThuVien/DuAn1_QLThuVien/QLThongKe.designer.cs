@@ -47,7 +47,7 @@ namespace QLThuVien
             this.đăngKíThẻHộiViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbx_SachChoMuon = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -233,31 +233,45 @@ namespace QLThuVien
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.comboBox2);
+            this.tabPage4.Controls.Add(this.cbx_SachChoMuon);
             this.tabPage4.Controls.Add(this.button2);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.dataGridView4);
             this.tabPage4.Location = new System.Drawing.Point(4, 31);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(970, 366);
+            this.tabPage4.Size = new System.Drawing.Size(970, 453);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Số sách cho mượn";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cbx_SachChoMuon
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(220, 41);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(624, 30);
-            this.comboBox2.TabIndex = 21;
+            this.cbx_SachChoMuon.FormattingEnabled = true;
+            this.cbx_SachChoMuon.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cbx_SachChoMuon.Location = new System.Drawing.Point(126, 18);
+            this.cbx_SachChoMuon.Name = "cbx_SachChoMuon";
+            this.cbx_SachChoMuon.Size = new System.Drawing.Size(726, 30);
+            this.cbx_SachChoMuon.TabIndex = 21;
+            this.cbx_SachChoMuon.SelectedIndexChanged += new System.EventHandler(this.cbx_SachChoMuon_SelectedIndexChanged);
             // 
             // button2
             // 
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(850, 39);
+            this.button2.Location = new System.Drawing.Point(873, 15);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(74, 33);
             this.button2.TabIndex = 20;
@@ -266,20 +280,20 @@ namespace QLThuVien
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 44);
+            this.label5.Location = new System.Drawing.Point(21, 18);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 24);
+            this.label5.Size = new System.Drawing.Size(70, 24);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Mã phiếu mượn:";
+            this.label5.Text = "Tháng:";
             // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(26, 99);
+            this.dataGridView4.Location = new System.Drawing.Point(7, 64);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(921, 258);
+            this.dataGridView4.Size = new System.Drawing.Size(957, 383);
             this.dataGridView4.TabIndex = 2;
             // 
             // tabPage3
@@ -466,7 +480,7 @@ namespace QLThuVien
             this.tabControl1.Location = new System.Drawing.Point(12, 159);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(978, 401);
+            this.tabControl1.Size = new System.Drawing.Size(978, 488);
             this.tabControl1.TabIndex = 5;
             // 
             // QLThongKe
@@ -474,7 +488,7 @@ namespace QLThuVien
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
-            this.ClientSize = new System.Drawing.Size(1002, 594);
+            this.ClientSize = new System.Drawing.Size(1002, 659);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -525,7 +539,7 @@ namespace QLThuVien
         private System.Windows.Forms.ToolStripMenuItem đăngKíThẻHộiViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbx_SachChoMuon;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView4;

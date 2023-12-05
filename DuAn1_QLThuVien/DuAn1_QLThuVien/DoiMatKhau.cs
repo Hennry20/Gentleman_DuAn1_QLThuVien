@@ -37,44 +37,7 @@ namespace DuAn1_QLThuVien
         {
 
         }
-        public static string toMD5(string pass)
-        {
-            MD5CryptoServiceProvider myMD5 = new MD5CryptoServiceProvider();
-            byte[] myPass = System.Text.Encoding.UTF8.GetBytes(pass);
-            myPass = myMD5.ComputeHash(myPass);
 
-            StringBuilder s = new StringBuilder();
-            foreach (byte p in myPass)
-            {
-                s.Append(p.ToString("x").ToLower());
-            }
-            return s.ToString();
-        }
-        
-        //public static string Decrypt(string toDecrypt)
-        //{
-        //    bool useHashing = true;
-        //    byte[] keyArray;
-        //    byte[] toEncryptArray = Convert.FromBase64String(toDecrypt);
-
-        //    if (useHashing)
-        //    {
-        //        MD5CryptoServiceProvider hashmd5 = new MD5CryptoServiceProvider();
-        //        keyArray = hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
-        //    }
-        //    else
-        //        keyArray = UTF8Encoding.UTF8.GetBytes(key);
-
-        //    TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
-        //    tdes.Key = keyArray;
-        //    tdes.Mode = CipherMode.ECB;
-        //    tdes.Padding = PaddingMode.PKCS7;
-
-        //    ICryptoTransform cTransform = tdes.CreateDecryptor();
-        //    byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
-
-        //    return UTF8Encoding.UTF8.GetString(resultArray);
-        //}
         private void btn_XacNhan_Click(object sender, EventArgs e)
         {
             try
@@ -89,7 +52,7 @@ namespace DuAn1_QLThuVien
                     MessageBox.Show("Vui lòng xác nhận mật khẩu mới", "Thông báo");
                     return;
                 }
-                string ht = string.Format(@"exec doimatkhau '{0}', '{1}','{2}'", txt_TaiKhoan.Text, txt_MatKhauCu.Text, txt_MatKhauMoi.Text = toMD5("huhuhullk22drdxd"));
+                string ht = string.Format(@"exec doimatkhau '{0}', '{1}','{2}'", txt_TaiKhoan.Text, DBHandler.toMD5(txt_MatKhauCu.Text), DBHandler.toMD5(txt_MatKhauMoi.Text));
                 SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
                 SqlCommand cmd = new SqlCommand(ht);
                 myConn.Open();

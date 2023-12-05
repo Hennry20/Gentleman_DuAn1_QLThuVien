@@ -27,8 +27,10 @@
     <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
     <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="NguoiDocs" Relationship="Self.fn_nd" FromRole="NhanVien" ToRole="NguoiDoc" />
     <NavigationProperty Name="Saches" Relationship="Self.fk_snv" FromRole="NhanVien" ToRole="Sach" />
+    <NavigationProperty Name="TaiKhoan" Relationship="Self.fn_tdn" FromRole="NhanVien" ToRole="TaiKhoan" />
   </EntityType>
   <EntityType Name="PhieuMuon">
     <Key>
@@ -93,6 +95,7 @@
     <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="VaiTro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.fn_tdn" FromRole="TaiKhoan" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="TheHoiVien">
     <Key>
@@ -161,6 +164,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fn_tdn">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="TenDangNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fn_pm">
     <End Role="Sach" Type="Self.Sach" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -189,7 +204,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QLThuVienEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="QLThuVienEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="NguoiDocs" EntityType="Self.NguoiDoc" />
     <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
     <EntitySet Name="PhieuMuons" EntityType="Self.PhieuMuon" />
@@ -213,6 +228,10 @@
     <AssociationSet Name="fk_snv" Association="Self.fk_snv">
       <End Role="NhanVien" EntitySet="NhanViens" />
       <End Role="Sach" EntitySet="Saches" />
+    </AssociationSet>
+    <AssociationSet Name="fn_tdn" Association="Self.fn_tdn">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
     </AssociationSet>
     <AssociationSet Name="fn_pm" Association="Self.fn_pm">
       <End Role="Sach" EntitySet="Saches" />

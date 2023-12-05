@@ -25,6 +25,7 @@ D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\Entit
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.SqlServer.dll
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.xml
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.AssemblyReference.cache
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DangNhap.resources
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.FormDangKyHV.resources
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.ManHinhCho.resources
@@ -42,4 +43,3 @@ D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.CopyComplete
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.exe
 D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.pdb
-D:\GIt\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.AssemblyReference.cache

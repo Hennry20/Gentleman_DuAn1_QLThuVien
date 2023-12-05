@@ -48,7 +48,7 @@ namespace DuAn1
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach("");
+            QLSach sach = new QLSach();
             this.Hide();
             sach.ShowDialog();
             this.Close();

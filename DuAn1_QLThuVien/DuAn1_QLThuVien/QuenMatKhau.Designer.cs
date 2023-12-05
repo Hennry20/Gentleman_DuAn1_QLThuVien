@@ -42,8 +42,8 @@ namespace DuAn1_QLThuVien
             this.btnThoat = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtNhanMa = new System.Windows.Forms.Button();
+            this.txtNhanMa = new System.Windows.Forms.TextBox();
+            this.btnNhanMa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -112,6 +112,7 @@ namespace DuAn1_QLThuVien
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(528, 26);
             this.txtEmail.TabIndex = 6;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtMatKhauMoi
             // 
@@ -177,34 +178,34 @@ namespace DuAn1_QLThuVien
             this.label6.TabIndex = 12;
             this.label6.Text = "Mã xác nhận:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(264, 465);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(397, 26);
-            this.textBox1.TabIndex = 13;
-            // 
             // txtNhanMa
             // 
-            this.txtNhanMa.BackColor = System.Drawing.Color.Silver;
-            this.txtNhanMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhanMa.ForeColor = System.Drawing.Color.Black;
-            this.txtNhanMa.Location = new System.Drawing.Point(668, 450);
+            this.txtNhanMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNhanMa.Location = new System.Drawing.Point(264, 465);
             this.txtNhanMa.Name = "txtNhanMa";
-            this.txtNhanMa.Size = new System.Drawing.Size(124, 52);
-            this.txtNhanMa.TabIndex = 14;
-            this.txtNhanMa.Text = "Nhận mã";
-            this.txtNhanMa.UseVisualStyleBackColor = false;
-            this.txtNhanMa.Click += new System.EventHandler(this.txtNhanMa_Click);
+            this.txtNhanMa.Size = new System.Drawing.Size(397, 26);
+            this.txtNhanMa.TabIndex = 13;
+            // 
+            // btnNhanMa
+            // 
+            this.btnNhanMa.BackColor = System.Drawing.Color.Silver;
+            this.btnNhanMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanMa.ForeColor = System.Drawing.Color.Black;
+            this.btnNhanMa.Location = new System.Drawing.Point(668, 450);
+            this.btnNhanMa.Name = "btnNhanMa";
+            this.btnNhanMa.Size = new System.Drawing.Size(124, 52);
+            this.btnNhanMa.TabIndex = 14;
+            this.btnNhanMa.Text = "Nhận mã";
+            this.btnNhanMa.UseVisualStyleBackColor = false;
+            this.btnNhanMa.Click += new System.EventHandler(this.txtNhanMa_Click);
             // 
             // QuenMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(873, 748);
+            this.Controls.Add(this.btnNhanMa);
             this.Controls.Add(this.txtNhanMa);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.btnThoat);
@@ -242,7 +243,7 @@ namespace DuAn1_QLThuVien
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button txtNhanMa;
+        private System.Windows.Forms.TextBox txtNhanMa;
+        private System.Windows.Forms.Button btnNhanMa;
     }
 }
