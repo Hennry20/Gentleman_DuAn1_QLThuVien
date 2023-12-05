@@ -22,11 +22,10 @@ namespace DuAn1_QLThuVien
     
         public int MaPhieuMuon { get; set; }
         public string MaND { get; set; }
-        public string TenND { get; set; }
         public string MaSach { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<System.DateTime> NgayMuon { get; set; }
-        public Nullable<System.DateTime> NgayTra { get; set; }
+        public Nullable<System.DateTime> NgayHenTra { get; set; }
         public Nullable<double> TienCoc { get; set; }
         public Nullable<int> SoGio { get; set; }
     

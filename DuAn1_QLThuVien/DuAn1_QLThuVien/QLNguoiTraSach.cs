@@ -71,9 +71,8 @@ namespace DuAn1_QLThuVien
                         dtgvQLTraSach.Rows.Clear();
                         if (dataReader.Read())
                         {
-                            dtgvQLTraSach.Rows.Add(dataReader[0], dataReader[1], dataReader[2], dataReader[3], dataReader[4], dataReader[5], dataReader[6].ToString().Split(' ')[0],
-                                dataReader[7], dataReader[8],
-                                dataReader[9].ToString().Split(' ')[0]);
+                            dtgvQLTraSach.Rows.Add(dataReader[0], dataReader[1], dataReader[2], dataReader[3], dataReader[4].ToString().Split(' ')[0],
+                                dataReader[5].ToString().Split(' ')[0], dataReader[6], dataReader[7], dataReader[8]);
                         }
                     }
                     conn.Close();
@@ -87,13 +86,13 @@ namespace DuAn1_QLThuVien
             lblQLTSMaPhieuTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[0].Value.ToString();
             txtQLTSMaPhieuMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[1].Value.ToString();
             cbQLTSMaNguoiDoc.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[2].Value.ToString();
-            txtQLTSTenNguoiDoc.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[3].Value.ToString();
-            txtQLTSSLMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[4].Value.ToString();
+            txtQLTSSLMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[3].Value.ToString();
+            dtpQLTSNgayHenTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[4].Value.ToString();
             dtpQLTSNgayTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[5].Value.ToString();
             txtQLTSPhiTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[6].Value.ToString();
             lblTinhTrangTraSach.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[7].Value.ToString();
             txtQLTSSoGioTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[8].Value.ToString();
-            dtpQLTSNgayHenTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[9].Value.ToString();
+
         }
 
         private void btnTraSach_Click(object sender, EventArgs e)
@@ -124,16 +123,16 @@ namespace DuAn1_QLThuVien
                         {
                             MessageBox.Show($"Mã người đọc: {cbQLTSMaNguoiDoc.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        else if (cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || txtQLTSMaPhieuMuon.Text.Trim() == string.Empty || txtQLTSTenNguoiDoc.Text.Trim() == string.Empty || txtQLTSSLMuon.Text.Trim() == string.Empty || dtpQLTSNgayHenTra.Text.Trim() == string.Empty || dtpQLTSNgayTra.Text.Trim() == string.Empty || txtQLTSPhiTra.Text.Trim() == string.Empty || txtQLTSSoGioTra.Text.Trim() == string.Empty)
+                        else if (cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || txtQLTSMaPhieuMuon.Text.Trim() == string.Empty || txtQLTSSLMuon.Text.Trim() == string.Empty || dtpQLTSNgayHenTra.Text.Trim() == string.Empty || dtpQLTSNgayTra.Text.Trim() == string.Empty || txtQLTSPhiTra.Text.Trim() == string.Empty || txtQLTSSoGioTra.Text.Trim() == string.Empty)
                         {
                             MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            string insertQuery = "INSERT INTO PhieuTra(MaND, MaPhieuMuon, TenND, SoLuong, NgayHenTra, NgayTra, PhiTra, SoGio, TinhTrang) " +
-                                                     " VALUES (@MaND, @MaPhieuMuon, @TenND, @SoLuong, @NgayHenTra, @NgayTra, @PhiTra, @SoGio, @TinhTrang)";
+                            string insertQuery = "INSERT INTO PhieuTra(MaND, MaPhieuMuon, SoLuong, NgayHenTra, NgayTra, PhiTra, SoGio, TinhTrang) " +
+                                                     " VALUES (@MaND, @MaPhieuMuon, @SoLuong, @NgayHenTra, @NgayTra, @PhiTra, @SoGio, @TinhTrang)";
 
-                            string ngayHenTra = dtpQLTSNgayHenTra.Text.Trim();
+                            string ngayHenTra = dtgvQLTraSach.Text.Trim();
                             DateTime ngHT;
                             string ngayTra = dtpQLTSNgayTra.Text.Trim();
                             DateTime ngTra;
@@ -177,7 +176,6 @@ namespace DuAn1_QLThuVien
                                 {
                                     command.Parameters.AddWithValue("@MaND", cbQLTSMaNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@MaPhieuMuon", txtQLTSMaPhieuMuon.Text.Trim());
-                                    command.Parameters.AddWithValue("@TenND", txtQLTSTenNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLTSSLMuon.Text.Trim());
                                     command.Parameters.AddWithValue("@PhiTra", txtQLTSPhiTra.Text.Trim());
                                     command.Parameters.AddWithValue("@SoGio", txtQLTSSoGioTra.Text.Trim());
@@ -199,7 +197,6 @@ namespace DuAn1_QLThuVien
             cbQLTSMaNguoiDoc.Text = string.Empty;
             txtQLTSMaPhieuMuon.Text = string.Empty;
             lblQLTSMaPhieuTra.Text = string.Empty;
-            txtQLTSTenNguoiDoc.Text = string.Empty;
             txtQLTSSLMuon.Text = string.Empty;
             dtpQLTSNgayHenTra.Text = string.Empty;
             dtpQLTSNgayTra.Text = string.Empty;
@@ -360,13 +357,13 @@ namespace DuAn1_QLThuVien
                         {
                             MessageBox.Show($"Mã người đọc: {cbQLTSMaNguoiDoc.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        if (cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || txtQLTSMaPhieuMuon.Text.Trim() == string.Empty || txtQLTSTenNguoiDoc.Text.Trim() == string.Empty || txtQLTSSLMuon.Text.Trim() == string.Empty || dtpQLTSNgayHenTra.Text.Trim() == string.Empty || dtpQLTSNgayTra.Text.Trim() == string.Empty || txtQLTSPhiTra.Text.Trim() == string.Empty || txtQLTSSoGioTra.Text.Trim() == string.Empty)
+                        if (cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || txtQLTSMaPhieuMuon.Text.Trim() == string.Empty || txtQLTSSLMuon.Text.Trim() == string.Empty || dtpQLTSNgayHenTra.Text.Trim() == string.Empty || dtpQLTSNgayTra.Text.Trim() == string.Empty || txtQLTSPhiTra.Text.Trim() == string.Empty || txtQLTSSoGioTra.Text.Trim() == string.Empty)
                         {
                             MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            string UpDateQuery = "UPDATE PhieuTra SET MaND = @MaND, MaPhieuMuon = @MaPhieuMuon, TenND = @TenND, SoLuong = @SoLuong, NgayHenTra = @NgayHenTra, NgayTra = @NgayTra, PhiTra = @PhiTra, SoGio = @SoGio WHERE MaPhieuTra = @MaPhieuTra";
+                            string UpDateQuery = "UPDATE PhieuTra SET MaND = @MaND, MaPhieuMuon = @MaPhieuMuon, SoLuong = @SoLuong, NgayHenTra = @NgayHenTra, NgayTra = @NgayTra, PhiTra = @PhiTra, SoGio = @SoGio WHERE MaPhieuTra = @MaPhieuTra";
 
                             string ngayHenTra = dtpQLTSNgayHenTra.Text.Trim();
                             DateTime ngHT;
@@ -405,7 +402,6 @@ namespace DuAn1_QLThuVien
                                     command.Parameters.AddWithValue("@MaND", cbQLTSMaNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@MaPhieuMuon", txtQLTSMaPhieuMuon.Text.Trim());
                                     command.Parameters.AddWithValue("@MaPhieuTra", lblQLTSMaPhieuTra.Text.Trim());
-                                    command.Parameters.AddWithValue("@TenND", txtQLTSTenNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLTSSLMuon.Text.Trim());
                                     command.Parameters.AddWithValue("@PhiTra", txtQLTSPhiTra.Text.Trim());
                                     command.Parameters.AddWithValue("@SoGio", txtQLTSSoGioTra.Text.Trim());

@@ -21,6 +21,8 @@ namespace DuAn1
             InitializeComponent();
 
             load_dtgvQLMuonSach();
+
+            load_dtgvQLTraSach();
         }
         private void QL_NguoiMuonSach_Load(object sender, EventArgs e)
         {
@@ -115,13 +117,6 @@ namespace DuAn1
             qLTheHoiVien.ShowDialog();
             this.Close();
         }
-        private void btnTraSach_Click(object sender, EventArgs e)
-        {
-            QLNguoiTraSach qLNguoiTraSach = new QLNguoiTraSach();
-            this.Hide();
-            qLNguoiTraSach.ShowDialog();
-            this.Close();
-        }
         private void đăngKýHộiViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
@@ -152,7 +147,7 @@ namespace DuAn1
                         while (dataReader.Read())
                         {
                             dtgvQLMuonSach.Rows.Add(dataReader[0], dataReader[1], dataReader[2],
-                                dataReader[3], dataReader[4], dataReader[5], dataReader[6].ToString().Split(' ')[0], dataReader[7].ToString().Split(' ')[0]);
+                                dataReader[3], dataReader[4], dataReader[5], dataReader[6], dataReader[7].ToString().Split(' ')[0], dataReader[8].ToString().Split(' ')[0]);
                         }
                     }
                     conn.Close();
@@ -163,14 +158,15 @@ namespace DuAn1
         private void dtgvQLMuonSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int currentRowIndex = dtgvQLMuonSach.CurrentRow.Index;
-            lblQLMSMaPhieuMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[0].Value.ToString();
+            txtQLMSMaPhieuMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[0].Value.ToString();
             cbQLMSMaNguoiDoc.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[1].Value.ToString();
-            cbQLMSMaSach2.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[2].Value.ToString();
-            txtQLMSSoLuong.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[3].Value.ToString();
-            dtpQLMSNgayMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[4].Value.ToString();
-            dtpQLMSNgayHenTra.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[5].Value.ToString();
-            txtQLMSTienCoc.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[6].Value.ToString();
-            txtQLMSSoGioMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[7].Value.ToString();
+            txtTenNguoiDoc.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[2].Value.ToString();
+            cbQLMSMaSach2.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[3].Value.ToString();
+            txtQLMSSoLuong.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[4].Value.ToString();
+            dtpQLMSNgayMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[5].Value.ToString();
+            dtpQLMSNgayHenTra.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[6].Value.ToString();
+            txtQLMSTienCoc.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[7].Value.ToString();
+            txtQLMSSoGioMuon.Text = dtgvQLMuonSach.Rows[currentRowIndex].Cells[8].Value.ToString();
         }
         public void load_MaND()
         {
@@ -200,8 +196,43 @@ namespace DuAn1
                 connection.Close();
             }
         }
+        private void load_dtgvQLTraSach()
+        {
+            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            using(SqlConnection conn = new SqlConnection(connString))
+            {
+                string query = "SELECT * FROM PhieuTra";
+                using(SqlCommand command = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    if (dataReader.HasRows)
+                    {
+                        dtgvQLTraSach.Rows.Clear();
+                        if (dataReader.Read())
+                        {
+                            dtgvQLTraSach.Rows.Add(dataReader[0], dataReader[1], dataReader[2], dataReader[3], dataReader[4], dataReader[5].ToString().Split(' ')[0],
+                                dataReader[6], dataReader[7], dataReader[8]);
+                        }
+                    }
+                    conn.Close();
+                }
+            }
+        }
 
-
+        private void dtgvQLTraSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int currenRowIndex = dtgvQLTraSach.CurrentRow.Index;
+            txtQLTSMaPhieuTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[0].Value.ToString();
+            txtQLTSMaPhieuMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[1].Value.ToString();
+            cbQLTSMaNguoiDoc.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[2].Value.ToString();
+            txtQLTSTenNguoiDoc.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[3].Value.ToString();
+            txtQLTSSLMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[4].Value.ToString();
+            dtpQLTSNgayTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[5].Value.ToString();
+            txtQLTSPhiTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[6].Value.ToString();
+            txtQLTSTinhTrang.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[7].Value.ToString();
+            txtQLTSSoGioTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[8].Value.ToString();
+        }
         public void load_MaSach()
         {
             string connectionString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
@@ -240,8 +271,9 @@ namespace DuAn1
         private void btnMoi_Click(object sender, EventArgs e)
         {
             load_dtgvQLMuonSach();
-            lblQLMSMaPhieuMuon.Text = string.Empty;
+            txtQLMSMaPhieuMuon.Text = string.Empty;
             cbQLMSMaNguoiDoc.Text = string.Empty;
+            txtTenNguoiDoc.Text = string.Empty;
             cbQLMSMaSach2.Text = string.Empty;
             txtQLMSSoLuong.Text = string.Empty;
             dtpQLMSNgayMuon.Text = string.Empty;
@@ -249,7 +281,20 @@ namespace DuAn1
             txtQLMSTienCoc.Text = string.Empty;
             txtQLMSSoGioMuon.Text = string.Empty;
         }
-        
+
+        private void btnKetThuc_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang này?", "Lỗi khi thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                TrangChu trangChu = new TrangChu();
+                this.Hide();
+                trangChu.ShowDialog();
+                this.Close();
+            }
+            
+        }
+
         private void btnChoMuon_Click(object sender, EventArgs e)
         {
             string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
@@ -264,7 +309,7 @@ namespace DuAn1
                 {
                     using (SqlCommand check_MaND_Command = new SqlCommand(check_MaND_Query, conn))
                     {
-                        check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", lblQLMSMaPhieuMuon.Text.Trim());
+                        check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", txtQLMSMaPhieuMuon.Text.Trim());
                         check_MaND_Command.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
 
                         int count = (int)check_PhieuMuon_Command.ExecuteScalar();
@@ -272,131 +317,32 @@ namespace DuAn1
 
                         if (count > 0)
                         {
-                            MessageBox.Show($"Mã phiếu mượn: {lblQLMSMaPhieuMuon.Text} đã tồn tại! \n Vui lòng Nhập Mã thẻ khác", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show($"Mã phiếu mượn: {txtQLMSMaPhieuMuon.Text} đã tồn tại! \n Vui lòng Nhập Mã thẻ khác", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
-                        }
-                        else if (count2 == 0)
-                        {
-                            MessageBox.Show($"Mã người đọc: {cbQLMSMaNguoiDoc.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                        else if (cbQLMSMaNguoiDoc.Text.Trim() == string.Empty || cbQLMSMaSach2.Text.Trim() == string.Empty || txtQLMSSoLuong.Text.Trim() == string.Empty || dtpQLMSNgayMuon.Text.Trim() == string.Empty || dtpQLMSNgayHenTra.Text.Trim() == string.Empty || txtQLMSTienCoc.Text.Trim() == string.Empty || txtQLMSSoGioMuon.Text.Trim() == string.Empty)
-                        {
-                            MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
-                        else
-                        {
-                            string insertQuery = "INSERT INTO PhieuMuon (MaND, MaSach, SoLuong, NgayMuon, NgayTra, TienCoc, SoGio) " +
-                                                     " VALUES (@MaND, @MaSach, @SoLuong, @NgayMuon, @NgayTra, @TienCoc, @SoGio)";
-
-                            string ngayMuon = dtpQLMSNgayMuon.Text.Trim();
-                            DateTime ngMuon;
-                            string ngayTra = dtpQLMSNgayHenTra.Text.Trim();
-                            DateTime ngTra;
-                            string SoLuongMuon = txtQLMSSoLuong.Text.Trim();
-                            float number;
-
-                            using (SqlCommand command = new SqlCommand(insertQuery, conn))
-                            {
-                                if (DateTime.TryParseExact(ngayMuon, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngMuon))
-                                {
-                                    command.Parameters.AddWithValue("@NgayMuon", ngMuon);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Định dạng ngày tháng không hợp lệ. \nVui lòng nhập lại đúng định dạng \nNăm/tháng/ngày (dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-                                if (DateTime.TryParseExact(ngayTra, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngTra))
-                                {
-                                    command.Parameters.AddWithValue("@NgayTra", ngTra);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Định dạng ngày tháng không hợp lệ. \nVui lòng nhập lại đúng định dạng \nNăm/tháng/ngày (dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return;
-                                }
-                                if (!float.TryParse(SoLuongMuon, out number) || number <= 0)
-                                {
-                                    MessageBox.Show("Vui lòng nhập số lượng mượn bằng số! \n Số không được dưới 0", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    return;
-                                }
-
-                                else
-                                {
-                                    ///command.Parameters.AddWithValue("@MaPhieuMuon", txtQLMSMaPhieuMuon.Text.Trim());
-                                    command.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
-                                    command.Parameters.AddWithValue("@MaSach", cbQLMSMaSach2.Text.Trim());
-                                    command.Parameters.AddWithValue("@SoLuong", txtQLMSSoLuong.Text.Trim());
-                                    command.Parameters.AddWithValue("@TienCoc", txtQLMSTienCoc.Text.Trim());
-                                    command.Parameters.AddWithValue("@SoGio", txtQLMSSoGioMuon.Text.Trim());
-                                    command.ExecuteNonQuery();
-                                    MessageBox.Show("Cho mượn thành công!");
-                                    load_dtgvQLMuonSach();
-
-                                    conn.Close();
-                                }
-
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            TrangChu trangChu = new TrangChu();
-            this.Hide();
-            trangChu.ShowDialog();
-            this.Close();
-        }
-
-        private void btnQLMSCapNhat_Click(object sender, EventArgs e)
-        {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
-
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                string check_PhieuMuon_Query = "SELECT COUNT(*) FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
-                string check_MaND_Query = "SELECT COUNT(*) FROM NguoiDoc WHERE MaND = @MaND";
-
-                using (SqlCommand check_PhieuMuon_Command = new SqlCommand(check_PhieuMuon_Query, conn))
-                {
-                    using (SqlCommand check_MaND_Command = new SqlCommand(check_MaND_Query, conn))
-                    {
-                        check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", lblQLMSMaPhieuMuon.Text.Trim());
-                        check_MaND_Command.Parameters.AddWithValue("MaND", cbQLMSMaNguoiDoc.Text.Trim());
-
-                        int count = (int)check_PhieuMuon_Command.ExecuteScalar();
-                        int count2 = (int)check_MaND_Command.ExecuteScalar();
-
-                        if (count == 0)
-                        {
-                            MessageBox.Show($"MaPhieuMuon: {cbQLMSMaNguoiDoc.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         if (count2 == 0)
                         {
                             MessageBox.Show($"Mã người đọc: {cbQLMSMaNguoiDoc.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
-                        if (cbQLMSMaNguoiDoc.Text.Trim() == string.Empty || cbQLMSMaSach2.Text.Trim() == string.Empty || txtQLMSSoLuong.Text.Trim() == string.Empty || dtpQLMSNgayMuon.Text.Trim() == string.Empty || dtpQLMSNgayHenTra.Text.Trim() == string.Empty || txtQLMSTienCoc.Text.Trim() == string.Empty || txtQLMSSoGioMuon.Text.Trim() == string.Empty)
+                        if (cbQLMSMaNguoiDoc.Text.Trim() == string.Empty || txtTenNguoiDoc.Text.Trim() == string.Empty || cbQLMSMaSach2.Text.Trim() == string.Empty || txtQLMSSoLuong.Text.Trim() == string.Empty || dtpQLMSNgayMuon.Text.Trim() == string.Empty || dtpQLMSNgayHenTra.Text.Trim() == string.Empty || txtQLMSTienCoc.Text.Trim() == string.Empty || txtQLMSSoGioMuon.Text.Trim() == string.Empty)
                         {
                             MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
                         else
                         {
-                            string UpDateQuery = "UPDATE PhieuMuon SET MaSach = @MaSach, SoLuong = @SoLuong, NgayMuon = @NgayMuon, NgayTra = @NgayTra, TienCoc = @TienCoc, SoGio = @SoGio WHERE MaPhieuMuon = @MaPhieuMuon";
+                            string insertQuery = "INSERT INTO PhieuMuon (MaND, TenND, MaSach, SoLuong, NgayMuon, NgayTra, TienCoc, SoGio) " +
+                                                     " VALUES (@MaND, @TenND, @MaSach, @SoLuong, @NgayMuon, @NgayTra, @TienCoc, @SoGio)";
 
                             string ngayMuon = dtpQLMSNgayMuon.Text.Trim();
                             DateTime ngMuon;
                             string ngayTra = dtpQLMSNgayHenTra.Text.Trim();
                             DateTime ngTra;
-                            string SoLuongMuon = txtQLMSSoLuong.Text.Trim();
+                            string SoLuongMuon = txtQLMSSoGioMuon.Text.Trim();
                             float number;
 
-                            using (SqlCommand command = new SqlCommand(UpDateQuery, conn))
+                            using (SqlCommand command = new SqlCommand(insertQuery, conn))
                             {
                                 if (DateTime.TryParseExact(ngayMuon, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngMuon))
                                 {
@@ -421,19 +367,23 @@ namespace DuAn1
                                     MessageBox.Show("Vui lòng nhập số lượng mượn bằng số! \n Số không được dưới 0", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
+
                                 else
                                 {
-                                    command.Parameters.AddWithValue("@MaPhieuMuon", lblQLMSMaPhieuMuon.Text.Trim());
+                                    ///command.Parameters.AddWithValue("@MaPhieuMuon", txtQLMSMaPhieuMuon.Text.Trim());
                                     command.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
+                                    command.Parameters.AddWithValue("@TenND", txtTenNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@MaSach", cbQLMSMaSach2.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLMSSoLuong.Text.Trim());
                                     command.Parameters.AddWithValue("@TienCoc", txtQLMSTienCoc.Text.Trim());
                                     command.Parameters.AddWithValue("@SoGio", txtQLMSSoGioMuon.Text.Trim());
                                     command.ExecuteNonQuery();
-                                    MessageBox.Show("Cập nhật Thành Công");
+                                    MessageBox.Show("Cho mượn thành công!");
                                     load_dtgvQLMuonSach();
+
                                     conn.Close();
                                 }
+
                             }
                         }
                     }
@@ -441,31 +391,25 @@ namespace DuAn1
             }
         }
 
-        private void xoaMaPhieuMuon(string maPMToDelete)
+        private void btnTraSach_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
-            string deleteQuery = "DELETE FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand(deleteQuery, conn))
-                {
-                    command.Parameters.AddWithValue("@MaPhieuMuon", maPMToDelete);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show($"Xóa thành công!");
-                    load_dtgvQLMuonSach();
-                    conn.Close();
-                }
-            }
+
         }
-        private void btnQLMSXoa_Click(object sender, EventArgs e)
+
+        private void btnReset_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Mã phiếu mượn = {lblQLMSMaPhieuMuon.Text.Trim()}?", "Xác nhận?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
-            {
-                string maPMToDelete = lblQLMSMaPhieuMuon.Text.Trim();
-                xoaMaPhieuMuon(maPMToDelete);
-            }
+            load_dtgvQLTraSach();
+            txtQLTSMaPhieuTra.Text = string.Empty;
+            txtQLTSMaPhieuMuon.Text = string.Empty;
+            cbQLTSMaNguoiDoc.Text = string.Empty;
+            txtQLTSTenNguoiDoc.Text = string.Empty;
+            txtQLTSSLMuon.Text = string.Empty;
+            dtpQLTSNgayTra.Text = string.Empty;
+            txtQLTSPhiTra.Text = string.Empty;
+            txtQLTSTinhTrang.Text = string.Empty;
+            txtQLTSSoGioTra.Text = string.Empty;
         }
+
+        
     }
 }

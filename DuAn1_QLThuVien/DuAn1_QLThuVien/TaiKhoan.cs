@@ -14,8 +14,17 @@ namespace DuAn1_QLThuVien
     
     public partial class TaiKhoan
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TaiKhoan()
+        {
+            this.NhanViens = new HashSet<NhanVien>();
+        }
+    
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
         public string VaiTro { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NhanVien> NhanViens { get; set; }
     }
 }

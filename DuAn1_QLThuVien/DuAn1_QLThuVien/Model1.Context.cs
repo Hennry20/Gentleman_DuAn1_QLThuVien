@@ -15,10 +15,10 @@ namespace DuAn1_QLThuVien
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class QLThuVienEntities1 : DbContext
+    public partial class QLThuVienEntities2 : DbContext
     {
-        public QLThuVienEntities1()
-            : base("name=QLThuVienEntities1")
+        public QLThuVienEntities2()
+            : base("name=QLThuVienEntities2")
         {
         }
     
@@ -50,6 +50,21 @@ namespace DuAn1_QLThuVien
                 new ObjectParameter("matkhaumoi", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("doimatkhau", tendangnhapParameter, matkhauParameter, matkhaumoiParameter);
+        }
+    
+        public virtual ObjectResult<string> sp_DanhSach_MaNV()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_DanhSach_MaNV");
+        }
+    
+        public virtual ObjectResult<string> sp_DanhSach_MaSach()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_DanhSach_MaSach");
+        }
+    
+        public virtual ObjectResult<string> sp_DanhSach_MaSachTTSach()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("sp_DanhSach_MaSachTTSach");
         }
     
         public virtual ObjectResult<string> sp_DanhSach_MaThe()

@@ -19,15 +19,18 @@
       <PropertyRef Name="MaNV" />
     </Key>
     <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GioiTinh" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
     <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="NguoiDocs" Relationship="Self.fn_nd" FromRole="NhanVien" ToRole="NguoiDoc" />
     <NavigationProperty Name="Saches" Relationship="Self.fk_snv" FromRole="NhanVien" ToRole="Sach" />
+    <NavigationProperty Name="TaiKhoan" Relationship="Self.fk_tdn" FromRole="NhanVien" ToRole="TaiKhoan" />
   </EntityType>
   <EntityType Name="PhieuMuon">
     <Key>
@@ -35,11 +38,10 @@
     </Key>
     <Property Name="MaPhieuMuon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MaSach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SoLuong" Type="Int32" />
     <Property Name="NgayMuon" Type="DateTime" Precision="0" />
-    <Property Name="NgayTra" Type="DateTime" Precision="0" />
+    <Property Name="NgayHenTra" Type="DateTime" Precision="0" />
     <Property Name="TienCoc" Type="Double" />
     <Property Name="SoGio" Type="Int32" />
     <NavigationProperty Name="NguoiDoc" Relationship="Self.fn_ndpm" FromRole="PhieuMuon" ToRole="NguoiDoc" />
@@ -53,8 +55,8 @@
     <Property Name="MaPhieuTra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaPhieuMuon" Type="Int32" Nullable="false" />
     <Property Name="MaND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SoLuong" Type="Int32" />
+    <Property Name="NgayHenTra" Type="DateTime" Precision="0" />
     <Property Name="NgayTra" Type="DateTime" Precision="0" />
     <Property Name="PhiTra" Type="Double" />
     <Property Name="TinhTrang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -69,7 +71,7 @@
     <Property Name="TenSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="LoaiSach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="TenTacGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="SoLuongTrongKho" Type="Int32" />
     <Property Name="GiaMuon" Type="Double" />
     <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
@@ -83,6 +85,7 @@
     <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="VaiTro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.fk_tdn" FromRole="TaiKhoan" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="TheHoiVien">
     <Key>
@@ -151,6 +154,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_tdn">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="TenDangNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fn_pm">
     <End Role="Sach" Type="Self.Sach" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -179,7 +196,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="QLThuVienEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="QLThuVienEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="NguoiDocs" EntityType="Self.NguoiDoc" />
     <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
     <EntitySet Name="PhieuMuons" EntityType="Self.PhieuMuon" />
@@ -203,6 +220,10 @@
       <End Role="NhanVien" EntitySet="NhanViens" />
       <End Role="Sach" EntitySet="Saches" />
     </AssociationSet>
+    <AssociationSet Name="fk_tdn" Association="Self.fk_tdn">
+      <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+      <End Role="NhanVien" EntitySet="NhanViens" />
+    </AssociationSet>
     <AssociationSet Name="fn_pm" Association="Self.fn_pm">
       <End Role="Sach" EntitySet="Saches" />
       <End Role="PhieuMuon" EntitySet="PhieuMuons" />
@@ -216,6 +237,9 @@
       <Parameter Name="matkhau" Mode="In" Type="String" />
       <Parameter Name="matkhaumoi" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_DanhSach_MaNV" ReturnType="Collection(String)" />
+    <FunctionImport Name="sp_DanhSach_MaSach" ReturnType="Collection(String)" />
+    <FunctionImport Name="sp_DanhSach_MaSachTTSach" ReturnType="Collection(String)" />
     <FunctionImport Name="sp_DanhSach_MaThe" ReturnType="Collection(String)" />
   </EntityContainer>
 </Schema>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="QLThuVienModelStoreContainer" CdmEntityContainer="QLThuVienEntities1">
+  <EntityContainerMapping StorageEntityContainer="QLThuVienModelStoreContainer" CdmEntityContainer="QLThuVienEntities2">
     <EntitySetMapping Name="NguoiDocs">
       <EntityTypeMapping TypeName="QLThuVienModel.NguoiDoc">
         <MappingFragment StoreEntitySet="NguoiDoc">
@@ -17,6 +17,7 @@
       <EntityTypeMapping TypeName="QLThuVienModel.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
           <ScalarProperty Name="TenNV" ColumnName="TenNV" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
@@ -24,6 +25,7 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
           <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -32,11 +34,10 @@
         <MappingFragment StoreEntitySet="PhieuMuon">
           <ScalarProperty Name="MaPhieuMuon" ColumnName="MaPhieuMuon" />
           <ScalarProperty Name="MaND" ColumnName="MaND" />
-          <ScalarProperty Name="TenND" ColumnName="TenND" />
           <ScalarProperty Name="MaSach" ColumnName="MaSach" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
-          <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+          <ScalarProperty Name="NgayHenTra" ColumnName="NgayHenTra" />
           <ScalarProperty Name="TienCoc" ColumnName="TienCoc" />
           <ScalarProperty Name="SoGio" ColumnName="SoGio" />
         </MappingFragment>
@@ -48,8 +49,8 @@
           <ScalarProperty Name="MaPhieuTra" ColumnName="MaPhieuTra" />
           <ScalarProperty Name="MaPhieuMuon" ColumnName="MaPhieuMuon" />
           <ScalarProperty Name="MaND" ColumnName="MaND" />
-          <ScalarProperty Name="TenND" ColumnName="TenND" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="NgayHenTra" ColumnName="NgayHenTra" />
           <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
           <ScalarProperty Name="PhiTra" ColumnName="PhiTra" />
           <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
@@ -94,6 +95,9 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="doimatkhau" FunctionName="QLThuVienModel.Store.doimatkhau" />
+    <FunctionImportMapping FunctionImportName="sp_DanhSach_MaNV" FunctionName="QLThuVienModel.Store.sp_DanhSach_MaNV" />
+    <FunctionImportMapping FunctionImportName="sp_DanhSach_MaSach" FunctionName="QLThuVienModel.Store.sp_DanhSach_MaSach" />
+    <FunctionImportMapping FunctionImportName="sp_DanhSach_MaSachTTSach" FunctionName="QLThuVienModel.Store.sp_DanhSach_MaSachTTSach" />
     <FunctionImportMapping FunctionImportName="sp_DanhSach_MaThe" FunctionName="QLThuVienModel.Store.sp_DanhSach_MaThe" />
   </EntityContainerMapping>
 </Mapping>

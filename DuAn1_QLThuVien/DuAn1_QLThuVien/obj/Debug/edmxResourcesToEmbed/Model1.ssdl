@@ -16,13 +16,15 @@
       <PropertyRef Name="MaNV" />
     </Key>
     <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TenNV" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="4" />
     <Property Name="NgaySinh" Type="date" />
     <Property Name="SDT" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
-    <Property Name="HinhAnh" Type="varbinary(max)" />
+    <Property Name="HinhAnh" Type="varchar(max)" />
     <Property Name="NgayVaoLam" Type="date" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="PhieuMuon">
     <Key>
@@ -30,11 +32,10 @@
     </Key>
     <Property Name="MaPhieuMuon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaND" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="TenND" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="MaSach" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="SoLuong" Type="int" />
     <Property Name="NgayMuon" Type="date" />
-    <Property Name="NgayTra" Type="date" />
+    <Property Name="NgayHenTra" Type="date" />
     <Property Name="TienCoc" Type="float" />
     <Property Name="SoGio" Type="int" />
   </EntityType>
@@ -45,8 +46,8 @@
     <Property Name="MaPhieuTra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaPhieuMuon" Type="int" Nullable="false" />
     <Property Name="MaND" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="TenND" Type="nvarchar" MaxLength="50" />
     <Property Name="SoLuong" Type="int" />
+    <Property Name="NgayHenTra" Type="date" />
     <Property Name="NgayTra" Type="date" />
     <Property Name="PhiTra" Type="float" />
     <Property Name="TinhTrang" Type="nvarchar" MaxLength="20" />
@@ -60,7 +61,7 @@
     <Property Name="TenSach" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="LoaiSach" Type="nvarchar" MaxLength="20" />
     <Property Name="TenTacGia" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="HinhAnh" Type="varbinary(max)" />
+    <Property Name="HinhAnh" Type="varchar(max)" />
     <Property Name="SoLuongTrongKho" Type="int" />
     <Property Name="GiaMuon" Type="float" />
     <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -96,6 +97,20 @@
       </Principal>
       <Dependent Role="Sach">
         <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tdn">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="TenDangNhap" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -172,6 +187,9 @@
     <Parameter Name="matkhau" Type="nvarchar" Mode="In" />
     <Parameter Name="matkhaumoi" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_DanhSach_MaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_DanhSach_MaSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_DanhSach_MaSachTTSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_DanhSach_MaThe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="QLThuVienModelStoreContainer">
     <EntitySet Name="NguoiDoc" EntityType="Self.NguoiDoc" Schema="dbo" store:Type="Tables" />
@@ -184,6 +202,10 @@
     <AssociationSet Name="fk_snv" Association="Self.fk_snv">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="Sach" EntitySet="Sach" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tdn" Association="Self.fk_tdn">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>
     <AssociationSet Name="fn_nd" Association="Self.fn_nd">
       <End Role="NhanVien" EntitySet="NhanVien" />

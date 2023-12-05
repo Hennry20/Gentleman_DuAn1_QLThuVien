@@ -21,13 +21,15 @@
             <PropertyRef Name="MaNV" />
           </Key>
           <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="TenNV" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="GioiTinh" Type="nvarchar" MaxLength="4" />
           <Property Name="NgaySinh" Type="date" />
           <Property Name="SDT" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="HinhAnh" Type="varbinary(max)" />
+          <Property Name="HinhAnh" Type="varchar(max)" />
           <Property Name="NgayVaoLam" Type="date" />
+          <Property Name="GhiChu" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="PhieuMuon">
           <Key>
@@ -35,11 +37,10 @@
           </Key>
           <Property Name="MaPhieuMuon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaND" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="TenND" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MaSach" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="SoLuong" Type="int" />
           <Property Name="NgayMuon" Type="date" />
-          <Property Name="NgayTra" Type="date" />
+          <Property Name="NgayHenTra" Type="date" />
           <Property Name="TienCoc" Type="float" />
           <Property Name="SoGio" Type="int" />
         </EntityType>
@@ -50,8 +51,8 @@
           <Property Name="MaPhieuTra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaPhieuMuon" Type="int" Nullable="false" />
           <Property Name="MaND" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="TenND" Type="nvarchar" MaxLength="50" />
           <Property Name="SoLuong" Type="int" />
+          <Property Name="NgayHenTra" Type="date" />
           <Property Name="NgayTra" Type="date" />
           <Property Name="PhiTra" Type="float" />
           <Property Name="TinhTrang" Type="nvarchar" MaxLength="20" />
@@ -65,7 +66,7 @@
           <Property Name="TenSach" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="LoaiSach" Type="nvarchar" MaxLength="20" />
           <Property Name="TenTacGia" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="HinhAnh" Type="varbinary(max)" />
+          <Property Name="HinhAnh" Type="varchar(max)" />
           <Property Name="SoLuongTrongKho" Type="int" />
           <Property Name="GiaMuon" Type="float" />
           <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -101,6 +102,20 @@
             </Principal>
             <Dependent Role="Sach">
               <PropertyRef Name="MaNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tdn">
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="TenDangNhap" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="TenDangNhap" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -177,6 +192,9 @@
           <Parameter Name="matkhau" Type="nvarchar" Mode="In" />
           <Parameter Name="matkhaumoi" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="sp_DanhSach_MaNV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_DanhSach_MaSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_DanhSach_MaSachTTSach" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_DanhSach_MaThe" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="QLThuVienModelStoreContainer">
           <EntitySet Name="NguoiDoc" EntityType="Self.NguoiDoc" Schema="dbo" store:Type="Tables" />
@@ -189,6 +207,10 @@
           <AssociationSet Name="fk_snv" Association="Self.fk_snv">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="Sach" EntitySet="Sach" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tdn" Association="Self.fk_tdn">
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
           </AssociationSet>
           <AssociationSet Name="fn_nd" Association="Self.fn_nd">
             <End Role="NhanVien" EntitySet="NhanVien" />
@@ -235,15 +257,18 @@
             <PropertyRef Name="MaNV" />
           </Key>
           <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GioiTinh" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="NgaySinh" Type="DateTime" Precision="0" />
           <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
+          <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NguoiDocs" Relationship="Self.fn_nd" FromRole="NhanVien" ToRole="NguoiDoc" />
           <NavigationProperty Name="Saches" Relationship="Self.fk_snv" FromRole="NhanVien" ToRole="Sach" />
+          <NavigationProperty Name="TaiKhoan" Relationship="Self.fk_tdn" FromRole="NhanVien" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="PhieuMuon">
           <Key>
@@ -251,11 +276,10 @@
           </Key>
           <Property Name="MaPhieuMuon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaSach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SoLuong" Type="Int32" />
           <Property Name="NgayMuon" Type="DateTime" Precision="0" />
-          <Property Name="NgayTra" Type="DateTime" Precision="0" />
+          <Property Name="NgayHenTra" Type="DateTime" Precision="0" />
           <Property Name="TienCoc" Type="Double" />
           <Property Name="SoGio" Type="Int32" />
           <NavigationProperty Name="NguoiDoc" Relationship="Self.fn_ndpm" FromRole="PhieuMuon" ToRole="NguoiDoc" />
@@ -269,8 +293,8 @@
           <Property Name="MaPhieuTra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MaPhieuMuon" Type="Int32" Nullable="false" />
           <Property Name="MaND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="SoLuong" Type="Int32" />
+          <Property Name="NgayHenTra" Type="DateTime" Precision="0" />
           <Property Name="NgayTra" Type="DateTime" Precision="0" />
           <Property Name="PhiTra" Type="Double" />
           <Property Name="TinhTrang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -285,7 +309,7 @@
           <Property Name="TenSach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LoaiSach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TenTacGia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="SoLuongTrongKho" Type="Int32" />
           <Property Name="GiaMuon" Type="Double" />
           <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
@@ -299,6 +323,7 @@
           <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="VaiTro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NhanViens" Relationship="Self.fk_tdn" FromRole="TaiKhoan" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="TheHoiVien">
           <Key>
@@ -367,6 +392,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_tdn">
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="TenDangNhap" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="TenDangNhap" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fn_pm">
           <End Role="Sach" Type="Self.Sach" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -395,7 +434,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLThuVienEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLThuVienEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="NguoiDocs" EntityType="Self.NguoiDoc" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="PhieuMuons" EntityType="Self.PhieuMuon" />
@@ -419,6 +458,10 @@
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="Sach" EntitySet="Saches" />
           </AssociationSet>
+          <AssociationSet Name="fk_tdn" Association="Self.fk_tdn">
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+            <End Role="NhanVien" EntitySet="NhanViens" />
+          </AssociationSet>
           <AssociationSet Name="fn_pm" Association="Self.fn_pm">
             <End Role="Sach" EntitySet="Saches" />
             <End Role="PhieuMuon" EntitySet="PhieuMuons" />
@@ -432,6 +475,9 @@
             <Parameter Name="matkhau" Mode="In" Type="String" />
             <Parameter Name="matkhaumoi" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="sp_DanhSach_MaNV" ReturnType="Collection(String)" />
+          <FunctionImport Name="sp_DanhSach_MaSach" ReturnType="Collection(String)" />
+          <FunctionImport Name="sp_DanhSach_MaSachTTSach" ReturnType="Collection(String)" />
           <FunctionImport Name="sp_DanhSach_MaThe" ReturnType="Collection(String)" />
         </EntityContainer>
       </Schema>
@@ -439,7 +485,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLThuVienModelStoreContainer" CdmEntityContainer="QLThuVienEntities1">
+        <EntityContainerMapping StorageEntityContainer="QLThuVienModelStoreContainer" CdmEntityContainer="QLThuVienEntities2">
           <EntitySetMapping Name="NguoiDocs">
             <EntityTypeMapping TypeName="QLThuVienModel.NguoiDoc">
               <MappingFragment StoreEntitySet="NguoiDoc">
@@ -456,6 +502,7 @@
             <EntityTypeMapping TypeName="QLThuVienModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
                 <ScalarProperty Name="TenNV" ColumnName="TenNV" />
                 <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
                 <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
@@ -463,6 +510,7 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
                 <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
+                <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -471,11 +519,10 @@
               <MappingFragment StoreEntitySet="PhieuMuon">
                 <ScalarProperty Name="MaPhieuMuon" ColumnName="MaPhieuMuon" />
                 <ScalarProperty Name="MaND" ColumnName="MaND" />
-                <ScalarProperty Name="TenND" ColumnName="TenND" />
                 <ScalarProperty Name="MaSach" ColumnName="MaSach" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
                 <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
-                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+                <ScalarProperty Name="NgayHenTra" ColumnName="NgayHenTra" />
                 <ScalarProperty Name="TienCoc" ColumnName="TienCoc" />
                 <ScalarProperty Name="SoGio" ColumnName="SoGio" />
               </MappingFragment>
@@ -487,8 +534,8 @@
                 <ScalarProperty Name="MaPhieuTra" ColumnName="MaPhieuTra" />
                 <ScalarProperty Name="MaPhieuMuon" ColumnName="MaPhieuMuon" />
                 <ScalarProperty Name="MaND" ColumnName="MaND" />
-                <ScalarProperty Name="TenND" ColumnName="TenND" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="NgayHenTra" ColumnName="NgayHenTra" />
                 <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
                 <ScalarProperty Name="PhiTra" ColumnName="PhiTra" />
                 <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
@@ -533,6 +580,9 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="doimatkhau" FunctionName="QLThuVienModel.Store.doimatkhau" />
+          <FunctionImportMapping FunctionImportName="sp_DanhSach_MaNV" FunctionName="QLThuVienModel.Store.sp_DanhSach_MaNV" />
+          <FunctionImportMapping FunctionImportName="sp_DanhSach_MaSach" FunctionName="QLThuVienModel.Store.sp_DanhSach_MaSach" />
+          <FunctionImportMapping FunctionImportName="sp_DanhSach_MaSachTTSach" FunctionName="QLThuVienModel.Store.sp_DanhSach_MaSachTTSach" />
           <FunctionImportMapping FunctionImportName="sp_DanhSach_MaThe" FunctionName="QLThuVienModel.Store.sp_DanhSach_MaThe" />
         </EntityContainerMapping>
       </Mapping>
