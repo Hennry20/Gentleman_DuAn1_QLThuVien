@@ -58,12 +58,12 @@ namespace DuAn1_QLThuVien
                         Properties.Settings.Default.Username = "";
                         Properties.Settings.Default.Password = "";
                     }
-                    using (QLThuVienEntities3 qal = new QLThuVienEntities3())
+                    using (QLThuVienEntities2 qal = new QLThuVienEntities2())
                     {
                             if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
                             {
                                 this.Hide();
-                                TrangChu ct = new TrangChu(txt_Username.Text);
+                            TrangChu ct = new TrangChu(txt_Username.Text);
                                 ct.ShowDialog();
                                 this.Close();
                             }

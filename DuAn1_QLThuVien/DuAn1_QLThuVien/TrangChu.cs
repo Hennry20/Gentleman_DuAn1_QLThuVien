@@ -14,7 +14,7 @@ namespace DuAn1
 {
     public partial class TrangChu : Form
     {
-        public TrangChu()
+        public TrangChu(string text)
         {
             InitializeComponent();
         }

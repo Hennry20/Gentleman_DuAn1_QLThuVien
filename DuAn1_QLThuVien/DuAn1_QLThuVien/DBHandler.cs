@@ -25,7 +25,7 @@ namespace DuAn1_QLThuVien
         }
         public static String Login(String User, String PassWord)
         {
-            using (QLThuVienEntities3 pe = new QLThuVienEntities3())
+            using (QLThuVienEntities2 pe = new QLThuVienEntities2())
             {
                 TaiKhoan found = pe.TaiKhoans.FirstOrDefault(row => row.TenDangNhap.Equals(User));
                 if (found != null && found.MatKhau.Equals(PassWord))
@@ -49,7 +49,7 @@ namespace DuAn1_QLThuVien
         public static List<Sach> getListSach()
         {
             List<Sach> dscd = new List<Sach>();
-            using (QLThuVienEntities3 abc = new QLThuVienEntities3())
+            using (QLThuVienEntities2 abc = new QLThuVienEntities2())
             {
                 dscd = abc.Saches.ToList();
             }
@@ -58,7 +58,7 @@ namespace DuAn1_QLThuVien
         public static List<NhanVien> getListNhanVien()
         {
             List<NhanVien> dsNhanVien = new List<NhanVien>();
-            using (QLThuVienEntities3 abc = new QLThuVienEntities3())
+            using (QLThuVienEntities2 abc = new QLThuVienEntities2())
             {
                 dsNhanVien = abc.NhanViens.ToList();
             }
