@@ -17,7 +17,6 @@ namespace DuAn1
 {
     public partial class QLSach : Form
     {
-        List<Sach> qlSach;
         public QLSach()
         {
             InitializeComponent();
@@ -53,10 +52,10 @@ namespace DuAn1
         }
         private void QLnguoiTraSach_Click(Object sender, EventArgs e)
         {
-            //QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
-            //this.Hide();
-            //qLNguoiTra.ShowDialog();
-            //this.Close();
+            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
+            this.Hide();
+            qLNguoiTra.ShowDialog();
+            this.Close();
 
         }
 
@@ -138,28 +137,33 @@ namespace DuAn1
         {
             try
             {
-             int currentRowIndex = dataGridView1.CurrentRow.Index;
-            cbbMaSach.Text = dataGridView1.Rows[currentRowIndex].Cells[0].Value.ToString();
-            txtTenSach.Text = dataGridView1.Rows[currentRowIndex].Cells[1].Value.ToString();
-            txtLoaiSach.Text = dataGridView1.Rows[currentRowIndex].Cells[2].Value.ToString();
-            txtTacGia.Text = dataGridView1.Rows[currentRowIndex].Cells[3].Value.ToString();
-            txtSoLuong.Text = dataGridView1.Rows[currentRowIndex].Cells[5].Value.ToString();
-            txtGiaMuon.Text = dataGridView1.Rows[currentRowIndex].Cells[6].Value.ToString();
-            cbbMaNV.Text = dataGridView1.Rows[currentRowIndex].Cells[7].Value.ToString();
+                int currentRowIndex = dataGridView1.CurrentRow.Index;
+                cbbMaSach.Text = dataGridView1.Rows[currentRowIndex].Cells[0].Value.ToString();
+                txtTenSach.Text = dataGridView1.Rows[currentRowIndex].Cells[1].Value.ToString();
+                txtLoaiSach.Text = dataGridView1.Rows[currentRowIndex].Cells[2].Value.ToString();
+                txtTacGia.Text = dataGridView1.Rows[currentRowIndex].Cells[3].Value.ToString();
+                txtSoLuong.Text = dataGridView1.Rows[currentRowIndex].Cells[5].Value.ToString();
+                txtGiaMuon.Text = dataGridView1.Rows[currentRowIndex].Cells[6].Value.ToString();
+                cbbMaNV.Text = dataGridView1.Rows[currentRowIndex].Cells[7].Value.ToString();
 
-
-            var img = dataGridView1.Rows[currentRowIndex].Cells[4].Value.ToString();
-            PbHinh.Image = Image.FromFile(@"" + img);
-            PbHinh.SizeMode = PictureBoxSizeMode.StretchImage;
-            PbHinh.Tag = img;
+                var img = dataGridView1.Rows[currentRowIndex].Cells[4].Value.ToString(); 
+                if (img != string.Empty)
+                {
+                    PbHinh.Image = Image.FromFile(@"" + img);
+                    PbHinh.SizeMode = PictureBoxSizeMode.StretchImage;
+                    PbHinh.Tag = img;
+                }
+                else
+                {
+                    PbHinh.Image = null;
+                }
+               
             }
             catch (Exception)
             {
 
                 return;
             }
-           
-
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
@@ -256,7 +260,7 @@ namespace DuAn1
                         }
                         else
                         {
-                            string insertQuery = "INSERT INTO Sach (MaSach, TenSach, LoaiSach, TenTacGia, HinhAnh, SoLuongTrongKho, GiaMuon, MaNV) " +
+                            string insertQuery = "INSERT INTO TheHoiVien (MaSach, TenSach, LoaiSach, TenTacGia, HinhAnh, SoLuongTrongKho, GiaMuon, MaNV) " +
                                                      " VALUES (@MaSach, @TenSach, @LoaiSach, @TenTacGia, @HinhAnh, @SoLuongTrongKho, @GiaMuon, @MaNV)";
                             string Soluong = txtSoLuong.Text.Trim();
                             int number;
@@ -360,7 +364,7 @@ namespace DuAn1
                                 else
                                 {
                                     string file = PbHinh.Tag.ToString();
-                                   
+
                                     insertCommand.Parameters.AddWithValue("@MaSach", cbbMaSach.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@TenSach", txtTenSach.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@LoaiSach", txtLoaiSach.Text.Trim());
@@ -425,7 +429,7 @@ namespace DuAn1
             txtTenSach.Text = string.Empty;
             txtTimKiem.Text = string.Empty;
             PbHinh.Image = null;
-            
+
         }
 
         private void QLSach_Load(object sender, EventArgs e)
@@ -433,12 +437,11 @@ namespace DuAn1
             Load_tblGridView();
             Load_MaSach();
             Load_MaThe();
-            qlSach = DBHandler.getListSach();
-            qlSach.ForEach(x => cbbMaSach.Items.Add(x.MaSach));
+
         }
         private void Load_MaSach()
         {
-            string connectionString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connectionString = @"Data Source =.; Initial Catalog = QLThuVien; Integrated security = SSPI";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {

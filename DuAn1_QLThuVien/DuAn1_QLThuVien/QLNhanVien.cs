@@ -51,15 +51,16 @@ namespace QLThuVien
                 txtNgaySinhNV.Text = dtgvQLNhanVien.Rows[i].Cells[4].Value.ToString();
                 txtSoDT.Text = dtgvQLNhanVien.Rows[i].Cells[5].Value.ToString();
                 txtEmailNV.Text = dtgvQLNhanVien.Rows[i].Cells[6].Value.ToString();
-
+                
                 txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
                 txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[9].Value.ToString();
-                
+
                 var image = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
                 ptbAnhNV.Image = Image.FromFile(@"" + image);
                 ptbAnhNV.SizeMode = PictureBoxSizeMode.StretchImage;
                 ptbAnhNV.Tag = image;
-
+                
+                
                 btThemNV.Enabled = false;
                 txtMaNV.ReadOnly = true;
                 btCapNhatNV.Enabled = true;
@@ -292,10 +293,10 @@ namespace QLThuVien
 
         private void quảnLýNgườiMượnSáchToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //QL_NguoiMuonSach nms = new QL_NguoiMuonSach();
-            //this.Hide();
-            //nms.ShowDialog();
-            //this.Close();
+            QL_NguoiMuonSach nms = new QL_NguoiMuonSach();
+            this.Hide();
+            nms.ShowDialog();
+            this.Close();
         }
 
         private void quảnLýNgườiMượnSáchToolStripMenuItem_Click(object sender, EventArgs e)

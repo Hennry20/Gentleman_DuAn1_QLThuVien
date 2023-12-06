@@ -52,14 +52,6 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongTrongKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -79,6 +71,14 @@
             this.QuanLyNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTrongKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbHinh)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -120,7 +120,7 @@
             this.cbbMaNV.Location = new System.Drawing.Point(610, 47);
             this.cbbMaNV.Name = "cbbMaNV";
             this.cbbMaNV.Size = new System.Drawing.Size(324, 33);
-            this.cbbMaNV.TabIndex = 7;
+            this.cbbMaNV.TabIndex = 23;
             // 
             // cbbMaSach
             // 
@@ -128,7 +128,7 @@
             this.cbbMaSach.Location = new System.Drawing.Point(144, 47);
             this.cbbMaSach.Name = "cbbMaSach";
             this.cbbMaSach.Size = new System.Drawing.Size(324, 33);
-            this.cbbMaSach.TabIndex = 1;
+            this.cbbMaSach.TabIndex = 23;
             // 
             // txtGiaMuon
             // 
@@ -136,7 +136,7 @@
             this.txtGiaMuon.Location = new System.Drawing.Point(143, 320);
             this.txtGiaMuon.Name = "txtGiaMuon";
             this.txtGiaMuon.Size = new System.Drawing.Size(325, 30);
-            this.txtGiaMuon.TabIndex = 6;
+            this.txtGiaMuon.TabIndex = 17;
             // 
             // PbHinh
             // 
@@ -156,7 +156,7 @@
             this.txtSoLuong.Location = new System.Drawing.Point(143, 267);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(324, 30);
-            this.txtSoLuong.TabIndex = 5;
+            this.txtSoLuong.TabIndex = 18;
             // 
             // lblMaNV
             // 
@@ -194,7 +194,7 @@
             this.txtTacGia.Location = new System.Drawing.Point(143, 212);
             this.txtTacGia.Name = "txtTacGia";
             this.txtTacGia.Size = new System.Drawing.Size(324, 30);
-            this.txtTacGia.TabIndex = 4;
+            this.txtTacGia.TabIndex = 19;
             // 
             // label15
             // 
@@ -212,7 +212,7 @@
             this.txtLoaiSach.Location = new System.Drawing.Point(143, 157);
             this.txtLoaiSach.Name = "txtLoaiSach";
             this.txtLoaiSach.Size = new System.Drawing.Size(324, 30);
-            this.txtLoaiSach.TabIndex = 3;
+            this.txtLoaiSach.TabIndex = 20;
             // 
             // label16
             // 
@@ -230,7 +230,7 @@
             this.txtTenSach.Location = new System.Drawing.Point(143, 102);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(324, 30);
-            this.txtTenSach.TabIndex = 2;
+            this.txtTenSach.TabIndex = 21;
             // 
             // label17
             // 
@@ -358,71 +358,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(621, 251);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblGridView_CellClick);
-            // 
-            // MaSach
-            // 
-            this.MaSach.HeaderText = "Mã sách";
-            this.MaSach.MinimumWidth = 6;
-            this.MaSach.Name = "MaSach";
-            this.MaSach.ReadOnly = true;
-            this.MaSach.Width = 125;
-            // 
-            // TenSach
-            // 
-            this.TenSach.HeaderText = "Tên sách";
-            this.TenSach.MinimumWidth = 6;
-            this.TenSach.Name = "TenSach";
-            this.TenSach.ReadOnly = true;
-            this.TenSach.Width = 125;
-            // 
-            // LoaiSach
-            // 
-            this.LoaiSach.HeaderText = "Loại Sách";
-            this.LoaiSach.MinimumWidth = 6;
-            this.LoaiSach.Name = "LoaiSach";
-            this.LoaiSach.ReadOnly = true;
-            this.LoaiSach.Width = 125;
-            // 
-            // TenTacGia
-            // 
-            this.TenTacGia.HeaderText = "Tên Tác Giả";
-            this.TenTacGia.MinimumWidth = 6;
-            this.TenTacGia.Name = "TenTacGia";
-            this.TenTacGia.ReadOnly = true;
-            this.TenTacGia.Width = 125;
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.HeaderText = "Hình ảnh ";
-            this.HinhAnh.MinimumWidth = 6;
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.ReadOnly = true;
-            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HinhAnh.Width = 125;
-            // 
-            // SoLuongTrongKho
-            // 
-            this.SoLuongTrongKho.HeaderText = "Số Lượng Trong Kho";
-            this.SoLuongTrongKho.MinimumWidth = 6;
-            this.SoLuongTrongKho.Name = "SoLuongTrongKho";
-            this.SoLuongTrongKho.ReadOnly = true;
-            this.SoLuongTrongKho.Width = 125;
-            // 
-            // GiaMuon
-            // 
-            this.GiaMuon.HeaderText = "Cóa Mượn ";
-            this.GiaMuon.MinimumWidth = 6;
-            this.GiaMuon.Name = "GiaMuon";
-            this.GiaMuon.ReadOnly = true;
-            this.GiaMuon.Width = 125;
-            // 
-            // MaNV
-            // 
-            this.MaNV.HeaderText = "Tạo bởi";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 125;
             // 
             // groupBox3
             // 
@@ -620,6 +555,71 @@
             this.ThongKeToolStripMenuItem.Text = "Tổng hợp thống kê";
             this.ThongKeToolStripMenuItem.Click += new System.EventHandler(this.QLTHongke_Click);
             // 
+            // MaSach
+            // 
+            this.MaSach.HeaderText = "Mã sách";
+            this.MaSach.MinimumWidth = 6;
+            this.MaSach.Name = "MaSach";
+            this.MaSach.ReadOnly = true;
+            this.MaSach.Width = 125;
+            // 
+            // TenSach
+            // 
+            this.TenSach.HeaderText = "Tên sách";
+            this.TenSach.MinimumWidth = 6;
+            this.TenSach.Name = "TenSach";
+            this.TenSach.ReadOnly = true;
+            this.TenSach.Width = 125;
+            // 
+            // LoaiSach
+            // 
+            this.LoaiSach.HeaderText = "Loại Sách";
+            this.LoaiSach.MinimumWidth = 6;
+            this.LoaiSach.Name = "LoaiSach";
+            this.LoaiSach.ReadOnly = true;
+            this.LoaiSach.Width = 125;
+            // 
+            // TenTacGia
+            // 
+            this.TenTacGia.HeaderText = "Tên Tác Giả";
+            this.TenTacGia.MinimumWidth = 6;
+            this.TenTacGia.Name = "TenTacGia";
+            this.TenTacGia.ReadOnly = true;
+            this.TenTacGia.Width = 125;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.HeaderText = "Hình ảnh ";
+            this.HinhAnh.MinimumWidth = 6;
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.ReadOnly = true;
+            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.HinhAnh.Width = 125;
+            // 
+            // SoLuongTrongKho
+            // 
+            this.SoLuongTrongKho.HeaderText = "Số Lượng Trong Kho";
+            this.SoLuongTrongKho.MinimumWidth = 6;
+            this.SoLuongTrongKho.Name = "SoLuongTrongKho";
+            this.SoLuongTrongKho.ReadOnly = true;
+            this.SoLuongTrongKho.Width = 125;
+            // 
+            // GiaMuon
+            // 
+            this.GiaMuon.HeaderText = "Giá Mượn ";
+            this.GiaMuon.MinimumWidth = 6;
+            this.GiaMuon.Name = "GiaMuon";
+            this.GiaMuon.ReadOnly = true;
+            this.GiaMuon.Width = 125;
+            // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "Tạo bởi";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 125;
+            // 
             // QLSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -681,14 +681,6 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.ComboBox cbbMaSach;
         private System.Windows.Forms.ComboBox cbbMaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTacGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTrongKho;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaMuon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem HeThongToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TrangChuToolStripMenuItem;
@@ -702,5 +694,13 @@
         private System.Windows.Forms.ToolStripMenuItem QuanLyNTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem QuanLyTHVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ThongKeToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTacGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTrongKho;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaMuon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
     }
 }
