@@ -120,7 +120,7 @@
             this.cbbMaNV.Location = new System.Drawing.Point(610, 47);
             this.cbbMaNV.Name = "cbbMaNV";
             this.cbbMaNV.Size = new System.Drawing.Size(324, 33);
-            this.cbbMaNV.TabIndex = 23;
+            this.cbbMaNV.TabIndex = 7;
             // 
             // cbbMaSach
             // 
@@ -128,7 +128,7 @@
             this.cbbMaSach.Location = new System.Drawing.Point(144, 47);
             this.cbbMaSach.Name = "cbbMaSach";
             this.cbbMaSach.Size = new System.Drawing.Size(324, 33);
-            this.cbbMaSach.TabIndex = 23;
+            this.cbbMaSach.TabIndex = 1;
             // 
             // txtGiaMuon
             // 
@@ -136,7 +136,7 @@
             this.txtGiaMuon.Location = new System.Drawing.Point(143, 320);
             this.txtGiaMuon.Name = "txtGiaMuon";
             this.txtGiaMuon.Size = new System.Drawing.Size(325, 30);
-            this.txtGiaMuon.TabIndex = 17;
+            this.txtGiaMuon.TabIndex = 6;
             // 
             // PbHinh
             // 
@@ -156,7 +156,7 @@
             this.txtSoLuong.Location = new System.Drawing.Point(143, 267);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(324, 30);
-            this.txtSoLuong.TabIndex = 18;
+            this.txtSoLuong.TabIndex = 5;
             // 
             // lblMaNV
             // 
@@ -194,7 +194,7 @@
             this.txtTacGia.Location = new System.Drawing.Point(143, 212);
             this.txtTacGia.Name = "txtTacGia";
             this.txtTacGia.Size = new System.Drawing.Size(324, 30);
-            this.txtTacGia.TabIndex = 19;
+            this.txtTacGia.TabIndex = 4;
             // 
             // label15
             // 
@@ -212,7 +212,7 @@
             this.txtLoaiSach.Location = new System.Drawing.Point(143, 157);
             this.txtLoaiSach.Name = "txtLoaiSach";
             this.txtLoaiSach.Size = new System.Drawing.Size(324, 30);
-            this.txtLoaiSach.TabIndex = 20;
+            this.txtLoaiSach.TabIndex = 3;
             // 
             // label16
             // 
@@ -230,7 +230,7 @@
             this.txtTenSach.Location = new System.Drawing.Point(143, 102);
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(324, 30);
-            this.txtTenSach.TabIndex = 21;
+            this.txtTenSach.TabIndex = 2;
             // 
             // label17
             // 
@@ -472,7 +472,7 @@
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(132, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(500, 54);
+            this.label1.Size = new System.Drawing.Size(515, 55);
             this.label1.TabIndex = 6;
             this.label1.Text = "QUẢN LÝ KHO SÁCH";
             // 
@@ -518,7 +518,7 @@
             this.TrangChuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TrangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TrangChuToolStripMenuItem.Image")));
             this.TrangChuToolStripMenuItem.Name = "TrangChuToolStripMenuItem";
-            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.TrangChuToolStripMenuItem.Text = "Trang chủ";
             this.TrangChuToolStripMenuItem.Click += new System.EventHandler(this.TrangChu_Click);
             // 
@@ -528,7 +528,7 @@
             this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DangXuatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DangXuatToolStripMenuItem.Image")));
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất ";
             this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuat_Click);
             // 
@@ -538,7 +538,7 @@
             this.DoiMatKhauToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DoiMatKhauToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DoiMatKhauToolStripMenuItem.Image")));
             this.DoiMatKhauToolStripMenuItem.Name = "DoiMatKhauToolStripMenuItem";
-            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DoiMatKhauToolStripMenuItem.Text = "Đổi mật khẩu ";
             this.DoiMatKhauToolStripMenuItem.Click += new System.EventHandler(this.DoiMatKhau_Click);
             // 
@@ -548,7 +548,7 @@
             this.ThoatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThoatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThoatToolStripMenuItem.Image")));
             this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
-            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.ThoatToolStripMenuItem.Text = "Thoát";
             this.ThoatToolStripMenuItem.Click += new System.EventHandler(this.Thoat_Click);
             // 

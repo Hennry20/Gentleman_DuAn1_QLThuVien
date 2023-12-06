@@ -28,14 +28,14 @@ namespace QLThuVien
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String conn = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            String conn = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
             String query = "select * from NhanVien";
 
             sda = new SqlDataAdapter(query, conn);
             sda.Fill(ds, "NhanVien");
             dtgvQLNhanVien.DataSource = ds.Tables["NhanVien"];
-            btCapNhatNV.Enabled = false;
-            btXoaNV.Enabled = false;
+            //btCapNhatNV.Enabled = false;
+            //btXoaNV.Enabled = false;
         }
 
         private void dtgvQLNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -54,7 +54,7 @@ namespace QLThuVien
 
                 txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
                 txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[9].Value.ToString();
-
+                
                 var image = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
                 ptbAnhNV.Image = Image.FromFile(@"" + image);
                 ptbAnhNV.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -86,7 +86,7 @@ namespace QLThuVien
                         row.NgaySinh,
                         row.SDT,
                         row.Email,
-                        row.HinhAnh,
+                        row.HinhAnh.ToString(),
                         row.NgayVaoLam,
                         row.GhiChu
                 ));
@@ -100,12 +100,12 @@ namespace QLThuVien
         }
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TrangChu tc = new TrangChu();
+            TrangChu tc = new TrangChu("");
             this.Hide();
             tc.ShowDialog();
             this.Close();
         }
-
+        
         private void btReset_Click(object sender, EventArgs e)
         {
             txtMaNV.Text = "";
@@ -292,10 +292,10 @@ namespace QLThuVien
 
         private void quảnLýNgườiMượnSáchToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            QL_NguoiMuonSach nms = new QL_NguoiMuonSach();
-            this.Hide();
-            nms.ShowDialog();
-            this.Close();
+            //QL_NguoiMuonSach nms = new QL_NguoiMuonSach();
+            //this.Hide();
+            //nms.ShowDialog();
+            //this.Close();
         }
 
         private void quảnLýNgườiMượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -324,7 +324,7 @@ namespace QLThuVien
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            TrangChu tc = new TrangChu();
+            TrangChu tc = new TrangChu("");
             this.Hide();
             tc.ShowDialog();
             this.Close();

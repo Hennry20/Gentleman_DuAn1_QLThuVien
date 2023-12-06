@@ -24,6 +24,7 @@
     <Property Name="HinhAnh" Type="nvarchar(max)" />
     <Property Name="NgayVaoLam" Type="date" />
     <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="PhieuMuon">
     <Key>
@@ -163,6 +164,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fn_tdn">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="TenDangNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fn_thv">
     <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -205,6 +218,10 @@
     <AssociationSet Name="fn_pt" Association="Self.fn_pt">
       <End Role="PhieuMuon" EntitySet="PhieuMuon" />
       <End Role="PhieuTra" EntitySet="PhieuTra" />
+    </AssociationSet>
+    <AssociationSet Name="fn_tdn" Association="Self.fn_tdn">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>
     <AssociationSet Name="fn_thv" Association="Self.fn_thv">
       <End Role="NguoiDoc" EntitySet="NguoiDoc" />

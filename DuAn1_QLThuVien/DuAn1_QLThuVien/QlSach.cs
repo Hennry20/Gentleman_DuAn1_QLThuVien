@@ -17,13 +17,14 @@ namespace DuAn1
 {
     public partial class QLSach : Form
     {
+        List<Sach> qlSach;
         public QLSach()
         {
             InitializeComponent();
         }
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu();
+            TrangChu trang = new TrangChu("");
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -52,10 +53,10 @@ namespace DuAn1
         }
         private void QLnguoiTraSach_Click(Object sender, EventArgs e)
         {
-            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
-            this.Hide();
-            qLNguoiTra.ShowDialog();
-            this.Close();
+            //QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
+            //this.Hide();
+            //qLNguoiTra.ShowDialog();
+            //this.Close();
 
         }
 
@@ -110,7 +111,7 @@ namespace DuAn1
         }
         private void Load_tblGridView()
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM Sach";
@@ -162,7 +163,7 @@ namespace DuAn1
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM Sach WHERE MaSach = @MaSach";
@@ -192,7 +193,7 @@ namespace DuAn1
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM Sach WHERE MaSach = @MaSach";
@@ -221,7 +222,7 @@ namespace DuAn1
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -255,7 +256,7 @@ namespace DuAn1
                         }
                         else
                         {
-                            string insertQuery = "INSERT INTO TheHoiVien (MaSach, TenSach, LoaiSach, TenTacGia, HinhAnh, SoLuongTrongKho, GiaMuon, MaNV) " +
+                            string insertQuery = "INSERT INTO Sach (MaSach, TenSach, LoaiSach, TenTacGia, HinhAnh, SoLuongTrongKho, GiaMuon, MaNV) " +
                                                      " VALUES (@MaSach, @TenSach, @LoaiSach, @TenTacGia, @HinhAnh, @SoLuongTrongKho, @GiaMuon, @MaNV)";
                             string Soluong = txtSoLuong.Text.Trim();
                             int number;
@@ -303,7 +304,7 @@ namespace DuAn1
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -396,7 +397,7 @@ namespace DuAn1
         }
         private void XoaMaSach(string idToDelete)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             string deleteQuery = "DELETE FROM Sach WHERE MaSach = @MaSach";
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -432,11 +433,12 @@ namespace DuAn1
             Load_tblGridView();
             Load_MaSach();
             Load_MaThe();
-
+            qlSach = DBHandler.getListSach();
+            qlSach.ForEach(x => cbbMaSach.Items.Add(x.MaSach));
         }
         private void Load_MaSach()
         {
-            string connectionString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -464,7 +466,7 @@ namespace DuAn1
         }
         private void Load_MaThe()
         {
-            string connectionString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {

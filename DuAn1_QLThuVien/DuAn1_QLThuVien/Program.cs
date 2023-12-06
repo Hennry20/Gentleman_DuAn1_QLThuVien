@@ -1,5 +1,4 @@
 ﻿using DuAn1;
-using QLThuVien;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace DuAn1_QLThuVien
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QLNhanVien());
+            Application.Run(new DangNhap());
         }
     }
 }

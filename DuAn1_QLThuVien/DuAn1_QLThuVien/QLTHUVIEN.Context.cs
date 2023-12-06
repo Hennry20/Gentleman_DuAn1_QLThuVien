@@ -13,10 +13,10 @@ namespace DuAn1_QLThuVien
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLThuVienEntities2 : DbContext
+    public partial class QLThuVienEntities3 : DbContext
     {
-        public QLThuVienEntities2()
-            : base("name=QLThuVienEntities2")
+        public QLThuVienEntities3()
+            : base("name=QLThuVienEntities3")
         {
         }
     

@@ -29,6 +29,7 @@
           <Property Name="HinhAnh" Type="nvarchar(max)" />
           <Property Name="NgayVaoLam" Type="date" />
           <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
+          <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="PhieuMuon">
           <Key>
@@ -168,6 +169,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fn_tdn">
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="TenDangNhap" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="TenDangNhap" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fn_thv">
           <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -211,6 +224,10 @@
             <End Role="PhieuMuon" EntitySet="PhieuMuon" />
             <End Role="PhieuTra" EntitySet="PhieuTra" />
           </AssociationSet>
+          <AssociationSet Name="fn_tdn" Association="Self.fn_tdn">
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="NhanVien" EntitySet="NhanVien" />
+          </AssociationSet>
           <AssociationSet Name="fn_thv" Association="Self.fn_thv">
             <End Role="NguoiDoc" EntitySet="NguoiDoc" />
             <End Role="TheHoiVien" EntitySet="TheHoiVien" />
@@ -248,8 +265,10 @@
           <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
           <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NguoiDocs" Relationship="Self.fn_nd" FromRole="NhanVien" ToRole="NguoiDoc" />
           <NavigationProperty Name="Saches" Relationship="Self.fk_snv" FromRole="NhanVien" ToRole="Sach" />
+          <NavigationProperty Name="TaiKhoan" Relationship="Self.fn_tdn" FromRole="NhanVien" ToRole="TaiKhoan" />
         </EntityType>
         <EntityType Name="PhieuMuon">
           <Key>
@@ -314,6 +333,7 @@
           <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="VaiTro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NhanViens" Relationship="Self.fn_tdn" FromRole="TaiKhoan" ToRole="NhanVien" />
         </EntityType>
         <EntityType Name="TheHoiVien">
           <Key>
@@ -382,6 +402,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fn_tdn">
+          <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+          <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TaiKhoan">
+              <PropertyRef Name="TenDangNhap" />
+            </Principal>
+            <Dependent Role="NhanVien">
+              <PropertyRef Name="TenDangNhap" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fn_pm">
           <End Role="Sach" Type="Self.Sach" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -410,7 +442,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLThuVienEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLThuVienEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="NguoiDocs" EntityType="Self.NguoiDoc" />
           <EntitySet Name="NhanViens" EntityType="Self.NhanVien" />
           <EntitySet Name="PhieuMuons" EntityType="Self.PhieuMuon" />
@@ -435,6 +467,10 @@
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="Sach" EntitySet="Saches" />
           </AssociationSet>
+          <AssociationSet Name="fn_tdn" Association="Self.fn_tdn">
+            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
+            <End Role="NhanVien" EntitySet="NhanViens" />
+          </AssociationSet>
           <AssociationSet Name="fn_pm" Association="Self.fn_pm">
             <End Role="Sach" EntitySet="Saches" />
             <End Role="PhieuMuon" EntitySet="PhieuMuons" />
@@ -449,7 +485,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLThuVienModelStoreContainer" CdmEntityContainer="QLThuVienEntities2">
+        <EntityContainerMapping StorageEntityContainer="QLThuVienModelStoreContainer" CdmEntityContainer="QLThuVienEntities3">
           <EntitySetMapping Name="NguoiDocs">
             <EntityTypeMapping TypeName="QLThuVienModel.NguoiDoc">
               <MappingFragment StoreEntitySet="NguoiDoc">
@@ -474,6 +510,7 @@
                 <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
                 <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
                 <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

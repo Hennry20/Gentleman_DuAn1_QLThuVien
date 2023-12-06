@@ -44,8 +44,8 @@ namespace DuAn1_QLThuVien
                     MessageBoxIcon.Error);
             }
             else
-            {
-                String Vaitro = DBHandler.Login(txt_Username.Text, txt_Password.Text);
+            {             
+                String Vaitro = DBHandler.Login(txt_Username.Text, DBHandler.toMD5(txt_Password.Text));
                 if (!String.IsNullOrEmpty(Vaitro))
                 {
                     if (ckb_GhiNhoDangNhap.Checked == true)
@@ -58,20 +58,22 @@ namespace DuAn1_QLThuVien
                         Properties.Settings.Default.Username = "";
                         Properties.Settings.Default.Password = "";
                     }
-
-                    if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
+                    using (QLThuVienEntities3 qal = new QLThuVienEntities3())
                     {
-                        this.Hide();
-                        TrangChu ct = new TrangChu();
-                        ct.ShowDialog();
-                        this.Close();
-                    }
-                    if (Vaitro.Equals("vaitro2") || Vaitro.Equals("NhanVien"))
-                    {
-                        this.Hide();
-                        TrangChu form = new TrangChu();
-                        form.ShowDialog();
-                        this.Close();
+                            if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
+                            {
+                                this.Hide();
+                                TrangChu ct = new TrangChu(txt_Username.Text);
+                                ct.ShowDialog();
+                                this.Close();
+                            }
+                            if (Vaitro.Equals("vaitro2") || Vaitro.Equals("Nhân viên"))
+                            {
+                                this.Hide();
+                                TrangChu form = new TrangChu(txt_Username.Text);
+                                form.ShowDialog();
+                                this.Close();
+                            }
                     }
                 }
 
@@ -84,7 +86,7 @@ namespace DuAn1_QLThuVien
                     MessageBoxIcon.Error);
                 }
             }
-            TrangChu tn = new TrangChu();
+            TrangChu tn = new TrangChu(txt_Username.Text);
             QLSach ql = new QLSach();
         }
 
