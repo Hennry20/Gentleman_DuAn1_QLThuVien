@@ -28,7 +28,7 @@ namespace QLThuVien
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String conn = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            String conn = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             String query = "select * from NhanVien";
 
             sda = new SqlDataAdapter(query, conn);

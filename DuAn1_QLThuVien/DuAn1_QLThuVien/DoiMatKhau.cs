@@ -53,7 +53,7 @@ namespace DuAn1_QLThuVien
                     return;
                 }
                 string ht = string.Format(@"exec doimatkhau '{0}', '{1}','{2}'", txt_TaiKhoan.Text, DBHandler.toMD5(txt_MatKhauCu.Text), DBHandler.toMD5(txt_MatKhauMoi.Text));
-                SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
+                SqlConnection myConn = new SqlConnection(@"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True");
                 SqlCommand cmd = new SqlCommand(ht);
                 myConn.Open();
                 cmd.Connection = myConn;

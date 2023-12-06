@@ -133,7 +133,7 @@ namespace DuAn1
         }
         private void load_dtgvQLMuonSach()
         {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM PhieuMuon";
@@ -198,7 +198,7 @@ namespace DuAn1
         }
         private void load_dtgvQLTraSach()
         {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             using(SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM PhieuTra";
@@ -235,7 +235,7 @@ namespace DuAn1
         }
         public void load_MaSach()
         {
-            string connectionString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -297,7 +297,7 @@ namespace DuAn1
 
         private void btnChoMuon_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {

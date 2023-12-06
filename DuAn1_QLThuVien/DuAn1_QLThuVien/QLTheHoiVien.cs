@@ -419,5 +419,10 @@ namespace DuAn1_QLThuVien
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

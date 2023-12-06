@@ -52,6 +52,14 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LoaiSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTrongKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -71,14 +79,6 @@
             this.QuanLyNTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyTHVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ThongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MaSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTacGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuongTrongKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbHinh)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -113,6 +113,7 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sách";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cbbMaNV
             // 
@@ -359,6 +360,71 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblGridView_CellClick);
             // 
+            // MaSach
+            // 
+            this.MaSach.HeaderText = "Mã sách";
+            this.MaSach.MinimumWidth = 6;
+            this.MaSach.Name = "MaSach";
+            this.MaSach.ReadOnly = true;
+            this.MaSach.Width = 125;
+            // 
+            // TenSach
+            // 
+            this.TenSach.HeaderText = "Tên sách";
+            this.TenSach.MinimumWidth = 6;
+            this.TenSach.Name = "TenSach";
+            this.TenSach.ReadOnly = true;
+            this.TenSach.Width = 125;
+            // 
+            // LoaiSach
+            // 
+            this.LoaiSach.HeaderText = "Loại Sách";
+            this.LoaiSach.MinimumWidth = 6;
+            this.LoaiSach.Name = "LoaiSach";
+            this.LoaiSach.ReadOnly = true;
+            this.LoaiSach.Width = 125;
+            // 
+            // TenTacGia
+            // 
+            this.TenTacGia.HeaderText = "Tên Tác Giả";
+            this.TenTacGia.MinimumWidth = 6;
+            this.TenTacGia.Name = "TenTacGia";
+            this.TenTacGia.ReadOnly = true;
+            this.TenTacGia.Width = 125;
+            // 
+            // HinhAnh
+            // 
+            this.HinhAnh.HeaderText = "Hình ảnh ";
+            this.HinhAnh.MinimumWidth = 6;
+            this.HinhAnh.Name = "HinhAnh";
+            this.HinhAnh.ReadOnly = true;
+            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.HinhAnh.Width = 125;
+            // 
+            // SoLuongTrongKho
+            // 
+            this.SoLuongTrongKho.HeaderText = "Số Lượng Trong Kho";
+            this.SoLuongTrongKho.MinimumWidth = 6;
+            this.SoLuongTrongKho.Name = "SoLuongTrongKho";
+            this.SoLuongTrongKho.ReadOnly = true;
+            this.SoLuongTrongKho.Width = 125;
+            // 
+            // GiaMuon
+            // 
+            this.GiaMuon.HeaderText = "Giá Mượn ";
+            this.GiaMuon.MinimumWidth = 6;
+            this.GiaMuon.Name = "GiaMuon";
+            this.GiaMuon.ReadOnly = true;
+            this.GiaMuon.Width = 125;
+            // 
+            // MaNV
+            // 
+            this.MaNV.HeaderText = "Tạo bởi";
+            this.MaNV.MinimumWidth = 6;
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            this.MaNV.Width = 125;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnTimKiem);
@@ -554,71 +620,6 @@
             this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(214, 32);
             this.ThongKeToolStripMenuItem.Text = "Tổng hợp thống kê";
             this.ThongKeToolStripMenuItem.Click += new System.EventHandler(this.QLTHongke_Click);
-            // 
-            // MaSach
-            // 
-            this.MaSach.HeaderText = "Mã sách";
-            this.MaSach.MinimumWidth = 6;
-            this.MaSach.Name = "MaSach";
-            this.MaSach.ReadOnly = true;
-            this.MaSach.Width = 125;
-            // 
-            // TenSach
-            // 
-            this.TenSach.HeaderText = "Tên sách";
-            this.TenSach.MinimumWidth = 6;
-            this.TenSach.Name = "TenSach";
-            this.TenSach.ReadOnly = true;
-            this.TenSach.Width = 125;
-            // 
-            // LoaiSach
-            // 
-            this.LoaiSach.HeaderText = "Loại Sách";
-            this.LoaiSach.MinimumWidth = 6;
-            this.LoaiSach.Name = "LoaiSach";
-            this.LoaiSach.ReadOnly = true;
-            this.LoaiSach.Width = 125;
-            // 
-            // TenTacGia
-            // 
-            this.TenTacGia.HeaderText = "Tên Tác Giả";
-            this.TenTacGia.MinimumWidth = 6;
-            this.TenTacGia.Name = "TenTacGia";
-            this.TenTacGia.ReadOnly = true;
-            this.TenTacGia.Width = 125;
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.HeaderText = "Hình ảnh ";
-            this.HinhAnh.MinimumWidth = 6;
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.ReadOnly = true;
-            this.HinhAnh.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.HinhAnh.Width = 125;
-            // 
-            // SoLuongTrongKho
-            // 
-            this.SoLuongTrongKho.HeaderText = "Số Lượng Trong Kho";
-            this.SoLuongTrongKho.MinimumWidth = 6;
-            this.SoLuongTrongKho.Name = "SoLuongTrongKho";
-            this.SoLuongTrongKho.ReadOnly = true;
-            this.SoLuongTrongKho.Width = 125;
-            // 
-            // GiaMuon
-            // 
-            this.GiaMuon.HeaderText = "Giá Mượn ";
-            this.GiaMuon.MinimumWidth = 6;
-            this.GiaMuon.Name = "GiaMuon";
-            this.GiaMuon.ReadOnly = true;
-            this.GiaMuon.Width = 125;
-            // 
-            // MaNV
-            // 
-            this.MaNV.HeaderText = "Tạo bởi";
-            this.MaNV.MinimumWidth = 6;
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            this.MaNV.Width = 125;
             // 
             // QLSach
             // 
