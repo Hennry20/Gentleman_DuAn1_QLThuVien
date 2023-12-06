@@ -19,6 +19,9 @@ namespace DuAn1
             InitializeComponent();
         }
 
+        public TrangChu()
+        {
+        }
 
         private void TrangChu_Load(object sender, EventArgs e)
         {

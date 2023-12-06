@@ -105,7 +105,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(281, 110);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -593,7 +592,6 @@
             this.QuanLyNTSToolStripMenuItem.Name = "QuanLyNTSToolStripMenuItem";
             this.QuanLyNTSToolStripMenuItem.Size = new System.Drawing.Size(403, 40);
             this.QuanLyNTSToolStripMenuItem.Text = "Quản Lý người trả sách";
-            this.QuanLyNTSToolStripMenuItem.Click += new System.EventHandler(this.QuanLyNTSToolStripMenuItem_Click);
             // 
             // QuanLyTHVToolStripMenuItem
             // 
