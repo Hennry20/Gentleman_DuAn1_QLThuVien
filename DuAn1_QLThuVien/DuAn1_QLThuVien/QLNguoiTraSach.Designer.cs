@@ -453,6 +453,7 @@ namespace DuAn1_QLThuVien
             this.btnQLTSXoa.TabIndex = 58;
             this.btnQLTSXoa.Text = "Xóa";
             this.btnQLTSXoa.UseVisualStyleBackColor = false;
+            this.btnQLTSXoa.Click += new System.EventHandler(this.btnQLTSXoa_Click_1);
             // 
             // btnQLTSCapNhat
             // 
@@ -466,6 +467,7 @@ namespace DuAn1_QLThuVien
             this.btnQLTSCapNhat.TabIndex = 57;
             this.btnQLTSCapNhat.Text = "Cập nhật";
             this.btnQLTSCapNhat.UseVisualStyleBackColor = false;
+            this.btnQLTSCapNhat.Click += new System.EventHandler(this.btnQLTSCapNhat_Click_1);
             // 
             // btnQLTSMoi
             // 
@@ -479,6 +481,7 @@ namespace DuAn1_QLThuVien
             this.btnQLTSMoi.TabIndex = 56;
             this.btnQLTSMoi.Text = "Mới";
             this.btnQLTSMoi.UseVisualStyleBackColor = false;
+            this.btnQLTSMoi.Click += new System.EventHandler(this.btnQLTSMoi_Click_1);
             // 
             // btnQLTSTraSach
             // 
@@ -492,6 +495,7 @@ namespace DuAn1_QLThuVien
             this.btnQLTSTraSach.TabIndex = 55;
             this.btnQLTSTraSach.Text = "Trả Sách";
             this.btnQLTSTraSach.UseVisualStyleBackColor = false;
+            this.btnQLTSTraSach.Click += new System.EventHandler(this.btnQLTSTraSach_Click);
             // 
             // lblTinhTrangTraSach
             // 

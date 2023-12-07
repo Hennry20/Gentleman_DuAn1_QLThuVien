@@ -39,18 +39,6 @@ namespace DuAn1
             }
         }
 
-        private void lblQLMSTenTacGia_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void QL_NguoiMuonSach_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //DialogResult dl = MessageBox.Show("Bạn có muốn đóng phần mềm không?", "Lưu ý!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (dl == DialogResult.No)
-            //    e.Cancel = true;
-        }
-
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TrangChu trang = new TrangChu();
@@ -237,26 +225,33 @@ namespace DuAn1
                 connection.Close();
             }
         }
-        
 
-        private void cbQLMSMaSach1_SelectedIndexChanged(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+            TrangChu trangChu = new TrangChu();
+            this.Hide();
+            trangChu.ShowDialog();
+            this.Close();
         }
 
-        private void btnMoi_Click(object sender, EventArgs e)
+        private void xoaMaPhieuMuon(string maPMToDelete)
         {
-            load_dtgvQLMuonSach();
-            lblQLMSMaPhieuMuon.Text = string.Empty;
-            cbQLMSMaNguoiDoc.Text = string.Empty;
-            cbQLMSMaSach2.Text = string.Empty;
-            txtQLMSSoLuong.Text = string.Empty;
-            dtpQLMSNgayMuon.Text = string.Empty;
-            dtpQLMSNgayHenTra.Text = string.Empty;
-            txtQLMSTienCoc.Text = string.Empty;
-            txtQLMSSoGioMuon.Text = string.Empty;
+            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string deleteQuery = "DELETE FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(deleteQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@MaPhieuMuon", maPMToDelete);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show($"Xóa thành công!");
+                    load_dtgvQLMuonSach();
+                    conn.Close();
+                }
+            }
         }
-        
+
         private void btnChoMuon_Click(object sender, EventArgs e)
         {
             string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
@@ -294,13 +289,13 @@ namespace DuAn1
                         }
                         else
                         {
-                            string insertQuery = "INSERT INTO PhieuMuon (MaND, MaSach, SoLuong, NgayMuon, NgayTra, TienCoc, SoGio) " +
-                                                     " VALUES (@MaND, @MaSach, @SoLuong, @NgayMuon, @NgayTra, @TienCoc, @SoGio)";
+                            string insertQuery = "INSERT INTO PhieuMuon (MaND, MaSach, SoLuong, NgayMuon, NgayHenTra, TienCoc, SoGio) " +
+                                                     " VALUES (@MaND, @MaSach, @SoLuong, @NgayMuon, @NgayHenTra, @TienCoc, @SoGio)";
 
                             string ngayMuon = dtpQLMSNgayMuon.Text.Trim();
                             DateTime ngMuon;
-                            string ngayTra = dtpQLMSNgayHenTra.Text.Trim();
-                            DateTime ngTra;
+                            string ngayHenTra = dtpQLMSNgayHenTra.Text.Trim();
+                            DateTime ngHenTra;
                             string SoLuongMuon = txtQLMSSoLuong.Text.Trim();
                             float number;
 
@@ -315,9 +310,9 @@ namespace DuAn1
                                     MessageBox.Show("Định dạng ngày tháng không hợp lệ. \nVui lòng nhập lại đúng định dạng \nNăm/tháng/ngày (dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
-                                if (DateTime.TryParseExact(ngayTra, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngTra))
+                                if (DateTime.TryParseExact(ngayHenTra, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngHenTra))
                                 {
-                                    command.Parameters.AddWithValue("@NgayTra", ngTra);
+                                    command.Parameters.AddWithValue("@NgayHenTra", ngHenTra);
                                 }
                                 else
                                 {
@@ -352,12 +347,17 @@ namespace DuAn1
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnQLMSMoi_Click(object sender, EventArgs e)
         {
-            TrangChu trangChu = new TrangChu();
-            this.Hide();
-            trangChu.ShowDialog();
-            this.Close();
+            load_dtgvQLMuonSach();
+            lblQLMSMaPhieuMuon.Text = string.Empty;
+            cbQLMSMaNguoiDoc.Text = string.Empty;
+            cbQLMSMaSach2.Text = string.Empty;
+            txtQLMSSoLuong.Text = string.Empty;
+            dtpQLMSNgayMuon.Text = string.Empty;
+            dtpQLMSNgayHenTra.Text = string.Empty;
+            txtQLMSTienCoc.Text = string.Empty;
+            txtQLMSSoGioMuon.Text = string.Empty;
         }
 
         private void btnQLMSCapNhat_Click(object sender, EventArgs e)
@@ -394,12 +394,12 @@ namespace DuAn1
                         }
                         else
                         {
-                            string UpDateQuery = "UPDATE PhieuMuon SET MaSach = @MaSach, SoLuong = @SoLuong, NgayMuon = @NgayMuon, NgayTra = @NgayTra, TienCoc = @TienCoc, SoGio = @SoGio WHERE MaPhieuMuon = @MaPhieuMuon";
+                            string UpDateQuery = "UPDATE PhieuMuon SET MaSach = @MaSach, SoLuong = @SoLuong, NgayMuon = @NgayMuon, NgayHenTra = @NgayHenTra, TienCoc = @TienCoc, SoGio = @SoGio WHERE MaPhieuMuon = @MaPhieuMuon";
 
                             string ngayMuon = dtpQLMSNgayMuon.Text.Trim();
                             DateTime ngMuon;
-                            string ngayTra = dtpQLMSNgayHenTra.Text.Trim();
-                            DateTime ngTra;
+                            string ngayHenTra = dtpQLMSNgayHenTra.Text.Trim();
+                            DateTime ngHenTra;
                             string SoLuongMuon = txtQLMSSoLuong.Text.Trim();
                             float number;
 
@@ -414,9 +414,9 @@ namespace DuAn1
                                     MessageBox.Show("Định dạng ngày tháng không hợp lệ. \nVui lòng nhập lại đúng định dạng \nNăm/tháng/ngày (dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
-                                if (DateTime.TryParseExact(ngayTra, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngTra))
+                                if (DateTime.TryParseExact(ngayHenTra, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngHenTra))
                                 {
-                                    command.Parameters.AddWithValue("@NgayTra", ngTra);
+                                    command.Parameters.AddWithValue("@NgayHenTra", ngHenTra);
                                 }
                                 else
                                 {
@@ -448,23 +448,6 @@ namespace DuAn1
             }
         }
 
-        private void xoaMaPhieuMuon(string maPMToDelete)
-        {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
-            string deleteQuery = "DELETE FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand(deleteQuery, conn))
-                {
-                    command.Parameters.AddWithValue("@MaPhieuMuon", maPMToDelete);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show($"Xóa thành công!");
-                    load_dtgvQLMuonSach();
-                    conn.Close();
-                }
-            }
-        }
         private void btnQLMSXoa_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Mã phiếu mượn = {lblQLMSMaPhieuMuon.Text.Trim()}?", "Xác nhận?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);

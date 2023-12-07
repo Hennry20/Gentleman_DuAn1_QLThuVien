@@ -54,6 +54,14 @@ namespace DuAn1
             this.btnQLMSCapNhat = new System.Windows.Forms.Button();
             this.gbDSChoMuon = new System.Windows.Forms.GroupBox();
             this.dtgvQLMuonSach = new System.Windows.Forms.DataGridView();
+            this.QLMSMaPhieuMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QLMSMaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSach2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QLMSSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QLMSNgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QLMSNgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TienCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoGioMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnQLMSMoi = new System.Windows.Forms.Button();
             this.lblQLMSMaPhieuMuon = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -74,14 +82,6 @@ namespace DuAn1
             this.gbChoMuonSach = new System.Windows.Forms.GroupBox();
             this.dtpQLMSNgayHenTra = new System.Windows.Forms.DateTimePicker();
             this.cbQLMSMaNguoiDoc = new System.Windows.Forms.ComboBox();
-            this.QLMSMaPhieuMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QLMSMaND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSach2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QLMSSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QLMSNgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QLMSNgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TienCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoGioMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbDSChoMuon.SuspendLayout();
@@ -301,6 +301,7 @@ namespace DuAn1
             this.btnQLMSCapNhat.TabIndex = 53;
             this.btnQLMSCapNhat.Text = "Cập nhật";
             this.btnQLMSCapNhat.UseVisualStyleBackColor = false;
+            this.btnQLMSCapNhat.Click += new System.EventHandler(this.btnQLMSCapNhat_Click);
             // 
             // gbDSChoMuon
             // 
@@ -336,6 +337,62 @@ namespace DuAn1
             this.dtgvQLMuonSach.TabIndex = 0;
             this.dtgvQLMuonSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLMuonSach_CellClick);
             // 
+            // QLMSMaPhieuMuon
+            // 
+            this.QLMSMaPhieuMuon.HeaderText = "Mã phiếu mượn";
+            this.QLMSMaPhieuMuon.MinimumWidth = 8;
+            this.QLMSMaPhieuMuon.Name = "QLMSMaPhieuMuon";
+            this.QLMSMaPhieuMuon.Width = 250;
+            // 
+            // QLMSMaND
+            // 
+            this.QLMSMaND.HeaderText = "Mã người đọc";
+            this.QLMSMaND.MinimumWidth = 8;
+            this.QLMSMaND.Name = "QLMSMaND";
+            this.QLMSMaND.Width = 230;
+            // 
+            // MaSach2
+            // 
+            this.MaSach2.HeaderText = "Mã sách";
+            this.MaSach2.MinimumWidth = 8;
+            this.MaSach2.Name = "MaSach2";
+            this.MaSach2.Width = 180;
+            // 
+            // QLMSSoLuong
+            // 
+            this.QLMSSoLuong.HeaderText = "Số lượng";
+            this.QLMSSoLuong.MinimumWidth = 8;
+            this.QLMSSoLuong.Name = "QLMSSoLuong";
+            this.QLMSSoLuong.Width = 180;
+            // 
+            // QLMSNgayMuon
+            // 
+            this.QLMSNgayMuon.HeaderText = "Ngày mượn";
+            this.QLMSNgayMuon.MinimumWidth = 8;
+            this.QLMSNgayMuon.Name = "QLMSNgayMuon";
+            this.QLMSNgayMuon.Width = 220;
+            // 
+            // QLMSNgayTra
+            // 
+            this.QLMSNgayTra.HeaderText = "Ngày hẹn trả";
+            this.QLMSNgayTra.MinimumWidth = 8;
+            this.QLMSNgayTra.Name = "QLMSNgayTra";
+            this.QLMSNgayTra.Width = 220;
+            // 
+            // TienCoc
+            // 
+            this.TienCoc.HeaderText = "Tiền cọc";
+            this.TienCoc.MinimumWidth = 8;
+            this.TienCoc.Name = "TienCoc";
+            this.TienCoc.Width = 150;
+            // 
+            // SoGioMuon
+            // 
+            this.SoGioMuon.HeaderText = "Số giờ mượn";
+            this.SoGioMuon.MinimumWidth = 8;
+            this.SoGioMuon.Name = "SoGioMuon";
+            this.SoGioMuon.Width = 230;
+            // 
             // btnQLMSMoi
             // 
             this.btnQLMSMoi.BackColor = System.Drawing.Color.White;
@@ -347,6 +404,7 @@ namespace DuAn1
             this.btnQLMSMoi.TabIndex = 50;
             this.btnQLMSMoi.Text = "Mới";
             this.btnQLMSMoi.UseVisualStyleBackColor = false;
+            this.btnQLMSMoi.Click += new System.EventHandler(this.btnQLMSMoi_Click);
             // 
             // lblQLMSMaPhieuMuon
             // 
@@ -400,6 +458,7 @@ namespace DuAn1
             this.btnQLMSXoa.TabIndex = 54;
             this.btnQLMSXoa.Text = "Xóa";
             this.btnQLMSXoa.UseVisualStyleBackColor = false;
+            this.btnQLMSXoa.Click += new System.EventHandler(this.btnQLMSXoa_Click);
             // 
             // txtQLMSSoGioMuon
             // 
@@ -488,6 +547,7 @@ namespace DuAn1
             this.btnChoMuon.TabIndex = 51;
             this.btnChoMuon.Text = "Cho Mượn";
             this.btnChoMuon.UseVisualStyleBackColor = false;
+            this.btnChoMuon.Click += new System.EventHandler(this.btnChoMuon_Click);
             // 
             // label12
             // 
@@ -574,62 +634,6 @@ namespace DuAn1
             this.cbQLMSMaNguoiDoc.Size = new System.Drawing.Size(270, 35);
             this.cbQLMSMaNguoiDoc.TabIndex = 1;
             // 
-            // QLMSMaPhieuMuon
-            // 
-            this.QLMSMaPhieuMuon.HeaderText = "Mã phiếu mượn";
-            this.QLMSMaPhieuMuon.MinimumWidth = 8;
-            this.QLMSMaPhieuMuon.Name = "QLMSMaPhieuMuon";
-            this.QLMSMaPhieuMuon.Width = 250;
-            // 
-            // QLMSMaND
-            // 
-            this.QLMSMaND.HeaderText = "Mã người đọc";
-            this.QLMSMaND.MinimumWidth = 8;
-            this.QLMSMaND.Name = "QLMSMaND";
-            this.QLMSMaND.Width = 230;
-            // 
-            // MaSach2
-            // 
-            this.MaSach2.HeaderText = "Mã sách";
-            this.MaSach2.MinimumWidth = 8;
-            this.MaSach2.Name = "MaSach2";
-            this.MaSach2.Width = 180;
-            // 
-            // QLMSSoLuong
-            // 
-            this.QLMSSoLuong.HeaderText = "Số lượng";
-            this.QLMSSoLuong.MinimumWidth = 8;
-            this.QLMSSoLuong.Name = "QLMSSoLuong";
-            this.QLMSSoLuong.Width = 180;
-            // 
-            // QLMSNgayMuon
-            // 
-            this.QLMSNgayMuon.HeaderText = "Ngày mượn";
-            this.QLMSNgayMuon.MinimumWidth = 8;
-            this.QLMSNgayMuon.Name = "QLMSNgayMuon";
-            this.QLMSNgayMuon.Width = 220;
-            // 
-            // QLMSNgayTra
-            // 
-            this.QLMSNgayTra.HeaderText = "Ngày hẹn trả";
-            this.QLMSNgayTra.MinimumWidth = 8;
-            this.QLMSNgayTra.Name = "QLMSNgayTra";
-            this.QLMSNgayTra.Width = 220;
-            // 
-            // TienCoc
-            // 
-            this.TienCoc.HeaderText = "Tiền cọc";
-            this.TienCoc.MinimumWidth = 8;
-            this.TienCoc.Name = "TienCoc";
-            this.TienCoc.Width = 150;
-            // 
-            // SoGioMuon
-            // 
-            this.SoGioMuon.HeaderText = "Số giờ mượn";
-            this.SoGioMuon.MinimumWidth = 8;
-            this.SoGioMuon.Name = "SoGioMuon";
-            this.SoGioMuon.Width = 230;
-            // 
             // QL_NguoiMuonSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -648,7 +652,6 @@ namespace DuAn1
             this.Name = "QL_NguoiMuonSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ NGƯỜI MƯỢN SÁCH";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QL_NguoiMuonSach_FormClosing);
             this.Load += new System.EventHandler(this.QL_NguoiMuonSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
