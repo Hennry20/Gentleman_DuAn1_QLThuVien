@@ -49,7 +49,6 @@ D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.ManHinhCho.resources
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.DoiMatKhau.resources
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.Properties.Resources.resources
-D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QL_NguoiMuonSach.resources
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QLNguoiTraSach.resources
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\QLThuVien.QLNhanVien.resources
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QLSach.resources
@@ -69,3 +68,4 @@ D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.xml
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\bin\Debug\EntityFramework.SqlServer.xml
 D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.csproj.CopyComplete
+D:\FPT_Polyechnic\DuAn1\Gentleman_DuAn1_QLThuVien\Gentleman_DuAn1_QLThuVien\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QL_NguoiMuonSach.resources
