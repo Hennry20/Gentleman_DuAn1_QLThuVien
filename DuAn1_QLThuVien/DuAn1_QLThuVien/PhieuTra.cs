@@ -17,8 +17,8 @@ namespace DuAn1_QLThuVien
         public int MaPhieuTra { get; set; }
         public int MaPhieuMuon { get; set; }
         public string MaND { get; set; }
-        public string TenND { get; set; }
         public Nullable<int> SoLuong { get; set; }
+        public Nullable<System.DateTime> NgayHenTra { get; set; }
         public Nullable<System.DateTime> NgayTra { get; set; }
         public Nullable<double> PhiTra { get; set; }
         public string TinhTrang { get; set; }

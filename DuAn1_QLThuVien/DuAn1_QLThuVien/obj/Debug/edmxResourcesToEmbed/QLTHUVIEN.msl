@@ -17,6 +17,7 @@
       <EntityTypeMapping TypeName="QLThuVienModel.NhanVien">
         <MappingFragment StoreEntitySet="NhanVien">
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
+          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
           <ScalarProperty Name="TenNV" ColumnName="TenNV" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
@@ -25,7 +26,6 @@
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
           <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
-          <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -34,10 +34,10 @@
         <MappingFragment StoreEntitySet="PhieuMuon">
           <ScalarProperty Name="MaPhieuMuon" ColumnName="MaPhieuMuon" />
           <ScalarProperty Name="MaND" ColumnName="MaND" />
-          <ScalarProperty Name="TenND" ColumnName="TenND" />
           <ScalarProperty Name="MaSach" ColumnName="MaSach" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="NgayMuon" ColumnName="NgayMuon" />
+          <ScalarProperty Name="NgayHenTra" ColumnName="NgayHenTra" />
           <ScalarProperty Name="TienCoc" ColumnName="TienCoc" />
           <ScalarProperty Name="SoGio" ColumnName="SoGio" />
         </MappingFragment>
@@ -49,8 +49,8 @@
           <ScalarProperty Name="MaPhieuTra" ColumnName="MaPhieuTra" />
           <ScalarProperty Name="MaPhieuMuon" ColumnName="MaPhieuMuon" />
           <ScalarProperty Name="MaND" ColumnName="MaND" />
-          <ScalarProperty Name="TenND" ColumnName="TenND" />
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="NgayHenTra" ColumnName="NgayHenTra" />
           <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
           <ScalarProperty Name="PhiTra" ColumnName="PhiTra" />
           <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />

@@ -19,9 +19,10 @@ namespace QLThuVien
         List<NhanVien> dsNhanVien;
         SqlDataAdapter sda;
         DataSet ds = new DataSet();
-        public QLNhanVien()
+        public QLNhanVien(String User)
         {
             InitializeComponent();
+            label12.Text = User;
         }
 
         
@@ -34,12 +35,16 @@ namespace QLThuVien
             sda = new SqlDataAdapter(query, conn);
             sda.Fill(ds, "NhanVien");
             dtgvQLNhanVien.DataSource = ds.Tables["NhanVien"];
-            //btCapNhatNV.Enabled = false;
-            //btXoaNV.Enabled = false;
+            btCapNhatNV.Enabled = false;
+            btXoaNV.Enabled = false;
         }
 
         private void dtgvQLNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btThemNV.Enabled = false;
+            txtMaNV.Enabled = false;
+            btCapNhatNV.Enabled = true;
+            btXoaNV.Enabled = true;
             try
             {
                 int i = dtgvQLNhanVien.CurrentRow.Index;
@@ -51,20 +56,22 @@ namespace QLThuVien
                 txtNgaySinhNV.Text = dtgvQLNhanVien.Rows[i].Cells[4].Value.ToString();
                 txtSoDT.Text = dtgvQLNhanVien.Rows[i].Cells[5].Value.ToString();
                 txtEmailNV.Text = dtgvQLNhanVien.Rows[i].Cells[6].Value.ToString();
-                
                 txtNgayVaoLam.Text = dtgvQLNhanVien.Rows[i].Cells[8].Value.ToString();
                 txtGhiChuNV.Text = dtgvQLNhanVien.Rows[i].Cells[9].Value.ToString();
 
                 var image = dtgvQLNhanVien.Rows[i].Cells[7].Value.ToString();
-                ptbAnhNV.Image = Image.FromFile(@"" + image);
-                ptbAnhNV.SizeMode = PictureBoxSizeMode.StretchImage;
-                ptbAnhNV.Tag = image;
+                if (image != string.Empty)
+                {
+                    ptbAnhNV.Image = Image.FromFile(@"" + image);
+                    ptbAnhNV.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ptbAnhNV.Tag = image;
+                }
+                else
+                {
+                    ptbAnhNV.Image = null;
+                }
                 
-                
-                btThemNV.Enabled = false;
-                txtMaNV.ReadOnly = true;
-                btCapNhatNV.Enabled = true;
-                btXoaNV.Enabled = true;
+                   
             }
             catch (Exception)
             {
@@ -122,7 +129,7 @@ namespace QLThuVien
             txtTimKiemNV.Text = "";
 
             btThemNV.Enabled = true;
-            txtMaNV.ReadOnly = false;
+            txtMaNV.Enabled = true;
             btCapNhatNV.Enabled = false;
             btXoaNV.Enabled = false;
         }
@@ -179,7 +186,6 @@ namespace QLThuVien
                     return;
                 }
 
-                QLNhanVien nv = new QLNhanVien();
                 int i = dtgvQLNhanVien.CurrentRow.Index;
                 DataRow row = ds.Tables["NhanVien"].Rows[i];
                 row.BeginEdit();
@@ -285,7 +291,7 @@ namespace QLThuVien
 
         private void quảnLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLNhanVien qlnv = new QLNhanVien();
+            QLNhanVien qlnv = new QLNhanVien(label12.Text);
             this.Hide();
             qlnv.ShowDialog();
             this.Close();
@@ -293,7 +299,7 @@ namespace QLThuVien
 
         private void quảnLýNgườiMượnSáchToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            QL_NguoiMuonSach nms = new QL_NguoiMuonSach();
+            QL_NguoiMuonSach nms = new QL_NguoiMuonSach(label12.Text);
             this.Hide();
             nms.ShowDialog();
             this.Close();
@@ -301,7 +307,7 @@ namespace QLThuVien
 
         private void quảnLýNgườiMượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLSach qls = new QLSach();
+            QLSach qls = new QLSach(label12.Text);
             this.Hide();
             qls.ShowDialog();
             this.Close();
@@ -309,7 +315,7 @@ namespace QLThuVien
 
         private void quảnLýThẻHộiViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien thv = new QLTheHoiVien();
+            QLTheHoiVien thv = new QLTheHoiVien(label12.Text);
             this.Hide();
             thv.ShowDialog();
             this.Close();
@@ -317,7 +323,7 @@ namespace QLThuVien
 
         private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLThongKe tk = new QLThongKe();
+            QLThongKe tk = new QLThongKe(label12.Text);
             this.Hide();
             tk.ShowDialog();
             this.Close();
@@ -325,7 +331,7 @@ namespace QLThuVien
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            TrangChu tc = new TrangChu("");
+            TrangChu tc = new TrangChu(label12.Text);
             this.Hide();
             tc.ShowDialog();
             this.Close();

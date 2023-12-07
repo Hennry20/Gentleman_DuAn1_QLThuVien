@@ -16,10 +16,10 @@ namespace DuAn1_QLThuVien
 {
     public partial class QLNguoiTraSach : Form
     {
-        public QLNguoiTraSach()
+        public QLNguoiTraSach(String User)
         {
             InitializeComponent();
-
+            label2.Text = User;
             load_dtgvQLTraSach();
 
         }
@@ -100,7 +100,128 @@ namespace DuAn1_QLThuVien
             }
         }
 
-        private void btnTraSach_Click(object sender, EventArgs e)
+
+        private void TrangChuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TrangChu trang = new TrangChu(label2.Text);
+            this.Hide();
+            trang.ShowDialog();
+            this.Close();
+        }
+
+        private void DangXuatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DangNhap dangNhap = new DangNhap();
+            this.Hide();
+            dangNhap.ShowDialog();
+            this.Close();
+        }
+
+        private void DoiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau dmk = new DoiMatKhau();
+            this.Hide();
+            dmk.ShowDialog();
+            this.Close();
+        }
+
+        private void ThoatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void QuanLyNVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLNhanVien nv = new QLNhanVien(label2.Text);
+            this.Hide();
+            nv.ShowDialog();
+            this.Close();
+        }
+
+        private void QuanLyKhoSachToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLSach sach = new QLSach(label2.Text);
+            this.Hide();
+            sach.ShowDialog();
+            this.Close();
+        }
+
+        private void QuanLyNMSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach(label2.Text);
+            this.Hide();
+            nguoiMuonSach.ShowDialog();
+            this.Close();
+        }
+
+        private void QuanLyNTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLNguoiTraSach qLNguoiTraSach = new QLNguoiTraSach(label2.Text);
+            this.Hide();
+            qLNguoiTraSach.ShowDialog();
+            this.Close();
+        }
+
+        private void QuanLyTHVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(label2.Text);
+            this.Hide();
+            qLTheHoiVien.ShowDialog();
+            this.Close();
+        }
+
+        private void ThongKeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLThongKe qLThongKe = new QLThongKe(label2.Text);
+            this.Hide();
+            qLThongKe.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            TrangChu trangChu = new TrangChu(label2.Text);
+            this.Hide();
+            trangChu.ShowDialog();
+            this.Close();
+        }
+        private void xoaMaPhieuTra(string maPTToDelete)
+        {
+            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string deleteQuery = "DELETE FROM PhieuTra WHERE MaPhieuTra = @MaPhieuTra";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(deleteQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@MaPhieuTra", maPTToDelete);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show($"Xóa thành công!");
+                    load_dtgvQLTraSach();
+                    conn.Close();
+                }
+            }
+        }
+
+        private void btnQLTSMoi_Click_1(object sender, EventArgs e)
+        {
+            load_dtgvQLTraSach();
+            cbQLTSMaNguoiDoc.Text = string.Empty;
+            txtQLTSMaPhieuMuon.Text = string.Empty;
+            lblQLTSMaPhieuTra.Text = string.Empty;
+            txtQLTSSLMuon.Text = string.Empty;
+            dtpQLTSNgayHenTra.Text = string.Empty;
+            dtpQLTSNgayTra.Text = string.Empty;
+            txtQLTSPhiTra.Text = string.Empty;
+            txtQLTSSoGioTra.Text = string.Empty;
+            lblTinhTrangTraSach.Text = string.Empty;
+        }
+
+        private void btnQLTSTraSach_Click(object sender, EventArgs e)
         {
             string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
 
@@ -137,7 +258,7 @@ namespace DuAn1_QLThuVien
                             string insertQuery = "INSERT INTO PhieuTra(MaND, MaPhieuMuon, SoLuong, NgayHenTra, NgayTra, PhiTra, SoGio, TinhTrang) " +
                                                      " VALUES (@MaND, @MaPhieuMuon, @SoLuong, @NgayHenTra, @NgayTra, @PhiTra, @SoGio, @TinhTrang)";
 
-                            string ngayHenTra = dtgvQLTraSach.Text.Trim();
+                            string ngayHenTra = dtpQLTSNgayHenTra.Text.Trim();
                             DateTime ngHT;
                             string ngayTra = dtpQLTSNgayTra.Text.Trim();
                             DateTime ngTra;
@@ -164,8 +285,8 @@ namespace DuAn1_QLThuVien
                                     MessageBox.Show("Định dạng ngày tháng không hợp lệ. \nVui lòng nhập lại đúng định dạng \nNăm/tháng/ngày (dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
-                                if (ngTra <= ngHT) 
-                                { 
+                                if (ngTra <= ngHT)
+                                {
                                     lblTinhTrangTraSach.Text = "Đúng hạn";
                                 }
                                 else
@@ -182,6 +303,8 @@ namespace DuAn1_QLThuVien
                                     command.Parameters.AddWithValue("@MaND", cbQLTSMaNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@MaPhieuMuon", txtQLTSMaPhieuMuon.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLTSSLMuon.Text.Trim());
+                                    //command.Parameters.AddWithValue("@NgayHenTra", .Text.Trim());
+                                    //command.Parameters.AddWithValue("@NgayTra", .Text.Trim());
                                     command.Parameters.AddWithValue("@PhiTra", txtQLTSPhiTra.Text.Trim());
                                     command.Parameters.AddWithValue("@SoGio", txtQLTSSoGioTra.Text.Trim());
                                     command.Parameters.AddWithValue("@TinhTrang", lblTinhTrangTraSach.Text.Trim());
@@ -196,145 +319,8 @@ namespace DuAn1_QLThuVien
                 }
             }
         }
-        private void btnQLTSMoi_Click(object sender, EventArgs e)
-        {
-            load_dtgvQLTraSach();
-            cbQLTSMaNguoiDoc.Text = string.Empty;
-            txtQLTSMaPhieuMuon.Text = string.Empty;
-            lblQLTSMaPhieuTra.Text = string.Empty;
-            txtQLTSSLMuon.Text = string.Empty;
-            dtpQLTSNgayHenTra.Text = string.Empty;
-            dtpQLTSNgayTra.Text = string.Empty;
-            txtQLTSPhiTra.Text = string.Empty;
-            txtQLTSSoGioTra.Text = string.Empty;
-            lblTinhTrangTraSach.Text = string.Empty;
-        }
 
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát khỏi trang này?", "Lỗi khi thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
-            {
-                Application.Exit();
-            }
-        }
-
-        private void TrangChuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TrangChu trang = new TrangChu("");
-            this.Hide();
-            trang.ShowDialog();
-            this.Close();
-        }
-
-        private void DangXuatToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DangNhap dangNhap = new DangNhap();
-            this.Hide();
-            dangNhap.ShowDialog();
-            this.Close();
-        }
-
-        private void DoiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DoiMatKhau dmk = new DoiMatKhau();
-            this.Hide();
-            dmk.ShowDialog();
-            this.Close();
-        }
-
-        private void ThoatToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không?", "Xác nhận thoát", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
-        private void QuanLyNVToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QLNhanVien nv = new QLNhanVien();
-            this.Hide();
-            nv.ShowDialog();
-            this.Close();
-        }
-
-        private void QuanLyKhoSachToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QLSach sach = new QLSach();
-            this.Hide();
-            sach.ShowDialog();
-            this.Close();
-        }
-
-        private void QuanLyNMSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach();
-            this.Hide();
-            nguoiMuonSach.ShowDialog();
-            this.Close();
-        }
-
-        private void QuanLyNTSToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QLNguoiTraSach qLNguoiTraSach = new QLNguoiTraSach();
-            this.Hide();
-            qLNguoiTraSach.ShowDialog();
-            this.Close();
-        }
-
-        private void QuanLyTHVToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
-            this.Hide();
-            qLTheHoiVien.ShowDialog();
-            this.Close();
-        }
-
-        private void ThongKeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            QLThongKe qLThongKe = new QLThongKe();
-            this.Hide();
-            qLThongKe.ShowDialog();
-            this.Close();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            TrangChu trangChu = new TrangChu("");
-            this.Hide();
-            trangChu.ShowDialog();
-            this.Close();
-        }
-        private void xoaMaPhieuTra(string maPTToDelete)
-        {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
-            string deleteQuery = "DELETE FROM PhieuTra WHERE MaPhieuTra = @MaPhieuTra";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand(deleteQuery, conn))
-                {
-                    command.Parameters.AddWithValue("@MaPhieuTra", maPTToDelete);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show($"Xóa thành công!");
-                    load_dtgvQLTraSach();
-                    conn.Close();
-                }
-            }
-        }
-        private void btnQLTSXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Mã phiếu trả = {lblQLTSMaPhieuTra.Text.Trim()} ?", "Xác nhận?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if(result == DialogResult.OK)
-            {
-                string maPTToDelete = lblQLTSMaPhieuTra.Text.Trim();
-                xoaMaPhieuTra(maPTToDelete);
-            }
-        }
-
-        private void btnQLTSCapNhat_Click(object sender, EventArgs e)
+        private void btnQLTSCapNhat_Click_1(object sender, EventArgs e)
         {
             string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
 
@@ -403,7 +389,7 @@ namespace DuAn1_QLThuVien
                                     return;
                                 }
                                 else
-                                {                                  
+                                {
                                     command.Parameters.AddWithValue("@MaND", cbQLTSMaNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@MaPhieuMuon", txtQLTSMaPhieuMuon.Text.Trim());
                                     command.Parameters.AddWithValue("@MaPhieuTra", lblQLTSMaPhieuTra.Text.Trim());
@@ -419,6 +405,16 @@ namespace DuAn1_QLThuVien
                         }
                     }
                 }
+            }
+        }
+
+        private void btnQLTSXoa_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Mã phiếu trả = {lblQLTSMaPhieuTra.Text.Trim()} ?", "Xác nhận?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                string maPTToDelete = lblQLTSMaPhieuTra.Text.Trim();
+                xoaMaPhieuTra(maPTToDelete);
             }
         }
     }

@@ -17,7 +17,6 @@ namespace DuAn1_QLThuVien
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NguoiDoc()
         {
-            this.PhieuMuons = new HashSet<PhieuMuon>();
             this.TheHoiViens = new HashSet<TheHoiVien>();
         }
     
@@ -29,8 +28,6 @@ namespace DuAn1_QLThuVien
         public string MaNV { get; set; }
     
         public virtual NhanVien NhanVien { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuMuon> PhieuMuons { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TheHoiVien> TheHoiViens { get; set; }
     }
