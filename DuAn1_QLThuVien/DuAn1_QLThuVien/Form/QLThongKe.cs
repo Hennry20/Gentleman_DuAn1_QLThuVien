@@ -25,7 +25,7 @@ namespace QLThuVien
         public void ThongKeSach1Thang()
         {
             DataTable dt = new DataTable();
-            SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
+            SqlConnection myConn = new SqlConnection(@"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True");
             myConn.Open();
 
             SqlCommand myCmd = new SqlCommand("tksach1thang", myConn);
@@ -38,10 +38,10 @@ namespace QLThuVien
         public void DoanhThu()
         {
             DataTable dt = new DataTable();
-            SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
+            SqlConnection myConn = new SqlConnection(@"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True");
             myConn.Open();
 
-            SqlCommand myCmd = new SqlCommand("Danhthu", myConn);
+            SqlCommand myCmd = new SqlCommand("Danhthu1thang", myConn);
             myCmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(myCmd);
             da.Fill(dt);
@@ -71,7 +71,7 @@ namespace QLThuVien
         private void cbx_SachChoMuon_SelectedIndexChanged(object sender, EventArgs e)
         {
             string ht = string.Format(@"exec ThongKe1thangSach'{0}'", cbx_SachChoMuon.SelectedItem);
-            SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
+            SqlConnection myConn = new SqlConnection(@"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True");
             SqlCommand cmd = new SqlCommand(ht);
             myConn.Open();
             cmd.Connection = myConn;
@@ -97,7 +97,7 @@ namespace QLThuVien
         private void cbxDoanhthu_SelectedIndexChanged(object sender, EventArgs e)
         {
             string ht = string.Format(@"exec Danhthu1thang'{0}'", cbxDoanhthu.SelectedItem);
-            SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
+            SqlConnection myConn = new SqlConnection(@"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True");
             SqlCommand cmd = new SqlCommand(ht);
             myConn.Open();
             cmd.Connection = myConn;

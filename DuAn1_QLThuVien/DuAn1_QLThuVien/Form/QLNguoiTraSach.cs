@@ -30,7 +30,7 @@ namespace DuAn1_QLThuVien
         }
         public void load_MaND()
         {
-            string connectionString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -58,7 +58,7 @@ namespace DuAn1_QLThuVien
         }
         private void load_dtgvQLTraSach()
         {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM PhieuTra";
@@ -191,7 +191,7 @@ namespace DuAn1_QLThuVien
         }
         private void xoaMaPhieuTra(string maPTToDelete)
         {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             string deleteQuery = "DELETE FROM PhieuTra WHERE MaPhieuTra = @MaPhieuTra";
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -223,7 +223,7 @@ namespace DuAn1_QLThuVien
 
         private void btnQLTSTraSach_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -322,7 +322,7 @@ namespace DuAn1_QLThuVien
 
         private void btnQLTSCapNhat_Click_1(object sender, EventArgs e)
         {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {

@@ -96,7 +96,7 @@ namespace DuAn1_QLThuVien
         }
         private void Load_tblGridView()
         {
-            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM TheHoiVien";
@@ -134,7 +134,7 @@ namespace DuAn1_QLThuVien
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM TheHoiVien WHERE MaThe = @MaThe";
@@ -154,7 +154,7 @@ namespace DuAn1_QLThuVien
                     }
                     else
                     {
-                        MessageBox.Show($"KHông tìm thấy MaThe = {txtTimKiem.Text.Trim()}", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"Không tìm thấy MaThe = {txtTimKiem.Text.Trim()}", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     conn.Close();
                 }
@@ -164,7 +164,7 @@ namespace DuAn1_QLThuVien
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM TheHoiVien WHERE MaThe = @MaThe";
@@ -193,7 +193,7 @@ namespace DuAn1_QLThuVien
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -276,7 +276,6 @@ namespace DuAn1_QLThuVien
                                 }
                             }
                         }
-
                     }
                 }
             }
@@ -284,7 +283,7 @@ namespace DuAn1_QLThuVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {

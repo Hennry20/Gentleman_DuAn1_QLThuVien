@@ -37,7 +37,7 @@ namespace DuAn1_QLThuVien
                 }
                 
                 string ht = string.Format(@"exec quenmk '{0}', '{1}'", txtTaiKhoan.Text,DBHandler.toMD5(txtMatKhauMoi.Text));
-                SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
+                SqlConnection myConn = new SqlConnection(@"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True");
                 SqlCommand cmd = new SqlCommand(ht);
                 myConn.Open();
                 cmd.Connection = myConn;

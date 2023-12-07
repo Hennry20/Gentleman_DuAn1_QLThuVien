@@ -46,7 +46,7 @@ namespace DuAn1_QLThuVien
                     MessageBoxIcon.Error);
             }
             else
-            {             
+            {
                 String Vaitro = DBHandler.Login(txt_Username.Text, DBHandler.toMD5(txt_Password.Text));
                 if (!String.IsNullOrEmpty(Vaitro))
                 {
@@ -60,25 +60,24 @@ namespace DuAn1_QLThuVien
                         Properties.Settings.Default.Username = "";
                         Properties.Settings.Default.Password = "";
                     }
-                    using (QLThuVienEntities2 qal = new QLThuVienEntities2())
+                    using (QLThuVienEntities3 qal = new QLThuVienEntities3())
                     {
-                            if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
-                            {
-                                this.Hide();
+                        if (Vaitro.Equals("vaitro1") || Vaitro.Equals("Admin"))
+                        {
+                            this.Hide();
                             TrangChu ct = new TrangChu(txt_Username.Text);
-                                ct.ShowDialog();
-                                this.Close();
-                            }
-                            if (Vaitro.Equals("vaitro2") || Vaitro.Equals("Nhân viên"))
-                            {
-                                this.Hide();
-                                TrangChu form = new TrangChu(txt_Username.Text);
-                                form.ShowDialog();
-                                this.Close();
-                            }
+                            ct.ShowDialog();
+                            this.Close();
+                        }
+                        if (Vaitro.Equals("vaitro2") || Vaitro.Equals("Nhân viên"))
+                        {
+                            this.Hide();
+                            TrangChu form = new TrangChu(txt_Username.Text);
+                            form.ShowDialog();
+                            this.Close();
+                        }
                     }
                 }
-
                 else
                 {
                     MessageBox.Show(
@@ -90,8 +89,8 @@ namespace DuAn1_QLThuVien
             }
             TrangChu tn = new TrangChu(txt_Username.Text);
             QLSach ql = new QLSach(txt_Username.Text);
-            QLNguoiTraSach qlnts = new QLNguoiTraSach(txt_Username.Text);
             QL_NguoiMuonSach qlnms = new QL_NguoiMuonSach(txt_Username.Text);
+            QLNguoiTraSach qlnts = new QLNguoiTraSach(txt_Username.Text);
             QLTheHoiVien qlthv = new QLTheHoiVien(txt_Username.Text);
             QLThongKe qltk = new QLThongKe(txt_Username.Text);
             QLNhanVien qlnv = new QLNhanVien(txt_Username.Text);

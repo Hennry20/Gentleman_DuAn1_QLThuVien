@@ -138,7 +138,7 @@ namespace DuAn1
         }
         private void load_dtgvQLMuonSach()
         {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM PhieuMuon";
@@ -181,7 +181,7 @@ namespace DuAn1
         }
         public void load_MaND()
         {
-            string connectionString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -211,7 +211,7 @@ namespace DuAn1
 
         public void load_MaSach()
         {
-            string connectionString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -265,7 +265,7 @@ namespace DuAn1
 
         private void xoaMaPhieuMuon(string maPMToDelete)
         {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
             string deleteQuery = "DELETE FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -296,7 +296,7 @@ namespace DuAn1
 
         private void btnChoMuon_Click_1(object sender, EventArgs e)
         {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -401,7 +401,7 @@ namespace DuAn1
 
         private void btnQLMSCapNhat_Click_1(object sender, EventArgs e)
         {
-            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
