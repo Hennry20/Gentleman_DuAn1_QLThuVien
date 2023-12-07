@@ -96,6 +96,13 @@ namespace DuAn1
             theHoiVien.ShowDialog();
             this.Close();
         }
+        private void QLNguoiDoc_Click(object sender, EventArgs e)
+        {
+            QLNguoiDoc qLNguoiDoc = new QLNguoiDoc();
+            this.Hide();
+            qLNguoiDoc.ShowDialog();
+            this.Close();
+        }
         private void Thoat_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình không?", "Xác nhận thoát", MessageBoxButtons.YesNo);

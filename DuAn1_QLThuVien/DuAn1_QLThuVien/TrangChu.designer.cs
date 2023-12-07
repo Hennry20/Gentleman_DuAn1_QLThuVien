@@ -77,6 +77,7 @@
             this.Logo = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.quảnLýNgườiĐọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel_Footer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Clock)).BeginInit();
             this.Panel_QLNTS.SuspendLayout();
@@ -502,7 +503,8 @@
             this.QuanLyKhoSachToolStripMenuItem,
             this.QuanLyNMSToolStripMenuItem,
             this.QuanLyNTSToolStripMenuItem,
-            this.QuanLyTHVToolStripMenuItem});
+            this.QuanLyTHVToolStripMenuItem,
+            this.quảnLýNgườiĐọcToolStripMenuItem});
             this.QuanLyToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.QuanLyToolStripMenuItem.Name = "QuanLyToolStripMenuItem";
             this.QuanLyToolStripMenuItem.Size = new System.Drawing.Size(98, 32);
@@ -582,6 +584,15 @@
             this.Logo.Size = new System.Drawing.Size(250, 88);
             this.Logo.TabIndex = 12;
             this.Logo.TabStop = false;
+            // 
+            // quảnLýNgườiĐọcToolStripMenuItem
+            // 
+            this.quảnLýNgườiĐọcToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.quảnLýNgườiĐọcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýNgườiĐọcToolStripMenuItem.Image")));
+            this.quảnLýNgườiĐọcToolStripMenuItem.Name = "quảnLýNgườiĐọcToolStripMenuItem";
+            this.quảnLýNgườiĐọcToolStripMenuItem.Size = new System.Drawing.Size(327, 32);
+            this.quảnLýNgườiĐọcToolStripMenuItem.Text = "Quản lý người đọc";
+            this.quảnLýNgườiĐọcToolStripMenuItem.Click += new System.EventHandler(this.QLNguoiDoc_Click);
             // 
             // TrangChu
             // 
@@ -681,6 +692,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.ToolStripMenuItem QuanLyNTSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýNgườiĐọcToolStripMenuItem;
     }
 }
 

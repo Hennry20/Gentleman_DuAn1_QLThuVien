@@ -18,3 +18,4 @@ E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QLTheHoiVien.resources
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1.QL_NguoiMuonSach.resources
 E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QLNguoiTraSach.resources
+E:\FPT\FPT Polytechnic\FALL_2023\BLOCK2\PRO131\v\DuAn1_QLThuVien\DuAn1_QLThuVien\obj\Debug\DuAn1_QLThuVien.QLNguoiDoc.resources
