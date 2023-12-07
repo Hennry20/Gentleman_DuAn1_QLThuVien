@@ -199,6 +199,15 @@ namespace DuAn1_QLThuVien
             string pattern = @"^\d{10,}$"; // Số điện thoại có ít nhất 10 chữ số
             return Regex.IsMatch(phoneNumber, pattern);
         }
+        public bool IsValidEmail(string email)
+        {
+            // Kiểm tra email có phù hợp với định dạng không
+            string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+            Match match = Regex.Match(email, pattern);
+
+            // Trả về true nếu email hợp lệ, ngược lại trả về false
+            return match.Success;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             string connString = @"Data Source = DESKTOP-DPRU2H9; Initial Catalog = QLThuVien; Integrated security = SSPI";
@@ -218,11 +227,13 @@ namespace DuAn1_QLThuVien
                         int count = (int)check_MaND_Command.ExecuteScalar();
 
                         int count2 = (int)check_MaNV_Command.ExecuteScalar();
+
                         if (cbbMaND.Text.Trim() == string.Empty || txtSDT.Text.Trim() == string.Empty || txtTenND.Text.Trim() == string.Empty || dtpNgaySinh.Text.Trim() == string.Empty || txtEmail.Text.Trim() == string.Empty || cbbMaNV.Text == string.Empty)
                         {
                             MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+
                         if (count > 0)
                         {
                             MessageBox.Show($"Mã người đọc: {cbbMaND.Text} đã tồn tại! \n Vui lòng Nhập Mã sách khác", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -236,7 +247,7 @@ namespace DuAn1_QLThuVien
                         else
                         {
                             string insertQuery = "INSERT INTO NguoiDoc (MaND, TenND, NgaySinh, SDT, Email, MaNV) " +
-                                                     " VALUES (@MaND, @TenND, @NgaySinh, @SDT, @Email, @MaNV)";
+                                                         " VALUES (@MaND, @TenND, @NgaySinh, @SDT, @Email, @MaNV)";
 
                             using (SqlCommand insertCommand = new SqlCommand(insertQuery, conn))
                             {
@@ -244,6 +255,9 @@ namespace DuAn1_QLThuVien
                                 DateTime ngSinh;
 
                                 string dienThoai = txtSDT.Text.Trim();
+
+                                string email = txtEmail.Text.Trim();
+
                                 if (IsPhoneNumberValid(dienThoai))
                                 {
                                     insertCommand.Parameters.AddWithValue("@SDT", dienThoai);
@@ -252,29 +266,38 @@ namespace DuAn1_QLThuVien
                                 {
                                     MessageBox.Show("Định dạng Số điện thoại không hợp lệ. \nVui lòng nhập lại đúng định dạng \n(09********)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
-                                }                  
+                                }
                                 if (DateTime.TryParseExact(ngaySinh, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngSinh))
                                 {
                                     insertCommand.Parameters.AddWithValue("@NgaySinh", ngSinh);
                                 }
                                 else
                                 {
-                                    insertCommand.Parameters.AddWithValue("@MaND", cbbMaND.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@TenND", txtTenND.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@NgaySinh", dtpNgaySinh.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@SDT", txtSDT.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@Email", txtEmail);
-                                    insertCommand.Parameters.AddWithValue("@MaNV", cbbMaNV.Text.Trim());
-                                    
-                                    insertCommand.ExecuteNonQuery();
-                                    MessageBox.Show("Thêm Thành Công");
-                                    Load_tblGridView();
-
-                                    conn.Close();
+                                    MessageBox.Show("Định dạng ngày tháng không hợp lệ. \nVui lòng nhập lại đúng định dạng \nNăm/tháng/ngày (dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
                                 }
 
+                                if (IsValidEmail(email))
+                                {
+                                    insertCommand.Parameters.AddWithValue("@Email", email);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Định dạng Email không hợp lệ. \nVui lòng nhập đúng định dạng\n(example@gmail.com)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+
+                                insertCommand.Parameters.AddWithValue("@MaND", cbbMaND.Text.Trim());
+                                insertCommand.Parameters.AddWithValue("@TenND", txtTenND.Text.Trim());
+                                insertCommand.Parameters.AddWithValue("@MaNV", cbbMaNV.Text.Trim());
+                                insertCommand.ExecuteNonQuery();
+                                MessageBox.Show("Thêm Thành Công");
+                                Load_tblGridView();
+
+                                conn.Close();
                             }
                         }
+
                     }
 
                 }
@@ -300,11 +323,8 @@ namespace DuAn1_QLThuVien
                         int count = (int)check_MaND_Command.ExecuteScalar();
 
                         int count2 = (int)check_MaNV_Command.ExecuteScalar();
-                        if (cbbMaND.Text.Trim() == string.Empty || txtSDT.Text.Trim() == string.Empty || txtTenND.Text.Trim() == string.Empty || dtpNgaySinh.Text.Trim() == string.Empty || txtEmail.Text.Trim() == string.Empty || cbbMaNV.Text == string.Empty)
-                        {
-                            MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
+
+
                         if (count == 0)
                         {
                             MessageBox.Show($"Mã người đọc: {cbbMaND.Text} không tồn tại! \n Vui lòng Nhập Mã người đọc khác", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -315,9 +335,14 @@ namespace DuAn1_QLThuVien
                             MessageBox.Show($"Người tạo: {cbbMaNV.Text} không tồn tại! \n Vui lòng Nhập Mã người tạo khác", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (cbbMaND.Text.Trim() == string.Empty || txtSDT.Text.Trim() == string.Empty || txtTenND.Text.Trim() == string.Empty || dtpNgaySinh.Text.Trim() == string.Empty || txtEmail.Text.Trim() == string.Empty || cbbMaNV.Text == string.Empty)
+                        {
+                            MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
                         else
                         {
-                            string updateQuery = "UPDATE NguoiDoc SET TenND = @TenND, NgaySinh = @NgaySinh, SDT = @SDT, Email = @Email, MaNV = @MaNV WHERE MaND = @MaND ";    
+                            string updateQuery = "UPDATE NguoiDoc SET TenND = @TenND, NgaySinh = @NgaySinh, SDT = @SDT, Email = @Email, MaNV = @MaNV WHERE MaND = @MaND ";
 
                             using (SqlCommand insertCommand = new SqlCommand(updateQuery, conn))
                             {
@@ -325,6 +350,9 @@ namespace DuAn1_QLThuVien
                                 DateTime ngSinh;
 
                                 string dienThoai = txtSDT.Text.Trim();
+
+                                string email = txtEmail.Text.Trim();
+
                                 if (IsPhoneNumberValid(dienThoai))
                                 {
                                     insertCommand.Parameters.AddWithValue("@SDT", dienThoai);
@@ -340,19 +368,30 @@ namespace DuAn1_QLThuVien
                                 }
                                 else
                                 {
-                                    insertCommand.Parameters.AddWithValue("@MaND", cbbMaND.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@TenND", txtTenND.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@NgaySinh", dtpNgaySinh.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@SDT", txtSDT.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@Email", txtEmail);
-                                    insertCommand.Parameters.AddWithValue("@MaNV", cbbMaNV.Text.Trim());
-
-                                    insertCommand.ExecuteNonQuery();
-                                    MessageBox.Show("Cập nhật Thành Công");
-                                    Load_tblGridView();
-
-                                    conn.Close();
+                                    MessageBox.Show("Định dạng ngày tháng không hợp lệ. \nVui lòng nhập lại đúng định dạng \nNăm/tháng/ngày (dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
                                 }
+
+                                if (IsValidEmail(email))
+                                {
+                                    insertCommand.Parameters.AddWithValue("@Email", email);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Định dạng Email không hợp lệ. \nVui lòng nhập đúng định dạng\n(example@gmail.com)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+
+                                insertCommand.Parameters.AddWithValue("@MaND", cbbMaND.Text.Trim());
+                                insertCommand.Parameters.AddWithValue("@TenND", txtTenND.Text.Trim());
+                                insertCommand.Parameters.AddWithValue("@MaNV", cbbMaNV.Text.Trim());
+
+                                insertCommand.ExecuteNonQuery();
+                                MessageBox.Show("Cập nhật Thành Công");
+                                Load_tblGridView();
+
+                                conn.Close();
+
 
                             }
                         }
@@ -362,7 +401,7 @@ namespace DuAn1_QLThuVien
             }
         }
 
-        
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Mã sách = {cbbMaND.Text.Trim()}?", "Xác nhận?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -422,8 +461,8 @@ namespace DuAn1_QLThuVien
                 txtTenND.Text = dataGridView1.Rows[currentRowIndex].Cells[1].Value.ToString();
                 dtpNgaySinh.Text = dataGridView1.Rows[currentRowIndex].Cells[2].Value.ToString();
                 txtSDT.Text = dataGridView1.Rows[currentRowIndex].Cells[3].Value.ToString();
-                txtEmail.Text = dataGridView1.Rows[currentRowIndex].Cells[4].Value.ToString();                
-                cbbMaNV.Text = dataGridView1.Rows[currentRowIndex].Cells[5].Value.ToString();             
+                txtEmail.Text = dataGridView1.Rows[currentRowIndex].Cells[4].Value.ToString();
+                cbbMaNV.Text = dataGridView1.Rows[currentRowIndex].Cells[5].Value.ToString();
             }
             catch (Exception)
             {
