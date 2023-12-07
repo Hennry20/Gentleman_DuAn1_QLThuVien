@@ -150,11 +150,11 @@ namespace DuAn1_QLThuVien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat Black", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("SG85-PHAT TAI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(182, 23);
+            this.label1.Location = new System.Drawing.Point(124, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(397, 69);
+            this.label1.Size = new System.Drawing.Size(468, 69);
             this.label1.TabIndex = 47;
             this.label1.Text = "Đổi mật khẩu";
             // 

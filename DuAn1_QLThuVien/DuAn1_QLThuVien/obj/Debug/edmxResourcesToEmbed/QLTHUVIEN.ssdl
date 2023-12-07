@@ -16,6 +16,7 @@
       <PropertyRef Name="MaNV" />
     </Key>
     <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="TenNV" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="GioiTinh" Type="nvarchar" MaxLength="4" />
     <Property Name="NgaySinh" Type="date" />
@@ -23,8 +24,7 @@
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="HinhAnh" Type="nvarchar(max)" />
     <Property Name="NgayVaoLam" Type="date" />
-    <Property Name="GhiChu" Type="nvarchar" MaxLength="50" />
-    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="50" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="PhieuMuon">
     <Key>
@@ -32,10 +32,10 @@
     </Key>
     <Property Name="MaPhieuMuon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaND" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="TenND" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="MaSach" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="SoLuong" Type="int" />
     <Property Name="NgayMuon" Type="date" />
+    <Property Name="NgayHenTra" Type="date" />
     <Property Name="TienCoc" Type="float" />
     <Property Name="SoGio" Type="int" />
   </EntityType>
@@ -46,8 +46,8 @@
     <Property Name="MaPhieuTra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaPhieuMuon" Type="int" Nullable="false" />
     <Property Name="MaND" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="TenND" Type="nvarchar" MaxLength="50" />
     <Property Name="SoLuong" Type="int" />
+    <Property Name="NgayHenTra" Type="date" />
     <Property Name="NgayTra" Type="date" />
     <Property Name="PhiTra" Type="float" />
     <Property Name="TinhTrang" Type="nvarchar" MaxLength="20" />
@@ -110,6 +110,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_tdn">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="TenDangNhap" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="TenDangNhap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fn_nd">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -121,18 +135,6 @@
       </Principal>
       <Dependent Role="NguoiDoc">
         <PropertyRef Name="MaNV" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fn_ndpm">
-    <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="1" />
-    <End Role="PhieuMuon" Type="Self.PhieuMuon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NguoiDoc">
-        <PropertyRef Name="MaND" />
-      </Principal>
-      <Dependent Role="PhieuMuon">
-        <PropertyRef Name="MaND" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -164,18 +166,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fn_tdn">
-    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TaiKhoan">
-        <PropertyRef Name="TenDangNhap" />
-      </Principal>
-      <Dependent Role="NhanVien">
-        <PropertyRef Name="TenDangNhap" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="fn_thv">
     <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -203,13 +193,13 @@
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="Sach" EntitySet="Sach" />
     </AssociationSet>
+    <AssociationSet Name="fk_tdn" Association="Self.fk_tdn">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
     <AssociationSet Name="fn_nd" Association="Self.fn_nd">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="NguoiDoc" EntitySet="NguoiDoc" />
-    </AssociationSet>
-    <AssociationSet Name="fn_ndpm" Association="Self.fn_ndpm">
-      <End Role="NguoiDoc" EntitySet="NguoiDoc" />
-      <End Role="PhieuMuon" EntitySet="PhieuMuon" />
     </AssociationSet>
     <AssociationSet Name="fn_pm" Association="Self.fn_pm">
       <End Role="Sach" EntitySet="Sach" />
@@ -218,10 +208,6 @@
     <AssociationSet Name="fn_pt" Association="Self.fn_pt">
       <End Role="PhieuMuon" EntitySet="PhieuMuon" />
       <End Role="PhieuTra" EntitySet="PhieuTra" />
-    </AssociationSet>
-    <AssociationSet Name="fn_tdn" Association="Self.fn_tdn">
-      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
-      <End Role="NhanVien" EntitySet="NhanVien" />
     </AssociationSet>
     <AssociationSet Name="fn_thv" Association="Self.fn_thv">
       <End Role="NguoiDoc" EntitySet="NguoiDoc" />

@@ -29,6 +29,7 @@ namespace DuAn1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QL_NguoiMuonSach));
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayHenTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +82,7 @@ namespace DuAn1
             this.gbChoMuonSach = new System.Windows.Forms.GroupBox();
             this.dtpQLMSNgayHenTra = new System.Windows.Forms.DateTimePicker();
             this.cbQLMSMaNguoiDoc = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gbDSChoMuon.SuspendLayout();
@@ -133,17 +135,18 @@ namespace DuAn1
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(113, 54);
+            this.label6.Font = new System.Drawing.Font("SG85-PHAT TAI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label6.Location = new System.Drawing.Point(101, 39);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(721, 53);
+            this.label6.Size = new System.Drawing.Size(819, 66);
             this.label6.TabIndex = 6;
             this.label6.Text = "QUẢN LÝ NGƯỜI MƯỢN SÁCH";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(926, 35);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(927, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(222, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -161,7 +164,6 @@ namespace DuAn1
             this.ThongKeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1160, 36);
             this.menuStrip1.TabIndex = 48;
             this.menuStrip1.Text = "menuStrip1";
@@ -182,6 +184,7 @@ namespace DuAn1
             // 
             this.TrangChuToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.TrangChuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.TrangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TrangChuToolStripMenuItem.Image")));
             this.TrangChuToolStripMenuItem.Name = "TrangChuToolStripMenuItem";
             this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.TrangChuToolStripMenuItem.Text = "Trang chủ";
@@ -191,6 +194,7 @@ namespace DuAn1
             // 
             this.DangXuatToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DangXuatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DangXuatToolStripMenuItem.Image")));
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
             this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất ";
@@ -200,6 +204,7 @@ namespace DuAn1
             // 
             this.DoiMatKhauToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.DoiMatKhauToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.DoiMatKhauToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DoiMatKhauToolStripMenuItem.Image")));
             this.DoiMatKhauToolStripMenuItem.Name = "DoiMatKhauToolStripMenuItem";
             this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DoiMatKhauToolStripMenuItem.Text = "Đổi mật khẩu ";
@@ -209,6 +214,7 @@ namespace DuAn1
             // 
             this.ThoatToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.ThoatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ThoatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThoatToolStripMenuItem.Image")));
             this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
             this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.ThoatToolStripMenuItem.Text = "Thoát";
@@ -231,6 +237,7 @@ namespace DuAn1
             // QuanLyNVToolStripMenuItem
             // 
             this.QuanLyNVToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.QuanLyNVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyNVToolStripMenuItem.Image")));
             this.QuanLyNVToolStripMenuItem.Name = "QuanLyNVToolStripMenuItem";
             this.QuanLyNVToolStripMenuItem.Size = new System.Drawing.Size(327, 32);
             this.QuanLyNVToolStripMenuItem.Text = "Quản lý nhân viên";
@@ -239,6 +246,7 @@ namespace DuAn1
             // QuanLyKhoSachToolStripMenuItem
             // 
             this.QuanLyKhoSachToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.QuanLyKhoSachToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyKhoSachToolStripMenuItem.Image")));
             this.QuanLyKhoSachToolStripMenuItem.Name = "QuanLyKhoSachToolStripMenuItem";
             this.QuanLyKhoSachToolStripMenuItem.Size = new System.Drawing.Size(327, 32);
             this.QuanLyKhoSachToolStripMenuItem.Text = "Quản lý Kho sách";
@@ -247,6 +255,7 @@ namespace DuAn1
             // QuanLyNMSToolStripMenuItem
             // 
             this.QuanLyNMSToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.QuanLyNMSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyNMSToolStripMenuItem.Image")));
             this.QuanLyNMSToolStripMenuItem.Name = "QuanLyNMSToolStripMenuItem";
             this.QuanLyNMSToolStripMenuItem.Size = new System.Drawing.Size(327, 32);
             this.QuanLyNMSToolStripMenuItem.Text = "Quản lý người mượn sách ";
@@ -255,6 +264,7 @@ namespace DuAn1
             // QuanLyNTSToolStripMenuItem
             // 
             this.QuanLyNTSToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.QuanLyNTSToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyNTSToolStripMenuItem.Image")));
             this.QuanLyNTSToolStripMenuItem.Name = "QuanLyNTSToolStripMenuItem";
             this.QuanLyNTSToolStripMenuItem.Size = new System.Drawing.Size(327, 32);
             this.QuanLyNTSToolStripMenuItem.Text = "Quản Lý người trả sách";
@@ -263,6 +273,7 @@ namespace DuAn1
             // QuanLyTHVToolStripMenuItem
             // 
             this.QuanLyTHVToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.QuanLyTHVToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QuanLyTHVToolStripMenuItem.Image")));
             this.QuanLyTHVToolStripMenuItem.Name = "QuanLyTHVToolStripMenuItem";
             this.QuanLyTHVToolStripMenuItem.Size = new System.Drawing.Size(327, 32);
             this.QuanLyTHVToolStripMenuItem.Text = "Quản lý thẻ hội viên";
@@ -271,8 +282,9 @@ namespace DuAn1
             // ThongKeToolStripMenuItem
             // 
             this.ThongKeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ThongKeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThongKeToolStripMenuItem.Image")));
             this.ThongKeToolStripMenuItem.Name = "ThongKeToolStripMenuItem";
-            this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(194, 32);
+            this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(214, 32);
             this.ThongKeToolStripMenuItem.Text = "Tổng hợp thống kê";
             this.ThongKeToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
@@ -281,21 +293,22 @@ namespace DuAn1
             this.btnQLMSCapNhat.BackColor = System.Drawing.Color.White;
             this.btnQLMSCapNhat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLMSCapNhat.Location = new System.Drawing.Point(1008, 275);
-            this.btnQLMSCapNhat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLMSCapNhat.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLMSCapNhat.Name = "btnQLMSCapNhat";
             this.btnQLMSCapNhat.Size = new System.Drawing.Size(117, 54);
             this.btnQLMSCapNhat.TabIndex = 53;
             this.btnQLMSCapNhat.Text = "Cập nhật";
             this.btnQLMSCapNhat.UseVisualStyleBackColor = false;
+            this.btnQLMSCapNhat.Click += new System.EventHandler(this.btnQLMSCapNhat_Click_1);
             // 
             // gbDSChoMuon
             // 
             this.gbDSChoMuon.Controls.Add(this.dtgvQLMuonSach);
             this.gbDSChoMuon.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbDSChoMuon.Location = new System.Drawing.Point(12, 410);
-            this.gbDSChoMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDSChoMuon.Margin = new System.Windows.Forms.Padding(4);
             this.gbDSChoMuon.Name = "gbDSChoMuon";
-            this.gbDSChoMuon.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbDSChoMuon.Padding = new System.Windows.Forms.Padding(4);
             this.gbDSChoMuon.Size = new System.Drawing.Size(1137, 309);
             this.gbDSChoMuon.TabIndex = 52;
             this.gbDSChoMuon.TabStop = false;
@@ -384,12 +397,13 @@ namespace DuAn1
             this.btnQLMSMoi.BackColor = System.Drawing.Color.White;
             this.btnQLMSMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLMSMoi.Location = new System.Drawing.Point(1008, 202);
-            this.btnQLMSMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLMSMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLMSMoi.Name = "btnQLMSMoi";
             this.btnQLMSMoi.Size = new System.Drawing.Size(117, 54);
             this.btnQLMSMoi.TabIndex = 50;
             this.btnQLMSMoi.Text = "Mới";
             this.btnQLMSMoi.UseVisualStyleBackColor = false;
+            this.btnQLMSMoi.Click += new System.EventHandler(this.btnQLMSMoi_Click);
             // 
             // lblQLMSMaPhieuMuon
             // 
@@ -418,7 +432,7 @@ namespace DuAn1
             this.cbQLMSMaSach2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbQLMSMaSach2.FormattingEnabled = true;
             this.cbQLMSMaSach2.Location = new System.Drawing.Point(212, 97);
-            this.cbQLMSMaSach2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbQLMSMaSach2.Margin = new System.Windows.Forms.Padding(4);
             this.cbQLMSMaSach2.Name = "cbQLMSMaSach2";
             this.cbQLMSMaSach2.Size = new System.Drawing.Size(240, 30);
             this.cbQLMSMaSach2.TabIndex = 5;
@@ -427,7 +441,7 @@ namespace DuAn1
             // 
             this.txtQLMSSoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQLMSSoLuong.Location = new System.Drawing.Point(212, 207);
-            this.txtQLMSSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQLMSSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtQLMSSoLuong.Name = "txtQLMSSoLuong";
             this.txtQLMSSoLuong.Size = new System.Drawing.Size(240, 30);
             this.txtQLMSSoLuong.TabIndex = 2;
@@ -437,18 +451,19 @@ namespace DuAn1
             this.btnQLMSXoa.BackColor = System.Drawing.Color.White;
             this.btnQLMSXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLMSXoa.Location = new System.Drawing.Point(1008, 349);
-            this.btnQLMSXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQLMSXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnQLMSXoa.Name = "btnQLMSXoa";
             this.btnQLMSXoa.Size = new System.Drawing.Size(117, 54);
             this.btnQLMSXoa.TabIndex = 54;
             this.btnQLMSXoa.Text = "Xóa";
             this.btnQLMSXoa.UseVisualStyleBackColor = false;
+            this.btnQLMSXoa.Click += new System.EventHandler(this.btnQLMSXoa_Click_1);
             // 
             // txtQLMSSoGioMuon
             // 
             this.txtQLMSSoGioMuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQLMSSoGioMuon.Location = new System.Drawing.Point(698, 205);
-            this.txtQLMSSoGioMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQLMSSoGioMuon.Margin = new System.Windows.Forms.Padding(4);
             this.txtQLMSSoGioMuon.Name = "txtQLMSSoGioMuon";
             this.txtQLMSSoGioMuon.Size = new System.Drawing.Size(240, 30);
             this.txtQLMSSoGioMuon.TabIndex = 14;
@@ -469,7 +484,7 @@ namespace DuAn1
             // 
             this.txtQLMSTienCoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQLMSTienCoc.Location = new System.Drawing.Point(698, 151);
-            this.txtQLMSTienCoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQLMSTienCoc.Margin = new System.Windows.Forms.Padding(4);
             this.txtQLMSTienCoc.Name = "txtQLMSTienCoc";
             this.txtQLMSTienCoc.Size = new System.Drawing.Size(240, 30);
             this.txtQLMSTienCoc.TabIndex = 10;
@@ -526,12 +541,13 @@ namespace DuAn1
             this.btnChoMuon.BackColor = System.Drawing.Color.White;
             this.btnChoMuon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChoMuon.Location = new System.Drawing.Point(1008, 130);
-            this.btnChoMuon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChoMuon.Margin = new System.Windows.Forms.Padding(4);
             this.btnChoMuon.Name = "btnChoMuon";
             this.btnChoMuon.Size = new System.Drawing.Size(117, 54);
             this.btnChoMuon.TabIndex = 51;
             this.btnChoMuon.Text = "Cho Mượn";
             this.btnChoMuon.UseVisualStyleBackColor = false;
+            this.btnChoMuon.Click += new System.EventHandler(this.btnChoMuon_Click_1);
             // 
             // label12
             // 
@@ -589,9 +605,9 @@ namespace DuAn1
             this.gbChoMuonSach.Controls.Add(this.label10);
             this.gbChoMuonSach.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbChoMuonSach.Location = new System.Drawing.Point(12, 128);
-            this.gbChoMuonSach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbChoMuonSach.Margin = new System.Windows.Forms.Padding(4);
             this.gbChoMuonSach.Name = "gbChoMuonSach";
-            this.gbChoMuonSach.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbChoMuonSach.Padding = new System.Windows.Forms.Padding(4);
             this.gbChoMuonSach.Size = new System.Drawing.Size(964, 258);
             this.gbChoMuonSach.TabIndex = 49;
             this.gbChoMuonSach.TabStop = false;
@@ -603,7 +619,7 @@ namespace DuAn1
             this.dtpQLMSNgayHenTra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpQLMSNgayHenTra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpQLMSNgayHenTra.Location = new System.Drawing.Point(698, 95);
-            this.dtpQLMSNgayHenTra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpQLMSNgayHenTra.Margin = new System.Windows.Forms.Padding(4);
             this.dtpQLMSNgayHenTra.Name = "dtpQLMSNgayHenTra";
             this.dtpQLMSNgayHenTra.Size = new System.Drawing.Size(240, 30);
             this.dtpQLMSNgayHenTra.TabIndex = 3;
@@ -613,10 +629,19 @@ namespace DuAn1
             this.cbQLMSMaNguoiDoc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbQLMSMaNguoiDoc.FormattingEnabled = true;
             this.cbQLMSMaNguoiDoc.Location = new System.Drawing.Point(212, 44);
-            this.cbQLMSMaNguoiDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbQLMSMaNguoiDoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbQLMSMaNguoiDoc.Name = "cbQLMSMaNguoiDoc";
             this.cbQLMSMaNguoiDoc.Size = new System.Drawing.Size(240, 30);
             this.cbQLMSMaNguoiDoc.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1095, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "label1";
             // 
             // QL_NguoiMuonSach
             // 
@@ -624,6 +649,7 @@ namespace DuAn1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(1160, 724);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnQLMSCapNhat);
             this.Controls.Add(this.gbDSChoMuon);
             this.Controls.Add(this.btnQLMSMoi);
@@ -636,7 +662,7 @@ namespace DuAn1
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "QL_NguoiMuonSach";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "c ";
+            this.Text = "QUẢN LÝ NGƯỜI MƯỢN SÁCH";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QL_NguoiMuonSach_FormClosing);
             this.Load += new System.EventHandler(this.QL_NguoiMuonSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -704,5 +730,6 @@ namespace DuAn1
         private System.Windows.Forms.GroupBox gbChoMuonSach;
         private System.Windows.Forms.DateTimePicker dtpQLMSNgayHenTra;
         private System.Windows.Forms.ComboBox cbQLMSMaNguoiDoc;
+        private System.Windows.Forms.Label label1;
     }
 }

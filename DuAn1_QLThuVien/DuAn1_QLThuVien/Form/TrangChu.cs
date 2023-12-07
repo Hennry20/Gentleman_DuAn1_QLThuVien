@@ -14,14 +14,12 @@ namespace DuAn1
 {
     public partial class TrangChu : Form
     {
-        public TrangChu(string text)
+        public TrangChu(String tendangnhap)
         {
             InitializeComponent();
+            label1.Text = tendangnhap;
         }
 
-        public TrangChu()
-        {
-        }
 
         private void TrangChu_Load(object sender, EventArgs e)
         {
@@ -50,14 +48,14 @@ namespace DuAn1
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach();
+            QLSach sach = new QLSach(label1.Text);
             this.Hide();
             sach.ShowDialog();
             this.Close();
         }
         private void QlNhanVien_Click(object sender, EventArgs e)
         {
-            QLNhanVien nv = new QLNhanVien();
+            QLNhanVien nv = new QLNhanVien(label1.Text);
             this.Hide();
             nv.ShowDialog();
             this.Close();
@@ -72,21 +70,21 @@ namespace DuAn1
         }
         private void QLnguoiMuonSach_Click(Object sender, EventArgs e)
         {
-            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach();
+            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach(label1.Text);
             this.Hide();
             nguoiMuonSach.ShowDialog();
             this.Close();         
         }
         private void QLTHongke_Click(object sender, EventArgs e)
         {
-            QLThongKe qLThongKe = new QLThongKe();
+            QLThongKe qLThongKe = new QLThongKe(label1.Text);
             this.Hide();
             qLThongKe.ShowDialog();
             this.Close();
         }
         private void QLnguoiTraSach_Click(Object sender, EventArgs e)
         {
-            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
+            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach(label1.Text);
             this.Hide();
             qLNguoiTra.ShowDialog();
             this.Close();
@@ -94,7 +92,7 @@ namespace DuAn1
         }
         private void QLTHV_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien theHoiVien = new QLTheHoiVien();
+            QLTheHoiVien theHoiVien = new QLTheHoiVien(label1.Text);
             this.Hide();
             theHoiVien.ShowDialog();
             this.Close();

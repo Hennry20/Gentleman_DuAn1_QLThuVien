@@ -53,11 +53,11 @@ namespace DuAn1_QLThuVien
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Font = new System.Drawing.Font("Rockwell Extra Bold", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Lost Type 2023", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
             this.label1.Location = new System.Drawing.Point(458, 507);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 58);
+            this.label1.Size = new System.Drawing.Size(362, 60);
             this.label1.TabIndex = 5;
             this.label1.Text = "LOADING...";
             // 

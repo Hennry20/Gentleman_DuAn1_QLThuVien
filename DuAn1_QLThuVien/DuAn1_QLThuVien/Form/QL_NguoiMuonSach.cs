@@ -16,10 +16,10 @@ namespace DuAn1
 {
     public partial class QL_NguoiMuonSach : Form
     {
-        public QL_NguoiMuonSach()
+        public QL_NguoiMuonSach(String User)
         {
             InitializeComponent();
-
+            label1.Text = User;
             load_dtgvQLMuonSach();
         }
         private void QL_NguoiMuonSach_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace DuAn1
 
         private void trangChủToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu();
+            TrangChu trang = new TrangChu(label1.Text);
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -86,7 +86,7 @@ namespace DuAn1
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLNhanVien nv = new QLNhanVien();
+            QLNhanVien nv = new QLNhanVien(label1.Text);
             this.Hide();
             nv.ShowDialog();
             this.Close();
@@ -94,7 +94,7 @@ namespace DuAn1
 
         private void quảnLýKhoSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach();
+            QLSach sach = new QLSach(label1.Text);
             this.Hide();
             sach.ShowDialog();
             this.Close();
@@ -102,7 +102,7 @@ namespace DuAn1
 
         private void quảnLýNgườiMượnSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach();
+            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach(label1.Text);
             this.Hide();
             nguoiMuonSach.ShowDialog();
             this.Close();
@@ -110,35 +110,35 @@ namespace DuAn1
 
         private void quảnLýThẻHộiViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
+            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(label1.Text);
             this.Hide();
             qLTheHoiVien.ShowDialog();
             this.Close();
         }
         private void btnTraSach_Click(object sender, EventArgs e)
         {
-            QLNguoiTraSach qLNguoiTraSach = new QLNguoiTraSach();
+            QLNguoiTraSach qLNguoiTraSach = new QLNguoiTraSach(label1.Text);
             this.Hide();
             qLNguoiTraSach.ShowDialog();
             this.Close();
         }
         private void đăngKýHộiViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
+            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(label1.Text);
             this.Hide();
             qLTheHoiVien.ShowDialog();
             this.Close();
         }
         private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QLThongKe qLThongKe = new QLThongKe();
+            QLThongKe qLThongKe = new QLThongKe(label1.Text);
             this.Hide();
             qLThongKe.ShowDialog();
             this.Close();
         }
         private void load_dtgvQLMuonSach()
         {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM PhieuMuon";
@@ -181,7 +181,7 @@ namespace DuAn1
         }
         public void load_MaND()
         {
-            string connectionString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -211,7 +211,7 @@ namespace DuAn1
 
         public void load_MaSach()
         {
-            string connectionString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -246,6 +246,43 @@ namespace DuAn1
 
         private void btnMoi_Click(object sender, EventArgs e)
         {
+            
+        }
+        
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            TrangChu trangChu = new TrangChu("");
+            this.Hide();
+            trangChu.ShowDialog();
+            this.Close();
+        }
+
+        private void btnQLMSCapNhat_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void xoaMaPhieuMuon(string maPMToDelete)
+        {
+            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
+            string deleteQuery = "DELETE FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(deleteQuery, conn))
+                {
+                    command.Parameters.AddWithValue("@MaPhieuMuon", maPMToDelete);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show($"Xóa thành công!");
+                    load_dtgvQLMuonSach();
+                    conn.Close();
+                }
+            }
+        }
+
+        private void btnQLMSMoi_Click(object sender, EventArgs e)
+        {
             load_dtgvQLMuonSach();
             lblQLMSMaPhieuMuon.Text = string.Empty;
             cbQLMSMaNguoiDoc.Text = string.Empty;
@@ -256,10 +293,10 @@ namespace DuAn1
             txtQLMSTienCoc.Text = string.Empty;
             txtQLMSSoGioMuon.Text = string.Empty;
         }
-        
-        private void btnChoMuon_Click(object sender, EventArgs e)
+
+        private void btnChoMuon_Click_1(object sender, EventArgs e)
         {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -352,17 +389,19 @@ namespace DuAn1
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnQLMSXoa_Click_1(object sender, EventArgs e)
         {
-            TrangChu trangChu = new TrangChu();
-            this.Hide();
-            trangChu.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Mã phiếu mượn = {lblQLMSMaPhieuMuon.Text.Trim()}?", "Xác nhận?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                string maPMToDelete = lblQLMSMaPhieuMuon.Text.Trim();
+                xoaMaPhieuMuon(maPMToDelete);
+            }
         }
 
-        private void btnQLMSCapNhat_Click(object sender, EventArgs e)
+        private void btnQLMSCapNhat_Click_1(object sender, EventArgs e)
         {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -434,6 +473,8 @@ namespace DuAn1
                                     command.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@MaSach", cbQLMSMaSach2.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLMSSoLuong.Text.Trim());
+                                    command.Parameters.AddWithValue("@NgayMuon", dtpQLMSNgayMuon.Text.Trim());
+                                    command.Parameters.AddWithValue("@NgayTra", dtpQLMSNgayHenTra.Text.Trim());
                                     command.Parameters.AddWithValue("@TienCoc", txtQLMSTienCoc.Text.Trim());
                                     command.Parameters.AddWithValue("@SoGio", txtQLMSSoGioMuon.Text.Trim());
                                     command.ExecuteNonQuery();
@@ -445,33 +486,6 @@ namespace DuAn1
                         }
                     }
                 }
-            }
-        }
-
-        private void xoaMaPhieuMuon(string maPMToDelete)
-        {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
-            string deleteQuery = "DELETE FROM PhieuMuon WHERE MaPhieuMuon = @MaPhieuMuon";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                using (SqlCommand command = new SqlCommand(deleteQuery, conn))
-                {
-                    command.Parameters.AddWithValue("@MaPhieuMuon", maPMToDelete);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show($"Xóa thành công!");
-                    load_dtgvQLMuonSach();
-                    conn.Close();
-                }
-            }
-        }
-        private void btnQLMSXoa_Click(object sender, EventArgs e)
-        {
-            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa Mã phiếu mượn = {lblQLMSMaPhieuMuon.Text.Trim()}?", "Xác nhận?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
-            {
-                string maPMToDelete = lblQLMSMaPhieuMuon.Text.Trim();
-                xoaMaPhieuMuon(maPMToDelete);
             }
         }
     }

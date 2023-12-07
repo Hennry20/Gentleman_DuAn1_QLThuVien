@@ -1,4 +1,6 @@
 ﻿using DuAn1;
+using DuAn1_QLThuVien;
+using QLThuVien;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,7 +89,12 @@ namespace DuAn1_QLThuVien
                 }
             }
             TrangChu tn = new TrangChu(txt_Username.Text);
-            QLSach ql = new QLSach();
+            QLSach ql = new QLSach(txt_Username.Text);
+            QLNguoiTraSach qlnts = new QLNguoiTraSach(txt_Username.Text);
+            QL_NguoiMuonSach qlnms = new QL_NguoiMuonSach(txt_Username.Text);
+            QLTheHoiVien qlthv = new QLTheHoiVien(txt_Username.Text);
+            QLThongKe qltk = new QLThongKe(txt_Username.Text);
+            QLNhanVien qlnv = new QLNhanVien(txt_Username.Text);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

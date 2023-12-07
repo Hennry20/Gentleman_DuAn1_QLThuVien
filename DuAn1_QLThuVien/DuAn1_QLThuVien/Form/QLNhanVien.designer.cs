@@ -68,9 +68,6 @@ namespace QLThuVien
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btReset = new System.Windows.Forms.Button();
-            this.btXoaNV = new System.Windows.Forms.Button();
-            this.btCapNhatNV = new System.Windows.Forms.Button();
-            this.btThemNV = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btTimKiemNV = new System.Windows.Forms.Button();
             this.txtTimKiemNV = new System.Windows.Forms.TextBox();
@@ -86,6 +83,9 @@ namespace QLThuVien
             this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayVaoLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btXoaNV = new System.Windows.Forms.Button();
+            this.btThemNV = new System.Windows.Forms.Button();
+            this.btCapNhatNV = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -99,11 +99,11 @@ namespace QLThuVien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(184, 74);
+            this.label1.Font = new System.Drawing.Font("SG85-PHAT TAI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(296, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(508, 55);
+            this.label1.Size = new System.Drawing.Size(592, 66);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÍ NHÂN VIÊN";
             // 
@@ -111,7 +111,7 @@ namespace QLThuVien
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(824, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(947, 50);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(267, 88);
             this.pictureBox1.TabIndex = 2;
@@ -130,7 +130,7 @@ namespace QLThuVien
             this.hướngDẫnSửDụngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1113, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1226, 33);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -241,7 +241,7 @@ namespace QLThuVien
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 45);
+            this.label2.Location = new System.Drawing.Point(14, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 25);
             this.label2.TabIndex = 0;
@@ -250,7 +250,7 @@ namespace QLThuVien
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 100);
+            this.label3.Location = new System.Drawing.Point(14, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 25);
             this.label3.TabIndex = 1;
@@ -259,7 +259,7 @@ namespace QLThuVien
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 203);
+            this.label4.Location = new System.Drawing.Point(14, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 25);
             this.label4.TabIndex = 2;
@@ -268,7 +268,7 @@ namespace QLThuVien
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(408, 95);
+            this.label5.Location = new System.Drawing.Point(14, 262);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 25);
             this.label5.TabIndex = 3;
@@ -277,7 +277,7 @@ namespace QLThuVien
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 150);
+            this.label6.Location = new System.Drawing.Point(14, 152);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(132, 25);
             this.label6.TabIndex = 4;
@@ -286,7 +286,7 @@ namespace QLThuVien
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 264);
+            this.label7.Location = new System.Drawing.Point(495, 43);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 25);
             this.label7.TabIndex = 5;
@@ -295,34 +295,34 @@ namespace QLThuVien
             // txtMaNV
             // 
             this.txtMaNV.BackColor = System.Drawing.Color.White;
-            this.txtMaNV.Location = new System.Drawing.Point(168, 42);
+            this.txtMaNV.Location = new System.Drawing.Point(167, 40);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(209, 30);
-            this.txtMaNV.TabIndex = 8;
+            this.txtMaNV.Size = new System.Drawing.Size(279, 30);
+            this.txtMaNV.TabIndex = 1;
             // 
             // txtHoTenNV
             // 
             this.txtHoTenNV.BackColor = System.Drawing.Color.White;
-            this.txtHoTenNV.Location = new System.Drawing.Point(168, 97);
+            this.txtHoTenNV.Location = new System.Drawing.Point(167, 95);
             this.txtHoTenNV.Name = "txtHoTenNV";
-            this.txtHoTenNV.Size = new System.Drawing.Size(209, 30);
-            this.txtHoTenNV.TabIndex = 9;
+            this.txtHoTenNV.Size = new System.Drawing.Size(279, 30);
+            this.txtHoTenNV.TabIndex = 2;
             // 
             // txtSoDT
             // 
             this.txtSoDT.BackColor = System.Drawing.Color.White;
-            this.txtSoDT.Location = new System.Drawing.Point(168, 147);
+            this.txtSoDT.Location = new System.Drawing.Point(167, 147);
             this.txtSoDT.Name = "txtSoDT";
-            this.txtSoDT.Size = new System.Drawing.Size(209, 30);
-            this.txtSoDT.TabIndex = 11;
+            this.txtSoDT.Size = new System.Drawing.Size(279, 30);
+            this.txtSoDT.TabIndex = 3;
             // 
             // txtEmailNV
             // 
             this.txtEmailNV.BackColor = System.Drawing.Color.White;
-            this.txtEmailNV.Location = new System.Drawing.Point(168, 261);
+            this.txtEmailNV.Location = new System.Drawing.Point(660, 40);
             this.txtEmailNV.Name = "txtEmailNV";
-            this.txtEmailNV.Size = new System.Drawing.Size(209, 30);
-            this.txtEmailNV.TabIndex = 13;
+            this.txtEmailNV.Size = new System.Drawing.Size(262, 30);
+            this.txtEmailNV.TabIndex = 6;
             // 
             // cbbxGioiTinh
             // 
@@ -331,10 +331,10 @@ namespace QLThuVien
             this.cbbxGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbbxGioiTinh.Location = new System.Drawing.Point(168, 200);
+            this.cbbxGioiTinh.Location = new System.Drawing.Point(167, 203);
             this.cbbxGioiTinh.Name = "cbbxGioiTinh";
-            this.cbbxGioiTinh.Size = new System.Drawing.Size(209, 33);
-            this.cbbxGioiTinh.TabIndex = 14;
+            this.cbbxGioiTinh.Size = new System.Drawing.Size(279, 33);
+            this.cbbxGioiTinh.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -361,9 +361,9 @@ namespace QLThuVien
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox1.Location = new System.Drawing.Point(37, 156);
+            this.groupBox1.Location = new System.Drawing.Point(12, 144);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1054, 329);
+            this.groupBox1.Size = new System.Drawing.Size(1202, 310);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhân viên";
@@ -371,31 +371,31 @@ namespace QLThuVien
             // txtNgayVaoLam
             // 
             this.txtNgayVaoLam.BackColor = System.Drawing.Color.White;
-            this.txtNgayVaoLam.Location = new System.Drawing.Point(569, 147);
+            this.txtNgayVaoLam.Location = new System.Drawing.Point(661, 145);
             this.txtNgayVaoLam.Name = "txtNgayVaoLam";
-            this.txtNgayVaoLam.Size = new System.Drawing.Size(201, 30);
-            this.txtNgayVaoLam.TabIndex = 28;
+            this.txtNgayVaoLam.Size = new System.Drawing.Size(262, 30);
+            this.txtNgayVaoLam.TabIndex = 8;
             // 
             // txtNgaySinhNV
             // 
             this.txtNgaySinhNV.BackColor = System.Drawing.Color.White;
-            this.txtNgaySinhNV.Location = new System.Drawing.Point(571, 92);
+            this.txtNgaySinhNV.Location = new System.Drawing.Point(167, 259);
             this.txtNgaySinhNV.Name = "txtNgaySinhNV";
-            this.txtNgaySinhNV.Size = new System.Drawing.Size(201, 30);
-            this.txtNgaySinhNV.TabIndex = 27;
+            this.txtNgaySinhNV.Size = new System.Drawing.Size(279, 30);
+            this.txtNgaySinhNV.TabIndex = 5;
             // 
             // txtTenDN
             // 
             this.txtTenDN.BackColor = System.Drawing.Color.White;
-            this.txtTenDN.Location = new System.Drawing.Point(571, 42);
+            this.txtTenDN.Location = new System.Drawing.Point(661, 95);
             this.txtTenDN.Name = "txtTenDN";
-            this.txtTenDN.Size = new System.Drawing.Size(201, 30);
-            this.txtTenDN.TabIndex = 26;
+            this.txtTenDN.Size = new System.Drawing.Size(262, 30);
+            this.txtTenDN.TabIndex = 7;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(408, 45);
+            this.label13.Location = new System.Drawing.Point(495, 93);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(151, 25);
             this.label13.TabIndex = 25;
@@ -404,7 +404,7 @@ namespace QLThuVien
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(877, 49);
+            this.label9.Location = new System.Drawing.Point(972, 40);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(90, 25);
             this.label9.TabIndex = 24;
@@ -413,7 +413,7 @@ namespace QLThuVien
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(408, 150);
+            this.label11.Location = new System.Drawing.Point(495, 150);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(137, 25);
             this.label11.TabIndex = 21;
@@ -424,9 +424,9 @@ namespace QLThuVien
             this.ptbAnhNV.BackColor = System.Drawing.Color.White;
             this.ptbAnhNV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ptbAnhNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbAnhNV.Location = new System.Drawing.Point(819, 77);
+            this.ptbAnhNV.Location = new System.Drawing.Point(977, 71);
             this.ptbAnhNV.Name = "ptbAnhNV";
-            this.ptbAnhNV.Size = new System.Drawing.Size(200, 217);
+            this.ptbAnhNV.Size = new System.Drawing.Size(180, 218);
             this.ptbAnhNV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbAnhNV.TabIndex = 18;
             this.ptbAnhNV.TabStop = false;
@@ -435,16 +435,16 @@ namespace QLThuVien
             // txtGhiChuNV
             // 
             this.txtGhiChuNV.BackColor = System.Drawing.Color.White;
-            this.txtGhiChuNV.Location = new System.Drawing.Point(569, 200);
+            this.txtGhiChuNV.Location = new System.Drawing.Point(662, 195);
             this.txtGhiChuNV.Multiline = true;
             this.txtGhiChuNV.Name = "txtGhiChuNV";
-            this.txtGhiChuNV.Size = new System.Drawing.Size(200, 94);
-            this.txtGhiChuNV.TabIndex = 17;
+            this.txtGhiChuNV.Size = new System.Drawing.Size(261, 94);
+            this.txtGhiChuNV.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(408, 203);
+            this.label8.Location = new System.Drawing.Point(495, 206);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 25);
             this.label8.TabIndex = 15;
@@ -454,15 +454,15 @@ namespace QLThuVien
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.groupBox3.Controls.Add(this.btReset);
-            this.groupBox3.Controls.Add(this.btXoaNV);
-            this.groupBox3.Controls.Add(this.btCapNhatNV);
-            this.groupBox3.Controls.Add(this.btThemNV);
             this.groupBox3.Controls.Add(this.groupBox2);
             this.groupBox3.Controls.Add(this.dtgvQLNhanVien);
+            this.groupBox3.Controls.Add(this.btXoaNV);
+            this.groupBox3.Controls.Add(this.btThemNV);
+            this.groupBox3.Controls.Add(this.btCapNhatNV);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(37, 510);
+            this.groupBox3.Location = new System.Drawing.Point(12, 460);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1054, 309);
+            this.groupBox3.Size = new System.Drawing.Size(1202, 359);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách nhân viên";
@@ -471,55 +471,14 @@ namespace QLThuVien
             // 
             this.btReset.Image = ((System.Drawing.Image)(resources.GetObject("btReset.Image")));
             this.btReset.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btReset.Location = new System.Drawing.Point(198, 238);
+            this.btReset.Location = new System.Drawing.Point(213, 266);
             this.btReset.Name = "btReset";
-            this.btReset.Size = new System.Drawing.Size(124, 42);
+            this.btReset.Size = new System.Drawing.Size(136, 42);
             this.btReset.TabIndex = 26;
             this.btReset.Text = "Reset";
             this.btReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btReset.UseVisualStyleBackColor = true;
             this.btReset.Click += new System.EventHandler(this.btReset_Click);
-            // 
-            // btXoaNV
-            // 
-            this.btXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btXoaNV.Image")));
-            this.btXoaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btXoaNV.Location = new System.Drawing.Point(75, 238);
-            this.btXoaNV.Name = "btXoaNV";
-            this.btXoaNV.Size = new System.Drawing.Size(100, 42);
-            this.btXoaNV.TabIndex = 25;
-            this.btXoaNV.Text = "Xóa";
-            this.btXoaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btXoaNV.UseVisualStyleBackColor = true;
-            this.btXoaNV.Click += new System.EventHandler(this.btXoaNV_Click);
-            // 
-            // btCapNhatNV
-            // 
-            this.btCapNhatNV.Image = ((System.Drawing.Image)(resources.GetObject("btCapNhatNV.Image")));
-            this.btCapNhatNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btCapNhatNV.Location = new System.Drawing.Point(198, 164);
-            this.btCapNhatNV.Name = "btCapNhatNV";
-            this.btCapNhatNV.Size = new System.Drawing.Size(124, 46);
-            this.btCapNhatNV.TabIndex = 24;
-            this.btCapNhatNV.Text = "Cập nhật";
-            this.btCapNhatNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btCapNhatNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btCapNhatNV.UseVisualStyleBackColor = true;
-            this.btCapNhatNV.Click += new System.EventHandler(this.btCapNhatNV_Click);
-            // 
-            // btThemNV
-            // 
-            this.btThemNV.Image = ((System.Drawing.Image)(resources.GetObject("btThemNV.Image")));
-            this.btThemNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btThemNV.Location = new System.Drawing.Point(75, 164);
-            this.btThemNV.Name = "btThemNV";
-            this.btThemNV.Size = new System.Drawing.Size(100, 46);
-            this.btThemNV.TabIndex = 23;
-            this.btThemNV.Text = "Thêm";
-            this.btThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btThemNV.UseVisualStyleBackColor = true;
-            this.btThemNV.Click += new System.EventHandler(this.btThemNV_Click);
             // 
             // groupBox2
             // 
@@ -576,12 +535,12 @@ namespace QLThuVien
             this.HinhAnh,
             this.NgayVaoLam,
             this.GhiChu});
-            this.dtgvQLNhanVien.Location = new System.Drawing.Point(386, 37);
+            this.dtgvQLNhanVien.Location = new System.Drawing.Point(378, 37);
             this.dtgvQLNhanVien.Name = "dtgvQLNhanVien";
             this.dtgvQLNhanVien.RowHeadersVisible = false;
             this.dtgvQLNhanVien.RowHeadersWidth = 51;
             this.dtgvQLNhanVien.RowTemplate.Height = 24;
-            this.dtgvQLNhanVien.Size = new System.Drawing.Size(638, 254);
+            this.dtgvQLNhanVien.Size = new System.Drawing.Size(808, 307);
             this.dtgvQLNhanVien.TabIndex = 0;
             this.dtgvQLNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLNhanVien_CellClick);
             // 
@@ -665,12 +624,51 @@ namespace QLThuVien
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.Width = 125;
             // 
+            // btXoaNV
+            // 
+            this.btXoaNV.Image = ((System.Drawing.Image)(resources.GetObject("btXoaNV.Image")));
+            this.btXoaNV.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btXoaNV.Location = new System.Drawing.Point(213, 193);
+            this.btXoaNV.Name = "btXoaNV";
+            this.btXoaNV.Size = new System.Drawing.Size(136, 46);
+            this.btXoaNV.TabIndex = 25;
+            this.btXoaNV.Text = "Xóa";
+            this.btXoaNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btXoaNV.UseVisualStyleBackColor = true;
+            this.btXoaNV.Click += new System.EventHandler(this.btXoaNV_Click);
+            // 
+            // btThemNV
+            // 
+            this.btThemNV.Image = ((System.Drawing.Image)(resources.GetObject("btThemNV.Image")));
+            this.btThemNV.Location = new System.Drawing.Point(39, 193);
+            this.btThemNV.Name = "btThemNV";
+            this.btThemNV.Size = new System.Drawing.Size(136, 46);
+            this.btThemNV.TabIndex = 23;
+            this.btThemNV.Text = "Thêm";
+            this.btThemNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btThemNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btThemNV.UseVisualStyleBackColor = true;
+            this.btThemNV.Click += new System.EventHandler(this.btThemNV_Click);
+            // 
+            // btCapNhatNV
+            // 
+            this.btCapNhatNV.Image = ((System.Drawing.Image)(resources.GetObject("btCapNhatNV.Image")));
+            this.btCapNhatNV.Location = new System.Drawing.Point(39, 262);
+            this.btCapNhatNV.Name = "btCapNhatNV";
+            this.btCapNhatNV.Size = new System.Drawing.Size(136, 46);
+            this.btCapNhatNV.TabIndex = 24;
+            this.btCapNhatNV.Text = "Cập nhật";
+            this.btCapNhatNV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btCapNhatNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btCapNhatNV.UseVisualStyleBackColor = true;
+            this.btCapNhatNV.Click += new System.EventHandler(this.btCapNhatNV_Click);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.label12.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(985, 5);
+            this.label12.Location = new System.Drawing.Point(1138, 9);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(76, 22);
             this.label12.TabIndex = 9;
@@ -681,13 +679,14 @@ namespace QLThuVien
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
-            this.ClientSize = new System.Drawing.Size(1113, 841);
+            this.ClientSize = new System.Drawing.Size(1226, 822);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "QLNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

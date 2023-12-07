@@ -11,7 +11,6 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="NhanVien" Relationship="Self.fn_nd" FromRole="NguoiDoc" ToRole="NhanVien" />
-    <NavigationProperty Name="PhieuMuons" Relationship="Self.fn_ndpm" FromRole="NguoiDoc" ToRole="PhieuMuon" />
     <NavigationProperty Name="TheHoiViens" Relationship="Self.fn_thv" FromRole="NguoiDoc" ToRole="TheHoiVien" />
   </EntityType>
   <EntityType Name="NhanVien">
@@ -19,6 +18,7 @@
       <PropertyRef Name="MaNV" />
     </Key>
     <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="TenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GioiTinh" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
     <Property Name="NgaySinh" Type="DateTime" Precision="0" />
@@ -26,11 +26,10 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
-    <Property Name="GhiChu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="NguoiDocs" Relationship="Self.fn_nd" FromRole="NhanVien" ToRole="NguoiDoc" />
     <NavigationProperty Name="Saches" Relationship="Self.fk_snv" FromRole="NhanVien" ToRole="Sach" />
-    <NavigationProperty Name="TaiKhoan" Relationship="Self.fn_tdn" FromRole="NhanVien" ToRole="TaiKhoan" />
+    <NavigationProperty Name="TaiKhoan" Relationship="Self.fk_tdn" FromRole="NhanVien" ToRole="TaiKhoan" />
   </EntityType>
   <EntityType Name="PhieuMuon">
     <Key>
@@ -38,13 +37,12 @@
     </Key>
     <Property Name="MaPhieuMuon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MaSach" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SoLuong" Type="Int32" />
     <Property Name="NgayMuon" Type="DateTime" Precision="0" />
+    <Property Name="NgayHenTra" Type="DateTime" Precision="0" />
     <Property Name="TienCoc" Type="Double" />
     <Property Name="SoGio" Type="Int32" />
-    <NavigationProperty Name="NguoiDoc" Relationship="Self.fn_ndpm" FromRole="PhieuMuon" ToRole="NguoiDoc" />
     <NavigationProperty Name="Sach" Relationship="Self.fn_pm" FromRole="PhieuMuon" ToRole="Sach" />
     <NavigationProperty Name="PhieuTras" Relationship="Self.fn_pt" FromRole="PhieuMuon" ToRole="PhieuTra" />
   </EntityType>
@@ -55,8 +53,8 @@
     <Property Name="MaPhieuTra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaPhieuMuon" Type="Int32" Nullable="false" />
     <Property Name="MaND" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="TenND" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SoLuong" Type="Int32" />
+    <Property Name="NgayHenTra" Type="DateTime" Precision="0" />
     <Property Name="NgayTra" Type="DateTime" Precision="0" />
     <Property Name="PhiTra" Type="Double" />
     <Property Name="TinhTrang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
@@ -95,7 +93,7 @@
     <Property Name="TenDangNhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="VaiTro" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="NhanViens" Relationship="Self.fn_tdn" FromRole="TaiKhoan" ToRole="NhanVien" />
+    <NavigationProperty Name="NhanViens" Relationship="Self.fk_tdn" FromRole="TaiKhoan" ToRole="NhanVien" />
   </EntityType>
   <EntityType Name="TheHoiVien">
     <Key>
@@ -121,18 +119,6 @@
       </Principal>
       <Dependent Role="NguoiDoc">
         <PropertyRef Name="MaNV" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fn_ndpm">
-    <End Role="NguoiDoc" Type="Self.NguoiDoc" Multiplicity="1" />
-    <End Role="PhieuMuon" Type="Self.PhieuMuon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NguoiDoc">
-        <PropertyRef Name="MaND" />
-      </Principal>
-      <Dependent Role="PhieuMuon">
-        <PropertyRef Name="MaND" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -164,8 +150,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fn_tdn">
-    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
+  <Association Name="fk_tdn">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="TaiKhoan">
@@ -217,10 +205,6 @@
       <End Role="NhanVien" EntitySet="NhanViens" />
       <End Role="NguoiDoc" EntitySet="NguoiDocs" />
     </AssociationSet>
-    <AssociationSet Name="fn_ndpm" Association="Self.fn_ndpm">
-      <End Role="NguoiDoc" EntitySet="NguoiDocs" />
-      <End Role="PhieuMuon" EntitySet="PhieuMuons" />
-    </AssociationSet>
     <AssociationSet Name="fn_thv" Association="Self.fn_thv">
       <End Role="NguoiDoc" EntitySet="NguoiDocs" />
       <End Role="TheHoiVien" EntitySet="TheHoiViens" />
@@ -229,7 +213,7 @@
       <End Role="NhanVien" EntitySet="NhanViens" />
       <End Role="Sach" EntitySet="Saches" />
     </AssociationSet>
-    <AssociationSet Name="fn_tdn" Association="Self.fn_tdn">
+    <AssociationSet Name="fk_tdn" Association="Self.fk_tdn">
       <End Role="TaiKhoan" EntitySet="TaiKhoans" />
       <End Role="NhanVien" EntitySet="NhanViens" />
     </AssociationSet>

@@ -16,9 +16,10 @@ namespace DuAn1_QLThuVien
 {
     public partial class QLTheHoiVien : Form
     {
-        public QLTheHoiVien()
+        public QLTheHoiVien(String User)
         {
             InitializeComponent();
+            label1.Text = User;
         }
         private void QLTheHoiVien_Load(object sender, EventArgs e)
         {
@@ -27,7 +28,7 @@ namespace DuAn1_QLThuVien
         }
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu();
+            TrangChu trang = new TrangChu(label1.Text);
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -42,14 +43,14 @@ namespace DuAn1_QLThuVien
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach();
+            QLSach sach = new QLSach(label1.Text);
             this.Hide();
             sach.ShowDialog();
             this.Close();
         }
         private void QlNhanVien_Click(object sender, EventArgs e)
         {
-            QLNhanVien nv = new QLNhanVien();
+            QLNhanVien nv = new QLNhanVien(label1.Text);
             this.Hide();
             nv.ShowDialog();
             this.Close();
@@ -64,14 +65,14 @@ namespace DuAn1_QLThuVien
         }
         private void QLnguoiMuonSach_Click(Object sender, EventArgs e)
         {
-            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach();
+            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach(label1.Text);
             this.Hide();
             nguoiMuonSach.ShowDialog();
             this.Close();
         }
         private void QLTHongke_Click(object sender, EventArgs e)
         {
-            QLThongKe qLThongKe = new QLThongKe();
+            QLThongKe qLThongKe = new QLThongKe(label1.Text);
             this.Hide();
             qLThongKe.ShowDialog();
             this.Close();
@@ -79,7 +80,7 @@ namespace DuAn1_QLThuVien
         
         private void QLTHV_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
+            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(label1.Text);
             this.Hide();
             qLTheHoiVien.ShowDialog();
             this.Close();
@@ -95,7 +96,7 @@ namespace DuAn1_QLThuVien
         }
         private void Load_tblGridView()
         {
-            string connString = @"Data Source = DESKTOP-DPRU2H9; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM TheHoiVien";
@@ -133,7 +134,7 @@ namespace DuAn1_QLThuVien
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source = DESKTOP-DPRU2H9; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM TheHoiVien WHERE MaThe = @MaThe";
@@ -163,7 +164,7 @@ namespace DuAn1_QLThuVien
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            string connString = @"Data Source = DESKTOP-DPRU2H9; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM TheHoiVien WHERE MaThe = @MaThe";
@@ -192,7 +193,7 @@ namespace DuAn1_QLThuVien
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source = DESKTOP-DPRU2H9; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -283,7 +284,7 @@ namespace DuAn1_QLThuVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source = DESKTOP-DPRU2H9; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -388,7 +389,7 @@ namespace DuAn1_QLThuVien
         }
         private void Load_MaThe()
         {
-            string connectionString = @"Data Source = DESKTOP-DPRU2H9; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            string connectionString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -420,9 +421,12 @@ namespace DuAn1_QLThuVien
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void quảnLýNgườiTrảSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            QLNguoiTraSach qlnts = new QLNguoiTraSach(label1.Text);
+            this.Hide();
+            qlnts.ShowDialog();
+            this.Close();
         }
     }
 }

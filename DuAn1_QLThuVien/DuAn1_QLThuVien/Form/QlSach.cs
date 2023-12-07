@@ -17,13 +17,14 @@ namespace DuAn1
 {
     public partial class QLSach : Form
     {
-        public QLSach()
+        public QLSach(String User)
         {
             InitializeComponent();
+            label3.Text = User;
         }
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu("");
+            TrangChu trang = new TrangChu(label3.Text);
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -38,21 +39,21 @@ namespace DuAn1
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach();
+            QLSach sach = new QLSach(label3.Text);
             this.Hide();
             sach.ShowDialog();
             this.Close();
         }
         private void QlNhanVien_Click(object sender, EventArgs e)
         {
-            QLNhanVien nv = new QLNhanVien();
+            QLNhanVien nv = new QLNhanVien(label3.Text);
             this.Hide();
             nv.ShowDialog();
             this.Close();
         }
         private void QLnguoiTraSach_Click(Object sender, EventArgs e)
         {
-            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach();
+            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach(label3.Text);
             this.Hide();
             qLNguoiTra.ShowDialog();
             this.Close();
@@ -68,14 +69,14 @@ namespace DuAn1
         }
         private void QLnguoiMuonSach_Click(Object sender, EventArgs e)
         {
-            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach();
+            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach(label3.Text);
             this.Hide();
             nguoiMuonSach.ShowDialog();
             this.Close();
         }
         private void QLTHongke_Click(object sender, EventArgs e)
         {
-            QLThongKe qLThongKe = new QLThongKe();
+            QLThongKe qLThongKe = new QLThongKe(label3.Text);
             this.Hide();
             qLThongKe.ShowDialog();
             this.Close();
@@ -83,7 +84,7 @@ namespace DuAn1
 
         private void QLTHV_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien();
+            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(label3.Text);
             this.Hide();
             qLTheHoiVien.ShowDialog();
             this.Close();
@@ -397,7 +398,15 @@ namespace DuAn1
                 string idToDelete = cbbMaSach.Text.Trim();
                 XoaMaSach(idToDelete);
             }
-
+            cbbMaSach.Text = string.Empty;
+            cbbMaNV.Text = string.Empty;
+            txtGiaMuon.Text = string.Empty;
+            txtLoaiSach.Text = string.Empty;
+            txtSoLuong.Text = string.Empty;
+            txtTacGia.Text = string.Empty;
+            txtTenSach.Text = string.Empty;
+            txtTimKiem.Text = string.Empty;
+            PbHinh.Image = null;
         }
         private void XoaMaSach(string idToDelete)
         {

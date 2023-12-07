@@ -22,14 +22,13 @@ namespace DuAn1_QLThuVien
     
         public int MaPhieuMuon { get; set; }
         public string MaND { get; set; }
-        public string TenND { get; set; }
         public string MaSach { get; set; }
         public Nullable<int> SoLuong { get; set; }
         public Nullable<System.DateTime> NgayMuon { get; set; }
+        public Nullable<System.DateTime> NgayHenTra { get; set; }
         public Nullable<double> TienCoc { get; set; }
         public Nullable<int> SoGio { get; set; }
     
-        public virtual NguoiDoc NguoiDoc { get; set; }
         public virtual Sach Sach { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuTra> PhieuTras { get; set; }

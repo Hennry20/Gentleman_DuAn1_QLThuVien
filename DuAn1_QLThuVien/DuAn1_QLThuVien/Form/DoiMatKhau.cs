@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Net;
+using DuAn1;
 
 namespace DuAn1_QLThuVien
 {
@@ -26,7 +27,7 @@ namespace DuAn1_QLThuVien
             DialogResult quit = MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.YesNo);
             if (quit == DialogResult.Yes)
             {
-                DangNhap dn = new DangNhap();
+                TrangChu dn = new TrangChu("");
                 this.Hide();
                 dn.ShowDialog();
                 this.Close();
