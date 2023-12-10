@@ -150,66 +150,6 @@ namespace DuAn1_QLThuVien
             btnCapNhat.Enabled = true;
             btnXoa.Enabled = true;
         }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                string query = "SELECT * FROM TheHoiVien WHERE MaThe = @MaThe";
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    conn.Open();
-                    command.Parameters.AddWithValue("@MaThe", txtTimKiem.Text.Trim());
-                    SqlDataReader dataReader = command.ExecuteReader();
-                    if (dataReader.HasRows)
-                    {
-                        dataGridView1.Rows.Clear();
-                        while (dataReader.Read())
-                        {
-                            dataGridView1.Rows.Add(dataReader[0], dataReader[1], dataReader[2],
-                               dataReader[3], dataReader[4], dataReader[5], dataReader[6]);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show($"KHông tìm thấy mã thẻ: {txtTimKiem.Text.Trim()}", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    conn.Close();
-                }
-
-            }
-        }
-
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                string query = "SELECT * FROM TheHoiVien WHERE MaThe = @MaThe";
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    conn.Open();
-                    command.Parameters.AddWithValue("@MaThe", txtTimKiem.Text.Trim());
-                    SqlDataReader dataReader = command.ExecuteReader();
-                    if (dataReader.HasRows)
-                    {
-                        dataGridView1.Rows.Clear();
-                        while (dataReader.Read())
-                        {
-                            dataGridView1.Rows.Add(dataReader[0], dataReader[1], dataReader[2],
-                               dataReader[3], dataReader[4], dataReader[5], dataReader[6]);
-                        }
-                    }
-                    else if (txtTimKiem.Text.Trim() == string.Empty)
-                    {
-                        Load_tblGridView();
-                    }
-                    conn.Close();
-                }
-            }
-        }
-
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
@@ -474,6 +414,35 @@ namespace DuAn1_QLThuVien
             this.Hide();
             trangChu.ShowDialog();
             this.Close();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string connString = @"Data Source=HUYNHQUYTRUONG;Initial Catalog=QLThuVien;Integrated Security=True";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                string query = "SELECT * FROM TheHoiVien WHERE MaThe = @MaThe";
+                using (SqlCommand command = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    command.Parameters.AddWithValue("@MaThe", txtTimKiem.Text.Trim());
+                    SqlDataReader dataReader = command.ExecuteReader();
+                    if (dataReader.HasRows)
+                    {
+                        dataGridView1.Rows.Clear();
+                        while (dataReader.Read())
+                        {
+                            dataGridView1.Rows.Add(dataReader[0], dataReader[1], dataReader[2],
+                               dataReader[3], dataReader[4], dataReader[5], dataReader[6]);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"KHông tìm thấy mã thẻ: {txtTimKiem.Text.Trim()}", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    conn.Close();
+                }
+            }
         }
     }
 }

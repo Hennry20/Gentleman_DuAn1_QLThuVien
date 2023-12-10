@@ -56,7 +56,7 @@ namespace DuAn1_QLThuVien
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoGioTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayHenTraQLTS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.gbDanhSachTra = new System.Windows.Forms.GroupBox();
             this.dtgvQLTraSach = new System.Windows.Forms.DataGridView();
             this.QLTSMaPhieuTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QLTSMaPhieuMuon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,7 +83,7 @@ namespace DuAn1_QLThuVien
             this.dtpQLTSNgayTra = new System.Windows.Forms.DateTimePicker();
             this.txtQLTSSLMuon = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.gbThucHienTraSach = new System.Windows.Forms.GroupBox();
             this.label28 = new System.Windows.Forms.Label();
             this.txtQLTSMaPhieuMuon = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -92,9 +92,9 @@ namespace DuAn1_QLThuVien
             this.label25 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
+            this.gbDanhSachTra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLTraSach)).BeginInit();
-            this.groupBox6.SuspendLayout();
+            this.gbThucHienTraSach.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -333,18 +333,18 @@ namespace DuAn1_QLThuVien
             this.NgayHenTraQLTS.Name = "NgayHenTraQLTS";
             this.NgayHenTraQLTS.Width = 250;
             // 
-            // groupBox5
+            // gbDanhSachTra
             // 
-            this.groupBox5.Controls.Add(this.dtgvQLTraSach);
-            this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(13, 549);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox5.Size = new System.Drawing.Size(1299, 356);
-            this.groupBox5.TabIndex = 54;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Danh Sách Trả Sách";
+            this.gbDanhSachTra.Controls.Add(this.dtgvQLTraSach);
+            this.gbDanhSachTra.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDanhSachTra.Location = new System.Drawing.Point(13, 549);
+            this.gbDanhSachTra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbDanhSachTra.Name = "gbDanhSachTra";
+            this.gbDanhSachTra.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbDanhSachTra.Size = new System.Drawing.Size(1299, 331);
+            this.gbDanhSachTra.TabIndex = 54;
+            this.gbDanhSachTra.TabStop = false;
+            this.gbDanhSachTra.Text = "Danh Sách Trả Sách";
             // 
             // dtgvQLTraSach
             // 
@@ -364,7 +364,7 @@ namespace DuAn1_QLThuVien
             this.dtgvQLTraSach.Name = "dtgvQLTraSach";
             this.dtgvQLTraSach.RowHeadersWidth = 62;
             this.dtgvQLTraSach.RowTemplate.Height = 28;
-            this.dtgvQLTraSach.Size = new System.Drawing.Size(1279, 315);
+            this.dtgvQLTraSach.Size = new System.Drawing.Size(1279, 288);
             this.dtgvQLTraSach.TabIndex = 0;
             this.dtgvQLTraSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvQLTraSach_CellClick);
             // 
@@ -613,35 +613,35 @@ namespace DuAn1_QLThuVien
             this.label23.TabIndex = 7;
             this.label23.Text = "Số lượng mượn:";
             // 
-            // groupBox6
+            // gbThucHienTraSach
             // 
-            this.groupBox6.Controls.Add(this.lblQLTSMaPhieuTra);
-            this.groupBox6.Controls.Add(this.lblTinhTrangTraSach);
-            this.groupBox6.Controls.Add(this.dtpQLTSNgayHenTra);
-            this.groupBox6.Controls.Add(this.label1);
-            this.groupBox6.Controls.Add(this.txtQLTSSoGioTra);
-            this.groupBox6.Controls.Add(this.label22);
-            this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.txtQLTSPhiTra);
-            this.groupBox6.Controls.Add(this.label20);
-            this.groupBox6.Controls.Add(this.label28);
-            this.groupBox6.Controls.Add(this.txtQLTSMaPhieuMuon);
-            this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Controls.Add(this.dtpQLTSNgayTra);
-            this.groupBox6.Controls.Add(this.label19);
-            this.groupBox6.Controls.Add(this.txtQLTSSLMuon);
-            this.groupBox6.Controls.Add(this.label23);
-            this.groupBox6.Controls.Add(this.cbQLTSMaNguoiDoc);
-            this.groupBox6.Controls.Add(this.label25);
-            this.groupBox6.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(13, 166);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox6.Size = new System.Drawing.Size(1129, 374);
-            this.groupBox6.TabIndex = 53;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Thực Hiện Trả Sách";
+            this.gbThucHienTraSach.Controls.Add(this.lblQLTSMaPhieuTra);
+            this.gbThucHienTraSach.Controls.Add(this.lblTinhTrangTraSach);
+            this.gbThucHienTraSach.Controls.Add(this.dtpQLTSNgayHenTra);
+            this.gbThucHienTraSach.Controls.Add(this.label1);
+            this.gbThucHienTraSach.Controls.Add(this.txtQLTSSoGioTra);
+            this.gbThucHienTraSach.Controls.Add(this.label22);
+            this.gbThucHienTraSach.Controls.Add(this.label18);
+            this.gbThucHienTraSach.Controls.Add(this.txtQLTSPhiTra);
+            this.gbThucHienTraSach.Controls.Add(this.label20);
+            this.gbThucHienTraSach.Controls.Add(this.label28);
+            this.gbThucHienTraSach.Controls.Add(this.txtQLTSMaPhieuMuon);
+            this.gbThucHienTraSach.Controls.Add(this.label17);
+            this.gbThucHienTraSach.Controls.Add(this.dtpQLTSNgayTra);
+            this.gbThucHienTraSach.Controls.Add(this.label19);
+            this.gbThucHienTraSach.Controls.Add(this.txtQLTSSLMuon);
+            this.gbThucHienTraSach.Controls.Add(this.label23);
+            this.gbThucHienTraSach.Controls.Add(this.cbQLTSMaNguoiDoc);
+            this.gbThucHienTraSach.Controls.Add(this.label25);
+            this.gbThucHienTraSach.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbThucHienTraSach.Location = new System.Drawing.Point(13, 166);
+            this.gbThucHienTraSach.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbThucHienTraSach.Name = "gbThucHienTraSach";
+            this.gbThucHienTraSach.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gbThucHienTraSach.Size = new System.Drawing.Size(1129, 374);
+            this.gbThucHienTraSach.TabIndex = 53;
+            this.gbThucHienTraSach.TabStop = false;
+            this.gbThucHienTraSach.Text = "Thực Hiện Trả Sách";
             // 
             // label28
             // 
@@ -715,13 +715,13 @@ namespace DuAn1_QLThuVien
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
-            this.ClientSize = new System.Drawing.Size(1327, 909);
-            this.Controls.Add(this.groupBox5);
+            this.ClientSize = new System.Drawing.Size(1327, 884);
+            this.Controls.Add(this.gbDanhSachTra);
             this.Controls.Add(this.btnQLTSXoa);
             this.Controls.Add(this.btnQLTSCapNhat);
             this.Controls.Add(this.btnQLTSMoi);
             this.Controls.Add(this.btnQLTSTraSach);
-            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.gbThucHienTraSach);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
@@ -732,10 +732,10 @@ namespace DuAn1_QLThuVien
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
+            this.gbDanhSachTra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLTraSach)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.gbThucHienTraSach.ResumeLayout(false);
+            this.gbThucHienTraSach.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -768,7 +768,7 @@ namespace DuAn1_QLThuVien
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoGioTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHenTraQLTS;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox gbDanhSachTra;
         private System.Windows.Forms.DataGridView dtgvQLTraSach;
         private System.Windows.Forms.Label lblQLTSMaPhieuTra;
         private System.Windows.Forms.Button btnQLTSXoa;
@@ -786,7 +786,7 @@ namespace DuAn1_QLThuVien
         private System.Windows.Forms.DateTimePicker dtpQLTSNgayTra;
         private System.Windows.Forms.TextBox txtQLTSSLMuon;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox gbThucHienTraSach;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtQLTSMaPhieuMuon;
         private System.Windows.Forms.Label label17;
