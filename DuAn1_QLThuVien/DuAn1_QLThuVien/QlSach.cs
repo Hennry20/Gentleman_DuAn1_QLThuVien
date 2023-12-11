@@ -62,7 +62,7 @@ namespace DuAn1
 
         private void DoiMatKhau_Click(object sender, EventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            DoiMatKhau dmk = new DoiMatKhau(label3.Text);
             this.Hide();
             dmk.ShowDialog();
             this.Close();
@@ -111,7 +111,7 @@ namespace DuAn1
         }
         private void Load_tblGridView()
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM Sach";
@@ -129,15 +129,17 @@ namespace DuAn1
                         }
                     }
                     conn.Close();
-
                 }
-
             }
         }
         private void tblGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                cbbMaSach.Enabled = false;
+                btnCapNhat.Enabled = true;
+                btnXoa.Enabled = true;
+                btnThem.Enabled = false;
                 int currentRowIndex = dataGridView1.CurrentRow.Index;
                 cbbMaSach.Text = dataGridView1.Rows[currentRowIndex].Cells[0].Value.ToString();
                 txtTenSach.Text = dataGridView1.Rows[currentRowIndex].Cells[1].Value.ToString();
@@ -168,7 +170,8 @@ namespace DuAn1
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM Sach WHERE MaSach = @MaSach";
@@ -198,7 +201,7 @@ namespace DuAn1
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 string query = "SELECT * FROM Sach WHERE MaSach = @MaSach";
@@ -227,7 +230,7 @@ namespace DuAn1
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -261,7 +264,7 @@ namespace DuAn1
                         }
                         else
                         {
-                            string insertQuery = "INSERT INTO TheHoiVien (MaSach, TenSach, LoaiSach, TenTacGia, HinhAnh, SoLuongTrongKho, GiaMuon, MaNV) " +
+                            string insertQuery = "INSERT INTO Sach (MaSach, TenSach, LoaiSach, TenTacGia, HinhAnh, SoLuongTrongKho, GiaMuon, MaNV) " +
                                                      " VALUES (@MaSach, @TenSach, @LoaiSach, @TenTacGia, @HinhAnh, @SoLuongTrongKho, @GiaMuon, @MaNV)";
                             string Soluong = txtSoLuong.Text.Trim();
                             int number;
@@ -289,12 +292,23 @@ namespace DuAn1
                                     insertCommand.Parameters.AddWithValue("@TenTacGia", txtTacGia.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@HinhAnh", file);
                                     insertCommand.Parameters.AddWithValue("@SoLuongTrongKho", txtSoLuong.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@GiaMuon", txtGiaMuon.Text.Trim());
+
+                                    string giaMuonWithoutCommas = txtGiaMuon.Text.Trim().Replace(",", "");
+                                    insertCommand.Parameters.AddWithValue("@GiaMuon", giaMuonWithoutCommas);
+
                                     insertCommand.Parameters.AddWithValue("@MaNV", cbbMaNV.Text.Trim());
                                     insertCommand.ExecuteNonQuery();
                                     MessageBox.Show("Thêm Thành Công");
                                     Load_tblGridView();
-
+                                    cbbMaSach.Text = string.Empty;
+                                    cbbMaNV.Text = string.Empty;
+                                    txtGiaMuon.Text = string.Empty;
+                                    txtLoaiSach.Text = string.Empty;
+                                    txtSoLuong.Text = string.Empty;
+                                    txtTacGia.Text = string.Empty;
+                                    txtTenSach.Text = string.Empty;
+                                    txtTimKiem.Text = string.Empty;
+                                    PbHinh.Image = null;
                                     conn.Close();
                                 }
 
@@ -309,7 +323,7 @@ namespace DuAn1
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -371,9 +385,11 @@ namespace DuAn1
                                     insertCommand.Parameters.AddWithValue("@LoaiSach", txtLoaiSach.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@TenTacGia", txtTacGia.Text.Trim());
                                     insertCommand.Parameters.AddWithValue("@HinhAnh", file);
-
                                     insertCommand.Parameters.AddWithValue("@SoLuongTrongKho", txtSoLuong.Text.Trim());
-                                    insertCommand.Parameters.AddWithValue("@GiaMuon", txtGiaMuon.Text.Trim());
+
+                                    string giaMuonWithoutCommas = txtGiaMuon.Text.Trim().Replace(",", "");
+                                    insertCommand.Parameters.AddWithValue("@GiaMuon", giaMuonWithoutCommas);
+
                                     insertCommand.Parameters.AddWithValue("@MaNV", cbbMaNV.Text.Trim());
                                     insertCommand.ExecuteNonQuery();
                                     MessageBox.Show("Cập nhật Thành Công");
@@ -410,7 +426,7 @@ namespace DuAn1
         }
         private void XoaMaSach(string idToDelete)
         {
-            string connString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=TrueSSPI";
+            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             string deleteQuery = "DELETE FROM Sach WHERE MaSach = @MaSach";
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -428,6 +444,10 @@ namespace DuAn1
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            cbbMaSach.Enabled = true;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = false;
+            btnCapNhat.Enabled = false;
             Load_tblGridView();
             cbbMaSach.Text = string.Empty;
             cbbMaNV.Text = string.Empty;
@@ -446,11 +466,12 @@ namespace DuAn1
             Load_tblGridView();
             Load_MaSach();
             Load_MaThe();
-
+            btnXoa.Enabled = false;
+            btnCapNhat.Enabled = false;
         }
         private void Load_MaSach()
         {
-            string connectionString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source =.; Initial Catalog = QLThuVien; Integrated security = SSPI";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -478,7 +499,7 @@ namespace DuAn1
         }
         private void Load_MaThe()
         {
-            string connectionString = @"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True";
+            string connectionString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
@@ -505,9 +526,29 @@ namespace DuAn1
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void quảnLýNgườiĐọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            QLNguoiDoc nd = new QLNguoiDoc(label3.Text);
+            this.Hide();
+            nd.ShowDialog();
+            this.Close();
+        }
 
+        private void txtGiaMuon_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtGiaMuon.Text == "" || txtGiaMuon.Text == "0") return;
+                decimal number;
+                number = decimal.Parse(txtGiaMuon.Text, System.Globalization.NumberStyles.Currency);
+                txtGiaMuon.Text = number.ToString("#,#");
+                txtGiaMuon.SelectionStart = txtGiaMuon.Text.Length;
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 }

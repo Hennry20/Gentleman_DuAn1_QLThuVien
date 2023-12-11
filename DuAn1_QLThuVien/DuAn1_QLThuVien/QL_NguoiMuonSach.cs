@@ -20,14 +20,15 @@ namespace DuAn1
         {
             InitializeComponent();
             label1.Text = User;
-            load_dtgvQLMuonSach();
+            //load_dtgvQLMuonSach();
         }
         private void QL_NguoiMuonSach_Load(object sender, EventArgs e)
         {
             load_dtgvQLMuonSach();
             load_MaND();
             load_MaSach();
-
+            btnQLMSXoa.Enabled = false;
+            btnQLMSCapNhat.Enabled = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -69,7 +70,7 @@ namespace DuAn1
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            DoiMatKhau dmk = new DoiMatKhau(label1.Text);
             this.Hide();
             dmk.ShowDialog();
             this.Close();
@@ -162,6 +163,9 @@ namespace DuAn1
 
         private void dtgvQLMuonSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnChoMuon.Enabled = false;
+            btnQLMSCapNhat.Enabled = true;
+            btnQLMSXoa.Enabled = true;
             int currentRowIndex = dtgvQLMuonSach.CurrentRow.Index;
             try
             {
@@ -283,6 +287,9 @@ namespace DuAn1
 
         private void btnQLMSMoi_Click(object sender, EventArgs e)
         {
+            btnChoMuon.Enabled = true;
+            btnQLMSCapNhat.Enabled = false;
+            btnQLMSXoa.Enabled = false;
             load_dtgvQLMuonSach();
             lblQLMSMaPhieuMuon.Text = string.Empty;
             cbQLMSMaNguoiDoc.Text = string.Empty;
@@ -331,8 +338,8 @@ namespace DuAn1
                         }
                         else
                         {
-                            string insertQuery = "INSERT INTO PhieuMuon (MaND, MaSach, SoLuong, NgayMuon, NgayTra, TienCoc, SoGio) " +
-                                                     " VALUES (@MaND, @MaSach, @SoLuong, @NgayMuon, @NgayTra, @TienCoc, @SoGio)";
+                            string insertQuery = "INSERT INTO PhieuMuon (MaND, MaSach, SoLuong, NgayMuon, NgayHenTra, TienCoc, SoGio) " +
+                                                     " VALUES (@MaND, @MaSach, @SoLuong, @NgayMuon, @NgayHenTra, @TienCoc, @SoGio)";
 
                             string ngayMuon = dtpQLMSNgayMuon.Text.Trim();
                             DateTime ngMuon;
@@ -354,7 +361,7 @@ namespace DuAn1
                                 }
                                 if (DateTime.TryParseExact(ngayTra, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngTra))
                                 {
-                                    command.Parameters.AddWithValue("@NgayTra", ngTra);
+                                    command.Parameters.AddWithValue("@NgayHenTra", ngTra);
                                 }
                                 else
                                 {
@@ -373,12 +380,22 @@ namespace DuAn1
                                     command.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@MaSach", cbQLMSMaSach2.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLMSSoLuong.Text.Trim());
-                                    command.Parameters.AddWithValue("@TienCoc", txtQLMSTienCoc.Text.Trim());
+
+                                    string giaMuonWithoutCommas = txtQLMSTienCoc.Text.Trim().Replace(",", "");
+                                    command.Parameters.AddWithValue("@TienCoc", giaMuonWithoutCommas);
+
                                     command.Parameters.AddWithValue("@SoGio", txtQLMSSoGioMuon.Text.Trim());
                                     command.ExecuteNonQuery();
                                     MessageBox.Show("Cho mượn thành công!");
                                     load_dtgvQLMuonSach();
-
+                                    lblQLMSMaPhieuMuon.Text = string.Empty;
+                                    cbQLMSMaNguoiDoc.Text = string.Empty;
+                                    cbQLMSMaSach2.Text = string.Empty;
+                                    txtQLMSSoLuong.Text = string.Empty;
+                                    dtpQLMSNgayMuon.Text = string.Empty;
+                                    dtpQLMSNgayHenTra.Text = string.Empty;
+                                    txtQLMSTienCoc.Text = string.Empty;
+                                    txtQLMSSoGioMuon.Text = string.Empty;
                                     conn.Close();
                                 }
 
@@ -433,7 +450,7 @@ namespace DuAn1
                         }
                         else
                         {
-                            string UpDateQuery = "UPDATE PhieuMuon SET MaSach = @MaSach, SoLuong = @SoLuong, NgayMuon = @NgayMuon, NgayTra = @NgayTra, TienCoc = @TienCoc, SoGio = @SoGio WHERE MaPhieuMuon = @MaPhieuMuon";
+                            string UpDateQuery = "UPDATE PhieuMuon SET MaSach = @MaSach, SoLuong = @SoLuong, NgayMuon = @NgayMuon, NgayHenTra = @NgayHenTra, TienCoc = @TienCoc, SoGio = @SoGio WHERE MaPhieuMuon = @MaPhieuMuon";
 
                             string ngayMuon = dtpQLMSNgayMuon.Text.Trim();
                             DateTime ngMuon;
@@ -455,7 +472,7 @@ namespace DuAn1
                                 }
                                 if (DateTime.TryParseExact(ngayTra, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngTra))
                                 {
-                                    command.Parameters.AddWithValue("@NgayTra", ngTra);
+                                    command.Parameters.AddWithValue("@NgayHenTra", ngTra);
                                 }
                                 else
                                 {
@@ -473,9 +490,12 @@ namespace DuAn1
                                     command.Parameters.AddWithValue("@MaND", cbQLMSMaNguoiDoc.Text.Trim());
                                     command.Parameters.AddWithValue("@MaSach", cbQLMSMaSach2.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLMSSoLuong.Text.Trim());
-                                    command.Parameters.AddWithValue("@NgayMuon", dtpQLMSNgayMuon.Text.Trim());
-                                    command.Parameters.AddWithValue("@NgayTra", dtpQLMSNgayHenTra.Text.Trim());
-                                    command.Parameters.AddWithValue("@TienCoc", txtQLMSTienCoc.Text.Trim());
+
+
+
+                                    string giaMuonWithoutCommas = txtQLMSTienCoc.Text.Trim().Replace(",", "");
+                                    command.Parameters.AddWithValue("@TienCoc", giaMuonWithoutCommas);
+
                                     command.Parameters.AddWithValue("@SoGio", txtQLMSSoGioMuon.Text.Trim());
                                     command.ExecuteNonQuery();
                                     MessageBox.Show("Cập nhật Thành Công");
@@ -486,6 +506,30 @@ namespace DuAn1
                         }
                     }
                 }
+            }
+        }
+
+        private void quảnLýNgườiĐọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLNguoiDoc nd = new QLNguoiDoc(label1.Text);
+            this.Hide();
+            nd.ShowDialog();
+            this.Close();
+        }
+
+        private void txtQLMSTienCoc_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtQLMSTienCoc.Text == "" || txtQLMSTienCoc.Text == "0") return;
+                decimal number;
+                number = decimal.Parse(txtQLMSTienCoc.Text, System.Globalization.NumberStyles.Currency);
+                txtQLMSTienCoc.Text = number.ToString("#,#");
+                txtQLMSTienCoc.SelectionStart = txtQLMSTienCoc.Text.Length;
+            }
+            catch
+            {
+
             }
         }
     }

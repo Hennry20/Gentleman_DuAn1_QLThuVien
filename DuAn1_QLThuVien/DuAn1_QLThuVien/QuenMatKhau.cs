@@ -20,24 +20,23 @@ namespace DuAn1_QLThuVien
         {
             InitializeComponent();
         }
-        string[] str2 = new string[30];
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             try
             {
-                if (txtTaiKhoan.Text == "" || txtEmail.Text == "" || txtMatKhauMoi.Text =="" ||txtXacNhanMatKhau.Text =="" || txtNhanMa.Text == "")
+                if (txtTaiKhoan.Text == "" || txtEmail.Text == "" || txtMatKhauMoi.Text == "" || txtXacNhanMatKhau.Text == "" || txtNhanMa.Text == "")
                 {
-                    MessageBox.Show("Vui lòng nhập dữ liệu đầy đủ!","Thông báo");
+                    MessageBox.Show("Vui lòng nhập dữ liệu đầy đủ!", "Thông báo");
                     return;
                 }
-                if(txtMatKhauMoi.Text != txtXacNhanMatKhau.Text)
+                if (txtMatKhauMoi.Text != txtXacNhanMatKhau.Text)
                 {
                     MessageBox.Show("Vui lòng nhập đúng mật khẩu!", "Thông báo");
                     return;
                 }
-                
-                string ht = string.Format(@"exec quenmk '{0}', '{1}'", txtTaiKhoan.Text,DBHandler.toMD5(txtMatKhauMoi.Text));
-                SqlConnection myConn = new SqlConnection(@"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True");
+
+                string ht = string.Format(@"exec quenmk '{0}', '{1}'", txtTaiKhoan.Text, DBHandler.toMD5(txtMatKhauMoi.Text));
+                SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
                 SqlCommand cmd = new SqlCommand(ht);
                 myConn.Open();
                 cmd.Connection = myConn;
@@ -57,16 +56,19 @@ namespace DuAn1_QLThuVien
 
             }
         }
+        
         private void txtNhanMa_Click(object sender, EventArgs e)
         {
+            Random rd = new Random();
+            string abc = rd.NextString(10);
             var fromAddress = new MailAddress("chuonggo51@gmail.com", "Anh Chuong Dep Trai");
             var toAddress = new MailAddress(txtEmail.Text, "To Nguoi dung");
-
+            
             const string fromPassword = "jxsd rirs mzlz nnoq";
             StringBuilder auto = new StringBuilder();
-            const string subject = "Mã xác nhận của bạn là: ";
-            Random rd = new Random();
+            const string subject = "là mã khôi phục tài khoản của bạn";
 
+            
             var smtp = new SmtpClient
             {
                 Host = "smtp.gmail.com",
@@ -78,14 +80,14 @@ namespace DuAn1_QLThuVien
             };
             using (var message = new MailMessage(fromAddress, toAddress)
             {
-                Subject = subject,
-                Body = rd.NextString(8),
+                Subject = abc + " " + subject,
+                Body = "\t\t\t\t\t\t\t Xin chào bạn\n\n \t\t\t\t\t\t\t Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu của bạn.\n \t\t\t\t\t\t\t Nhập mật khẩu đặt lại sau đây: \n \t\t\t\t\t\t\t" + abc,
             })
+
             {
                 smtp.Send(message);
             }
             MessageBox.Show("Đã gửi tin nhắn thành công!", "Thành Công", MessageBoxButtons.OK);
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
