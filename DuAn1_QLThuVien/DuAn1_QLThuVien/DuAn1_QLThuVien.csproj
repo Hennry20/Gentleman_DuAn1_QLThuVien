@@ -118,6 +118,12 @@
     <Compile Include="Form\QLThongKe.designer.cs">
       <DependentUpon>QLThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLNguoiDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLNguoiDoc.designer.cs">
+      <DependentUpon>QLNguoiDoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLThuVien.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLNguoiDoc.resx">
+      <DependentUpon>QLNguoiDoc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

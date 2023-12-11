@@ -91,6 +91,7 @@ namespace DuAn1_QLThuVien
             this.cbQLTSMaNguoiDoc = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -614,6 +615,7 @@ namespace DuAn1_QLThuVien
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.lblQLTSMaPhieuTra);
             this.groupBox6.Controls.Add(this.lblTinhTrangTraSach);
             this.groupBox6.Controls.Add(this.dtpQLTSNgayHenTra);
@@ -718,6 +720,20 @@ namespace DuAn1_QLThuVien
             this.label2.TabIndex = 59;
             this.label2.Text = "label2";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(633, 240);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(108, 51);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "In";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // QLNguoiTraSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -814,5 +830,6 @@ namespace DuAn1_QLThuVien
         private System.Windows.Forms.DataGridViewTextBoxColumn QLTSTinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn QLTSSoGio;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

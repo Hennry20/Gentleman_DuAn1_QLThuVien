@@ -240,7 +240,7 @@ namespace QLThuVien
         private void btTimKiemNV_Click(object sender, EventArgs e)
         {
             string ht = string.Format(@"exec TimKiemNV '{0}'", txtTimKiemNV.Text);
-            SqlConnection myConn = new SqlConnection(@"Data Source=DESKTOP-NBH;Initial Catalog=QLThuVien;Integrated Security=True");
+            SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated Security=True");
             SqlCommand cmd = new SqlCommand(ht);
             myConn.Open();
             cmd.Connection = myConn;
@@ -340,6 +340,12 @@ namespace QLThuVien
         private void đăngKíThẻHộiViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtTimKiemNV_TextChanged(object sender, EventArgs e)
+        {
+            string rowFilter = string.Format("{0} like '{1}'", "MaNV", "*" + txtTimKiemNV.Text + "*");
+            (dtgvQLNhanVien.DataSource as DataTable).DefaultView.RowFilter = rowFilter;
         }
     }
 }

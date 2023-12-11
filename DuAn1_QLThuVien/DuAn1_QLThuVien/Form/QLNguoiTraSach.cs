@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Globalization;
 using QLThuVien;
 using DuAn1;
+using System.Drawing.Printing;
 
 namespace DuAn1_QLThuVien
 {
@@ -416,6 +417,33 @@ namespace DuAn1_QLThuVien
                 string maPTToDelete = lblQLTSMaPhieuTra.Text.Trim();
                 xoaMaPhieuTra(maPTToDelete);
             }
+        }
+        private PrintDocument docToPrint = new PrintDocument();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PrintDialog PrintDialog1 = new PrintDialog();
+            docToPrint.DefaultPageSettings.PaperSize = new PaperSize("MyPaper", 228, 300);
+            PrintDialog1.AllowSomePages = true;
+            PrintDialog1.ShowHelp = true;
+            PrintDialog1.Document = docToPrint;
+
+
+            DialogResult result = PrintDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                docToPrint.PrintPage += new PrintPageEventHandler(document_PrintPage);
+                docToPrint.Print();
+            }
+        }
+        private void document_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string title = "HOA DON TRA SACH";
+            System.Drawing.Font printFont = new System.Drawing.Font
+                ("Arial", 11, System.Drawing.FontStyle.Bold);
+
+            e.Graphics.DrawString(title, printFont,
+                System.Drawing.Brushes.Black, 10, 10);
         }
     }
 }

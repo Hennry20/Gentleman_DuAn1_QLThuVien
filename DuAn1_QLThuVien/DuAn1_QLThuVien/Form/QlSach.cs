@@ -129,15 +129,17 @@ namespace DuAn1
                         }
                     }
                     conn.Close();
-
                 }
-
             }
         }
         private void tblGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                cbbMaSach.Enabled = false;
+                btnCapNhat.Enabled = true;
+                btnXoa.Enabled = true;
+                btnThem.Enabled = false;
                 int currentRowIndex = dataGridView1.CurrentRow.Index;
                 cbbMaSach.Text = dataGridView1.Rows[currentRowIndex].Cells[0].Value.ToString();
                 txtTenSach.Text = dataGridView1.Rows[currentRowIndex].Cells[1].Value.ToString();
@@ -168,61 +170,62 @@ namespace DuAn1
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                string query = "SELECT * FROM Sach WHERE MaSach = @MaSach";
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    conn.Open();
-                    command.Parameters.AddWithValue("@MaSach", txtTimKiem.Text.Trim());
-                    SqlDataReader dataReader = command.ExecuteReader();
-                    if (dataReader.HasRows)
-                    {
-                        dataGridView1.Rows.Clear();
-                        while (dataReader.Read())
-                        {
-                            dataGridView1.Rows.Add(dataReader[0], dataReader[1], dataReader[2],
-                               dataReader[3], dataReader[4], dataReader[5], dataReader[6], dataReader[7]);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show($"KHông tìm thấy MaSach = {txtTimKiem.Text.Trim()}", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    conn.Close();
-                }
+            
+            //string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            //using (SqlConnection conn = new SqlConnection(connString))
+            //{
+            //    string query = "SELECT * FROM Sach WHERE MaSach = @MaSach";
+            //    using (SqlCommand command = new SqlCommand(query, conn))
+            //    {
+            //        conn.Open();
+            //        command.Parameters.AddWithValue("@MaSach", txtTimKiem.Text.Trim());
+            //        SqlDataReader dataReader = command.ExecuteReader();
+            //        if (dataReader.HasRows)
+            //        {
+            //            dataGridView1.Rows.Clear();
+            //            while (dataReader.Read())
+            //            {
+            //                dataGridView1.Rows.Add(dataReader[0], dataReader[1], dataReader[2],
+            //                   dataReader[3], dataReader[4], dataReader[5], dataReader[6], dataReader[7]);
+            //            }
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show($"KHông tìm thấy MaSach = {txtTimKiem.Text.Trim()}", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
+            //        conn.Close();
+            //    }
 
-            }
+            //}
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                string query = "SELECT * FROM Sach WHERE MaSach = @MaSach";
-                using (SqlCommand command = new SqlCommand(query, conn))
-                {
-                    conn.Open();
-                    command.Parameters.AddWithValue("@MaSach", txtTimKiem.Text.Trim());
-                    SqlDataReader dataReader = command.ExecuteReader();
-                    if (dataReader.HasRows)
-                    {
-                        dataGridView1.Rows.Clear();
-                        while (dataReader.Read())
-                        {
-                            dataGridView1.Rows.Add(dataReader[0], dataReader[1], dataReader[2],
-                               dataReader[3], dataReader[4], dataReader[5], dataReader[6], dataReader[7]);
-                        }
-                    }
-                    else if (txtTimKiem.Text.Trim() == string.Empty)
-                    {
-                        Load_tblGridView();
-                    }
-                    conn.Close();
-                }
-            }
+            //string connString = @"Data Source = .; Initial Catalog = QLThuVien; Integrated security = SSPI";
+            //using (SqlConnection conn = new SqlConnection(connString))
+            //{
+            //    string query = "SELECT * FROM Sach WHERE MaSach = @MaSach";
+            //    using (SqlCommand command = new SqlCommand(query, conn))
+            //    {
+            //        conn.Open();
+            //        command.Parameters.AddWithValue("@MaSach", txtTimKiem.Text.Trim());
+            //        SqlDataReader dataReader = command.ExecuteReader();
+            //        if (dataReader.HasRows)
+            //        {
+            //            dataGridView1.Rows.Clear();
+            //            while (dataReader.Read())
+            //            {
+            //                dataGridView1.Rows.Add(dataReader[0], dataReader[1], dataReader[2],
+            //                   dataReader[3], dataReader[4], dataReader[5], dataReader[6], dataReader[7]);
+            //            }
+            //        }
+            //        else if (txtTimKiem.Text.Trim() == string.Empty)
+            //        {
+            //            Load_tblGridView();
+            //        }
+            //        conn.Close();
+            //    }
+            //}
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -428,6 +431,10 @@ namespace DuAn1
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            cbbMaSach.Enabled = true;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = false;
+            btnCapNhat.Enabled = false;
             Load_tblGridView();
             cbbMaSach.Text = string.Empty;
             cbbMaNV.Text = string.Empty;
@@ -446,7 +453,8 @@ namespace DuAn1
             Load_tblGridView();
             Load_MaSach();
             Load_MaThe();
-
+            btnXoa.Enabled = false;
+            btnCapNhat.Enabled = false;
         }
         private void Load_MaSach()
         {
