@@ -17,21 +17,18 @@ namespace DuAn1_QLThuVien
     public partial class DoiMatKhau : Form
     {
 
-        public DoiMatKhau()
+        public DoiMatKhau(String USer)
         {
             InitializeComponent();
+            label5.Text = USer;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult quit = MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.YesNo);
-            if (quit == DialogResult.Yes)
-            {
-                TrangChu dn = new TrangChu("");
+                TrangChu dn = new TrangChu(label5.Text);
                 this.Hide();
                 dn.ShowDialog();
                 this.Close();
-            }
         }
 
         private void DoiMatKhau_Load(object sender, EventArgs e)
@@ -73,6 +70,22 @@ namespace DuAn1_QLThuVien
 
             }
             
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                txt_MatKhauCu.PasswordChar = '\0';
+                txt_MatKhauMoi.PasswordChar = '\0';
+                txt_XacNhanMatKhau.PasswordChar = '\0';
+            }
+            else
+            {
+                txt_MatKhauCu.PasswordChar = '*';
+                txt_MatKhauMoi.PasswordChar = '*';
+                txt_XacNhanMatKhau.PasswordChar = '*';
+            }
         }
     }
 }

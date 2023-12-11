@@ -23,6 +23,8 @@ namespace DuAn1_QLThuVien
         }
         private void QLTheHoiVien_Load(object sender, EventArgs e)
         {
+            btnCapNhat.Enabled = false;
+            btnXoa.Enabled = false;
             Load_tblGridView();
             Load_MaThe();
         }
@@ -58,7 +60,7 @@ namespace DuAn1_QLThuVien
 
         private void DoiMatKhau_Click(object sender, EventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            DoiMatKhau dmk = new DoiMatKhau(label1.Text);
             this.Hide();
             dmk.ShowDialog();
             this.Close();
@@ -77,7 +79,7 @@ namespace DuAn1_QLThuVien
             qLThongKe.ShowDialog();
             this.Close();
         }
-        
+
         private void QLTHV_Click(object sender, EventArgs e)
         {
             QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(label1.Text);
@@ -121,6 +123,9 @@ namespace DuAn1_QLThuVien
         }
         private void tblGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnThem.Enabled = false;
+            btnCapNhat.Enabled = true;
+            btnXoa.Enabled = true;
             int currentRowIndex = dataGridView1.CurrentRow.Index;
             CbbMaThe.Text = dataGridView1.Rows[currentRowIndex].Cells[0].Value.ToString();
             txtManguoidoc.Text = dataGridView1.Rows[currentRowIndex].Cells[1].Value.ToString();
@@ -364,7 +369,14 @@ namespace DuAn1_QLThuVien
                                     insertCommand.ExecuteNonQuery();
                                     MessageBox.Show("Thêm Thành Công");
                                     Load_tblGridView();
-
+                                    CbbMaThe.Text = string.Empty;
+                                    txtManguoidoc.Text = string.Empty;
+                                    txtTenHoiVien.Text = string.Empty;
+                                    txtDiaChi.Text = string.Empty;
+                                    dtpNgayDangky.Text = string.Empty;
+                                    dtpNgayHetHan.Text = string.Empty;
+                                    txtDiemHoiVien.Text = string.Empty;
+                                    txtTimKiem.Text = string.Empty;
                                     conn.Close();
                                 }
 
@@ -377,15 +389,18 @@ namespace DuAn1_QLThuVien
         }
         private void btnReset_Click(object sender, EventArgs e)
         {
-                Load_tblGridView();
-                CbbMaThe.Text = string.Empty;
-                txtManguoidoc.Text = string.Empty;
-                txtTenHoiVien.Text = string.Empty;
-                txtDiaChi.Text = string.Empty;
-                dtpNgayDangky.Text = string.Empty;
-                dtpNgayHetHan.Text = string.Empty;
-                txtDiemHoiVien.Text = string.Empty;
-                txtTimKiem.Text = string.Empty;
+            btnThem.Enabled = true;
+            btnCapNhat.Enabled = false;
+            btnXoa.Enabled = false;
+            Load_tblGridView();
+            CbbMaThe.Text = string.Empty;
+            txtManguoidoc.Text = string.Empty;
+            txtTenHoiVien.Text = string.Empty;
+            txtDiaChi.Text = string.Empty;
+            dtpNgayDangky.Text = string.Empty;
+            dtpNgayHetHan.Text = string.Empty;
+            txtDiemHoiVien.Text = string.Empty;
+            txtTimKiem.Text = string.Empty;
         }
         private void Load_MaThe()
         {
@@ -426,6 +441,14 @@ namespace DuAn1_QLThuVien
             QLNguoiTraSach qlnts = new QLNguoiTraSach(label1.Text);
             this.Hide();
             qlnts.ShowDialog();
+            this.Close();
+        }
+
+        private void quảnLýNgườiĐọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLNguoiDoc nd = new QLNguoiDoc(label1.Text);
+            this.Hide();
+            nd.ShowDialog();
             this.Close();
         }
     }

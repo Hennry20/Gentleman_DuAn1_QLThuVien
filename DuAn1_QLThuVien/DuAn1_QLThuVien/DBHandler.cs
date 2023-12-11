@@ -55,6 +55,26 @@ namespace DuAn1_QLThuVien
             }
             return dscd;
         }
+
+        public static List<PhieuMuon> getPhieuMuon()
+        {
+            List<PhieuMuon> pm = new List<PhieuMuon>();
+            using (QLThuVienEntities3 abc = new QLThuVienEntities3())
+            {
+                pm = abc.PhieuMuons.ToList();
+            }
+            return pm;
+        }
+
+        public static List<NguoiDoc> getNguoiDoc()
+        {
+            List<NguoiDoc> pm = new List<NguoiDoc>();
+            using (QLThuVienEntities3 abc = new QLThuVienEntities3())
+            {
+                pm = abc.NguoiDocs.ToList();
+            }
+            return pm;
+        }
         public static List<NhanVien> getListNhanVien()
         {
             List<NhanVien> dsNhanVien = new List<NhanVien>();

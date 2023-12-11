@@ -17,15 +17,16 @@ namespace DuAn1_QLThuVien
 {
     public partial class QLNguoiDoc : Form
     {
-        public QLNguoiDoc()
+        public QLNguoiDoc(String User)
         {
             InitializeComponent();
+            label3.Text = User;
         }
 
 
         private void TrangChu_Click(object sender, EventArgs e)
         {
-            TrangChu trang = new TrangChu("");
+            TrangChu trang = new TrangChu(label3.Text);
             this.Hide();
             trang.ShowDialog();
             this.Close();
@@ -40,21 +41,21 @@ namespace DuAn1_QLThuVien
         }
         private void QLKhoSach_Click(object sender, EventArgs e)
         {
-            QLSach sach = new QLSach("");
+            QLSach sach = new QLSach(label3.Text);
             this.Hide();
             sach.ShowDialog();
             this.Close();
         }
         private void QlNhanVien_Click(object sender, EventArgs e)
         {
-            QLNhanVien nv = new QLNhanVien("");
+            QLNhanVien nv = new QLNhanVien(label3.Text);
             this.Hide();
             nv.ShowDialog();
             this.Close();
         }
         private void QLnguoiTraSach_Click(Object sender, EventArgs e)
         {
-            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach("");
+            QLNguoiTraSach qLNguoiTra = new QLNguoiTraSach(label3.Text);
             this.Hide();
             qLNguoiTra.ShowDialog();
             this.Close();
@@ -63,21 +64,21 @@ namespace DuAn1_QLThuVien
 
         private void DoiMatKhau_Click(object sender, EventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            DoiMatKhau dmk = new DoiMatKhau(label3.Text);
             this.Hide();
             dmk.ShowDialog();
             this.Close();
         }
         private void QLnguoiMuonSach_Click(Object sender, EventArgs e)
         {
-            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach("");
+            QL_NguoiMuonSach nguoiMuonSach = new QL_NguoiMuonSach(label3.Text);
             this.Hide();
             nguoiMuonSach.ShowDialog();
             this.Close();
         }
         private void QLTHongke_Click(object sender, EventArgs e)
         {
-            QLThongKe qLThongKe = new QLThongKe("");
+            QLThongKe qLThongKe = new QLThongKe(label3.Text);
             this.Hide();
             qLThongKe.ShowDialog();
             this.Close();
@@ -85,14 +86,14 @@ namespace DuAn1_QLThuVien
 
         private void QLTHV_Click(object sender, EventArgs e)
         {
-            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien("");
+            QLTheHoiVien qLTheHoiVien = new QLTheHoiVien(label3.Text);
             this.Hide();
             qLTheHoiVien.ShowDialog();
             this.Close();
         }
         private void QLNguoiDoc_Click(object sender, EventArgs e)
         {
-            QLNguoiDoc qLNguoiDoc = new QLNguoiDoc();
+            QLNguoiDoc qLNguoiDoc = new QLNguoiDoc(label3.Text);
             this.Hide();
             qLNguoiDoc.ShowDialog();
             this.Close();
@@ -293,7 +294,18 @@ namespace DuAn1_QLThuVien
                                 insertCommand.ExecuteNonQuery();
                                 MessageBox.Show("Thêm Thành Công");
                                 Load_tblGridView();
+                                cbbMaND.Text = string.Empty;
+                                cbbMaNV.Text = string.Empty;
+                                txtEmail.Text = string.Empty;
+                                txtSDT.Text = string.Empty;
+                                txtTenND.Text = string.Empty;
+                                txtTimKiem.Text = string.Empty;
+                                dtpNgaySinh.Text = string.Empty;
 
+                                btnThem.Enabled = true;
+                                btnXoa.Enabled = false;
+                                btnCapNhat.Enabled = false;
+                                cbbMaND.Enabled = true;
                                 conn.Close();
                             }
                         }
@@ -533,7 +545,7 @@ namespace DuAn1_QLThuVien
 
         private void TrangChuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TrangChu tn = new TrangChu("");
+            TrangChu tn = new TrangChu(label3.Text);
             this.Hide();
             tn.ShowDialog();
             this.Close();

@@ -43,6 +43,8 @@ namespace QLThuVien
             this.quảnLýNgườiMượnSáchToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýNgườiMượnSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýThẻHộiViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýNgườiTrảSáchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýNgườiĐọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -98,11 +100,11 @@ namespace QLThuVien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SG85-PHAT TAI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(296, 60);
+            this.label1.Location = new System.Drawing.Point(338, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(592, 66);
+            this.label1.Size = new System.Drawing.Size(497, 56);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÍ NHÂN VIÊN";
             // 
@@ -146,6 +148,7 @@ namespace QLThuVien
             // 
             // trangChủToolStripMenuItem
             // 
+            this.trangChủToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.trangChủToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trangChủToolStripMenuItem.Image")));
             this.trangChủToolStripMenuItem.Name = "trangChủToolStripMenuItem";
             this.trangChủToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
@@ -154,6 +157,7 @@ namespace QLThuVien
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
+            this.đổiMậtKhẩuToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.đổiMậtKhẩuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đổiMậtKhẩuToolStripMenuItem.Image")));
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
@@ -162,6 +166,7 @@ namespace QLThuVien
             // 
             // đăngXuấtToolStripMenuItem
             // 
+            this.đăngXuấtToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.đăngXuấtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngXuấtToolStripMenuItem.Image")));
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
@@ -170,6 +175,7 @@ namespace QLThuVien
             // 
             // kếtThúcToolStripMenuItem
             // 
+            this.kếtThúcToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.kếtThúcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kếtThúcToolStripMenuItem.Image")));
             this.kếtThúcToolStripMenuItem.Name = "kếtThúcToolStripMenuItem";
             this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
@@ -182,7 +188,9 @@ namespace QLThuVien
             this.quảnLToolStripMenuItem,
             this.quảnLýNgườiMượnSáchToolStripMenuItem1,
             this.quảnLýNgườiMượnSáchToolStripMenuItem,
-            this.quảnLýThẻHộiViênToolStripMenuItem});
+            this.quảnLýThẻHộiViênToolStripMenuItem,
+            this.quảnLýNgườiTrảSáchToolStripMenuItem,
+            this.quảnLýNgườiĐọcToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
             this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(94, 29);
@@ -190,6 +198,7 @@ namespace QLThuVien
             // 
             // quảnLToolStripMenuItem
             // 
+            this.quảnLToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.quảnLToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLToolStripMenuItem.Image")));
             this.quảnLToolStripMenuItem.Name = "quảnLToolStripMenuItem";
             this.quảnLToolStripMenuItem.Size = new System.Drawing.Size(320, 30);
@@ -198,6 +207,7 @@ namespace QLThuVien
             // 
             // quảnLýNgườiMượnSáchToolStripMenuItem1
             // 
+            this.quảnLýNgườiMượnSáchToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.quảnLýNgườiMượnSáchToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýNgườiMượnSáchToolStripMenuItem1.Image")));
             this.quảnLýNgườiMượnSáchToolStripMenuItem1.Name = "quảnLýNgườiMượnSáchToolStripMenuItem1";
             this.quảnLýNgườiMượnSáchToolStripMenuItem1.Size = new System.Drawing.Size(320, 30);
@@ -206,6 +216,7 @@ namespace QLThuVien
             // 
             // quảnLýNgườiMượnSáchToolStripMenuItem
             // 
+            this.quảnLýNgườiMượnSáchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.quảnLýNgườiMượnSáchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýNgườiMượnSáchToolStripMenuItem.Image")));
             this.quảnLýNgườiMượnSáchToolStripMenuItem.Name = "quảnLýNgườiMượnSáchToolStripMenuItem";
             this.quảnLýNgườiMượnSáchToolStripMenuItem.Size = new System.Drawing.Size(320, 30);
@@ -214,18 +225,38 @@ namespace QLThuVien
             // 
             // quảnLýThẻHộiViênToolStripMenuItem
             // 
+            this.quảnLýThẻHộiViênToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
             this.quảnLýThẻHộiViênToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýThẻHộiViênToolStripMenuItem.Image")));
             this.quảnLýThẻHộiViênToolStripMenuItem.Name = "quảnLýThẻHộiViênToolStripMenuItem";
             this.quảnLýThẻHộiViênToolStripMenuItem.Size = new System.Drawing.Size(320, 30);
             this.quảnLýThẻHộiViênToolStripMenuItem.Text = "Quản lý thẻ hội viên";
             this.quảnLýThẻHộiViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýThẻHộiViênToolStripMenuItem_Click);
             // 
+            // quảnLýNgườiTrảSáchToolStripMenuItem
+            // 
+            this.quảnLýNgườiTrảSáchToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.quảnLýNgườiTrảSáchToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýNgườiTrảSáchToolStripMenuItem.Image")));
+            this.quảnLýNgườiTrảSáchToolStripMenuItem.Name = "quảnLýNgườiTrảSáchToolStripMenuItem";
+            this.quảnLýNgườiTrảSáchToolStripMenuItem.Size = new System.Drawing.Size(320, 30);
+            this.quảnLýNgườiTrảSáchToolStripMenuItem.Text = "Quản lý người trả sách";
+            this.quảnLýNgườiTrảSáchToolStripMenuItem.Click += new System.EventHandler(this.quảnLýNgườiTrảSáchToolStripMenuItem_Click);
+            // 
+            // quảnLýNgườiĐọcToolStripMenuItem
+            // 
+            this.quảnLýNgườiĐọcToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.quảnLýNgườiĐọcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýNgườiĐọcToolStripMenuItem.Image")));
+            this.quảnLýNgườiĐọcToolStripMenuItem.Name = "quảnLýNgườiĐọcToolStripMenuItem";
+            this.quảnLýNgườiĐọcToolStripMenuItem.Size = new System.Drawing.Size(320, 30);
+            this.quảnLýNgườiĐọcToolStripMenuItem.Text = "Quản lý người đọc";
+            this.quảnLýNgườiĐọcToolStripMenuItem.Click += new System.EventHandler(this.quảnLýNgườiĐọcToolStripMenuItem_Click);
+            // 
             // thốngKêToolStripMenuItem
             // 
             this.thốngKêToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thốngKêToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thốngKêToolStripMenuItem.Image")));
             this.thốngKêToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(109, 29);
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(129, 29);
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
             this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
@@ -658,11 +689,11 @@ namespace QLThuVien
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label12.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1138, 9);
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1137, 4);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(80, 22);
+            this.label12.Size = new System.Drawing.Size(75, 25);
             this.label12.TabIndex = 9;
             this.label12.Text = "label12";
             // 
@@ -682,7 +713,7 @@ namespace QLThuVien
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "QLNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lí nhân viên";
+            this.Text = "QUẢN LÝ NHÂN VIÊN";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -756,6 +787,8 @@ namespace QLThuVien
         private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayVaoLam;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýNgườiTrảSáchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýNgườiĐọcToolStripMenuItem;
     }
 }
 

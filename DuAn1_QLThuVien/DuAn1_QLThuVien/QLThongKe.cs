@@ -41,7 +41,7 @@ namespace QLThuVien
             SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
             myConn.Open();
 
-            SqlCommand myCmd = new SqlCommand("Danhthu", myConn);
+            SqlCommand myCmd = new SqlCommand("ThongKeDoanhThu", myConn);
             myCmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(myCmd);
             da.Fill(dt);
@@ -96,7 +96,7 @@ namespace QLThuVien
 
         private void cbxDoanhthu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string ht = string.Format(@"exec Danhthu1thang'{0}'", cbxDoanhthu.SelectedItem);
+            string ht = string.Format(@"exec ThongKeDoanhThuTrongThang'{0}'", cbxDoanhthu.SelectedItem);
             SqlConnection myConn = new SqlConnection(@"Data Source=.;Initial Catalog=QLThuVien;Integrated security=SSPI");
             SqlCommand cmd = new SqlCommand(ht);
             myConn.Open();
@@ -124,7 +124,7 @@ namespace QLThuVien
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            DoiMatKhau dmk = new DoiMatKhau(label3.Text);
             this.Hide();
             dmk.ShowDialog();
             this.Close();
@@ -188,6 +188,14 @@ namespace QLThuVien
             QLNguoiTraSach qlnts = new QLNguoiTraSach(label3.Text);
             this.Hide();
             qlnts.ShowDialog();
+            this.Close();
+        }
+
+        private void quảnLýNgườiĐọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLNguoiDoc nd = new QLNguoiDoc(label3.Text);
+            this.Hide();
+            nd.ShowDialog();
             this.Close();
         }
     }

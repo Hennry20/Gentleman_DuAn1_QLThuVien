@@ -14,10 +14,10 @@ namespace DuAn1
 {
     public partial class TrangChu : Form
     {
-        public TrangChu(String tendangnhap)
+        public TrangChu(String User)
         {
             InitializeComponent();
-            label1.Text = tendangnhap;
+            label1.Text = User;
         }
 
 
@@ -63,7 +63,7 @@ namespace DuAn1
 
         private void DoiMatKhau_Click(object sender, EventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            DoiMatKhau dmk = new DoiMatKhau(label1.Text);
             this.Hide();
             dmk.ShowDialog();
             this.Close();
@@ -95,6 +95,13 @@ namespace DuAn1
             QLTheHoiVien theHoiVien = new QLTheHoiVien(label1.Text);
             this.Hide();
             theHoiVien.ShowDialog();
+            this.Close();
+        }
+        private void QLNguoiDoc_Click(object sender, EventArgs e)
+        {
+            QLNguoiDoc qLNguoiDoc = new QLNguoiDoc(label1.Text);
+            this.Hide();
+            qLNguoiDoc.ShowDialog();
             this.Close();
         }
         private void Thoat_Click(object sender, EventArgs e)

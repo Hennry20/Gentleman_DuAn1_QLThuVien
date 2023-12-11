@@ -43,6 +43,7 @@ namespace DuAn1_QLThuVien
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,11 +151,11 @@ namespace DuAn1_QLThuVien
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SG85-PHAT TAI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 34.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(124, 20);
+            this.label1.Location = new System.Drawing.Point(192, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(468, 69);
+            this.label1.Size = new System.Drawing.Size(391, 67);
             this.label1.TabIndex = 47;
             this.label1.Text = "Đổi mật khẩu";
             // 
@@ -178,6 +179,16 @@ namespace DuAn1_QLThuVien
             this.checkBox1.TabIndex = 59;
             this.checkBox1.Text = "Hiển thị mật khẩu";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.TabIndex = 60;
+            this.label5.Visible = false;
             // 
             // DoiMatKhau
             // 
@@ -185,6 +196,7 @@ namespace DuAn1_QLThuVien
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(781, 721);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_XacNhanMatKhau);
@@ -223,5 +235,6 @@ namespace DuAn1_QLThuVien
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

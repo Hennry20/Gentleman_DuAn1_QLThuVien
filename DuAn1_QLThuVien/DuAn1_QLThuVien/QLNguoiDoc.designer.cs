@@ -74,6 +74,7 @@
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
@@ -133,7 +134,7 @@
             this.ThongKeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1180, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1226, 36);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -156,7 +157,7 @@
             this.TrangChuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.TrangChuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("TrangChuToolStripMenuItem.Image")));
             this.TrangChuToolStripMenuItem.Name = "TrangChuToolStripMenuItem";
-            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.TrangChuToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.TrangChuToolStripMenuItem.Text = "Trang chủ";
             this.TrangChuToolStripMenuItem.Click += new System.EventHandler(this.TrangChuToolStripMenuItem_Click);
             // 
@@ -166,7 +167,7 @@
             this.DangXuatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DangXuatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DangXuatToolStripMenuItem.Image")));
             this.DangXuatToolStripMenuItem.Name = "DangXuatToolStripMenuItem";
-            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.DangXuatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DangXuatToolStripMenuItem.Text = "Đăng xuất ";
             this.DangXuatToolStripMenuItem.Click += new System.EventHandler(this.DangXuat_Click);
             // 
@@ -176,7 +177,7 @@
             this.DoiMatKhauToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.DoiMatKhauToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("DoiMatKhauToolStripMenuItem.Image")));
             this.DoiMatKhauToolStripMenuItem.Name = "DoiMatKhauToolStripMenuItem";
-            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.DoiMatKhauToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.DoiMatKhauToolStripMenuItem.Text = "Đổi mật khẩu ";
             this.DoiMatKhauToolStripMenuItem.Click += new System.EventHandler(this.DoiMatKhau_Click);
             // 
@@ -186,7 +187,7 @@
             this.ThoatToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThoatToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThoatToolStripMenuItem.Image")));
             this.ThoatToolStripMenuItem.Name = "ThoatToolStripMenuItem";
-            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.ThoatToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
             this.ThoatToolStripMenuItem.Text = "Thoát";
             this.ThoatToolStripMenuItem.Click += new System.EventHandler(this.Thoat_Click);
             // 
@@ -264,14 +265,14 @@
             this.ThongKeToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ThongKeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ThongKeToolStripMenuItem.Image")));
             this.ThongKeToolStripMenuItem.Name = "ThongKeToolStripMenuItem";
-            this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(214, 32);
-            this.ThongKeToolStripMenuItem.Text = "Tổng hợp thống kê";
+            this.ThongKeToolStripMenuItem.Size = new System.Drawing.Size(127, 32);
+            this.ThongKeToolStripMenuItem.Text = "Thống kê";
             // 
             // Logo
             // 
             this.Logo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Logo.BackgroundImage")));
             this.Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Logo.Location = new System.Drawing.Point(918, 39);
+            this.Logo.Location = new System.Drawing.Point(958, 39);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(250, 88);
             this.Logo.TabIndex = 15;
@@ -280,11 +281,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(132, 62);
+            this.label1.Font = new System.Drawing.Font("Arial", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(282, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(542, 55);
+            this.label1.Size = new System.Drawing.Size(537, 56);
             this.label1.TabIndex = 14;
             this.label1.Text = "QUẢN LÝ NGƯỜI ĐỌC";
             // 
@@ -310,7 +311,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.Location = new System.Drawing.Point(17, 133);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1151, 284);
+            this.groupBox1.Size = new System.Drawing.Size(1191, 284);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Người Đọc";
@@ -491,7 +492,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.Location = new System.Drawing.Point(17, 423);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1151, 301);
+            this.groupBox2.Size = new System.Drawing.Size(1197, 387);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách";
@@ -499,6 +500,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaND,
@@ -507,11 +509,11 @@
             this.SDT,
             this.Email,
             this.MaNV});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 29);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1115, 251);
+            this.dataGridView1.Size = new System.Drawing.Size(1185, 352);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -562,19 +564,33 @@
             this.MaNV.ReadOnly = true;
             this.MaNV.Width = 120;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(239)))), ((int)(((byte)(253)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1141, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 25);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "label3";
+            // 
             // QLNguoiDoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(194)))), ((int)(((byte)(210)))));
-            this.ClientSize = new System.Drawing.Size(1180, 731);
+            this.ClientSize = new System.Drawing.Size(1226, 822);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Logo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "QLNguoiDoc";
-            this.Text = "QLNguoiDoc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "QUẢN LÝ NGƯỜI ĐỌC";
             this.Load += new System.EventHandler(this.QLNguoiDoc_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -636,5 +652,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.ToolStripMenuItem quảnLýNgườiĐọcToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
     }
 }

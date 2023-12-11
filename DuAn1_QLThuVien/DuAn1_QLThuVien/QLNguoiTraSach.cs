@@ -17,6 +17,8 @@ namespace DuAn1_QLThuVien
 {
     public partial class QLNguoiTraSach : Form
     {
+        List<PhieuMuon> dsphieumuon;
+        List<NguoiDoc> dsnguoidoc;
         public QLNguoiTraSach(String User)
         {
             InitializeComponent();
@@ -26,6 +28,13 @@ namespace DuAn1_QLThuVien
         }
         private void QL_NguoiTraSach_Load(object sender, EventArgs e)
         {
+            btnQLTSCapNhat.Enabled = false;
+            btnQLTSXoa.Enabled = false;
+            dsphieumuon = DBHandler.getPhieuMuon();
+            dsphieumuon.ForEach(mapm => cbxMaPhieuMuon.Items.Add(mapm.MaPhieuMuon));
+
+            dsnguoidoc = DBHandler.getNguoiDoc();
+            dsnguoidoc.ForEach(mapm => cbQLTSMaNguoiDoc.Items.Add(mapm.MaND));
             load_dtgvQLTraSach();
             load_MaND();
         }
@@ -82,11 +91,14 @@ namespace DuAn1_QLThuVien
 
         private void dtgvQLTraSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnQLTSTraSach.Enabled = false;
+            btnQLTSCapNhat.Enabled = true;
+            btnQLTSXoa.Enabled = true;
             int currenRowIndex = dtgvQLTraSach.CurrentRow.Index;
             try
             {
                 lblQLTSMaPhieuTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[0].Value.ToString();
-                txtQLTSMaPhieuMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[1].Value.ToString();
+                cbxMaPhieuMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[1].Value.ToString();
                 cbQLTSMaNguoiDoc.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[2].Value.ToString();
                 txtQLTSSLMuon.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[3].Value.ToString();
                 dtpQLTSNgayHenTra.Text = dtgvQLTraSach.Rows[currenRowIndex].Cells[4].Value.ToString();
@@ -120,7 +132,7 @@ namespace DuAn1_QLThuVien
 
         private void DoiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DoiMatKhau dmk = new DoiMatKhau();
+            DoiMatKhau dmk = new DoiMatKhau(label2.Text);
             this.Hide();
             dmk.ShowDialog();
             this.Close();
@@ -210,9 +222,12 @@ namespace DuAn1_QLThuVien
 
         private void btnQLTSMoi_Click_1(object sender, EventArgs e)
         {
+            btnQLTSTraSach.Enabled = true;
+            btnQLTSCapNhat.Enabled = false;
+            btnQLTSXoa.Enabled = false;
             load_dtgvQLTraSach();
             cbQLTSMaNguoiDoc.Text = string.Empty;
-            txtQLTSMaPhieuMuon.Text = string.Empty;
+            cbxMaPhieuMuon.Text = string.Empty;
             lblQLTSMaPhieuTra.Text = string.Empty;
             txtQLTSSLMuon.Text = string.Empty;
             dtpQLTSNgayHenTra.Text = string.Empty;
@@ -236,7 +251,7 @@ namespace DuAn1_QLThuVien
                 {
                     using (SqlCommand check_MaND_Command = new SqlCommand(check_MaND_Query, conn))
                     {
-                        check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", txtQLTSMaPhieuMuon.Text.Trim());
+                        check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", cbxMaPhieuMuon.Text.Trim());
                         check_MaND_Command.Parameters.AddWithValue("MaND", cbQLTSMaNguoiDoc.Text.Trim());
 
                         int count = (int)check_PhieuMuon_Command.ExecuteScalar();
@@ -244,13 +259,13 @@ namespace DuAn1_QLThuVien
 
                         if (count == 0)
                         {
-                            MessageBox.Show($"MaPhieuMuon: {txtQLTSMaPhieuMuon.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show($"MaPhieuMuon: {cbxMaPhieuMuon.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else if (count2 == 0)
                         {
                             MessageBox.Show($"Mã người đọc: {cbQLTSMaNguoiDoc.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        else if (cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || txtQLTSMaPhieuMuon.Text.Trim() == string.Empty || txtQLTSSLMuon.Text.Trim() == string.Empty || dtpQLTSNgayHenTra.Text.Trim() == string.Empty || dtpQLTSNgayTra.Text.Trim() == string.Empty || txtQLTSPhiTra.Text.Trim() == string.Empty || txtQLTSSoGioTra.Text.Trim() == string.Empty)
+                        else if (cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || cbxMaPhieuMuon.Text.Trim() == string.Empty || txtQLTSSLMuon.Text.Trim() == string.Empty || dtpQLTSNgayHenTra.Text.Trim() == string.Empty || dtpQLTSNgayTra.Text.Trim() == string.Empty || txtQLTSPhiTra.Text.Trim() == string.Empty || txtQLTSSoGioTra.Text.Trim() == string.Empty)
                         {
                             MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
@@ -302,16 +317,26 @@ namespace DuAn1_QLThuVien
                                 else
                                 {
                                     command.Parameters.AddWithValue("@MaND", cbQLTSMaNguoiDoc.Text.Trim());
-                                    command.Parameters.AddWithValue("@MaPhieuMuon", txtQLTSMaPhieuMuon.Text.Trim());
+                                    command.Parameters.AddWithValue("@MaPhieuMuon", cbxMaPhieuMuon.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLTSSLMuon.Text.Trim());
                                     //command.Parameters.AddWithValue("@NgayHenTra", .Text.Trim());
                                     //command.Parameters.AddWithValue("@NgayTra", .Text.Trim());
-                                    command.Parameters.AddWithValue("@PhiTra", txtQLTSPhiTra.Text.Trim());
+                                    string giaMuonWithoutCommas = txtQLTSPhiTra.Text.Trim().Replace(",", "");
+                                    command.Parameters.AddWithValue("@PhiTra", giaMuonWithoutCommas);
                                     command.Parameters.AddWithValue("@SoGio", txtQLTSSoGioTra.Text.Trim());
                                     command.Parameters.AddWithValue("@TinhTrang", lblTinhTrangTraSach.Text.Trim());
                                     command.ExecuteNonQuery();
                                     MessageBox.Show("Trả sách thành công!");
                                     load_dtgvQLTraSach();
+                                    cbQLTSMaNguoiDoc.Text = string.Empty;
+                                    cbxMaPhieuMuon.Text = string.Empty;
+                                    lblQLTSMaPhieuTra.Text = string.Empty;
+                                    txtQLTSSLMuon.Text = string.Empty;
+                                    dtpQLTSNgayHenTra.Text = string.Empty;
+                                    dtpQLTSNgayTra.Text = string.Empty;
+                                    txtQLTSPhiTra.Text = string.Empty;
+                                    txtQLTSSoGioTra.Text = string.Empty;
+                                    lblTinhTrangTraSach.Text = string.Empty;
                                     conn.Close();
                                 }
                             }
@@ -335,7 +360,7 @@ namespace DuAn1_QLThuVien
                 {
                     using (SqlCommand check_MaND_Command = new SqlCommand(check_MaND_Query, conn))
                     {
-                        check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", txtQLTSMaPhieuMuon.Text.Trim());
+                        check_PhieuMuon_Command.Parameters.AddWithValue("@MaPhieuMuon", cbxMaPhieuMuon.Text.Trim());
                         check_MaND_Command.Parameters.AddWithValue("MaND", cbQLTSMaNguoiDoc.Text.Trim());
 
                         int count = (int)check_PhieuMuon_Command.ExecuteScalar();
@@ -343,13 +368,13 @@ namespace DuAn1_QLThuVien
 
                         if (count == 0)
                         {
-                            MessageBox.Show($"MaPhieuMuon: {txtQLTSMaPhieuMuon.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show($"MaPhieuMuon: {cbxMaPhieuMuon.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         if (count2 == 0)
                         {
                             MessageBox.Show($"Mã người đọc: {cbQLTSMaNguoiDoc.Text} không tồn tại!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        if (cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || txtQLTSMaPhieuMuon.Text.Trim() == string.Empty || txtQLTSSLMuon.Text.Trim() == string.Empty || dtpQLTSNgayHenTra.Text.Trim() == string.Empty || dtpQLTSNgayTra.Text.Trim() == string.Empty || txtQLTSPhiTra.Text.Trim() == string.Empty || txtQLTSSoGioTra.Text.Trim() == string.Empty)
+                        if (cbQLTSMaNguoiDoc.Text.Trim() == string.Empty || cbxMaPhieuMuon.Text.Trim() == string.Empty || txtQLTSSLMuon.Text.Trim() == string.Empty || dtpQLTSNgayHenTra.Text.Trim() == string.Empty || dtpQLTSNgayTra.Text.Trim() == string.Empty || txtQLTSPhiTra.Text.Trim() == string.Empty || txtQLTSSoGioTra.Text.Trim() == string.Empty)
                         {
                             MessageBox.Show("Vui lòng không để trống các thông tin!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
@@ -392,10 +417,13 @@ namespace DuAn1_QLThuVien
                                 else
                                 {
                                     command.Parameters.AddWithValue("@MaND", cbQLTSMaNguoiDoc.Text.Trim());
-                                    command.Parameters.AddWithValue("@MaPhieuMuon", txtQLTSMaPhieuMuon.Text.Trim());
+                                    command.Parameters.AddWithValue("@MaPhieuMuon", cbxMaPhieuMuon.Text.Trim());
                                     command.Parameters.AddWithValue("@MaPhieuTra", lblQLTSMaPhieuTra.Text.Trim());
                                     command.Parameters.AddWithValue("@SoLuong", txtQLTSSLMuon.Text.Trim());
-                                    command.Parameters.AddWithValue("@PhiTra", txtQLTSPhiTra.Text.Trim());
+
+                                    string giaMuonWithoutCommas = txtQLTSPhiTra.Text.Trim().Replace(",", "");
+                                    command.Parameters.AddWithValue("@PhiTra", giaMuonWithoutCommas);
+
                                     command.Parameters.AddWithValue("@SoGio", txtQLTSSoGioTra.Text.Trim());
                                     command.ExecuteNonQuery();
                                     MessageBox.Show("Cập nhật Thành Công");
@@ -417,6 +445,15 @@ namespace DuAn1_QLThuVien
                 string maPTToDelete = lblQLTSMaPhieuTra.Text.Trim();
                 xoaMaPhieuTra(maPTToDelete);
             }
+            cbQLTSMaNguoiDoc.Text = string.Empty;
+            cbxMaPhieuMuon.Text = string.Empty;
+            lblQLTSMaPhieuTra.Text = string.Empty;
+            txtQLTSSLMuon.Text = string.Empty;
+            dtpQLTSNgayHenTra.Text = string.Empty;
+            dtpQLTSNgayTra.Text = string.Empty;
+            txtQLTSPhiTra.Text = string.Empty;
+            txtQLTSSoGioTra.Text = string.Empty;
+            lblTinhTrangTraSach.Text = string.Empty;
         }
         private PrintDocument docToPrint = new PrintDocument();
         private void button1_Click(object sender, EventArgs e)
@@ -444,6 +481,32 @@ namespace DuAn1_QLThuVien
 
             e.Graphics.DrawString(title, printFont,
                 System.Drawing.Brushes.Black, 10, 10);
+
+            
+        }
+
+        private void txtQLTSPhiTra_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtQLTSPhiTra.Text == "" || txtQLTSPhiTra.Text == "0") return;
+                decimal number;
+                number = decimal.Parse(txtQLTSPhiTra.Text, System.Globalization.NumberStyles.Currency);
+                txtQLTSPhiTra.Text = number.ToString("#,#");
+                txtQLTSPhiTra.SelectionStart = txtQLTSPhiTra.Text.Length;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void quảnLýNgườiĐọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QLNguoiDoc nd = new QLNguoiDoc(label2.Text);
+            this.Hide();
+            nd.ShowDialog();
+            this.Close();
         }
     }
 }
