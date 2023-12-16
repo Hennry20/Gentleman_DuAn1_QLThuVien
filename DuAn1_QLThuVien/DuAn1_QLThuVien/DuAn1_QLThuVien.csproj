@@ -55,23 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="Form\DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
+    <Compile Include="Form\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="DBHandler.cs" />
-    <Compile Include="ManHinhCho.cs">
+    <Compile Include="Form\ManHinhCho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManHinhCho.Designer.cs">
+    <Compile Include="Form\ManHinhCho.Designer.cs">
       <DependentUpon>ManHinhCho.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoiMatKhau.cs">
+    <Compile Include="Form\DoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoiMatKhau.Designer.cs">
+    <Compile Include="Form\DoiMatKhau.Designer.cs">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="NguoiDoc.cs">
@@ -88,40 +88,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLNguoiTraSach.cs">
+    <Compile Include="Form\QLNguoiTraSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLNguoiTraSach.designer.cs">
+    <Compile Include="Form\QLNguoiTraSach.designer.cs">
       <DependentUpon>QLNguoiTraSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLNhanVien.cs">
+    <Compile Include="Form\QLNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLNhanVien.designer.cs">
+    <Compile Include="Form\QLNhanVien.designer.cs">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="QlSach.cs">
+    <Compile Include="Form\QlSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QlSach.designer.cs">
+    <Compile Include="Form\QlSach.designer.cs">
       <DependentUpon>QlSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLTheHoiVien.cs">
+    <Compile Include="Form\QLTheHoiVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLTheHoiVien.Designer.cs">
+    <Compile Include="Form\QLTheHoiVien.Designer.cs">
       <DependentUpon>QLTheHoiVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLThongKe.cs">
+    <Compile Include="Form\QLThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLThongKe.designer.cs">
+    <Compile Include="Form\QLThongKe.designer.cs">
       <DependentUpon>QLThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLNguoiDoc.cs">
+    <Compile Include="Form\QLNguoiDoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QLNguoiDoc.designer.cs">
+    <Compile Include="Form\QLNguoiDoc.designer.cs">
       <DependentUpon>QLNguoiDoc.cs</DependentUpon>
     </Compile>
     <Compile Include="QLThuVien.Context.cs">
@@ -139,16 +139,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLThuVien.edmx</DependentUpon>
     </Compile>
-    <Compile Include="QL_NguoiMuonSach.cs">
+    <Compile Include="Form\QL_NguoiMuonSach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QL_NguoiMuonSach.designer.cs">
+    <Compile Include="Form\QL_NguoiMuonSach.designer.cs">
       <DependentUpon>QL_NguoiMuonSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuenMatKhau.cs">
+    <Compile Include="Form\QuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuenMatKhau.Designer.cs">
+    <Compile Include="Form\QuenMatKhau.Designer.cs">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="Sach.cs">
@@ -169,13 +169,13 @@
     <Compile Include="TrangChu.designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="Form\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManHinhCho.resx">
+    <EmbeddedResource Include="Form\ManHinhCho.resx">
       <DependentUpon>ManHinhCho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoiMatKhau.resx">
+    <EmbeddedResource Include="Form\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -188,31 +188,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QLNguoiTraSach.resx">
+    <EmbeddedResource Include="Form\QLNguoiTraSach.resx">
       <DependentUpon>QLNguoiTraSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLNhanVien.resx">
+    <EmbeddedResource Include="Form\QLNhanVien.resx">
       <DependentUpon>QLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QlSach.resx">
+    <EmbeddedResource Include="Form\QlSach.resx">
       <DependentUpon>QlSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLTheHoiVien.resx">
+    <EmbeddedResource Include="Form\QLTheHoiVien.resx">
       <DependentUpon>QLTheHoiVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLThongKe.resx">
+    <EmbeddedResource Include="Form\QLThongKe.resx">
       <DependentUpon>QLThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QL_NguoiMuonSach.resx">
+    <EmbeddedResource Include="Form\QL_NguoiMuonSach.resx">
       <DependentUpon>QL_NguoiMuonSach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuenMatKhau.resx">
+    <EmbeddedResource Include="Form\QuenMatKhau.resx">
       <DependentUpon>QuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QLNguoiDoc.resx">
+    <EmbeddedResource Include="Form\QLNguoiDoc.resx">
       <DependentUpon>QLNguoiDoc.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -255,8 +255,6 @@
       <LastGenOutput>QLThuVien.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Form\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

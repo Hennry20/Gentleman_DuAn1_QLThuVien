@@ -54,7 +54,7 @@ namespace DuAn1_QLThuVien
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(213, 42);
+            this.label1.Location = new System.Drawing.Point(256, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(448, 59);
             this.label1.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace DuAn1_QLThuVien
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 138);
+            this.label2.Location = new System.Drawing.Point(91, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 25);
             this.label2.TabIndex = 1;
@@ -74,7 +74,7 @@ namespace DuAn1_QLThuVien
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(48, 216);
+            this.label3.Location = new System.Drawing.Point(91, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 25);
             this.label3.TabIndex = 2;
@@ -84,7 +84,7 @@ namespace DuAn1_QLThuVien
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(48, 301);
+            this.label4.Location = new System.Drawing.Point(91, 314);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(135, 25);
             this.label4.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace DuAn1_QLThuVien
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 387);
+            this.label5.Location = new System.Drawing.Point(91, 400);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(187, 25);
             this.label5.TabIndex = 4;
@@ -103,7 +103,7 @@ namespace DuAn1_QLThuVien
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(264, 139);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(307, 152);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(528, 26);
             this.txtTaiKhoan.TabIndex = 5;
@@ -111,7 +111,7 @@ namespace DuAn1_QLThuVien
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(264, 217);
+            this.txtEmail.Location = new System.Drawing.Point(307, 230);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(528, 26);
             this.txtEmail.TabIndex = 6;
@@ -120,7 +120,7 @@ namespace DuAn1_QLThuVien
             // txtMatKhauMoi
             // 
             this.txtMatKhauMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(264, 302);
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(307, 315);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.PasswordChar = '*';
             this.txtMatKhauMoi.Size = new System.Drawing.Size(528, 26);
@@ -129,7 +129,7 @@ namespace DuAn1_QLThuVien
             // txtXacNhanMatKhau
             // 
             this.txtXacNhanMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXacNhanMatKhau.Location = new System.Drawing.Point(264, 386);
+            this.txtXacNhanMatKhau.Location = new System.Drawing.Point(307, 399);
             this.txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
             this.txtXacNhanMatKhau.PasswordChar = '*';
             this.txtXacNhanMatKhau.Size = new System.Drawing.Size(528, 26);
@@ -140,7 +140,7 @@ namespace DuAn1_QLThuVien
             this.btnXacNhan.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnXacNhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXacNhan.ForeColor = System.Drawing.Color.White;
-            this.btnXacNhan.Location = new System.Drawing.Point(164, 592);
+            this.btnXacNhan.Location = new System.Drawing.Point(207, 605);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(531, 52);
             this.btnXacNhan.TabIndex = 9;
@@ -153,7 +153,7 @@ namespace DuAn1_QLThuVien
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(164, 663);
+            this.btnThoat.Location = new System.Drawing.Point(207, 676);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(531, 52);
             this.btnThoat.TabIndex = 10;
@@ -165,7 +165,7 @@ namespace DuAn1_QLThuVien
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(264, 518);
+            this.checkBox1.Location = new System.Drawing.Point(307, 531);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(184, 29);
             this.checkBox1.TabIndex = 11;
@@ -177,7 +177,7 @@ namespace DuAn1_QLThuVien
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(48, 464);
+            this.label6.Location = new System.Drawing.Point(91, 477);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 25);
             this.label6.TabIndex = 12;
@@ -186,7 +186,7 @@ namespace DuAn1_QLThuVien
             // txtNhanMa
             // 
             this.txtNhanMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNhanMa.Location = new System.Drawing.Point(264, 465);
+            this.txtNhanMa.Location = new System.Drawing.Point(307, 478);
             this.txtNhanMa.Name = "txtNhanMa";
             this.txtNhanMa.Size = new System.Drawing.Size(397, 26);
             this.txtNhanMa.TabIndex = 13;
@@ -196,7 +196,7 @@ namespace DuAn1_QLThuVien
             this.btnNhanMa.BackColor = System.Drawing.Color.Silver;
             this.btnNhanMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanMa.ForeColor = System.Drawing.Color.Black;
-            this.btnNhanMa.Location = new System.Drawing.Point(668, 450);
+            this.btnNhanMa.Location = new System.Drawing.Point(711, 463);
             this.btnNhanMa.Name = "btnNhanMa";
             this.btnNhanMa.Size = new System.Drawing.Size(124, 52);
             this.btnNhanMa.TabIndex = 14;
@@ -208,9 +208,9 @@ namespace DuAn1_QLThuVien
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(668, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(750, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(193, 89);
+            this.pictureBox1.Size = new System.Drawing.Size(228, 89);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
@@ -218,7 +218,7 @@ namespace DuAn1_QLThuVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 748);
+            this.ClientSize = new System.Drawing.Size(990, 748);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNhanMa);
             this.Controls.Add(this.txtNhanMa);
